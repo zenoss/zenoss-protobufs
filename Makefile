@@ -154,5 +154,4 @@ install:
 set-relversion:
 	$(MVN) versions:set -DnewVersion=$(NEW_VERSION) -DgenerateBackupPoms=false
 	@sed -i 's/version=".*"/version="$(NEW_VERSION)"/g' python/setup.py
-	@sed -i 's/"version": ".*"/"version": "$(NEW_VERSION)"/g' package.json
 
