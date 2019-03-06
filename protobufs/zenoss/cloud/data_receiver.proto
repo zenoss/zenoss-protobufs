@@ -1,0 +1,144 @@
+syntax = "proto3";
+package zenoss.cloud;
+option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver";
+option java_package = "org.zenoss.cloud.dataReceiver";
+option java_multiple_files = true;
+import "google/protobuf/struct.proto";
+
+message Void {}
+
+message TaggedMetric {
+    // The metric name
+    string metric = 1;
+
+    // The time at which the value was captured
+    int64 timestamp = 2;
+
+    // The metric value
+    double value = 3;
+
+    // Metadata associated with this datapoint.
+    map<string, string> tags = 4;
+}
+
+message CompactMetric {
+    // The metric id
+    string id = 1;
+
+    // The time at which the value was captured
+    int64 timestamp = 2;
+
+    // The metric value
+    double value = 3;
+}
+
+// Canonical Metric format
+message Metric {
+    // The metric name
+    string metric = 1;
+
+    // The time at which the value was captured
+    int64 timestamp = 2;
+
+    // The metric value
+    double value = 3;
+
+    // Dimensions associated with this datapoint.
+    map<string, string> dimensions = 4;
+
+    // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
+    google.protobuf.Struct metadataFields = 6;
+
+}
+
+message Model {
+    // The time when the value was sent.
+    int64 timestamp = 1;
+
+    // Dimensions associated with this model.
+    map<string, string> dimensions = 2;
+
+    // Fields associated with this model.
+    google.protobuf.Struct fields = 3;
+}
+
+// Batch of models
+message ModelBatch {
+    // Tags that apply to all models in the batch
+    map<string, string> global_tags = 1;
+
+    // The models
+    repeated Model models = 2;
+}
+
+message StatusResult {
+    // failed is the count of metrics that failed to be accepted
+    int32 failed = 1;
+    // succeeded is the count of metrics that were accepted
+    int32 succeeded = 2;
+    // message is an informational message that may or may not be set
+    string message = 3;
+    //Failed metrics only returned if detailedResponse is set to true
+    repeated CompactMetricError failedCompactMetrics = 4;
+    repeated TaggedMetricError failedTaggedMetrics = 5;
+    repeated MetricError failedMetrics = 6;
+}
+
+message MetricWrapper {
+    oneof metric_type {
+        // Verbose format
+        TaggedMetric tagged = 1;
+
+        // Compact format
+        CompactMetric compact = 2;
+
+        // Canonical format
+        Metric canonical = 3;
+    }
+}
+
+// DEPRECATED Batch of metrics
+message MetricBatch {
+    // Tags that apply to all metrics in the batch
+    map<string, string> global_tags = 2;
+
+    // The metrics
+    repeated MetricWrapper metrics = 3;
+}
+
+message CompactMetricError{
+    string error = 1;
+    CompactMetric metric =2;
+}
+
+message MetricError{
+    string error = 1;
+    Metric metric =2;
+}
+
+message TaggedMetricError{
+    string error = 1;
+    TaggedMetric metric =2;
+}
+
+message Metrics{
+    // detailedResponse if set to true will return any metrics that failed to be sent
+    bool detailedResponse = 1;
+
+    repeated CompactMetric compactMetrics = 3;
+    repeated TaggedMetric taggedMetrics = 4;
+    repeated Metric metrics = 5;
+}
+
+// Data Receiver API
+service DataReceiverService {
+
+    // Send MetricBatch
+    rpc PutMetrics(Metrics) returns(StatusResult) {}
+
+    // Stream Metric of any type
+    rpc PutMetric(stream MetricWrapper) returns(Void) {}
+
+    // Send model batch 
+    rpc PublishModels(ModelBatch) returns(Void) {}
+}
