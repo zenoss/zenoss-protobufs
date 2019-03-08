@@ -1,0 +1,13 @@
+ignored = ["github.com/zenoss/zing-proto"]
+
+[[constraint]]
+  name = "github.com/golang/protobuf"
+  branch = "master"
+
+[[constraint]]
+  name = "google.golang.org/grpc"
+  version = "1.11.3"
+
+[prune]
+  go-tests = true
+  unused-packages = true
