@@ -69,7 +69,7 @@ PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 default: all_containerized
 
 .PHONY: all
-all: $(GOFILES) mocks $(PYTHONFILES)
+all: $(GOFILES) mocks pybuild
 
 .PHONY: all_containerized
 all_containerized: package
@@ -104,6 +104,9 @@ mocks: $(GOFILES) $(GODIR) vendor
 .PHONY: $(PYTHONDIR)/%_pb2.py
 $(PYTHONDIR)/%_pb2.py: $(PROTOFILES) $(PYTHONDIR)
 	python -m grpc_tools.protoc  -I $(PROTODIR) $(PROTODIR)/$*.proto --python_out=$(PYTHONDIR) --grpc_python_out=$(PYTHONDIR); \
+
+pybuild: $(PYTHONFILES)
+	find python/zenoss -type d -exec touch {}/__init__.py \; \
 
 #:
 #	echo "$(PROTOFILES)"; \
