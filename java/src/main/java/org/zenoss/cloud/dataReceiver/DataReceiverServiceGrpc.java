@@ -84,31 +84,31 @@ public final class DataReceiverServiceGrpc {
      return getPutMetricMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.ModelBatch,
-      org.zenoss.cloud.dataReceiver.Void> getPublishModelsMethod;
+  private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models,
+      org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod;
 
-  public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.ModelBatch,
-      org.zenoss.cloud.dataReceiver.Void> getPublishModelsMethod() {
-    io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.ModelBatch, org.zenoss.cloud.dataReceiver.Void> getPublishModelsMethod;
-    if ((getPublishModelsMethod = DataReceiverServiceGrpc.getPublishModelsMethod) == null) {
+  public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models,
+      org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod() {
+    io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models, org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod;
+    if ((getPutModelsMethod = DataReceiverServiceGrpc.getPutModelsMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
-        if ((getPublishModelsMethod = DataReceiverServiceGrpc.getPublishModelsMethod) == null) {
-          DataReceiverServiceGrpc.getPublishModelsMethod = getPublishModelsMethod = 
-              io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.ModelBatch, org.zenoss.cloud.dataReceiver.Void>newBuilder()
+        if ((getPutModelsMethod = DataReceiverServiceGrpc.getPutModelsMethod) == null) {
+          DataReceiverServiceGrpc.getPutModelsMethod = getPutModelsMethod = 
+              io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.Models, org.zenoss.cloud.dataReceiver.ModelStatusResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PublishModels"))
+                  "zenoss.cloud.DataReceiverService", "PutModels"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.zenoss.cloud.dataReceiver.ModelBatch.getDefaultInstance()))
+                  org.zenoss.cloud.dataReceiver.Models.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.zenoss.cloud.dataReceiver.Void.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PublishModels"))
+                  org.zenoss.cloud.dataReceiver.ModelStatusResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutModels"))
                   .build();
           }
         }
      }
-     return getPublishModelsMethod;
+     return getPutModelsMethod;
   }
 
   /**
@@ -143,7 +143,7 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send MetricBatch
+     * Send Metrics
      * </pre>
      */
     public void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
@@ -163,12 +163,12 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send model batch 
+     * Send batch of models
      * </pre>
      */
-    public void publishModels(org.zenoss.cloud.dataReceiver.ModelBatch request,
-        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
-      asyncUnimplementedUnaryCall(getPublishModelsMethod(), responseObserver);
+    public void putModels(org.zenoss.cloud.dataReceiver.Models request,
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getPutModelsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -188,12 +188,12 @@ public final class DataReceiverServiceGrpc {
                 org.zenoss.cloud.dataReceiver.Void>(
                   this, METHODID_PUT_METRIC)))
           .addMethod(
-            getPublishModelsMethod(),
+            getPutModelsMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.ModelBatch,
-                org.zenoss.cloud.dataReceiver.Void>(
-                  this, METHODID_PUBLISH_MODELS)))
+                org.zenoss.cloud.dataReceiver.Models,
+                org.zenoss.cloud.dataReceiver.ModelStatusResult>(
+                  this, METHODID_PUT_MODELS)))
           .build();
     }
   }
@@ -221,7 +221,7 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send MetricBatch
+     * Send Metrics
      * </pre>
      */
     public void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
@@ -243,13 +243,13 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send model batch 
+     * Send batch of models
      * </pre>
      */
-    public void publishModels(org.zenoss.cloud.dataReceiver.ModelBatch request,
-        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
+    public void putModels(org.zenoss.cloud.dataReceiver.Models request,
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPublishModelsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getPutModelsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -276,7 +276,7 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send MetricBatch
+     * Send Metrics
      * </pre>
      */
     public org.zenoss.cloud.dataReceiver.StatusResult putMetrics(org.zenoss.cloud.dataReceiver.Metrics request) {
@@ -286,12 +286,12 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send model batch 
+     * Send batch of models
      * </pre>
      */
-    public org.zenoss.cloud.dataReceiver.Void publishModels(org.zenoss.cloud.dataReceiver.ModelBatch request) {
+    public org.zenoss.cloud.dataReceiver.ModelStatusResult putModels(org.zenoss.cloud.dataReceiver.Models request) {
       return blockingUnaryCall(
-          getChannel(), getPublishModelsMethod(), getCallOptions(), request);
+          getChannel(), getPutModelsMethod(), getCallOptions(), request);
     }
   }
 
@@ -318,7 +318,7 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send MetricBatch
+     * Send Metrics
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.StatusResult> putMetrics(
@@ -329,18 +329,18 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
-     * Send model batch 
+     * Send batch of models
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.Void> publishModels(
-        org.zenoss.cloud.dataReceiver.ModelBatch request) {
+    public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.ModelStatusResult> putModels(
+        org.zenoss.cloud.dataReceiver.Models request) {
       return futureUnaryCall(
-          getChannel().newCall(getPublishModelsMethod(), getCallOptions()), request);
+          getChannel().newCall(getPutModelsMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_PUT_METRICS = 0;
-  private static final int METHODID_PUBLISH_MODELS = 1;
+  private static final int METHODID_PUT_MODELS = 1;
   private static final int METHODID_PUT_METRIC = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
@@ -364,9 +364,9 @@ public final class DataReceiverServiceGrpc {
           serviceImpl.putMetrics((org.zenoss.cloud.dataReceiver.Metrics) request,
               (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.StatusResult>) responseObserver);
           break;
-        case METHODID_PUBLISH_MODELS:
-          serviceImpl.publishModels((org.zenoss.cloud.dataReceiver.ModelBatch) request,
-              (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void>) responseObserver);
+        case METHODID_PUT_MODELS:
+          serviceImpl.putModels((org.zenoss.cloud.dataReceiver.Models) request,
+              (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -434,7 +434,7 @@ public final class DataReceiverServiceGrpc {
               .setSchemaDescriptor(new DataReceiverServiceFileDescriptorSupplier())
               .addMethod(getPutMetricsMethod())
               .addMethod(getPutMetricMethod())
-              .addMethod(getPublishModelsMethod())
+              .addMethod(getPutModelsMethod())
               .build();
         }
       }

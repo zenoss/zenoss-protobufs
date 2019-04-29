@@ -75,23 +75,23 @@ public interface ModelOrBuilder extends
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  boolean hasFields();
+  boolean hasMetadataFields();
   /**
    * <pre>
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  com.google.protobuf.Struct getFields();
+  com.google.protobuf.Struct getMetadataFields();
   /**
    * <pre>
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  com.google.protobuf.StructOrBuilder getFieldsOrBuilder();
+  com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder();
 }

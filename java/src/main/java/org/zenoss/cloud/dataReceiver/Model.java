@@ -67,13 +67,13 @@ private static final long serialVersionUID = 0L;
           }
           case 26: {
             com.google.protobuf.Struct.Builder subBuilder = null;
-            if (fields_ != null) {
-              subBuilder = fields_.toBuilder();
+            if (metadataFields_ != null) {
+              subBuilder = metadataFields_.toBuilder();
             }
-            fields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+            metadataFields_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(fields_);
-              fields_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(metadataFields_);
+              metadataFields_ = subBuilder.buildPartial();
             }
 
             break;
@@ -219,37 +219,37 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
-  public static final int FIELDS_FIELD_NUMBER = 3;
-  private com.google.protobuf.Struct fields_;
+  public static final int METADATAFIELDS_FIELD_NUMBER = 3;
+  private com.google.protobuf.Struct metadataFields_;
   /**
    * <pre>
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  public boolean hasFields() {
-    return fields_ != null;
+  public boolean hasMetadataFields() {
+    return metadataFields_ != null;
   }
   /**
    * <pre>
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  public com.google.protobuf.Struct getFields() {
-    return fields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fields_;
+  public com.google.protobuf.Struct getMetadataFields() {
+    return metadataFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
   }
   /**
    * <pre>
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct fields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3;</code>
    */
-  public com.google.protobuf.StructOrBuilder getFieldsOrBuilder() {
-    return getFields();
+  public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
+    return getMetadataFields();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -273,8 +273,8 @@ private static final long serialVersionUID = 0L;
         internalGetDimensions(),
         DimensionsDefaultEntryHolder.defaultEntry,
         2);
-    if (fields_ != null) {
-      output.writeMessage(3, getFields());
+    if (metadataFields_ != null) {
+      output.writeMessage(3, getMetadataFields());
     }
     unknownFields.writeTo(output);
   }
@@ -298,9 +298,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, dimensions__);
     }
-    if (fields_ != null) {
+    if (metadataFields_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getFields());
+        .computeMessageSize(3, getMetadataFields());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -322,10 +322,10 @@ private static final long serialVersionUID = 0L;
         == other.getTimestamp());
     result = result && internalGetDimensions().equals(
         other.internalGetDimensions());
-    result = result && (hasFields() == other.hasFields());
-    if (hasFields()) {
-      result = result && getFields()
-          .equals(other.getFields());
+    result = result && (hasMetadataFields() == other.hasMetadataFields());
+    if (hasMetadataFields()) {
+      result = result && getMetadataFields()
+          .equals(other.getMetadataFields());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -345,9 +345,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDimensions().hashCode();
     }
-    if (hasFields()) {
-      hash = (37 * hash) + FIELDS_FIELD_NUMBER;
-      hash = (53 * hash) + getFields().hashCode();
+    if (hasMetadataFields()) {
+      hash = (37 * hash) + METADATAFIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataFields().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -503,11 +503,11 @@ private static final long serialVersionUID = 0L;
       timestamp_ = 0L;
 
       internalGetMutableDimensions().clear();
-      if (fieldsBuilder_ == null) {
-        fields_ = null;
+      if (metadataFieldsBuilder_ == null) {
+        metadataFields_ = null;
       } else {
-        fields_ = null;
-        fieldsBuilder_ = null;
+        metadataFields_ = null;
+        metadataFieldsBuilder_ = null;
       }
       return this;
     }
@@ -536,10 +536,10 @@ private static final long serialVersionUID = 0L;
       result.timestamp_ = timestamp_;
       result.dimensions_ = internalGetDimensions();
       result.dimensions_.makeImmutable();
-      if (fieldsBuilder_ == null) {
-        result.fields_ = fields_;
+      if (metadataFieldsBuilder_ == null) {
+        result.metadataFields_ = metadataFields_;
       } else {
-        result.fields_ = fieldsBuilder_.build();
+        result.metadataFields_ = metadataFieldsBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -588,8 +588,8 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableDimensions().mergeFrom(
           other.internalGetDimensions());
-      if (other.hasFields()) {
-        mergeFields(other.getFields());
+      if (other.hasMetadataFields()) {
+        mergeMetadataFields(other.getMetadataFields());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -808,31 +808,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Struct fields_ = null;
+    private com.google.protobuf.Struct metadataFields_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> fieldsBuilder_;
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataFieldsBuilder_;
     /**
      * <pre>
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public boolean hasFields() {
-      return fieldsBuilder_ != null || fields_ != null;
+    public boolean hasMetadataFields() {
+      return metadataFieldsBuilder_ != null || metadataFields_ != null;
     }
     /**
      * <pre>
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public com.google.protobuf.Struct getFields() {
-      if (fieldsBuilder_ == null) {
-        return fields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : fields_;
+    public com.google.protobuf.Struct getMetadataFields() {
+      if (metadataFieldsBuilder_ == null) {
+        return metadataFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
       } else {
-        return fieldsBuilder_.getMessage();
+        return metadataFieldsBuilder_.getMessage();
       }
     }
     /**
@@ -840,17 +840,17 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public Builder setFields(com.google.protobuf.Struct value) {
-      if (fieldsBuilder_ == null) {
+    public Builder setMetadataFields(com.google.protobuf.Struct value) {
+      if (metadataFieldsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        fields_ = value;
+        metadataFields_ = value;
         onChanged();
       } else {
-        fieldsBuilder_.setMessage(value);
+        metadataFieldsBuilder_.setMessage(value);
       }
 
       return this;
@@ -860,15 +860,15 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public Builder setFields(
+    public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
-      if (fieldsBuilder_ == null) {
-        fields_ = builderForValue.build();
+      if (metadataFieldsBuilder_ == null) {
+        metadataFields_ = builderForValue.build();
         onChanged();
       } else {
-        fieldsBuilder_.setMessage(builderForValue.build());
+        metadataFieldsBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -878,19 +878,19 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public Builder mergeFields(com.google.protobuf.Struct value) {
-      if (fieldsBuilder_ == null) {
-        if (fields_ != null) {
-          fields_ =
-            com.google.protobuf.Struct.newBuilder(fields_).mergeFrom(value).buildPartial();
+    public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
+      if (metadataFieldsBuilder_ == null) {
+        if (metadataFields_ != null) {
+          metadataFields_ =
+            com.google.protobuf.Struct.newBuilder(metadataFields_).mergeFrom(value).buildPartial();
         } else {
-          fields_ = value;
+          metadataFields_ = value;
         }
         onChanged();
       } else {
-        fieldsBuilder_.mergeFrom(value);
+        metadataFieldsBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -900,15 +900,15 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public Builder clearFields() {
-      if (fieldsBuilder_ == null) {
-        fields_ = null;
+    public Builder clearMetadataFields() {
+      if (metadataFieldsBuilder_ == null) {
+        metadataFields_ = null;
         onChanged();
       } else {
-        fields_ = null;
-        fieldsBuilder_ = null;
+        metadataFields_ = null;
+        metadataFieldsBuilder_ = null;
       }
 
       return this;
@@ -918,26 +918,26 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public com.google.protobuf.Struct.Builder getFieldsBuilder() {
+    public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
       onChanged();
-      return getFieldsFieldBuilder().getBuilder();
+      return getMetadataFieldsFieldBuilder().getBuilder();
     }
     /**
      * <pre>
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
-    public com.google.protobuf.StructOrBuilder getFieldsOrBuilder() {
-      if (fieldsBuilder_ != null) {
-        return fieldsBuilder_.getMessageOrBuilder();
+    public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
+      if (metadataFieldsBuilder_ != null) {
+        return metadataFieldsBuilder_.getMessageOrBuilder();
       } else {
-        return fields_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : fields_;
+        return metadataFields_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
       }
     }
     /**
@@ -945,20 +945,20 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct fields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
-        getFieldsFieldBuilder() {
-      if (fieldsBuilder_ == null) {
-        fieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        getMetadataFieldsFieldBuilder() {
+      if (metadataFieldsBuilder_ == null) {
+        metadataFieldsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getFields(),
+                getMetadataFields(),
                 getParentForChildren(),
                 isClean());
-        fields_ = null;
+        metadataFields_ = null;
       }
-      return fieldsBuilder_;
+      return metadataFieldsBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
