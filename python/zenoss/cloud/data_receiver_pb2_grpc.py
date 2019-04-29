@@ -24,10 +24,10 @@ class DataReceiverServiceStub(object):
         request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.MetricWrapper.SerializeToString,
         response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
         )
-    self.PublishModels = channel.unary_unary(
-        '/zenoss.cloud.DataReceiverService/PublishModels',
-        request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.ModelBatch.SerializeToString,
-        response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
+    self.PutModels = channel.unary_unary(
+        '/zenoss.cloud.DataReceiverService/PutModels',
+        request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Models.SerializeToString,
+        response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.ModelStatusResult.FromString,
         )
 
 
@@ -36,7 +36,7 @@ class DataReceiverServiceServicer(object):
   """
 
   def PutMetrics(self, request, context):
-    """Send MetricBatch
+    """Send Metrics
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -49,8 +49,8 @@ class DataReceiverServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def PublishModels(self, request, context):
-    """Send model batch 
+  def PutModels(self, request, context):
+    """Send batch of models
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -69,10 +69,10 @@ def add_DataReceiverServiceServicer_to_server(servicer, server):
           request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.MetricWrapper.FromString,
           response_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.SerializeToString,
       ),
-      'PublishModels': grpc.unary_unary_rpc_method_handler(
-          servicer.PublishModels,
-          request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.ModelBatch.FromString,
-          response_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.SerializeToString,
+      'PutModels': grpc.unary_unary_rpc_method_handler(
+          servicer.PutModels,
+          request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Models.FromString,
+          response_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.ModelStatusResult.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

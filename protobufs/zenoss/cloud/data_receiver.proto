@@ -59,16 +59,31 @@ message Model {
     map<string, string> dimensions = 2;
 
     // Fields associated with this model.
-    google.protobuf.Struct fields = 3;
+    google.protobuf.Struct metadataFields = 3;
 }
 
-// Batch of models
-message ModelBatch {
-    // Tags that apply to all models in the batch
-    map<string, string> global_tags = 1;
+message Models {
+    // detailedResponse if set to true will return any models that failed to be sent
+    bool detailedResponse = 1;
 
     // The models
     repeated Model models = 2;
+}
+
+message  ModelError {
+    string error = 1;
+    Model model =2;
+}
+
+message ModelStatusResult {
+    // failed is the count of models that failed to be accepted
+    int32 failed = 1;
+    // succeeded is the count of models that were accepted
+    int32 succeeded = 2;
+    // message is an informational message that may or may not be set
+    string message = 3;
+    // Failed models only returned if detailedResponse is set to true
+    repeated ModelError failedModels = 4;
 }
 
 message StatusResult {
@@ -133,12 +148,12 @@ message Metrics{
 // Data Receiver API
 service DataReceiverService {
 
-    // Send MetricBatch
+    // Send Metrics
     rpc PutMetrics(Metrics) returns(StatusResult) {}
 
     // Stream Metric of any type
     rpc PutMetric(stream MetricWrapper) returns(Void) {}
 
-    // Send model batch 
-    rpc PublishModels(ModelBatch) returns(Void) {}
+    // Send batch of models
+    rpc PutModels(Models) returns(ModelStatusResult) {}
 }

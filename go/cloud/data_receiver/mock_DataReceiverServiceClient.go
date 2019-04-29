@@ -11,36 +11,6 @@ type MockDataReceiverServiceClient struct {
 	mock.Mock
 }
 
-// PublishModels provides a mock function with given fields: ctx, in, opts
-func (_m *MockDataReceiverServiceClient) PublishModels(ctx context.Context, in *ModelBatch, opts ...grpc.CallOption) (*Void, error) {
-	_va := make([]interface{}, len(opts))
-	for _i := range opts {
-		_va[_i] = opts[_i]
-	}
-	var _ca []interface{}
-	_ca = append(_ca, ctx, in)
-	_ca = append(_ca, _va...)
-	ret := _m.Called(_ca...)
-
-	var r0 *Void
-	if rf, ok := ret.Get(0).(func(context.Context, *ModelBatch, ...grpc.CallOption) *Void); ok {
-		r0 = rf(ctx, in, opts...)
-	} else {
-		if ret.Get(0) != nil {
-			r0 = ret.Get(0).(*Void)
-		}
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(context.Context, *ModelBatch, ...grpc.CallOption) error); ok {
-		r1 = rf(ctx, in, opts...)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 // PutMetric provides a mock function with given fields: ctx, opts
 func (_m *MockDataReceiverServiceClient) PutMetric(ctx context.Context, opts ...grpc.CallOption) (DataReceiverService_PutMetricClient, error) {
 	_va := make([]interface{}, len(opts))
@@ -93,6 +63,36 @@ func (_m *MockDataReceiverServiceClient) PutMetrics(ctx context.Context, in *Met
 
 	var r1 error
 	if rf, ok := ret.Get(1).(func(context.Context, *Metrics, ...grpc.CallOption) error); ok {
+		r1 = rf(ctx, in, opts...)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// PutModels provides a mock function with given fields: ctx, in, opts
+func (_m *MockDataReceiverServiceClient) PutModels(ctx context.Context, in *Models, opts ...grpc.CallOption) (*ModelStatusResult, error) {
+	_va := make([]interface{}, len(opts))
+	for _i := range opts {
+		_va[_i] = opts[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, ctx, in)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 *ModelStatusResult
+	if rf, ok := ret.Get(0).(func(context.Context, *Models, ...grpc.CallOption) *ModelStatusResult); ok {
+		r0 = rf(ctx, in, opts...)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).(*ModelStatusResult)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(context.Context, *Models, ...grpc.CallOption) error); ok {
 		r1 = rf(ctx, in, opts...)
 	} else {
 		r1 = ret.Error(1)
