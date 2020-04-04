@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name="zing-proto",
+    name="zenoss-protobufs",
     version="0.0.3",
     packages=find_packages(),
     author="Zenoss",

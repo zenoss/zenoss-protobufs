@@ -22,6 +22,7 @@ LOCAL_MAVEN_REPO     = $(HOME)/.m2
 endif
 
 PROTODIR             := protobufs
+GO                   := $(shell command -v go 2> /dev/null)
 GODIR                := go
 GO_SRC_DIR           ?= $(GOPATH)/src
 PACKAGE              := github.com/zenoss/zenoss-protobufs
@@ -29,15 +30,17 @@ JAVADIR              := java
 JAVA_SRC_DIR         := $(JAVADIR)/src/main/java
 PYTHONDIR            := python
 PROTOFILES           := $(shell find protobufs -name "*.proto")
-GOFILES              := $(subst $(PROTODIR),$(GODIR),$(subst .proto,.pb.go,$(PROTOFILES)))
-PYTHONFILES          := $(subst $(PROTODIR), $(PYTHONDIR),$(subst .proto,_pb2.py, $(PROTOFILES)))
+GO_FILES             := $(subst $(PROTODIR),$(GODIR),$(subst .proto,.pb.go,$(PROTOFILES)))
+GO_GW_FILES          := $(subst $(PROTODIR),$(GODIR),$(subst .proto,.pb.gw.go,$(PROTOFILES)))
+PYTHON_FILES         := $(subst $(PROTODIR), $(PYTHONDIR),$(subst .proto,_pb2.py,$(PROTOFILES)))
 PROTOC               := /usr/bin/protoc
 ifneq ($(PROTOC), $(shell which protoc))
     PROTOC           := $(shell which protoc)
 endif
+PROTOC_PARAMS        := --proto_path=${GOPATH}/googleapis
 LOCAL_USER_ID        := $(shell id -u)
 CONTAINER_DIR        := /tmp/working
-ZENKIT_BUILD_VERSION := 1.7.6
+ZENKIT_BUILD_VERSION := 1.7.9
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
 DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
@@ -69,7 +72,7 @@ PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 default: all_containerized
 
 .PHONY: all
-all: $(GOFILES) mocks pybuild
+all: $(GO_FILES) $(GO_GW_FILES) mocks pybuild
 
 .PHONY: all_containerized
 all_containerized: package
@@ -88,59 +91,40 @@ $(PYTHONDIR):
 	@mkdir $(PYTHONDIR)
 	touch __init__.py
 
-$(GODIR)/%.pb.go: $(PROTOFILES) $(PROTOFILES_PUB) $(GODIR)
-	ls -lat
-	pwd
-	$(PROTOC) -I $(PROTODIR) $(PROTODIR)/zenoss/cloud/$(*F).proto --go_out=plugins=grpc:$(GO_SRC_DIR); \
+$(GODIR)/%.pb.go: $(PROTOFILES) $(GODIR)
+	$(PROTOC) $(PROTOC_PARAMS) \
+		-I $(PROTODIR) \
+		$(PROTODIR)/zenoss/cloud/$(*F).proto \
+		--go_out=plugins=grpc:$(GO_SRC_DIR)
 
-vendor: Gopkg.toml Gopkg.lock ; $(info retrieving dependencies…)
-	@$(GODEP) ensure
-	@touch $@
+$(GODIR)/%.pb.gw.go: $(PROTOFILES) $(GODIR)
+	$(PROTOC) $(PROTOC_PARAMS) \
+		-I $(PROTODIR) \
+		$(PROTODIR)/zenoss/cloud/$(*F).proto \
+		--grpc-gateway_out=logtostderr=true:$(GO_SRC_DIR)
+
+.PHONY: vendor
+vendor: $(GO_FILES) $(GO_GW_FILES)
+	GO111MODULE=on $(GO) mod vendor
 
 .PHONY: mocks
-mocks: $(GOFILES) $(GODIR) vendor
+mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) vendor
 	@$(GOMOCKERY) -all -inpkg -dir $(GODIR)
 
 .PHONY: $(PYTHONDIR)/%_pb2.py
 $(PYTHONDIR)/%_pb2.py: $(PROTOFILES) $(PYTHONDIR)
-	python -m grpc_tools.protoc  -I $(PROTODIR) $(PROTODIR)/$*.proto --python_out=$(PYTHONDIR) --grpc_python_out=$(PYTHONDIR); \
+	python -m grpc_tools.protoc $(PROTOC_PARAMS) \
+		-I $(PROTODIR) \
+		$(PROTODIR)/$*.proto \
+		--python_out=$(PYTHONDIR) \
+		--grpc_python_out=$(PYTHONDIR); \
 
-pybuild: $(PYTHONFILES)
+pybuild: $(PYTHON_FILES)
 	find python/zenoss -type d -exec touch {}/__init__.py \; \
-
-#:
-#	echo "$(PROTOFILES)"; \
-#	for thing in x y z; \
-#    do \
-#        echo "blam" \
-#    done
-#
-#--rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
-#	                      -v $(ROOTDIR):/go/src/$(PACKAGE):rw \
-#                        -e LOCAL_USER_ID=$(LOCAL_USER_ID) \
-#                        --network $(DOCKER_NETWORK) \
-#                        -w /go/src/$(PACKAGE)
-
-
-sed:
-	docker run -t --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw  -w $(CONTAINER_DIR) $(BUILD_IMG) make fix_go_package
-
-fix_go_package:
-	for thing in $(PROTOFILES); \
-	do \
-		sed -i 's/zing-proto/zenoss-protobufs/g' $$thing; \
-	done
-
-#		cd $(ROOTDIR)/$$(dirname $$thing); \
-#		touch $$(basename $$thing).here ; \
-#		sed -i 's/zing-proto/zenoss-protobufs/g' $$(basename $$thing); \
-
-
-#
 
 .PHONY: clean
 clean:
-	rm -rf $(GODIR)/* $(DESCRIPTORDIR) $(JAVA_SRC_DIR) $(PYTHONFILES) vendor
+	rm -rf $(GODIR)/* $(DESCRIPTORDIR) $(JAVA_SRC_DIR) $(PYTHON_FILES) vendor
 	find . -type f -name *grpc.py -exec rm {} \;
 	-$(MVN) -e clean
 
