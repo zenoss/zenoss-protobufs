@@ -4,6 +4,7 @@ option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver";
 option java_package = "org.zenoss.cloud.dataReceiver";
 option java_multiple_files = true;
 import "google/protobuf/struct.proto";
+import "google/api/annotations.proto";
 
 message Void {}
 
@@ -70,7 +71,7 @@ message Models {
     repeated Model models = 2;
 }
 
-message  ModelError {
+message ModelError {
     string error = 1;
     Model model =2;
 }
@@ -149,11 +150,21 @@ message Metrics{
 service DataReceiverService {
 
     // Send Metrics
-    rpc PutMetrics(Metrics) returns(StatusResult) {}
+    rpc PutMetrics(Metrics) returns(StatusResult) {
+        option (google.api.http) = {
+            post: "/v1/data-receiver/metrics"
+            body: "*"
+        };
+    }
 
     // Stream Metric of any type
     rpc PutMetric(stream MetricWrapper) returns(Void) {}
 
     // Send batch of models
-    rpc PutModels(Models) returns(ModelStatusResult) {}
+    rpc PutModels(Models) returns(ModelStatusResult) {
+        option (google.api.http) = {
+            post: "/v1/data-receiver/models"
+            body: "*"
+        };
+    }
 }

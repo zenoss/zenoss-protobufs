@@ -2,9 +2,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.zenoss.zing.proto</groupId>
-    <artifactId>zing-proto</artifactId>
+    <artifactId>zenoss-protobufs</artifactId>
     <version>0.0.3</version>
-    <name>zing-proto</name>
+    <name>zenoss-protobufs</name>
     <properties>
         <!--Coordinate any version changes with the services using the generated protobuf classes.-->
         <google.protobuf.version>3.4.0</google.protobuf.version>
@@ -30,6 +30,11 @@
           <groupId>io.grpc</groupId>
           <artifactId>grpc-stub</artifactId>
           <version>${io.grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>googleapis-common-protos</artifactId>
+            <version>0.0.3</version>
         </dependency>
     </dependencies>
     <build>
