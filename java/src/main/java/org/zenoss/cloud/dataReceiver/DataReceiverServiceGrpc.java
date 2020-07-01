@@ -30,6 +30,60 @@ public final class DataReceiverServiceGrpc {
   public static final String SERVICE_NAME = "zenoss.cloud.DataReceiverService";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events,
+      org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod;
+
+  public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events,
+      org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod() {
+    io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events, org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod;
+    if ((getPutEventsMethod = DataReceiverServiceGrpc.getPutEventsMethod) == null) {
+      synchronized (DataReceiverServiceGrpc.class) {
+        if ((getPutEventsMethod = DataReceiverServiceGrpc.getPutEventsMethod) == null) {
+          DataReceiverServiceGrpc.getPutEventsMethod = getPutEventsMethod = 
+              io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.Events, org.zenoss.cloud.dataReceiver.EventStatusResult>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "zenoss.cloud.DataReceiverService", "PutEvents"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.zenoss.cloud.dataReceiver.Events.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.zenoss.cloud.dataReceiver.EventStatusResult.getDefaultInstance()))
+                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvents"))
+                  .build();
+          }
+        }
+     }
+     return getPutEventsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper,
+      org.zenoss.cloud.dataReceiver.Void> getPutEventMethod;
+
+  public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper,
+      org.zenoss.cloud.dataReceiver.Void> getPutEventMethod() {
+    io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper, org.zenoss.cloud.dataReceiver.Void> getPutEventMethod;
+    if ((getPutEventMethod = DataReceiverServiceGrpc.getPutEventMethod) == null) {
+      synchronized (DataReceiverServiceGrpc.class) {
+        if ((getPutEventMethod = DataReceiverServiceGrpc.getPutEventMethod) == null) {
+          DataReceiverServiceGrpc.getPutEventMethod = getPutEventMethod = 
+              io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.EventWrapper, org.zenoss.cloud.dataReceiver.Void>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "zenoss.cloud.DataReceiverService", "PutEvent"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.zenoss.cloud.dataReceiver.EventWrapper.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.zenoss.cloud.dataReceiver.Void.getDefaultInstance()))
+                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvent"))
+                  .build();
+          }
+        }
+     }
+     return getPutEventMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Metrics,
       org.zenoss.cloud.dataReceiver.StatusResult> getPutMetricsMethod;
 
@@ -143,6 +197,26 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
+     * Send Events
+     * </pre>
+     */
+    public void putEvents(org.zenoss.cloud.dataReceiver.Events request,
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult> responseObserver) {
+      asyncUnimplementedUnaryCall(getPutEventsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Stream Events of any type.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
+      return asyncUnimplementedStreamingCall(getPutEventMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Send Metrics
      * </pre>
      */
@@ -173,6 +247,20 @@ public final class DataReceiverServiceGrpc {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getPutEventsMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                org.zenoss.cloud.dataReceiver.Events,
+                org.zenoss.cloud.dataReceiver.EventStatusResult>(
+                  this, METHODID_PUT_EVENTS)))
+          .addMethod(
+            getPutEventMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                org.zenoss.cloud.dataReceiver.EventWrapper,
+                org.zenoss.cloud.dataReceiver.Void>(
+                  this, METHODID_PUT_EVENT)))
           .addMethod(
             getPutMetricsMethod(),
             asyncUnaryCall(
@@ -217,6 +305,28 @@ public final class DataReceiverServiceGrpc {
     protected DataReceiverServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       return new DataReceiverServiceStub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * Send Events
+     * </pre>
+     */
+    public void putEvents(org.zenoss.cloud.dataReceiver.Events request,
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPutEventsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Stream Events of any type.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
+        io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getPutEventMethod(), getCallOptions()), responseObserver);
     }
 
     /**
@@ -276,6 +386,16 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
+     * Send Events
+     * </pre>
+     */
+    public org.zenoss.cloud.dataReceiver.EventStatusResult putEvents(org.zenoss.cloud.dataReceiver.Events request) {
+      return blockingUnaryCall(
+          getChannel(), getPutEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Send Metrics
      * </pre>
      */
@@ -318,6 +438,17 @@ public final class DataReceiverServiceGrpc {
 
     /**
      * <pre>
+     * Send Events
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.EventStatusResult> putEvents(
+        org.zenoss.cloud.dataReceiver.Events request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPutEventsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Send Metrics
      * </pre>
      */
@@ -339,9 +470,11 @@ public final class DataReceiverServiceGrpc {
     }
   }
 
-  private static final int METHODID_PUT_METRICS = 0;
-  private static final int METHODID_PUT_MODELS = 1;
-  private static final int METHODID_PUT_METRIC = 2;
+  private static final int METHODID_PUT_EVENTS = 0;
+  private static final int METHODID_PUT_METRICS = 1;
+  private static final int METHODID_PUT_MODELS = 2;
+  private static final int METHODID_PUT_EVENT = 3;
+  private static final int METHODID_PUT_METRIC = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -360,6 +493,10 @@ public final class DataReceiverServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_PUT_EVENTS:
+          serviceImpl.putEvents((org.zenoss.cloud.dataReceiver.Events) request,
+              (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult>) responseObserver);
+          break;
         case METHODID_PUT_METRICS:
           serviceImpl.putMetrics((org.zenoss.cloud.dataReceiver.Metrics) request,
               (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.StatusResult>) responseObserver);
@@ -378,6 +515,9 @@ public final class DataReceiverServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_PUT_EVENT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.putEvent(
+              (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void>) responseObserver);
         case METHODID_PUT_METRIC:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.putMetric(
               (io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void>) responseObserver);
@@ -432,6 +572,8 @@ public final class DataReceiverServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new DataReceiverServiceFileDescriptorSupplier())
+              .addMethod(getPutEventsMethod())
+              .addMethod(getPutEventMethod())
               .addMethod(getPutMetricsMethod())
               .addMethod(getPutMetricMethod())
               .addMethod(getPutModelsMethod())

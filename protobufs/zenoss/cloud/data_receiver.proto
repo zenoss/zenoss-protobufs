@@ -5,8 +5,93 @@ option java_package = "org.zenoss.cloud.dataReceiver";
 option java_multiple_files = true;
 import "google/protobuf/struct.proto";
 import "google/api/annotations.proto";
+import "google/protobuf/wrappers.proto";
 
 message Void {}
+
+// Public Event struct.
+// Note the conspicuous absence of 'id' and 'tenant' which are inferred by auth.
+message Event {
+
+    // timestamp is the time (in ms since epoch) at which the event occurred.
+    int64 timestamp = 1;
+
+    // name, when combined with dimensions, makes this event unique.
+    //   - should be set to the ID for systems that have an event ID concept
+    //   - otherwise the same as "type"
+    //   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
+    string name = 2;
+
+    // Dimensions associated with this event.
+    // Dimensions, when combined with name, make this event unique.
+    //   - typically set the same as the entity to which event is related
+    map<string, string> dimensions = 3;
+
+    // Fields associated with this event.
+    google.protobuf.Struct metadataFields = 4;
+
+    // type uniquely identifies the context-free type of event.
+    //   - typically set the same as "name" for systems that have an event ID.
+    //   - e.g. linkDown, fault-F0157
+    string type = 5;
+
+    // summary is a short (<128 character) summary of the event.
+    //   - most commonly displayed per-event field
+    //   - highly recommend to set this
+    string summary = 6;
+
+    // body is a long (? character) further description of the event.
+    //   - it is not necessary to repeat summary in the body
+    string body = 7;
+
+    // severity defines how severe the event is.
+    //   - use SEVERITY_DEFAULT when not currently known
+    //   - use SEVERITY_DEBUG when not severe enough to show by default
+    //   - use SEVERITY_INFO when when no action is likely required
+    //   - use SEVERITY_WARNING when delayed action may be required
+    //   - use SEVERITY_ERROR when system is degraded, but not down
+    //   - use SEVERITY_CRITICAL for system down
+    Severity severity = 8;
+
+    // status defines the event's disposition from the system perspective.
+    //   - use STATUS_DEFAULT when not currently known
+    //   - use STATUS_OPEN when event is known to be actively ongoing
+    //   - use STATUS_SUPPRESSED when event should be suppressed
+    //   - use STATUS_CLOSED when the event is known to have subsided
+    Status status = 9;
+
+    // acknowledged explicitly sets the events acknowledged state.
+    google.protobuf.BoolValue acknowledged = 10;
+}
+
+enum Severity {
+    SEVERITY_DEFAULT = 0;
+    SEVERITY_DEBUG = 1;
+    SEVERITY_INFO = 2;
+    SEVERITY_WARNING = 3;
+    SEVERITY_ERROR = 4;
+    SEVERITY_CRITICAL = 5;
+}
+
+enum Status {
+    STATUS_DEFAULT = 0;
+    STATUS_OPEN = 1;
+    STATUS_SUPPRESSED = 2;
+    STATUS_CLOSED = 3;
+}
+
+message Events {
+    // detailedResponse: if true, return any events that failed to be sent.
+    bool detailedResponse = 1;
+
+    // The events
+    repeated Event events = 2;
+}
+
+message  EventError {
+    string error = 1;
+    Event event = 2;
+}
 
 message TaggedMetric {
     // The metric name
@@ -76,6 +161,17 @@ message ModelError {
     Model model =2;
 }
 
+message EventStatusResult {
+    // failed is the count of events that failed to be accepted
+    int32 failed = 1;
+    // succeeded is the count of events that were accepted
+    int32 succeeded = 2;
+    // message is an informational message that may or may not be set
+    string message = 3;
+    // Failed events only returned if detailedResponse is set to true
+    repeated EventError failedEvents = 4;
+}
+
 message ModelStatusResult {
     // failed is the count of models that failed to be accepted
     int32 failed = 1;
@@ -98,6 +194,13 @@ message StatusResult {
     repeated CompactMetricError failedCompactMetrics = 4;
     repeated TaggedMetricError failedTaggedMetrics = 5;
     repeated MetricError failedMetrics = 6;
+}
+
+message EventWrapper {
+    oneof event_type {
+        // Canonical format
+        Event canonical = 1;
+    }
 }
 
 message MetricWrapper {
@@ -148,6 +251,18 @@ message Metrics{
 
 // Data Receiver API
 service DataReceiverService {
+
+    // Send Events
+    rpc PutEvents(Events) returns(EventStatusResult) {
+        option (google.api.http) = {
+            post: "/v1/data-receiver/events"
+            body: "*"
+        };
+    }
+
+    // Stream Events of any type.
+    rpc PutEvent(stream EventWrapper) returns(Void) {}
+
 
     // Send Metrics
     rpc PutMetrics(Metrics) returns(StatusResult) {

@@ -14,6 +14,16 @@ class DataReceiverServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.PutEvents = channel.unary_unary(
+        '/zenoss.cloud.DataReceiverService/PutEvents',
+        request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Events.SerializeToString,
+        response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventStatusResult.FromString,
+        )
+    self.PutEvent = channel.stream_unary(
+        '/zenoss.cloud.DataReceiverService/PutEvent',
+        request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventWrapper.SerializeToString,
+        response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
+        )
     self.PutMetrics = channel.unary_unary(
         '/zenoss.cloud.DataReceiverService/PutMetrics',
         request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Metrics.SerializeToString,
@@ -34,6 +44,20 @@ class DataReceiverServiceStub(object):
 class DataReceiverServiceServicer(object):
   """Data Receiver API
   """
+
+  def PutEvents(self, request, context):
+    """Send Events
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def PutEvent(self, request_iterator, context):
+    """Stream Events of any type.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
 
   def PutMetrics(self, request, context):
     """Send Metrics
@@ -59,6 +83,16 @@ class DataReceiverServiceServicer(object):
 
 def add_DataReceiverServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'PutEvents': grpc.unary_unary_rpc_method_handler(
+          servicer.PutEvents,
+          request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Events.FromString,
+          response_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventStatusResult.SerializeToString,
+      ),
+      'PutEvent': grpc.stream_unary_rpc_method_handler(
+          servicer.PutEvent,
+          request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventWrapper.FromString,
+          response_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.SerializeToString,
+      ),
       'PutMetrics': grpc.unary_unary_rpc_method_handler(
           servicer.PutMetrics,
           request_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Metrics.FromString,

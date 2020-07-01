@@ -4,6 +4,7 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -15,6 +16,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,10 +24,90 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='zenoss.cloud',
   syntax='proto3',
   serialized_options=_b('\n\035org.zenoss.cloud.dataReceiverP\001Z9github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver'),
-  serialized_pb=_b('\n zenoss/cloud/data_receiver.proto\x12\x0czenoss.cloud\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1cgoogle/api/annotations.proto\"\x06\n\x04Void\"\xa1\x01\n\x0cTaggedMetric\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x32\n\x04tags\x18\x04 \x03(\x0b\x32$.zenoss.cloud.TaggedMetric.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\rCompactMetric\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\"\xd8\x01\n\x06Metric\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x38\n\ndimensions\x18\x04 \x03(\x0b\x32$.zenoss.cloud.Metric.DimensionsEntry\x12/\n\x0emetadataFields\x18\x06 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x05Model\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x37\n\ndimensions\x18\x02 \x03(\x0b\x32#.zenoss.cloud.Model.DimensionsEntry\x12/\n\x0emetadataFields\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"G\n\x06Models\x12\x18\n\x10\x64\x65tailedResponse\x18\x01 \x01(\x08\x12#\n\x06models\x18\x02 \x03(\x0b\x32\x13.zenoss.cloud.Model\"?\n\nModelError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12\"\n\x05model\x18\x02 \x01(\x0b\x32\x13.zenoss.cloud.Model\"w\n\x11ModelStatusResult\x12\x0e\n\x06\x66\x61iled\x18\x01 \x01(\x05\x12\x11\n\tsucceeded\x18\x02 \x01(\x05\x12\x0f\n\x07message\x18\x03 \x01(\t\x12.\n\x0c\x66\x61iledModels\x18\x04 \x03(\x0b\x32\x18.zenoss.cloud.ModelError\"\xf2\x01\n\x0cStatusResult\x12\x0e\n\x06\x66\x61iled\x18\x01 \x01(\x05\x12\x11\n\tsucceeded\x18\x02 \x01(\x05\x12\x0f\n\x07message\x18\x03 \x01(\t\x12>\n\x14\x66\x61iledCompactMetrics\x18\x04 \x03(\x0b\x32 .zenoss.cloud.CompactMetricError\x12<\n\x13\x66\x61iledTaggedMetrics\x18\x05 \x03(\x0b\x32\x1f.zenoss.cloud.TaggedMetricError\x12\x30\n\rfailedMetrics\x18\x06 \x03(\x0b\x32\x19.zenoss.cloud.MetricError\"\xa7\x01\n\rMetricWrapper\x12,\n\x06tagged\x18\x01 \x01(\x0b\x32\x1a.zenoss.cloud.TaggedMetricH\x00\x12.\n\x07\x63ompact\x18\x02 \x01(\x0b\x32\x1b.zenoss.cloud.CompactMetricH\x00\x12)\n\tcanonical\x18\x03 \x01(\x0b\x32\x14.zenoss.cloud.MetricH\x00\x42\r\n\x0bmetric_type\"\xae\x01\n\x0bMetricBatch\x12>\n\x0bglobal_tags\x18\x02 \x03(\x0b\x32).zenoss.cloud.MetricBatch.GlobalTagsEntry\x12,\n\x07metrics\x18\x03 \x03(\x0b\x32\x1b.zenoss.cloud.MetricWrapper\x1a\x31\n\x0fGlobalTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"P\n\x12\x43ompactMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12+\n\x06metric\x18\x02 \x01(\x0b\x32\x1b.zenoss.cloud.CompactMetric\"B\n\x0bMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12$\n\x06metric\x18\x02 \x01(\x0b\x32\x14.zenoss.cloud.Metric\"N\n\x11TaggedMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12*\n\x06metric\x18\x02 \x01(\x0b\x32\x1a.zenoss.cloud.TaggedMetric\"\xb2\x01\n\x07Metrics\x12\x18\n\x10\x64\x65tailedResponse\x18\x01 \x01(\x08\x12\x33\n\x0e\x63ompactMetrics\x18\x03 \x03(\x0b\x32\x1b.zenoss.cloud.CompactMetric\x12\x31\n\rtaggedMetrics\x18\x04 \x03(\x0b\x32\x1a.zenoss.cloud.TaggedMetric\x12%\n\x07metrics\x18\x05 \x03(\x0b\x32\x14.zenoss.cloud.Metric2\xa7\x02\n\x13\x44\x61taReceiverService\x12\x65\n\nPutMetrics\x12\x15.zenoss.cloud.Metrics\x1a\x1a.zenoss.cloud.StatusResult\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/data-receiver/metrics:\x01*\x12@\n\tPutMetric\x12\x1b.zenoss.cloud.MetricWrapper\x1a\x12.zenoss.cloud.Void\"\x00(\x01\x12g\n\tPutModels\x12\x14.zenoss.cloud.Models\x1a\x1f.zenoss.cloud.ModelStatusResult\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/data-receiver/models:\x01*B\\\n\x1dorg.zenoss.cloud.dataReceiverP\x01Z9github.com/zenoss/zenoss-protobufs/go/cloud/data_receiverb\x06proto3')
+  serialized_pb=_b('\n zenoss/cloud/data_receiver.proto\x12\x0czenoss.cloud\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x06\n\x04Void\"\xf4\x02\n\x05\x45vent\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x37\n\ndimensions\x18\x03 \x03(\x0b\x32#.zenoss.cloud.Event.DimensionsEntry\x12/\n\x0emetadataFields\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\x0f\n\x07summary\x18\x06 \x01(\t\x12\x0c\n\x04\x62ody\x18\x07 \x01(\t\x12(\n\x08severity\x18\x08 \x01(\x0e\x32\x16.zenoss.cloud.Severity\x12$\n\x06status\x18\t \x01(\x0e\x32\x14.zenoss.cloud.Status\x12\x30\n\x0c\x61\x63knowledged\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"G\n\x06\x45vents\x12\x18\n\x10\x64\x65tailedResponse\x18\x01 \x01(\x08\x12#\n\x06\x65vents\x18\x02 \x03(\x0b\x32\x13.zenoss.cloud.Event\"?\n\nEventError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12\"\n\x05\x65vent\x18\x02 \x01(\x0b\x32\x13.zenoss.cloud.Event\"\xa1\x01\n\x0cTaggedMetric\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x32\n\x04tags\x18\x04 \x03(\x0b\x32$.zenoss.cloud.TaggedMetric.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\rCompactMetric\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\"\xd8\x01\n\x06Metric\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x38\n\ndimensions\x18\x04 \x03(\x0b\x32$.zenoss.cloud.Metric.DimensionsEntry\x12/\n\x0emetadataFields\x18\x06 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb7\x01\n\x05Model\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x37\n\ndimensions\x18\x02 \x03(\x0b\x32#.zenoss.cloud.Model.DimensionsEntry\x12/\n\x0emetadataFields\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"G\n\x06Models\x12\x18\n\x10\x64\x65tailedResponse\x18\x01 \x01(\x08\x12#\n\x06models\x18\x02 \x03(\x0b\x32\x13.zenoss.cloud.Model\"?\n\nModelError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12\"\n\x05model\x18\x02 \x01(\x0b\x32\x13.zenoss.cloud.Model\"w\n\x11\x45ventStatusResult\x12\x0e\n\x06\x66\x61iled\x18\x01 \x01(\x05\x12\x11\n\tsucceeded\x18\x02 \x01(\x05\x12\x0f\n\x07message\x18\x03 \x01(\t\x12.\n\x0c\x66\x61iledEvents\x18\x04 \x03(\x0b\x32\x18.zenoss.cloud.EventError\"w\n\x11ModelStatusResult\x12\x0e\n\x06\x66\x61iled\x18\x01 \x01(\x05\x12\x11\n\tsucceeded\x18\x02 \x01(\x05\x12\x0f\n\x07message\x18\x03 \x01(\t\x12.\n\x0c\x66\x61iledModels\x18\x04 \x03(\x0b\x32\x18.zenoss.cloud.ModelError\"\xf2\x01\n\x0cStatusResult\x12\x0e\n\x06\x66\x61iled\x18\x01 \x01(\x05\x12\x11\n\tsucceeded\x18\x02 \x01(\x05\x12\x0f\n\x07message\x18\x03 \x01(\t\x12>\n\x14\x66\x61iledCompactMetrics\x18\x04 \x03(\x0b\x32 .zenoss.cloud.CompactMetricError\x12<\n\x13\x66\x61iledTaggedMetrics\x18\x05 \x03(\x0b\x32\x1f.zenoss.cloud.TaggedMetricError\x12\x30\n\rfailedMetrics\x18\x06 \x03(\x0b\x32\x19.zenoss.cloud.MetricError\"F\n\x0c\x45ventWrapper\x12(\n\tcanonical\x18\x01 \x01(\x0b\x32\x13.zenoss.cloud.EventH\x00\x42\x0c\n\nevent_type\"\xa7\x01\n\rMetricWrapper\x12,\n\x06tagged\x18\x01 \x01(\x0b\x32\x1a.zenoss.cloud.TaggedMetricH\x00\x12.\n\x07\x63ompact\x18\x02 \x01(\x0b\x32\x1b.zenoss.cloud.CompactMetricH\x00\x12)\n\tcanonical\x18\x03 \x01(\x0b\x32\x14.zenoss.cloud.MetricH\x00\x42\r\n\x0bmetric_type\"\xae\x01\n\x0bMetricBatch\x12>\n\x0bglobal_tags\x18\x02 \x03(\x0b\x32).zenoss.cloud.MetricBatch.GlobalTagsEntry\x12,\n\x07metrics\x18\x03 \x03(\x0b\x32\x1b.zenoss.cloud.MetricWrapper\x1a\x31\n\x0fGlobalTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"P\n\x12\x43ompactMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12+\n\x06metric\x18\x02 \x01(\x0b\x32\x1b.zenoss.cloud.CompactMetric\"B\n\x0bMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12$\n\x06metric\x18\x02 \x01(\x0b\x32\x14.zenoss.cloud.Metric\"N\n\x11TaggedMetricError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\x12*\n\x06metric\x18\x02 \x01(\x0b\x32\x1a.zenoss.cloud.TaggedMetric\"\xb2\x01\n\x07Metrics\x12\x18\n\x10\x64\x65tailedResponse\x18\x01 \x01(\x08\x12\x33\n\x0e\x63ompactMetrics\x18\x03 \x03(\x0b\x32\x1b.zenoss.cloud.CompactMetric\x12\x31\n\rtaggedMetrics\x18\x04 \x03(\x0b\x32\x1a.zenoss.cloud.TaggedMetric\x12%\n\x07metrics\x18\x05 \x03(\x0b\x32\x14.zenoss.cloud.Metric*\x88\x01\n\x08Severity\x12\x14\n\x10SEVERITY_DEFAULT\x10\x00\x12\x12\n\x0eSEVERITY_DEBUG\x10\x01\x12\x11\n\rSEVERITY_INFO\x10\x02\x12\x14\n\x10SEVERITY_WARNING\x10\x03\x12\x12\n\x0eSEVERITY_ERROR\x10\x04\x12\x15\n\x11SEVERITY_CRITICAL\x10\x05*W\n\x06Status\x12\x12\n\x0eSTATUS_DEFAULT\x10\x00\x12\x0f\n\x0bSTATUS_OPEN\x10\x01\x12\x15\n\x11STATUS_SUPPRESSED\x10\x02\x12\x11\n\rSTATUS_CLOSED\x10\x03\x32\xd0\x03\n\x13\x44\x61taReceiverService\x12g\n\tPutEvents\x12\x14.zenoss.cloud.Events\x1a\x1f.zenoss.cloud.EventStatusResult\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/data-receiver/events:\x01*\x12>\n\x08PutEvent\x12\x1a.zenoss.cloud.EventWrapper\x1a\x12.zenoss.cloud.Void\"\x00(\x01\x12\x65\n\nPutMetrics\x12\x15.zenoss.cloud.Metrics\x1a\x1a.zenoss.cloud.StatusResult\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/data-receiver/metrics:\x01*\x12@\n\tPutMetric\x12\x1b.zenoss.cloud.MetricWrapper\x1a\x12.zenoss.cloud.Void\"\x00(\x01\x12g\n\tPutModels\x12\x14.zenoss.cloud.Models\x1a\x1f.zenoss.cloud.ModelStatusResult\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/data-receiver/models:\x01*B\\\n\x1dorg.zenoss.cloud.dataReceiverP\x01Z9github.com/zenoss/zenoss-protobufs/go/cloud/data_receiverb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
+_SEVERITY = _descriptor.EnumDescriptor(
+  name='Severity',
+  full_name='zenoss.cloud.Severity',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_DEFAULT', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_DEBUG', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_INFO', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_WARNING', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_ERROR', index=4, number=4,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='SEVERITY_CRITICAL', index=5, number=5,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2751,
+  serialized_end=2887,
+)
+_sym_db.RegisterEnumDescriptor(_SEVERITY)
+
+Severity = enum_type_wrapper.EnumTypeWrapper(_SEVERITY)
+_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='zenoss.cloud.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='STATUS_DEFAULT', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STATUS_OPEN', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STATUS_SUPPRESSED', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STATUS_CLOSED', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2889,
+  serialized_end=2976,
+)
+_sym_db.RegisterEnumDescriptor(_STATUS)
+
+Status = enum_type_wrapper.EnumTypeWrapper(_STATUS)
+SEVERITY_DEFAULT = 0
+SEVERITY_DEBUG = 1
+SEVERITY_INFO = 2
+SEVERITY_WARNING = 3
+SEVERITY_ERROR = 4
+SEVERITY_CRITICAL = 5
+STATUS_DEFAULT = 0
+STATUS_OPEN = 1
+STATUS_SUPPRESSED = 2
+STATUS_CLOSED = 3
 
 
 
@@ -48,8 +130,215 @@ _VOID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=110,
-  serialized_end=116,
+  serialized_start=142,
+  serialized_end=148,
+)
+
+
+_EVENT_DIMENSIONSENTRY = _descriptor.Descriptor(
+  name='DimensionsEntry',
+  full_name='zenoss.cloud.Event.DimensionsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='zenoss.cloud.Event.DimensionsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='zenoss.cloud.Event.DimensionsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=474,
+  serialized_end=523,
+)
+
+_EVENT = _descriptor.Descriptor(
+  name='Event',
+  full_name='zenoss.cloud.Event',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='zenoss.cloud.Event.timestamp', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='zenoss.cloud.Event.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dimensions', full_name='zenoss.cloud.Event.dimensions', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='metadataFields', full_name='zenoss.cloud.Event.metadataFields', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='zenoss.cloud.Event.type', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='summary', full_name='zenoss.cloud.Event.summary', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='zenoss.cloud.Event.body', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='severity', full_name='zenoss.cloud.Event.severity', index=7,
+      number=8, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='zenoss.cloud.Event.status', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='acknowledged', full_name='zenoss.cloud.Event.acknowledged', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_EVENT_DIMENSIONSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=151,
+  serialized_end=523,
+)
+
+
+_EVENTS = _descriptor.Descriptor(
+  name='Events',
+  full_name='zenoss.cloud.Events',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='detailedResponse', full_name='zenoss.cloud.Events.detailedResponse', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='events', full_name='zenoss.cloud.Events.events', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=525,
+  serialized_end=596,
+)
+
+
+_EVENTERROR = _descriptor.Descriptor(
+  name='EventError',
+  full_name='zenoss.cloud.EventError',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='error', full_name='zenoss.cloud.EventError.error', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='event', full_name='zenoss.cloud.EventError.event', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=598,
+  serialized_end=661,
 )
 
 
@@ -86,8 +375,8 @@ _TAGGEDMETRIC_TAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=237,
-  serialized_end=280,
+  serialized_start=782,
+  serialized_end=825,
 )
 
 _TAGGEDMETRIC = _descriptor.Descriptor(
@@ -137,8 +426,8 @@ _TAGGEDMETRIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=280,
+  serialized_start=664,
+  serialized_end=825,
 )
 
 
@@ -182,8 +471,8 @@ _COMPACTMETRIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=343,
+  serialized_start=827,
+  serialized_end=888,
 )
 
 
@@ -220,8 +509,8 @@ _METRIC_DIMENSIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=513,
-  serialized_end=562,
+  serialized_start=474,
+  serialized_end=523,
 )
 
 _METRIC = _descriptor.Descriptor(
@@ -278,8 +567,8 @@ _METRIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=562,
+  serialized_start=891,
+  serialized_end=1107,
 )
 
 
@@ -316,8 +605,8 @@ _MODEL_DIMENSIONSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=513,
-  serialized_end=562,
+  serialized_start=474,
+  serialized_end=523,
 )
 
 _MODEL = _descriptor.Descriptor(
@@ -360,8 +649,8 @@ _MODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=565,
-  serialized_end=748,
+  serialized_start=1110,
+  serialized_end=1293,
 )
 
 
@@ -398,8 +687,8 @@ _MODELS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=750,
-  serialized_end=821,
+  serialized_start=1295,
+  serialized_end=1366,
 )
 
 
@@ -436,8 +725,60 @@ _MODELERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=823,
-  serialized_end=886,
+  serialized_start=1368,
+  serialized_end=1431,
+)
+
+
+_EVENTSTATUSRESULT = _descriptor.Descriptor(
+  name='EventStatusResult',
+  full_name='zenoss.cloud.EventStatusResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='failed', full_name='zenoss.cloud.EventStatusResult.failed', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='succeeded', full_name='zenoss.cloud.EventStatusResult.succeeded', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='zenoss.cloud.EventStatusResult.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='failedEvents', full_name='zenoss.cloud.EventStatusResult.failedEvents', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1433,
+  serialized_end=1552,
 )
 
 
@@ -488,8 +829,8 @@ _MODELSTATUSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=1007,
+  serialized_start=1554,
+  serialized_end=1673,
 )
 
 
@@ -554,8 +895,42 @@ _STATUSRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1252,
+  serialized_start=1676,
+  serialized_end=1918,
+)
+
+
+_EVENTWRAPPER = _descriptor.Descriptor(
+  name='EventWrapper',
+  full_name='zenoss.cloud.EventWrapper',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='canonical', full_name='zenoss.cloud.EventWrapper.canonical', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='event_type', full_name='zenoss.cloud.EventWrapper.event_type',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=1920,
+  serialized_end=1990,
 )
 
 
@@ -602,8 +977,8 @@ _METRICWRAPPER = _descriptor.Descriptor(
       name='metric_type', full_name='zenoss.cloud.MetricWrapper.metric_type',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1255,
-  serialized_end=1422,
+  serialized_start=1993,
+  serialized_end=2160,
 )
 
 
@@ -640,8 +1015,8 @@ _METRICBATCH_GLOBALTAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1550,
-  serialized_end=1599,
+  serialized_start=2288,
+  serialized_end=2337,
 )
 
 _METRICBATCH = _descriptor.Descriptor(
@@ -677,8 +1052,8 @@ _METRICBATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1425,
-  serialized_end=1599,
+  serialized_start=2163,
+  serialized_end=2337,
 )
 
 
@@ -715,8 +1090,8 @@ _COMPACTMETRICERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1601,
-  serialized_end=1681,
+  serialized_start=2339,
+  serialized_end=2419,
 )
 
 
@@ -753,8 +1128,8 @@ _METRICERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1683,
-  serialized_end=1749,
+  serialized_start=2421,
+  serialized_end=2487,
 )
 
 
@@ -791,8 +1166,8 @@ _TAGGEDMETRICERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1751,
-  serialized_end=1829,
+  serialized_start=2489,
+  serialized_end=2567,
 )
 
 
@@ -843,10 +1218,18 @@ _METRICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1832,
-  serialized_end=2010,
+  serialized_start=2570,
+  serialized_end=2748,
 )
 
+_EVENT_DIMENSIONSENTRY.containing_type = _EVENT
+_EVENT.fields_by_name['dimensions'].message_type = _EVENT_DIMENSIONSENTRY
+_EVENT.fields_by_name['metadataFields'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_EVENT.fields_by_name['severity'].enum_type = _SEVERITY
+_EVENT.fields_by_name['status'].enum_type = _STATUS
+_EVENT.fields_by_name['acknowledged'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_EVENTS.fields_by_name['events'].message_type = _EVENT
+_EVENTERROR.fields_by_name['event'].message_type = _EVENT
 _TAGGEDMETRIC_TAGSENTRY.containing_type = _TAGGEDMETRIC
 _TAGGEDMETRIC.fields_by_name['tags'].message_type = _TAGGEDMETRIC_TAGSENTRY
 _METRIC_DIMENSIONSENTRY.containing_type = _METRIC
@@ -857,10 +1240,15 @@ _MODEL.fields_by_name['dimensions'].message_type = _MODEL_DIMENSIONSENTRY
 _MODEL.fields_by_name['metadataFields'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 _MODELS.fields_by_name['models'].message_type = _MODEL
 _MODELERROR.fields_by_name['model'].message_type = _MODEL
+_EVENTSTATUSRESULT.fields_by_name['failedEvents'].message_type = _EVENTERROR
 _MODELSTATUSRESULT.fields_by_name['failedModels'].message_type = _MODELERROR
 _STATUSRESULT.fields_by_name['failedCompactMetrics'].message_type = _COMPACTMETRICERROR
 _STATUSRESULT.fields_by_name['failedTaggedMetrics'].message_type = _TAGGEDMETRICERROR
 _STATUSRESULT.fields_by_name['failedMetrics'].message_type = _METRICERROR
+_EVENTWRAPPER.fields_by_name['canonical'].message_type = _EVENT
+_EVENTWRAPPER.oneofs_by_name['event_type'].fields.append(
+  _EVENTWRAPPER.fields_by_name['canonical'])
+_EVENTWRAPPER.fields_by_name['canonical'].containing_oneof = _EVENTWRAPPER.oneofs_by_name['event_type']
 _METRICWRAPPER.fields_by_name['tagged'].message_type = _TAGGEDMETRIC
 _METRICWRAPPER.fields_by_name['compact'].message_type = _COMPACTMETRIC
 _METRICWRAPPER.fields_by_name['canonical'].message_type = _METRIC
@@ -883,20 +1271,27 @@ _METRICS.fields_by_name['compactMetrics'].message_type = _COMPACTMETRIC
 _METRICS.fields_by_name['taggedMetrics'].message_type = _TAGGEDMETRIC
 _METRICS.fields_by_name['metrics'].message_type = _METRIC
 DESCRIPTOR.message_types_by_name['Void'] = _VOID
+DESCRIPTOR.message_types_by_name['Event'] = _EVENT
+DESCRIPTOR.message_types_by_name['Events'] = _EVENTS
+DESCRIPTOR.message_types_by_name['EventError'] = _EVENTERROR
 DESCRIPTOR.message_types_by_name['TaggedMetric'] = _TAGGEDMETRIC
 DESCRIPTOR.message_types_by_name['CompactMetric'] = _COMPACTMETRIC
 DESCRIPTOR.message_types_by_name['Metric'] = _METRIC
 DESCRIPTOR.message_types_by_name['Model'] = _MODEL
 DESCRIPTOR.message_types_by_name['Models'] = _MODELS
 DESCRIPTOR.message_types_by_name['ModelError'] = _MODELERROR
+DESCRIPTOR.message_types_by_name['EventStatusResult'] = _EVENTSTATUSRESULT
 DESCRIPTOR.message_types_by_name['ModelStatusResult'] = _MODELSTATUSRESULT
 DESCRIPTOR.message_types_by_name['StatusResult'] = _STATUSRESULT
+DESCRIPTOR.message_types_by_name['EventWrapper'] = _EVENTWRAPPER
 DESCRIPTOR.message_types_by_name['MetricWrapper'] = _METRICWRAPPER
 DESCRIPTOR.message_types_by_name['MetricBatch'] = _METRICBATCH
 DESCRIPTOR.message_types_by_name['CompactMetricError'] = _COMPACTMETRICERROR
 DESCRIPTOR.message_types_by_name['MetricError'] = _METRICERROR
 DESCRIPTOR.message_types_by_name['TaggedMetricError'] = _TAGGEDMETRICERROR
 DESCRIPTOR.message_types_by_name['Metrics'] = _METRICS
+DESCRIPTOR.enum_types_by_name['Severity'] = _SEVERITY
+DESCRIPTOR.enum_types_by_name['Status'] = _STATUS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Void = _reflection.GeneratedProtocolMessageType('Void', (_message.Message,), dict(
@@ -905,6 +1300,35 @@ Void = _reflection.GeneratedProtocolMessageType('Void', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:zenoss.cloud.Void)
   ))
 _sym_db.RegisterMessage(Void)
+
+Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), dict(
+
+  DimensionsEntry = _reflection.GeneratedProtocolMessageType('DimensionsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _EVENT_DIMENSIONSENTRY,
+    __module__ = 'zenoss.cloud.data_receiver_pb2'
+    # @@protoc_insertion_point(class_scope:zenoss.cloud.Event.DimensionsEntry)
+    ))
+  ,
+  DESCRIPTOR = _EVENT,
+  __module__ = 'zenoss.cloud.data_receiver_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.Event)
+  ))
+_sym_db.RegisterMessage(Event)
+_sym_db.RegisterMessage(Event.DimensionsEntry)
+
+Events = _reflection.GeneratedProtocolMessageType('Events', (_message.Message,), dict(
+  DESCRIPTOR = _EVENTS,
+  __module__ = 'zenoss.cloud.data_receiver_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.Events)
+  ))
+_sym_db.RegisterMessage(Events)
+
+EventError = _reflection.GeneratedProtocolMessageType('EventError', (_message.Message,), dict(
+  DESCRIPTOR = _EVENTERROR,
+  __module__ = 'zenoss.cloud.data_receiver_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.EventError)
+  ))
+_sym_db.RegisterMessage(EventError)
 
 TaggedMetric = _reflection.GeneratedProtocolMessageType('TaggedMetric', (_message.Message,), dict(
 
@@ -972,6 +1396,13 @@ ModelError = _reflection.GeneratedProtocolMessageType('ModelError', (_message.Me
   ))
 _sym_db.RegisterMessage(ModelError)
 
+EventStatusResult = _reflection.GeneratedProtocolMessageType('EventStatusResult', (_message.Message,), dict(
+  DESCRIPTOR = _EVENTSTATUSRESULT,
+  __module__ = 'zenoss.cloud.data_receiver_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.EventStatusResult)
+  ))
+_sym_db.RegisterMessage(EventStatusResult)
+
 ModelStatusResult = _reflection.GeneratedProtocolMessageType('ModelStatusResult', (_message.Message,), dict(
   DESCRIPTOR = _MODELSTATUSRESULT,
   __module__ = 'zenoss.cloud.data_receiver_pb2'
@@ -985,6 +1416,13 @@ StatusResult = _reflection.GeneratedProtocolMessageType('StatusResult', (_messag
   # @@protoc_insertion_point(class_scope:zenoss.cloud.StatusResult)
   ))
 _sym_db.RegisterMessage(StatusResult)
+
+EventWrapper = _reflection.GeneratedProtocolMessageType('EventWrapper', (_message.Message,), dict(
+  DESCRIPTOR = _EVENTWRAPPER,
+  __module__ = 'zenoss.cloud.data_receiver_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.EventWrapper)
+  ))
+_sym_db.RegisterMessage(EventWrapper)
 
 MetricWrapper = _reflection.GeneratedProtocolMessageType('MetricWrapper', (_message.Message,), dict(
   DESCRIPTOR = _METRICWRAPPER,
@@ -1038,6 +1476,7 @@ _sym_db.RegisterMessage(Metrics)
 
 
 DESCRIPTOR._options = None
+_EVENT_DIMENSIONSENTRY._options = None
 _TAGGEDMETRIC_TAGSENTRY._options = None
 _METRIC_DIMENSIONSENTRY._options = None
 _MODEL_DIMENSIONSENTRY._options = None
@@ -1049,13 +1488,31 @@ _DATARECEIVERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2013,
-  serialized_end=2308,
+  serialized_start=2979,
+  serialized_end=3443,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='PutEvents',
+    full_name='zenoss.cloud.DataReceiverService.PutEvents',
+    index=0,
+    containing_service=None,
+    input_type=_EVENTS,
+    output_type=_EVENTSTATUSRESULT,
+    serialized_options=_b('\202\323\344\223\002\035\"\030/v1/data-receiver/events:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='PutEvent',
+    full_name='zenoss.cloud.DataReceiverService.PutEvent',
+    index=1,
+    containing_service=None,
+    input_type=_EVENTWRAPPER,
+    output_type=_VOID,
+    serialized_options=None,
+  ),
   _descriptor.MethodDescriptor(
     name='PutMetrics',
     full_name='zenoss.cloud.DataReceiverService.PutMetrics',
-    index=0,
+    index=2,
     containing_service=None,
     input_type=_METRICS,
     output_type=_STATUSRESULT,
@@ -1064,7 +1521,7 @@ _DATARECEIVERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PutMetric',
     full_name='zenoss.cloud.DataReceiverService.PutMetric',
-    index=1,
+    index=3,
     containing_service=None,
     input_type=_METRICWRAPPER,
     output_type=_VOID,
@@ -1073,7 +1530,7 @@ _DATARECEIVERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='PutModels',
     full_name='zenoss.cloud.DataReceiverService.PutModels',
-    index=2,
+    index=4,
     containing_service=None,
     input_type=_MODELS,
     output_type=_MODELSTATUSRESULT,

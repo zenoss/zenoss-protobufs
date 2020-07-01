@@ -69,7 +69,7 @@ GODEP = $(GOPATH)/bin/dep
 
 PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 
-default: all_containerized
+default: clean all_containerized
 
 .PHONY: all
 all: $(GO_FILES) $(GO_GW_FILES) mocks pybuild
@@ -141,4 +141,8 @@ install:
 set-relversion:
 	$(MVN) versions:set -DnewVersion=$(NEW_VERSION) -DgenerateBackupPoms=false
 	@sed -i 's/version=".*"/version="$(NEW_VERSION)"/g' python/setup.py
+
+.PHONY: test
+test:
+	go test ./... -test.v
 
