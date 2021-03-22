@@ -1,4 +1,4 @@
-package testDataReceiver
+package test
 
 import (
 	"context"
