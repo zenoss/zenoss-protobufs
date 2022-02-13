@@ -13,6 +13,7 @@ public interface MetricsOrBuilder extends
    * </pre>
    *
    * <code>bool detailedResponse = 1;</code>
+   * @return The detailedResponse.
    */
   boolean getDetailedResponse();
 

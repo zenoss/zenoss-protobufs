@@ -9,30 +9,36 @@ public interface RegisterMetricResponseOrBuilder extends
 
   /**
    * <code>string instanceId = 1;</code>
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
    * <code>string instanceId = 1;</code>
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString
       getInstanceIdBytes();
 
   /**
    * <code>string definitionId = 2;</code>
+   * @return The definitionId.
    */
   java.lang.String getDefinitionId();
   /**
    * <code>string definitionId = 2;</code>
+   * @return The bytes for definitionId.
    */
   com.google.protobuf.ByteString
       getDefinitionIdBytes();
 
   /**
    * <code>string name = 3;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
    * <code>string name = 3;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();

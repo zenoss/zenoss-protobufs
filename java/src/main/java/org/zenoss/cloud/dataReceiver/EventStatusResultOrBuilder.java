@@ -13,6 +13,7 @@ public interface EventStatusResultOrBuilder extends
    * </pre>
    *
    * <code>int32 failed = 1;</code>
+   * @return The failed.
    */
   int getFailed();
 
@@ -22,6 +23,7 @@ public interface EventStatusResultOrBuilder extends
    * </pre>
    *
    * <code>int32 succeeded = 2;</code>
+   * @return The succeeded.
    */
   int getSucceeded();
 
@@ -31,6 +33,7 @@ public interface EventStatusResultOrBuilder extends
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The message.
    */
   java.lang.String getMessage();
   /**
@@ -39,6 +42,7 @@ public interface EventStatusResultOrBuilder extends
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The bytes for message.
    */
   com.google.protobuf.ByteString
       getMessageBytes();

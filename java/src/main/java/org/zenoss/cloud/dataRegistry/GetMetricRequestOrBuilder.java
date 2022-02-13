@@ -9,10 +9,12 @@ public interface GetMetricRequestOrBuilder extends
 
   /**
    * <code>string instanceId = 1;</code>
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
    * <code>string instanceId = 1;</code>
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString
       getInstanceIdBytes();

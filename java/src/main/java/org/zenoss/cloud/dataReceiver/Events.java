@@ -6,7 +6,7 @@ package org.zenoss.cloud.dataReceiver;
 /**
  * Protobuf type {@code zenoss.cloud.Events}
  */
-public  final class Events extends
+public final class Events extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.Events)
     EventsOrBuilder {
@@ -16,8 +16,14 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Events() {
-    detailedResponse_ = false;
     events_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Events();
   }
 
   @java.lang.Override
@@ -30,6 +36,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -41,25 +50,25 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
 
             detailedResponse_ = input.readBool();
             break;
           }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               events_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.Event>();
-              mutable_bitField0_ |= 0x00000002;
+              mutable_bitField0_ |= 0x00000001;
             }
             events_.add(
                 input.readMessage(org.zenoss.cloud.dataReceiver.Event.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -70,7 +79,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         events_ = java.util.Collections.unmodifiableList(events_);
       }
       this.unknownFields = unknownFields.build();
@@ -82,6 +91,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Events_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Events_fieldAccessorTable
@@ -89,7 +99,6 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.Events.class, org.zenoss.cloud.dataReceiver.Events.Builder.class);
   }
 
-  private int bitField0_;
   public static final int DETAILEDRESPONSE_FIELD_NUMBER = 1;
   private boolean detailedResponse_;
   /**
@@ -98,7 +107,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>bool detailedResponse = 1;</code>
+   * @return The detailedResponse.
    */
+  @java.lang.Override
   public boolean getDetailedResponse() {
     return detailedResponse_;
   }
@@ -112,6 +123,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.Event events = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.Event> getEventsList() {
     return events_;
   }
@@ -122,6 +134,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.Event events = 2;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.EventOrBuilder> 
       getEventsOrBuilderList() {
     return events_;
@@ -133,6 +146,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.Event events = 2;</code>
    */
+  @java.lang.Override
   public int getEventsCount() {
     return events_.size();
   }
@@ -143,6 +157,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.Event events = 2;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Event getEvents(int index) {
     return events_.get(index);
   }
@@ -153,12 +168,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.Event events = 2;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.EventOrBuilder getEventsOrBuilder(
       int index) {
     return events_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -168,6 +185,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (detailedResponse_ != false) {
@@ -179,6 +197,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -207,13 +226,12 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.Events other = (org.zenoss.cloud.dataReceiver.Events) obj;
 
-    boolean result = true;
-    result = result && (getDetailedResponse()
-        == other.getDetailedResponse());
-    result = result && getEventsList()
-        .equals(other.getEventsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getDetailedResponse()
+        != other.getDetailedResponse()) return false;
+    if (!getEventsList()
+        .equals(other.getEventsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -305,6 +323,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -312,6 +331,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.Events prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -335,6 +355,7 @@ private static final long serialVersionUID = 0L;
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Events_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Events_fieldAccessorTable
@@ -358,28 +379,32 @@ private static final long serialVersionUID = 0L;
         getEventsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       detailedResponse_ = false;
 
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         eventsBuilder_.clear();
       }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Events_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Events getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.Events.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Events build() {
       org.zenoss.cloud.dataReceiver.Events result = buildPartial();
       if (!result.isInitialized()) {
@@ -388,51 +413,57 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Events buildPartial() {
       org.zenoss.cloud.dataReceiver.Events result = new org.zenoss.cloud.dataReceiver.Events(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.detailedResponse_ = detailedResponse_;
       if (eventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           events_ = java.util.Collections.unmodifiableList(events_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.events_ = events_;
       } else {
         result.events_ = eventsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.Events) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.Events)other);
@@ -451,7 +482,7 @@ private static final long serialVersionUID = 0L;
         if (!other.events_.isEmpty()) {
           if (events_.isEmpty()) {
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureEventsIsMutable();
             events_.addAll(other.events_);
@@ -464,7 +495,7 @@ private static final long serialVersionUID = 0L;
             eventsBuilder_.dispose();
             eventsBuilder_ = null;
             events_ = other.events_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
             eventsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getEventsFieldBuilder() : null;
@@ -478,10 +509,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -508,7 +541,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool detailedResponse = 1;</code>
+     * @return The detailedResponse.
      */
+    @java.lang.Override
     public boolean getDetailedResponse() {
       return detailedResponse_;
     }
@@ -518,6 +553,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool detailedResponse = 1;</code>
+     * @param value The detailedResponse to set.
+     * @return This builder for chaining.
      */
     public Builder setDetailedResponse(boolean value) {
       
@@ -531,6 +568,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>bool detailedResponse = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearDetailedResponse() {
       
@@ -542,9 +580,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.Event> events_ =
       java.util.Collections.emptyList();
     private void ensureEventsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         events_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.Event>(events_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -738,7 +776,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearEvents() {
       if (eventsBuilder_ == null) {
         events_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         eventsBuilder_.clear();
@@ -843,18 +881,20 @@ private static final long serialVersionUID = 0L;
         eventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.Event, org.zenoss.cloud.dataReceiver.Event.Builder, org.zenoss.cloud.dataReceiver.EventOrBuilder>(
                 events_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         events_ = null;
       }
       return eventsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -876,11 +916,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Events>
       PARSER = new com.google.protobuf.AbstractParser<Events>() {
+    @java.lang.Override
     public Events parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Events(input, extensionRegistry);
+      return new Events(input, extensionRegistry);
     }
   };
 
@@ -893,6 +934,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Events getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

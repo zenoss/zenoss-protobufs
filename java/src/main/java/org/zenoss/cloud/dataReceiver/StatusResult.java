@@ -6,7 +6,7 @@ package org.zenoss.cloud.dataReceiver;
 /**
  * Protobuf type {@code zenoss.cloud.StatusResult}
  */
-public  final class StatusResult extends
+public final class StatusResult extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.StatusResult)
     StatusResultOrBuilder {
@@ -16,12 +16,17 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StatusResult() {
-    failed_ = 0;
-    succeeded_ = 0;
     message_ = "";
     failedCompactMetrics_ = java.util.Collections.emptyList();
     failedTaggedMetrics_ = java.util.Collections.emptyList();
     failedMetrics_ = java.util.Collections.emptyList();
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new StatusResult();
   }
 
   @java.lang.Override
@@ -34,6 +39,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,13 +53,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
 
             failed_ = input.readInt32();
@@ -69,30 +70,37 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               failedCompactMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.CompactMetricError>();
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             failedCompactMetrics_.add(
                 input.readMessage(org.zenoss.cloud.dataReceiver.CompactMetricError.parser(), extensionRegistry));
             break;
           }
           case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               failedTaggedMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.TaggedMetricError>();
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000002;
             }
             failedTaggedMetrics_.add(
                 input.readMessage(org.zenoss.cloud.dataReceiver.TaggedMetricError.parser(), extensionRegistry));
             break;
           }
           case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
               failedMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.MetricError>();
-              mutable_bitField0_ |= 0x00000020;
+              mutable_bitField0_ |= 0x00000004;
             }
             failedMetrics_.add(
                 input.readMessage(org.zenoss.cloud.dataReceiver.MetricError.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -103,13 +111,13 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
         failedCompactMetrics_ = java.util.Collections.unmodifiableList(failedCompactMetrics_);
       }
-      if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         failedTaggedMetrics_ = java.util.Collections.unmodifiableList(failedTaggedMetrics_);
       }
-      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
         failedMetrics_ = java.util.Collections.unmodifiableList(failedMetrics_);
       }
       this.unknownFields = unknownFields.build();
@@ -121,6 +129,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_StatusResult_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_StatusResult_fieldAccessorTable
@@ -128,7 +137,6 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.StatusResult.class, org.zenoss.cloud.dataReceiver.StatusResult.Builder.class);
   }
 
-  private int bitField0_;
   public static final int FAILED_FIELD_NUMBER = 1;
   private int failed_;
   /**
@@ -137,7 +145,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 failed = 1;</code>
+   * @return The failed.
    */
+  @java.lang.Override
   public int getFailed() {
     return failed_;
   }
@@ -150,7 +160,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int32 succeeded = 2;</code>
+   * @return The succeeded.
    */
+  @java.lang.Override
   public int getSucceeded() {
     return succeeded_;
   }
@@ -163,7 +175,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The message.
    */
+  @java.lang.Override
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
@@ -182,7 +196,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string message = 3;</code>
+   * @return The bytes for message.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getMessageBytes() {
     java.lang.Object ref = message_;
@@ -206,6 +222,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.CompactMetricError failedCompactMetrics = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.CompactMetricError> getFailedCompactMetricsList() {
     return failedCompactMetrics_;
   }
@@ -216,6 +233,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.CompactMetricError failedCompactMetrics = 4;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.CompactMetricErrorOrBuilder> 
       getFailedCompactMetricsOrBuilderList() {
     return failedCompactMetrics_;
@@ -227,6 +245,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.CompactMetricError failedCompactMetrics = 4;</code>
    */
+  @java.lang.Override
   public int getFailedCompactMetricsCount() {
     return failedCompactMetrics_.size();
   }
@@ -237,6 +256,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.CompactMetricError failedCompactMetrics = 4;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetricError getFailedCompactMetrics(int index) {
     return failedCompactMetrics_.get(index);
   }
@@ -247,6 +267,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.CompactMetricError failedCompactMetrics = 4;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetricErrorOrBuilder getFailedCompactMetricsOrBuilder(
       int index) {
     return failedCompactMetrics_.get(index);
@@ -257,12 +278,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .zenoss.cloud.TaggedMetricError failedTaggedMetrics = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetricError> getFailedTaggedMetricsList() {
     return failedTaggedMetrics_;
   }
   /**
    * <code>repeated .zenoss.cloud.TaggedMetricError failedTaggedMetrics = 5;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.TaggedMetricErrorOrBuilder> 
       getFailedTaggedMetricsOrBuilderList() {
     return failedTaggedMetrics_;
@@ -270,18 +293,21 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .zenoss.cloud.TaggedMetricError failedTaggedMetrics = 5;</code>
    */
+  @java.lang.Override
   public int getFailedTaggedMetricsCount() {
     return failedTaggedMetrics_.size();
   }
   /**
    * <code>repeated .zenoss.cloud.TaggedMetricError failedTaggedMetrics = 5;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetricError getFailedTaggedMetrics(int index) {
     return failedTaggedMetrics_.get(index);
   }
   /**
    * <code>repeated .zenoss.cloud.TaggedMetricError failedTaggedMetrics = 5;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetricErrorOrBuilder getFailedTaggedMetricsOrBuilder(
       int index) {
     return failedTaggedMetrics_.get(index);
@@ -292,12 +318,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .zenoss.cloud.MetricError failedMetrics = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.MetricError> getFailedMetricsList() {
     return failedMetrics_;
   }
   /**
    * <code>repeated .zenoss.cloud.MetricError failedMetrics = 6;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricErrorOrBuilder> 
       getFailedMetricsOrBuilderList() {
     return failedMetrics_;
@@ -305,24 +333,28 @@ private static final long serialVersionUID = 0L;
   /**
    * <code>repeated .zenoss.cloud.MetricError failedMetrics = 6;</code>
    */
+  @java.lang.Override
   public int getFailedMetricsCount() {
     return failedMetrics_.size();
   }
   /**
    * <code>repeated .zenoss.cloud.MetricError failedMetrics = 6;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricError getFailedMetrics(int index) {
     return failedMetrics_.get(index);
   }
   /**
    * <code>repeated .zenoss.cloud.MetricError failedMetrics = 6;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricErrorOrBuilder getFailedMetricsOrBuilder(
       int index) {
     return failedMetrics_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -332,6 +364,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (failed_ != 0) {
@@ -355,6 +388,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -398,21 +432,20 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.StatusResult other = (org.zenoss.cloud.dataReceiver.StatusResult) obj;
 
-    boolean result = true;
-    result = result && (getFailed()
-        == other.getFailed());
-    result = result && (getSucceeded()
-        == other.getSucceeded());
-    result = result && getMessage()
-        .equals(other.getMessage());
-    result = result && getFailedCompactMetricsList()
-        .equals(other.getFailedCompactMetricsList());
-    result = result && getFailedTaggedMetricsList()
-        .equals(other.getFailedTaggedMetricsList());
-    result = result && getFailedMetricsList()
-        .equals(other.getFailedMetricsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (getFailed()
+        != other.getFailed()) return false;
+    if (getSucceeded()
+        != other.getSucceeded()) return false;
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
+    if (!getFailedCompactMetricsList()
+        .equals(other.getFailedCompactMetricsList())) return false;
+    if (!getFailedTaggedMetricsList()
+        .equals(other.getFailedTaggedMetricsList())) return false;
+    if (!getFailedMetricsList()
+        .equals(other.getFailedMetricsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -515,6 +548,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -522,6 +556,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.StatusResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -545,6 +580,7 @@ private static final long serialVersionUID = 0L;
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_StatusResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_StatusResult_fieldAccessorTable
@@ -570,6 +606,7 @@ private static final long serialVersionUID = 0L;
         getFailedMetricsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       failed_ = 0;
@@ -580,34 +617,37 @@ private static final long serialVersionUID = 0L;
 
       if (failedCompactMetricsBuilder_ == null) {
         failedCompactMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
       } else {
         failedCompactMetricsBuilder_.clear();
       }
       if (failedTaggedMetricsBuilder_ == null) {
         failedTaggedMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
       } else {
         failedTaggedMetricsBuilder_.clear();
       }
       if (failedMetricsBuilder_ == null) {
         failedMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
       } else {
         failedMetricsBuilder_.clear();
       }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_StatusResult_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.StatusResult getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.StatusResult.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.StatusResult build() {
       org.zenoss.cloud.dataReceiver.StatusResult result = buildPartial();
       if (!result.isInitialized()) {
@@ -616,71 +656,77 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.StatusResult buildPartial() {
       org.zenoss.cloud.dataReceiver.StatusResult result = new org.zenoss.cloud.dataReceiver.StatusResult(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.failed_ = failed_;
       result.succeeded_ = succeeded_;
       result.message_ = message_;
       if (failedCompactMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (((bitField0_ & 0x00000001) != 0)) {
           failedCompactMetrics_ = java.util.Collections.unmodifiableList(failedCompactMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.failedCompactMetrics_ = failedCompactMetrics_;
       } else {
         result.failedCompactMetrics_ = failedCompactMetricsBuilder_.build();
       }
       if (failedTaggedMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           failedTaggedMetrics_ = java.util.Collections.unmodifiableList(failedTaggedMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.failedTaggedMetrics_ = failedTaggedMetrics_;
       } else {
         result.failedTaggedMetrics_ = failedTaggedMetricsBuilder_.build();
       }
       if (failedMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           failedMetrics_ = java.util.Collections.unmodifiableList(failedMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.failedMetrics_ = failedMetrics_;
       } else {
         result.failedMetrics_ = failedMetricsBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.StatusResult) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.StatusResult)other);
@@ -706,7 +752,7 @@ private static final long serialVersionUID = 0L;
         if (!other.failedCompactMetrics_.isEmpty()) {
           if (failedCompactMetrics_.isEmpty()) {
             failedCompactMetrics_ = other.failedCompactMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureFailedCompactMetricsIsMutable();
             failedCompactMetrics_.addAll(other.failedCompactMetrics_);
@@ -719,7 +765,7 @@ private static final long serialVersionUID = 0L;
             failedCompactMetricsBuilder_.dispose();
             failedCompactMetricsBuilder_ = null;
             failedCompactMetrics_ = other.failedCompactMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000001);
             failedCompactMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFailedCompactMetricsFieldBuilder() : null;
@@ -732,7 +778,7 @@ private static final long serialVersionUID = 0L;
         if (!other.failedTaggedMetrics_.isEmpty()) {
           if (failedTaggedMetrics_.isEmpty()) {
             failedTaggedMetrics_ = other.failedTaggedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFailedTaggedMetricsIsMutable();
             failedTaggedMetrics_.addAll(other.failedTaggedMetrics_);
@@ -745,7 +791,7 @@ private static final long serialVersionUID = 0L;
             failedTaggedMetricsBuilder_.dispose();
             failedTaggedMetricsBuilder_ = null;
             failedTaggedMetrics_ = other.failedTaggedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
             failedTaggedMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFailedTaggedMetricsFieldBuilder() : null;
@@ -758,7 +804,7 @@ private static final long serialVersionUID = 0L;
         if (!other.failedMetrics_.isEmpty()) {
           if (failedMetrics_.isEmpty()) {
             failedMetrics_ = other.failedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFailedMetricsIsMutable();
             failedMetrics_.addAll(other.failedMetrics_);
@@ -771,7 +817,7 @@ private static final long serialVersionUID = 0L;
             failedMetricsBuilder_.dispose();
             failedMetricsBuilder_ = null;
             failedMetrics_ = other.failedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000004);
             failedMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFailedMetricsFieldBuilder() : null;
@@ -785,10 +831,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -815,7 +863,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failed = 1;</code>
+     * @return The failed.
      */
+    @java.lang.Override
     public int getFailed() {
       return failed_;
     }
@@ -825,6 +875,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failed = 1;</code>
+     * @param value The failed to set.
+     * @return This builder for chaining.
      */
     public Builder setFailed(int value) {
       
@@ -838,6 +890,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 failed = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearFailed() {
       
@@ -853,7 +906,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 succeeded = 2;</code>
+     * @return The succeeded.
      */
+    @java.lang.Override
     public int getSucceeded() {
       return succeeded_;
     }
@@ -863,6 +918,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 succeeded = 2;</code>
+     * @param value The succeeded to set.
+     * @return This builder for chaining.
      */
     public Builder setSucceeded(int value) {
       
@@ -876,6 +933,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int32 succeeded = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSucceeded() {
       
@@ -891,6 +949,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return The message.
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -910,6 +969,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -930,6 +990,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessage(
         java.lang.String value) {
@@ -947,6 +1009,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMessage() {
       
@@ -960,6 +1023,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string message = 3;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
@@ -976,9 +1041,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.CompactMetricError> failedCompactMetrics_ =
       java.util.Collections.emptyList();
     private void ensureFailedCompactMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (!((bitField0_ & 0x00000001) != 0)) {
         failedCompactMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.CompactMetricError>(failedCompactMetrics_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000001;
        }
     }
 
@@ -1172,7 +1237,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFailedCompactMetrics() {
       if (failedCompactMetricsBuilder_ == null) {
         failedCompactMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
       } else {
         failedCompactMetricsBuilder_.clear();
@@ -1277,7 +1342,7 @@ private static final long serialVersionUID = 0L;
         failedCompactMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.CompactMetricError, org.zenoss.cloud.dataReceiver.CompactMetricError.Builder, org.zenoss.cloud.dataReceiver.CompactMetricErrorOrBuilder>(
                 failedCompactMetrics_,
-                ((bitField0_ & 0x00000008) == 0x00000008),
+                ((bitField0_ & 0x00000001) != 0),
                 getParentForChildren(),
                 isClean());
         failedCompactMetrics_ = null;
@@ -1288,9 +1353,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetricError> failedTaggedMetrics_ =
       java.util.Collections.emptyList();
     private void ensureFailedTaggedMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         failedTaggedMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.TaggedMetricError>(failedTaggedMetrics_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -1440,7 +1505,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFailedTaggedMetrics() {
       if (failedTaggedMetricsBuilder_ == null) {
         failedTaggedMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         failedTaggedMetricsBuilder_.clear();
@@ -1517,7 +1582,7 @@ private static final long serialVersionUID = 0L;
         failedTaggedMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.TaggedMetricError, org.zenoss.cloud.dataReceiver.TaggedMetricError.Builder, org.zenoss.cloud.dataReceiver.TaggedMetricErrorOrBuilder>(
                 failedTaggedMetrics_,
-                ((bitField0_ & 0x00000010) == 0x00000010),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         failedTaggedMetrics_ = null;
@@ -1528,9 +1593,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.MetricError> failedMetrics_ =
       java.util.Collections.emptyList();
     private void ensureFailedMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         failedMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.MetricError>(failedMetrics_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1680,7 +1745,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFailedMetrics() {
       if (failedMetricsBuilder_ == null) {
         failedMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         failedMetricsBuilder_.clear();
@@ -1757,18 +1822,20 @@ private static final long serialVersionUID = 0L;
         failedMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.MetricError, org.zenoss.cloud.dataReceiver.MetricError.Builder, org.zenoss.cloud.dataReceiver.MetricErrorOrBuilder>(
                 failedMetrics_,
-                ((bitField0_ & 0x00000020) == 0x00000020),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         failedMetrics_ = null;
       }
       return failedMetricsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1790,11 +1857,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<StatusResult>
       PARSER = new com.google.protobuf.AbstractParser<StatusResult>() {
+    @java.lang.Override
     public StatusResult parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StatusResult(input, extensionRegistry);
+      return new StatusResult(input, extensionRegistry);
     }
   };
 
@@ -1807,6 +1875,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.StatusResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

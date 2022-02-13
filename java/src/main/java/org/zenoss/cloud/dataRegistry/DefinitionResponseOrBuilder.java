@@ -9,10 +9,12 @@ public interface DefinitionResponseOrBuilder extends
 
   /**
    * <code>string definitionId = 1;</code>
+   * @return The definitionId.
    */
   java.lang.String getDefinitionId();
   /**
    * <code>string definitionId = 1;</code>
+   * @return The bytes for definitionId.
    */
   com.google.protobuf.ByteString
       getDefinitionIdBytes();

@@ -9,10 +9,12 @@ public interface RegisterMetricRequestOrBuilder extends
 
   /**
    * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
    * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+   * @return The metric.
    */
   org.zenoss.cloud.dataReceiver.MetricWrapper getMetric();
   /**
@@ -22,10 +24,12 @@ public interface RegisterMetricRequestOrBuilder extends
 
   /**
    * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+   * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
   /**
    * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+   * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();
 }

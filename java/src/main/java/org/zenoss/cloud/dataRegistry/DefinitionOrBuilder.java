@@ -13,6 +13,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The metric.
    */
   java.lang.String getMetric();
   /**
@@ -21,6 +22,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The bytes for metric.
    */
   com.google.protobuf.ByteString
       getMetricBytes();
@@ -31,6 +33,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>repeated string dimensions = 2;</code>
+   * @return A list containing the dimensions.
    */
   java.util.List<java.lang.String>
       getDimensionsList();
@@ -40,6 +43,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>repeated string dimensions = 2;</code>
+   * @return The count of dimensions.
    */
   int getDimensionsCount();
   /**
@@ -48,6 +52,8 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>repeated string dimensions = 2;</code>
+   * @param index The index of the element to return.
+   * @return The dimensions at the given index.
    */
   java.lang.String getDimensions(int index);
   /**
@@ -56,6 +62,8 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>repeated string dimensions = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dimensions at the given index.
    */
   com.google.protobuf.ByteString
       getDimensionsBytes(int index);
@@ -66,6 +74,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
   /**
@@ -74,6 +83,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
   /**
@@ -93,6 +103,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
   /**
@@ -103,6 +114,7 @@ public interface DefinitionOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();
 }

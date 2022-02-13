@@ -6,7 +6,7 @@ package org.zenoss.cloud.dataReceiver;
 /**
  * Protobuf type {@code zenoss.cloud.MetricWrapper}
  */
-public  final class MetricWrapper extends
+public final class MetricWrapper extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.MetricWrapper)
     MetricWrapperOrBuilder {
@@ -19,6 +19,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new MetricWrapper();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -28,7 +35,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -39,13 +48,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             org.zenoss.cloud.dataReceiver.TaggedMetric.Builder subBuilder = null;
             if (metricTypeCase_ == 1) {
@@ -88,6 +90,13 @@ private static final long serialVersionUID = 0L;
             metricTypeCase_ = 3;
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -105,6 +114,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_fieldAccessorTable
@@ -115,7 +125,8 @@ private static final long serialVersionUID = 0L;
   private int metricTypeCase_ = 0;
   private java.lang.Object metricType_;
   public enum MetricTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     TAGGED(1),
     COMPACT(2),
     CANONICAL(3),
@@ -125,6 +136,8 @@ private static final long serialVersionUID = 0L;
       this.value = value;
     }
     /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
@@ -159,7 +172,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * @return Whether the tagged field is set.
    */
+  @java.lang.Override
   public boolean hasTagged() {
     return metricTypeCase_ == 1;
   }
@@ -169,7 +184,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * @return The tagged.
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetric getTagged() {
     if (metricTypeCase_ == 1) {
        return (org.zenoss.cloud.dataReceiver.TaggedMetric) metricType_;
@@ -183,6 +200,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder getTaggedOrBuilder() {
     if (metricTypeCase_ == 1) {
        return (org.zenoss.cloud.dataReceiver.TaggedMetric) metricType_;
@@ -197,7 +215,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * @return Whether the compact field is set.
    */
+  @java.lang.Override
   public boolean hasCompact() {
     return metricTypeCase_ == 2;
   }
@@ -207,7 +227,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * @return The compact.
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetric getCompact() {
     if (metricTypeCase_ == 2) {
        return (org.zenoss.cloud.dataReceiver.CompactMetric) metricType_;
@@ -221,6 +243,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getCompactOrBuilder() {
     if (metricTypeCase_ == 2) {
        return (org.zenoss.cloud.dataReceiver.CompactMetric) metricType_;
@@ -235,7 +258,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * @return Whether the canonical field is set.
    */
+  @java.lang.Override
   public boolean hasCanonical() {
     return metricTypeCase_ == 3;
   }
@@ -245,7 +270,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * @return The canonical.
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Metric getCanonical() {
     if (metricTypeCase_ == 3) {
        return (org.zenoss.cloud.dataReceiver.Metric) metricType_;
@@ -259,6 +286,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.zenoss.cloud.Metric canonical = 3;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricOrBuilder getCanonicalOrBuilder() {
     if (metricTypeCase_ == 3) {
        return (org.zenoss.cloud.dataReceiver.Metric) metricType_;
@@ -267,6 +295,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -276,6 +305,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (metricTypeCase_ == 1) {
@@ -290,6 +320,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -322,28 +353,25 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.MetricWrapper other = (org.zenoss.cloud.dataReceiver.MetricWrapper) obj;
 
-    boolean result = true;
-    result = result && getMetricTypeCase().equals(
-        other.getMetricTypeCase());
-    if (!result) return false;
+    if (!getMetricTypeCase().equals(other.getMetricTypeCase())) return false;
     switch (metricTypeCase_) {
       case 1:
-        result = result && getTagged()
-            .equals(other.getTagged());
+        if (!getTagged()
+            .equals(other.getTagged())) return false;
         break;
       case 2:
-        result = result && getCompact()
-            .equals(other.getCompact());
+        if (!getCompact()
+            .equals(other.getCompact())) return false;
         break;
       case 3:
-        result = result && getCanonical()
-            .equals(other.getCanonical());
+        if (!getCanonical()
+            .equals(other.getCanonical())) return false;
         break;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -444,6 +472,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -451,6 +480,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.MetricWrapper prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -474,6 +504,7 @@ private static final long serialVersionUID = 0L;
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_fieldAccessorTable
@@ -496,6 +527,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       metricTypeCase_ = 0;
@@ -503,15 +535,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricWrapper getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.MetricWrapper.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricWrapper build() {
       org.zenoss.cloud.dataReceiver.MetricWrapper result = buildPartial();
       if (!result.isInitialized()) {
@@ -520,6 +555,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricWrapper buildPartial() {
       org.zenoss.cloud.dataReceiver.MetricWrapper result = new org.zenoss.cloud.dataReceiver.MetricWrapper(this);
       if (metricTypeCase_ == 1) {
@@ -548,32 +584,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.MetricWrapper) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.MetricWrapper)other);
@@ -607,10 +650,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -652,7 +697,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+     * @return Whether the tagged field is set.
      */
+    @java.lang.Override
     public boolean hasTagged() {
       return metricTypeCase_ == 1;
     }
@@ -662,7 +709,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+     * @return The tagged.
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetric getTagged() {
       if (taggedBuilder_ == null) {
         if (metricTypeCase_ == 1) {
@@ -780,6 +829,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder getTaggedOrBuilder() {
       if ((metricTypeCase_ == 1) && (taggedBuilder_ != null)) {
         return taggedBuilder_.getMessageOrBuilder();
@@ -824,7 +874,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+     * @return Whether the compact field is set.
      */
+    @java.lang.Override
     public boolean hasCompact() {
       return metricTypeCase_ == 2;
     }
@@ -834,7 +886,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+     * @return The compact.
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.CompactMetric getCompact() {
       if (compactBuilder_ == null) {
         if (metricTypeCase_ == 2) {
@@ -952,6 +1006,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getCompactOrBuilder() {
       if ((metricTypeCase_ == 2) && (compactBuilder_ != null)) {
         return compactBuilder_.getMessageOrBuilder();
@@ -996,7 +1051,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Metric canonical = 3;</code>
+     * @return Whether the canonical field is set.
      */
+    @java.lang.Override
     public boolean hasCanonical() {
       return metricTypeCase_ == 3;
     }
@@ -1006,7 +1063,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Metric canonical = 3;</code>
+     * @return The canonical.
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Metric getCanonical() {
       if (canonicalBuilder_ == null) {
         if (metricTypeCase_ == 3) {
@@ -1124,6 +1183,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.zenoss.cloud.Metric canonical = 3;</code>
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricOrBuilder getCanonicalOrBuilder() {
       if ((metricTypeCase_ == 3) && (canonicalBuilder_ != null)) {
         return canonicalBuilder_.getMessageOrBuilder();
@@ -1159,11 +1219,13 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return canonicalBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1185,11 +1247,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<MetricWrapper>
       PARSER = new com.google.protobuf.AbstractParser<MetricWrapper>() {
+    @java.lang.Override
     public MetricWrapper parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MetricWrapper(input, extensionRegistry);
+      return new MetricWrapper(input, extensionRegistry);
     }
   };
 
@@ -1202,6 +1265,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapper getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

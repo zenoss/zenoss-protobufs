@@ -82,7 +82,7 @@ public final class DataRegistry {
       "ss.cloud.UpdateMode\"\211\001\n\020DefinitionUpdate" +
       "\022\025\n\rdefinition_id\030\001 \001(\t\022/\n\016metadataField" +
       "s\030\002 \001(\0132\027.google.protobuf.Struct\022-\n\013upda" +
-      "te_mode\030\003 \001(\0162\030.zenoss.cloud.UpdateMode\"",
+      "te_mode\030\003 \001(\0162\030.zenoss.cloud.UpdateMode\"" +
       "s\n\025RegisterMetricRequest\022+\n\006metric\030\001 \001(\013" +
       "2\033.zenoss.cloud.MetricWrapper\022-\n\013update_" +
       "mode\030\002 \001(\0162\030.zenoss.cloud.UpdateMode\"\234\001\n" +
@@ -92,7 +92,7 @@ public final class DataRegistry {
       "cloud.UpdateMode\022\021\n\ttimestamp\030\004 \001(\003\"P\n\026R" +
       "egisterMetricResponse\022\022\n\ninstanceId\030\001 \001(" +
       "\t\022\024\n\014definitionId\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"f\n" +
-      "\035RegisterMetricVerboseResponse\0226\n\010respon",
+      "\035RegisterMetricVerboseResponse\0226\n\010respon" +
       "se\030\001 \001(\0132$.zenoss.cloud.RegisterMetricRe" +
       "sponse\022\r\n\005error\030\002 \001(\t\"Y\n\027RegisterMetrics" +
       "Response\022>\n\tresponses\030\001 \003(\0132+.zenoss.clo" +
@@ -102,7 +102,7 @@ public final class DataRegistry {
       "GetMetricResponse\022$\n\006metric\030\001 \001(\0132\024.zeno" +
       "ss.cloud.Metric*4\n\nUpdateMode\022\t\n\005MERGE\020\000" +
       "\022\013\n\007REPLACE\020\001\022\016\n\nREPLACEALL\020\0022\272\004\n\023DataRe" +
-      "gistryService\022c\n\024CreateOrUpdateMetric\022#.",
+      "gistryService\022c\n\024CreateOrUpdateMetric\022#." +
       "zenoss.cloud.RegisterMetricRequest\032$.zen" +
       "oss.cloud.RegisterMetricResponse\"\000\022g\n\025Cr" +
       "eateOrUpdateMetrics\022#.zenoss.cloud.Regis" +
@@ -112,7 +112,7 @@ public final class DataRegistry {
       "cloud.RegisterMetricResponse\"\000\022R\n\022Regist" +
       "erDefinition\022\030.zenoss.cloud.Definition\032 " +
       ".zenoss.cloud.DefinitionResponse\"\000\022V\n\020Up" +
-      "dateDefinition\022\036.zenoss.cloud.Definition",
+      "dateDefinition\022\036.zenoss.cloud.Definition" +
       "Update\032 .zenoss.cloud.DefinitionResponse" +
       "\"\000\022N\n\tGetMetric\022\036.zenoss.cloud.GetMetric" +
       "Request\032\037.zenoss.cloud.GetMetricResponse" +
@@ -120,20 +120,12 @@ public final class DataRegistry {
       "ithub.com/zenoss/zenoss-protobufs/go/clo" +
       "ud/data-registryb\006proto3"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.zenoss.cloud.dataReceiver.DataReceiver.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
-        }, assigner);
+        });
     internal_static_zenoss_cloud_Definition_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_zenoss_cloud_Definition_fieldAccessorTable = new

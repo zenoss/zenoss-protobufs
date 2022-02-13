@@ -13,6 +13,7 @@ public interface EventWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Event canonical = 1;</code>
+   * @return Whether the canonical field is set.
    */
   boolean hasCanonical();
   /**
@@ -21,6 +22,7 @@ public interface EventWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Event canonical = 1;</code>
+   * @return The canonical.
    */
   org.zenoss.cloud.dataReceiver.Event getCanonical();
   /**

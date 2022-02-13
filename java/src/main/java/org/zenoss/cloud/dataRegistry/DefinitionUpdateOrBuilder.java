@@ -13,6 +13,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>string definition_id = 1;</code>
+   * @return The definitionId.
    */
   java.lang.String getDefinitionId();
   /**
@@ -21,6 +22,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>string definition_id = 1;</code>
+   * @return The bytes for definitionId.
    */
   com.google.protobuf.ByteString
       getDefinitionIdBytes();
@@ -31,6 +33,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
   /**
@@ -39,6 +42,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
   /**
@@ -58,6 +62,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
   /**
@@ -68,6 +73,7 @@ public interface DefinitionUpdateOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();
 }

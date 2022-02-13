@@ -13,6 +13,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * @return Whether the tagged field is set.
    */
   boolean hasTagged();
   /**
@@ -21,6 +22,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * @return The tagged.
    */
   org.zenoss.cloud.dataReceiver.TaggedMetric getTagged();
   /**
@@ -38,6 +40,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * @return Whether the compact field is set.
    */
   boolean hasCompact();
   /**
@@ -46,6 +49,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * @return The compact.
    */
   org.zenoss.cloud.dataReceiver.CompactMetric getCompact();
   /**
@@ -63,6 +67,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * @return Whether the canonical field is set.
    */
   boolean hasCanonical();
   /**
@@ -71,6 +76,7 @@ public interface MetricWrapperOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * @return The canonical.
    */
   org.zenoss.cloud.dataReceiver.Metric getCanonical();
   /**

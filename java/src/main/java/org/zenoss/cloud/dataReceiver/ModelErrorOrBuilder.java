@@ -9,20 +9,24 @@ public interface ModelErrorOrBuilder extends
 
   /**
    * <code>string error = 1;</code>
+   * @return The error.
    */
   java.lang.String getError();
   /**
    * <code>string error = 1;</code>
+   * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
 
   /**
    * <code>.zenoss.cloud.Model model = 2;</code>
+   * @return Whether the model field is set.
    */
   boolean hasModel();
   /**
    * <code>.zenoss.cloud.Model model = 2;</code>
+   * @return The model.
    */
   org.zenoss.cloud.dataReceiver.Model getModel();
   /**

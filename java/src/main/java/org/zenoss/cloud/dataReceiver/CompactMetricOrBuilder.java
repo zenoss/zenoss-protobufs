@@ -13,6 +13,7 @@ public interface CompactMetricOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
   java.lang.String getId();
   /**
@@ -21,6 +22,7 @@ public interface CompactMetricOrBuilder extends
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
@@ -31,6 +33,7 @@ public interface CompactMetricOrBuilder extends
    * </pre>
    *
    * <code>int64 timestamp = 2;</code>
+   * @return The timestamp.
    */
   long getTimestamp();
 
@@ -40,6 +43,7 @@ public interface CompactMetricOrBuilder extends
    * </pre>
    *
    * <code>double value = 3;</code>
+   * @return The value.
    */
   double getValue();
 }
