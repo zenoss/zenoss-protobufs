@@ -6,7 +6,7 @@ package org.zenoss.cloud.dataReceiver;
 /**
  * Protobuf type {@code zenoss.cloud.TaggedMetric}
  */
-public  final class TaggedMetric extends
+public final class TaggedMetric extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.TaggedMetric)
     TaggedMetricOrBuilder {
@@ -17,8 +17,13 @@ private static final long serialVersionUID = 0L;
   }
   private TaggedMetric() {
     metric_ = "";
-    timestamp_ = 0L;
-    value_ = 0D;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new TaggedMetric();
   }
 
   @java.lang.Override
@@ -31,6 +36,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -42,13 +50,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -66,16 +67,23 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               tags_ = com.google.protobuf.MapField.newMapField(
                   TagsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             tags__ = input.readMessage(
                 TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             tags_.getMutableMap().put(
                 tags__.getKey(), tags__.getValue());
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -96,6 +104,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -106,6 +115,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_TaggedMetric_fieldAccessorTable
@@ -113,7 +123,6 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.TaggedMetric.class, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder.class);
   }
 
-  private int bitField0_;
   public static final int METRIC_FIELD_NUMBER = 1;
   private volatile java.lang.Object metric_;
   /**
@@ -122,7 +131,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The metric.
    */
+  @java.lang.Override
   public java.lang.String getMetric() {
     java.lang.Object ref = metric_;
     if (ref instanceof java.lang.String) {
@@ -141,7 +152,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The bytes for metric.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getMetricBytes() {
     java.lang.Object ref = metric_;
@@ -164,7 +177,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 timestamp = 2;</code>
+   * @return The timestamp.
    */
+  @java.lang.Override
   public long getTimestamp() {
     return timestamp_;
   }
@@ -177,7 +192,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double value = 3;</code>
+   * @return The value.
    */
+  @java.lang.Override
   public double getValue() {
     return value_;
   }
@@ -216,6 +233,7 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; tags = 4;</code>
    */
 
+  @java.lang.Override
   public boolean containsTags(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
@@ -224,6 +242,7 @@ private static final long serialVersionUID = 0L;
   /**
    * Use {@link #getTagsMap()} instead.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
@@ -235,6 +254,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; tags = 4;</code>
    */
+  @java.lang.Override
 
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
@@ -246,6 +266,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; tags = 4;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getTagsOrDefault(
       java.lang.String key,
@@ -262,6 +283,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; tags = 4;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getTagsOrThrow(
       java.lang.String key) {
@@ -275,6 +297,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -284,6 +307,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getMetricBytes().isEmpty()) {
@@ -304,6 +328,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -345,19 +370,17 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.TaggedMetric other = (org.zenoss.cloud.dataReceiver.TaggedMetric) obj;
 
-    boolean result = true;
-    result = result && getMetric()
-        .equals(other.getMetric());
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && (
-        java.lang.Double.doubleToLongBits(getValue())
-        == java.lang.Double.doubleToLongBits(
-            other.getValue()));
-    result = result && internalGetTags().equals(
-        other.internalGetTags());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getMetric()
+        .equals(other.getMetric())) return false;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (java.lang.Double.doubleToLongBits(getValue())
+        != java.lang.Double.doubleToLongBits(
+            other.getValue())) return false;
+    if (!internalGetTags().equals(
+        other.internalGetTags())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -454,6 +477,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -461,6 +485,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.TaggedMetric prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -506,6 +531,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_TaggedMetric_fieldAccessorTable
@@ -528,6 +554,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       metric_ = "";
@@ -540,15 +567,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_TaggedMetric_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetric getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.TaggedMetric.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetric build() {
       org.zenoss.cloud.dataReceiver.TaggedMetric result = buildPartial();
       if (!result.isInitialized()) {
@@ -557,46 +587,52 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetric buildPartial() {
       org.zenoss.cloud.dataReceiver.TaggedMetric result = new org.zenoss.cloud.dataReceiver.TaggedMetric(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.metric_ = metric_;
       result.timestamp_ = timestamp_;
       result.value_ = value_;
       result.tags_ = internalGetTags();
       result.tags_.makeImmutable();
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.TaggedMetric) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.TaggedMetric)other);
@@ -625,10 +661,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -655,6 +693,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string metric = 1;</code>
+     * @return The metric.
      */
     public java.lang.String getMetric() {
       java.lang.Object ref = metric_;
@@ -674,6 +713,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string metric = 1;</code>
+     * @return The bytes for metric.
      */
     public com.google.protobuf.ByteString
         getMetricBytes() {
@@ -694,6 +734,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string metric = 1;</code>
+     * @param value The metric to set.
+     * @return This builder for chaining.
      */
     public Builder setMetric(
         java.lang.String value) {
@@ -711,6 +753,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string metric = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearMetric() {
       
@@ -724,6 +767,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string metric = 1;</code>
+     * @param value The bytes for metric to set.
+     * @return This builder for chaining.
      */
     public Builder setMetricBytes(
         com.google.protobuf.ByteString value) {
@@ -744,7 +789,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public long getTimestamp() {
       return timestamp_;
     }
@@ -754,6 +801,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(long value) {
       
@@ -767,6 +816,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -782,7 +832,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public double getValue() {
       return value_;
     }
@@ -792,6 +844,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(double value) {
       
@@ -805,6 +859,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       
@@ -847,6 +902,7 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; tags = 4;</code>
      */
 
+    @java.lang.Override
     public boolean containsTags(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -855,6 +911,7 @@ private static final long serialVersionUID = 0L;
     /**
      * Use {@link #getTagsMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
@@ -866,6 +923,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4;</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
@@ -877,6 +935,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getTagsOrDefault(
         java.lang.String key,
@@ -893,6 +952,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getTagsOrThrow(
         java.lang.String key) {
@@ -963,11 +1023,13 @@ private static final long serialVersionUID = 0L;
           .putAll(values);
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -989,11 +1051,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<TaggedMetric>
       PARSER = new com.google.protobuf.AbstractParser<TaggedMetric>() {
+    @java.lang.Override
     public TaggedMetric parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaggedMetric(input, extensionRegistry);
+      return new TaggedMetric(input, extensionRegistry);
     }
   };
 
@@ -1006,6 +1069,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetric getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

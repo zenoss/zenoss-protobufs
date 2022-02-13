@@ -9,20 +9,24 @@ public interface EventErrorOrBuilder extends
 
   /**
    * <code>string error = 1;</code>
+   * @return The error.
    */
   java.lang.String getError();
   /**
    * <code>string error = 1;</code>
+   * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
 
   /**
    * <code>.zenoss.cloud.Event event = 2;</code>
+   * @return Whether the event field is set.
    */
   boolean hasEvent();
   /**
    * <code>.zenoss.cloud.Event event = 2;</code>
+   * @return The event.
    */
   org.zenoss.cloud.dataReceiver.Event getEvent();
   /**

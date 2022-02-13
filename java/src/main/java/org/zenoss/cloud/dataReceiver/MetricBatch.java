@@ -10,7 +10,7 @@ package org.zenoss.cloud.dataReceiver;
  *
  * Protobuf type {@code zenoss.cloud.MetricBatch}
  */
-public  final class MetricBatch extends
+public final class MetricBatch extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.MetricBatch)
     MetricBatchOrBuilder {
@@ -24,6 +24,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new MetricBatch();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
     return this.unknownFields;
@@ -33,6 +40,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,15 +54,8 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               globalTags_ = com.google.protobuf.MapField.newMapField(
                   GlobalTagsDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000001;
@@ -65,12 +68,19 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
               metrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.MetricWrapper>();
               mutable_bitField0_ |= 0x00000002;
             }
             metrics_.add(
                 input.readMessage(org.zenoss.cloud.dataReceiver.MetricWrapper.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -81,7 +91,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
         metrics_ = java.util.Collections.unmodifiableList(metrics_);
       }
       this.unknownFields = unknownFields.build();
@@ -94,6 +104,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -104,6 +115,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricBatch_fieldAccessorTable
@@ -145,6 +157,7 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; global_tags = 2;</code>
    */
 
+  @java.lang.Override
   public boolean containsGlobalTags(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
@@ -153,6 +166,7 @@ private static final long serialVersionUID = 0L;
   /**
    * Use {@link #getGlobalTagsMap()} instead.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getGlobalTags() {
     return getGlobalTagsMap();
@@ -164,6 +178,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; global_tags = 2;</code>
    */
+  @java.lang.Override
 
   public java.util.Map<java.lang.String, java.lang.String> getGlobalTagsMap() {
     return internalGetGlobalTags().getMap();
@@ -175,6 +190,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; global_tags = 2;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getGlobalTagsOrDefault(
       java.lang.String key,
@@ -191,6 +207,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; global_tags = 2;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getGlobalTagsOrThrow(
       java.lang.String key) {
@@ -212,6 +229,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> getMetricsList() {
     return metrics_;
   }
@@ -222,6 +240,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
    */
+  @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> 
       getMetricsOrBuilderList() {
     return metrics_;
@@ -233,6 +252,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
    */
+  @java.lang.Override
   public int getMetricsCount() {
     return metrics_.size();
   }
@@ -243,6 +263,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapper getMetrics(int index) {
     return metrics_.get(index);
   }
@@ -253,12 +274,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
    */
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricsOrBuilder(
       int index) {
     return metrics_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -268,6 +291,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3
@@ -282,6 +306,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -316,13 +341,12 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.MetricBatch other = (org.zenoss.cloud.dataReceiver.MetricBatch) obj;
 
-    boolean result = true;
-    result = result && internalGetGlobalTags().equals(
-        other.internalGetGlobalTags());
-    result = result && getMetricsList()
-        .equals(other.getMetricsList());
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!internalGetGlobalTags().equals(
+        other.internalGetGlobalTags())) return false;
+    if (!getMetricsList()
+        .equals(other.getMetricsList())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -415,6 +439,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -422,6 +447,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.MetricBatch prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -471,6 +497,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricBatch_fieldAccessorTable
@@ -494,6 +521,7 @@ private static final long serialVersionUID = 0L;
         getMetricsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       internalGetMutableGlobalTags().clear();
@@ -506,15 +534,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricBatch_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricBatch getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.MetricBatch.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricBatch build() {
       org.zenoss.cloud.dataReceiver.MetricBatch result = buildPartial();
       if (!result.isInitialized()) {
@@ -523,13 +554,14 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricBatch buildPartial() {
       org.zenoss.cloud.dataReceiver.MetricBatch result = new org.zenoss.cloud.dataReceiver.MetricBatch(this);
       int from_bitField0_ = bitField0_;
       result.globalTags_ = internalGetGlobalTags();
       result.globalTags_.makeImmutable();
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
@@ -541,32 +573,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.MetricBatch) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.MetricBatch)other);
@@ -611,10 +650,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -668,6 +709,7 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; global_tags = 2;</code>
      */
 
+    @java.lang.Override
     public boolean containsGlobalTags(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -676,6 +718,7 @@ private static final long serialVersionUID = 0L;
     /**
      * Use {@link #getGlobalTagsMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getGlobalTags() {
       return getGlobalTagsMap();
@@ -687,6 +730,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2;</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.String> getGlobalTagsMap() {
       return internalGetGlobalTags().getMap();
@@ -698,6 +742,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getGlobalTagsOrDefault(
         java.lang.String key,
@@ -714,6 +759,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getGlobalTagsOrThrow(
         java.lang.String key) {
@@ -788,7 +834,7 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> metrics_ =
       java.util.Collections.emptyList();
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         metrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.MetricWrapper>(metrics_);
         bitField0_ |= 0x00000002;
        }
@@ -1089,18 +1135,20 @@ private static final long serialVersionUID = 0L;
         metricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.MetricWrapper.Builder, org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder>(
                 metrics_,
-                ((bitField0_ & 0x00000002) == 0x00000002),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1122,11 +1170,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<MetricBatch>
       PARSER = new com.google.protobuf.AbstractParser<MetricBatch>() {
+    @java.lang.Override
     public MetricBatch parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MetricBatch(input, extensionRegistry);
+      return new MetricBatch(input, extensionRegistry);
     }
   };
 
@@ -1139,6 +1188,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricBatch getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

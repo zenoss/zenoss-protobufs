@@ -11,7 +11,7 @@ package org.zenoss.cloud.dataReceiver;
  *
  * Protobuf type {@code zenoss.cloud.Event}
  */
-public  final class Event extends
+public final class Event extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.Event)
     EventOrBuilder {
@@ -21,13 +21,19 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Event() {
-    timestamp_ = 0L;
     name_ = "";
     type_ = "";
     summary_ = "";
     body_ = "";
     severity_ = 0;
     status_ = 0;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new Event();
   }
 
   @java.lang.Override
@@ -40,6 +46,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,13 +60,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 8: {
 
             timestamp_ = input.readInt64();
@@ -70,10 +72,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               dimensions_ = com.google.protobuf.MapField.newMapField(
                   DimensionsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              mutable_bitField0_ |= 0x00000001;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             dimensions__ = input.readMessage(
@@ -138,6 +140,13 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -156,6 +165,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -166,6 +176,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Event_fieldAccessorTable
@@ -173,7 +184,6 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.Event.class, org.zenoss.cloud.dataReceiver.Event.Builder.class);
   }
 
-  private int bitField0_;
   public static final int TIMESTAMP_FIELD_NUMBER = 1;
   private long timestamp_;
   /**
@@ -182,7 +192,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 timestamp = 1;</code>
+   * @return The timestamp.
    */
+  @java.lang.Override
   public long getTimestamp() {
     return timestamp_;
   }
@@ -198,7 +210,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
+  @java.lang.Override
   public java.lang.String getName() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
@@ -220,7 +234,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getNameBytes() {
     java.lang.Object ref = name_;
@@ -271,6 +287,7 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
 
+  @java.lang.Override
   public boolean containsDimensions(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
@@ -279,6 +296,7 @@ private static final long serialVersionUID = 0L;
   /**
    * Use {@link #getDimensionsMap()} instead.
    */
+  @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
     return getDimensionsMap();
@@ -292,6 +310,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
+  @java.lang.Override
 
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
     return internalGetDimensions().getMap();
@@ -305,6 +324,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getDimensionsOrDefault(
       java.lang.String key,
@@ -323,6 +343,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; dimensions = 3;</code>
    */
+  @java.lang.Override
 
   public java.lang.String getDimensionsOrThrow(
       java.lang.String key) {
@@ -343,7 +364,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * @return Whether the metadataFields field is set.
    */
+  @java.lang.Override
   public boolean hasMetadataFields() {
     return metadataFields_ != null;
   }
@@ -353,7 +376,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * @return The metadataFields.
    */
+  @java.lang.Override
   public com.google.protobuf.Struct getMetadataFields() {
     return metadataFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
   }
@@ -364,6 +389,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.Struct metadataFields = 4;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
     return getMetadataFields();
   }
@@ -378,7 +404,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 5;</code>
+   * @return The type.
    */
+  @java.lang.Override
   public java.lang.String getType() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
@@ -399,7 +427,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string type = 5;</code>
+   * @return The bytes for type.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getTypeBytes() {
     java.lang.Object ref = type_;
@@ -424,7 +454,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string summary = 6;</code>
+   * @return The summary.
    */
+  @java.lang.Override
   public java.lang.String getSummary() {
     java.lang.Object ref = summary_;
     if (ref instanceof java.lang.String) {
@@ -445,7 +477,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string summary = 6;</code>
+   * @return The bytes for summary.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getSummaryBytes() {
     java.lang.Object ref = summary_;
@@ -469,7 +503,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string body = 7;</code>
+   * @return The body.
    */
+  @java.lang.Override
   public java.lang.String getBody() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
@@ -489,7 +525,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string body = 7;</code>
+   * @return The bytes for body.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getBodyBytes() {
     java.lang.Object ref = body_;
@@ -518,8 +556,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * @return The enum numeric value on the wire for severity.
    */
-  public int getSeverityValue() {
+  @java.lang.Override public int getSeverityValue() {
     return severity_;
   }
   /**
@@ -534,8 +573,10 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * @return The severity.
    */
-  public org.zenoss.cloud.dataReceiver.Severity getSeverity() {
+  @java.lang.Override public org.zenoss.cloud.dataReceiver.Severity getSeverity() {
+    @SuppressWarnings("deprecation")
     org.zenoss.cloud.dataReceiver.Severity result = org.zenoss.cloud.dataReceiver.Severity.valueOf(severity_);
     return result == null ? org.zenoss.cloud.dataReceiver.Severity.UNRECOGNIZED : result;
   }
@@ -552,8 +593,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Status status = 9;</code>
+   * @return The enum numeric value on the wire for status.
    */
-  public int getStatusValue() {
+  @java.lang.Override public int getStatusValue() {
     return status_;
   }
   /**
@@ -566,8 +608,10 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.zenoss.cloud.Status status = 9;</code>
+   * @return The status.
    */
-  public org.zenoss.cloud.dataReceiver.Status getStatus() {
+  @java.lang.Override public org.zenoss.cloud.dataReceiver.Status getStatus() {
+    @SuppressWarnings("deprecation")
     org.zenoss.cloud.dataReceiver.Status result = org.zenoss.cloud.dataReceiver.Status.valueOf(status_);
     return result == null ? org.zenoss.cloud.dataReceiver.Status.UNRECOGNIZED : result;
   }
@@ -580,7 +624,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * @return Whether the acknowledged field is set.
    */
+  @java.lang.Override
   public boolean hasAcknowledged() {
     return acknowledged_ != null;
   }
@@ -590,7 +636,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * @return The acknowledged.
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValue getAcknowledged() {
     return acknowledged_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : acknowledged_;
   }
@@ -601,11 +649,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
    */
+  @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getAcknowledgedOrBuilder() {
     return getAcknowledged();
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -615,6 +665,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (timestamp_ != 0L) {
@@ -653,6 +704,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -715,33 +767,32 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.Event other = (org.zenoss.cloud.dataReceiver.Event) obj;
 
-    boolean result = true;
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && getName()
-        .equals(other.getName());
-    result = result && internalGetDimensions().equals(
-        other.internalGetDimensions());
-    result = result && (hasMetadataFields() == other.hasMetadataFields());
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (!getName()
+        .equals(other.getName())) return false;
+    if (!internalGetDimensions().equals(
+        other.internalGetDimensions())) return false;
+    if (hasMetadataFields() != other.hasMetadataFields()) return false;
     if (hasMetadataFields()) {
-      result = result && getMetadataFields()
-          .equals(other.getMetadataFields());
+      if (!getMetadataFields()
+          .equals(other.getMetadataFields())) return false;
     }
-    result = result && getType()
-        .equals(other.getType());
-    result = result && getSummary()
-        .equals(other.getSummary());
-    result = result && getBody()
-        .equals(other.getBody());
-    result = result && severity_ == other.severity_;
-    result = result && status_ == other.status_;
-    result = result && (hasAcknowledged() == other.hasAcknowledged());
+    if (!getType()
+        .equals(other.getType())) return false;
+    if (!getSummary()
+        .equals(other.getSummary())) return false;
+    if (!getBody()
+        .equals(other.getBody())) return false;
+    if (severity_ != other.severity_) return false;
+    if (status_ != other.status_) return false;
+    if (hasAcknowledged() != other.hasAcknowledged()) return false;
     if (hasAcknowledged()) {
-      result = result && getAcknowledged()
-          .equals(other.getAcknowledged());
+      if (!getAcknowledged()
+          .equals(other.getAcknowledged())) return false;
     }
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -853,6 +904,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -860,6 +912,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.Event prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -910,6 +963,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Event_fieldAccessorTable
@@ -932,6 +986,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       timestamp_ = 0L;
@@ -964,15 +1019,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Event_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Event getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.Event.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Event build() {
       org.zenoss.cloud.dataReceiver.Event result = buildPartial();
       if (!result.isInitialized()) {
@@ -981,10 +1039,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Event buildPartial() {
       org.zenoss.cloud.dataReceiver.Event result = new org.zenoss.cloud.dataReceiver.Event(this);
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
       result.timestamp_ = timestamp_;
       result.name_ = name_;
       result.dimensions_ = internalGetDimensions();
@@ -1004,37 +1062,43 @@ private static final long serialVersionUID = 0L;
       } else {
         result.acknowledged_ = acknowledgedBuilder_.build();
       }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.Event) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.Event)other);
@@ -1084,10 +1148,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1114,7 +1180,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 1;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public long getTimestamp() {
       return timestamp_;
     }
@@ -1124,6 +1192,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 1;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(long value) {
       
@@ -1137,6 +1207,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -1155,6 +1226,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1177,6 +1249,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1200,6 +1273,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The name to set.
+     * @return This builder for chaining.
      */
     public Builder setName(
         java.lang.String value) {
@@ -1220,6 +1295,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearName() {
       
@@ -1236,6 +1312,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string name = 2;</code>
+     * @param value The bytes for name to set.
+     * @return This builder for chaining.
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
@@ -1285,6 +1363,7 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; dimensions = 3;</code>
      */
 
+    @java.lang.Override
     public boolean containsDimensions(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
@@ -1293,6 +1372,7 @@ private static final long serialVersionUID = 0L;
     /**
      * Use {@link #getDimensionsMap()} instead.
      */
+    @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
       return getDimensionsMap();
@@ -1306,6 +1386,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 3;</code>
      */
+    @java.lang.Override
 
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
       return internalGetDimensions().getMap();
@@ -1319,6 +1400,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 3;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getDimensionsOrDefault(
         java.lang.String key,
@@ -1337,6 +1419,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 3;</code>
      */
+    @java.lang.Override
 
     public java.lang.String getDimensionsOrThrow(
         java.lang.String key) {
@@ -1414,7 +1497,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Struct metadataFields_ = null;
+    private com.google.protobuf.Struct metadataFields_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> metadataFieldsBuilder_;
     /**
@@ -1423,6 +1506,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
       return metadataFieldsBuilder_ != null || metadataFields_ != null;
@@ -1433,6 +1517,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -1576,6 +1661,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 5;</code>
+     * @return The type.
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -1597,6 +1683,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 5;</code>
+     * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -1619,6 +1706,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 5;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
      */
     public Builder setType(
         java.lang.String value) {
@@ -1638,6 +1727,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 5;</code>
+     * @return This builder for chaining.
      */
     public Builder clearType() {
       
@@ -1653,6 +1743,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string type = 5;</code>
+     * @param value The bytes for type to set.
+     * @return This builder for chaining.
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
@@ -1675,6 +1767,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string summary = 6;</code>
+     * @return The summary.
      */
     public java.lang.String getSummary() {
       java.lang.Object ref = summary_;
@@ -1696,6 +1789,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string summary = 6;</code>
+     * @return The bytes for summary.
      */
     public com.google.protobuf.ByteString
         getSummaryBytes() {
@@ -1718,6 +1812,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string summary = 6;</code>
+     * @param value The summary to set.
+     * @return This builder for chaining.
      */
     public Builder setSummary(
         java.lang.String value) {
@@ -1737,6 +1833,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string summary = 6;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSummary() {
       
@@ -1752,6 +1849,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string summary = 6;</code>
+     * @param value The bytes for summary to set.
+     * @return This builder for chaining.
      */
     public Builder setSummaryBytes(
         com.google.protobuf.ByteString value) {
@@ -1773,6 +1872,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
+     * @return The body.
      */
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
@@ -1793,6 +1893,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
+     * @return The bytes for body.
      */
     public com.google.protobuf.ByteString
         getBodyBytes() {
@@ -1814,6 +1915,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
+     * @param value The body to set.
+     * @return This builder for chaining.
      */
     public Builder setBody(
         java.lang.String value) {
@@ -1832,6 +1935,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
+     * @return This builder for chaining.
      */
     public Builder clearBody() {
       
@@ -1846,6 +1950,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string body = 7;</code>
+     * @param value The bytes for body to set.
+     * @return This builder for chaining.
      */
     public Builder setBodyBytes(
         com.google.protobuf.ByteString value) {
@@ -1872,8 +1978,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * @return The enum numeric value on the wire for severity.
      */
-    public int getSeverityValue() {
+    @java.lang.Override public int getSeverityValue() {
       return severity_;
     }
     /**
@@ -1888,8 +1995,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * @param value The enum numeric value on the wire for severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
+      
       severity_ = value;
       onChanged();
       return this;
@@ -1906,8 +2016,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * @return The severity.
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Severity getSeverity() {
+      @SuppressWarnings("deprecation")
       org.zenoss.cloud.dataReceiver.Severity result = org.zenoss.cloud.dataReceiver.Severity.valueOf(severity_);
       return result == null ? org.zenoss.cloud.dataReceiver.Severity.UNRECOGNIZED : result;
     }
@@ -1923,6 +2036,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * @param value The severity to set.
+     * @return This builder for chaining.
      */
     public Builder setSeverity(org.zenoss.cloud.dataReceiver.Severity value) {
       if (value == null) {
@@ -1945,6 +2060,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * @return This builder for chaining.
      */
     public Builder clearSeverity() {
       
@@ -1964,8 +2080,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Status status = 9;</code>
+     * @return The enum numeric value on the wire for status.
      */
-    public int getStatusValue() {
+    @java.lang.Override public int getStatusValue() {
       return status_;
     }
     /**
@@ -1978,8 +2095,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Status status = 9;</code>
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
+      
       status_ = value;
       onChanged();
       return this;
@@ -1994,8 +2114,11 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Status status = 9;</code>
+     * @return The status.
      */
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Status getStatus() {
+      @SuppressWarnings("deprecation")
       org.zenoss.cloud.dataReceiver.Status result = org.zenoss.cloud.dataReceiver.Status.valueOf(status_);
       return result == null ? org.zenoss.cloud.dataReceiver.Status.UNRECOGNIZED : result;
     }
@@ -2009,6 +2132,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Status status = 9;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
      */
     public Builder setStatus(org.zenoss.cloud.dataReceiver.Status value) {
       if (value == null) {
@@ -2029,6 +2154,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.zenoss.cloud.Status status = 9;</code>
+     * @return This builder for chaining.
      */
     public Builder clearStatus() {
       
@@ -2037,7 +2163,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.BoolValue acknowledged_ = null;
+    private com.google.protobuf.BoolValue acknowledged_;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> acknowledgedBuilder_;
     /**
@@ -2046,6 +2172,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * @return Whether the acknowledged field is set.
      */
     public boolean hasAcknowledged() {
       return acknowledgedBuilder_ != null || acknowledged_ != null;
@@ -2056,6 +2183,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * @return The acknowledged.
      */
     public com.google.protobuf.BoolValue getAcknowledged() {
       if (acknowledgedBuilder_ == null) {
@@ -2189,11 +2317,13 @@ private static final long serialVersionUID = 0L;
       }
       return acknowledgedBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2215,11 +2345,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<Event>
       PARSER = new com.google.protobuf.AbstractParser<Event>() {
+    @java.lang.Override
     public Event parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Event(input, extensionRegistry);
+      return new Event(input, extensionRegistry);
     }
   };
 
@@ -2232,6 +2363,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Event getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

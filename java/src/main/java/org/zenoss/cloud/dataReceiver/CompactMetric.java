@@ -6,7 +6,7 @@ package org.zenoss.cloud.dataReceiver;
 /**
  * Protobuf type {@code zenoss.cloud.CompactMetric}
  */
-public  final class CompactMetric extends
+public final class CompactMetric extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:zenoss.cloud.CompactMetric)
     CompactMetricOrBuilder {
@@ -17,8 +17,13 @@ private static final long serialVersionUID = 0L;
   }
   private CompactMetric() {
     id_ = "";
-    timestamp_ = 0L;
-    value_ = 0D;
+  }
+
+  @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new CompactMetric();
   }
 
   @java.lang.Override
@@ -31,7 +36,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -42,13 +49,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -63,6 +63,13 @@ private static final long serialVersionUID = 0L;
           case 25: {
 
             value_ = input.readDouble();
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -82,6 +89,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_CompactMetric_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_CompactMetric_fieldAccessorTable
@@ -97,7 +105,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The id.
    */
+  @java.lang.Override
   public java.lang.String getId() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
@@ -116,7 +126,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>string id = 1;</code>
+   * @return The bytes for id.
    */
+  @java.lang.Override
   public com.google.protobuf.ByteString
       getIdBytes() {
     java.lang.Object ref = id_;
@@ -139,7 +151,9 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>int64 timestamp = 2;</code>
+   * @return The timestamp.
    */
+  @java.lang.Override
   public long getTimestamp() {
     return timestamp_;
   }
@@ -152,12 +166,15 @@ private static final long serialVersionUID = 0L;
    * </pre>
    *
    * <code>double value = 3;</code>
+   * @return The value.
    */
+  @java.lang.Override
   public double getValue() {
     return value_;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -167,6 +184,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getIdBytes().isEmpty()) {
@@ -181,6 +199,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -212,17 +231,15 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.dataReceiver.CompactMetric other = (org.zenoss.cloud.dataReceiver.CompactMetric) obj;
 
-    boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && (
-        java.lang.Double.doubleToLongBits(getValue())
-        == java.lang.Double.doubleToLongBits(
-            other.getValue()));
-    result = result && unknownFields.equals(other.unknownFields);
-    return result;
+    if (!getId()
+        .equals(other.getId())) return false;
+    if (getTimestamp()
+        != other.getTimestamp()) return false;
+    if (java.lang.Double.doubleToLongBits(getValue())
+        != java.lang.Double.doubleToLongBits(
+            other.getValue())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -315,6 +332,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -322,6 +340,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(org.zenoss.cloud.dataReceiver.CompactMetric prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -345,6 +364,7 @@ private static final long serialVersionUID = 0L;
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_CompactMetric_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_CompactMetric_fieldAccessorTable
@@ -367,6 +387,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       id_ = "";
@@ -378,15 +399,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_CompactMetric_descriptor;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.CompactMetric getDefaultInstanceForType() {
       return org.zenoss.cloud.dataReceiver.CompactMetric.getDefaultInstance();
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.CompactMetric build() {
       org.zenoss.cloud.dataReceiver.CompactMetric result = buildPartial();
       if (!result.isInitialized()) {
@@ -395,6 +419,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public org.zenoss.cloud.dataReceiver.CompactMetric buildPartial() {
       org.zenoss.cloud.dataReceiver.CompactMetric result = new org.zenoss.cloud.dataReceiver.CompactMetric(this);
       result.id_ = id_;
@@ -404,32 +429,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.setField(field, value);
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof org.zenoss.cloud.dataReceiver.CompactMetric) {
         return mergeFrom((org.zenoss.cloud.dataReceiver.CompactMetric)other);
@@ -456,10 +488,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -485,6 +519,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The id.
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -504,6 +539,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -524,6 +560,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The id to set.
+     * @return This builder for chaining.
      */
     public Builder setId(
         java.lang.String value) {
@@ -541,6 +579,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @return This builder for chaining.
      */
     public Builder clearId() {
       
@@ -554,6 +593,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>string id = 1;</code>
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
@@ -574,7 +615,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @return The timestamp.
      */
+    @java.lang.Override
     public long getTimestamp() {
       return timestamp_;
     }
@@ -584,6 +627,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @param value The timestamp to set.
+     * @return This builder for chaining.
      */
     public Builder setTimestamp(long value) {
       
@@ -597,6 +642,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>int64 timestamp = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
       
@@ -612,7 +658,9 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @return The value.
      */
+    @java.lang.Override
     public double getValue() {
       return value_;
     }
@@ -622,6 +670,8 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @param value The value to set.
+     * @return This builder for chaining.
      */
     public Builder setValue(double value) {
       
@@ -635,6 +685,7 @@ private static final long serialVersionUID = 0L;
      * </pre>
      *
      * <code>double value = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearValue() {
       
@@ -642,11 +693,13 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -668,11 +721,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<CompactMetric>
       PARSER = new com.google.protobuf.AbstractParser<CompactMetric>() {
+    @java.lang.Override
     public CompactMetric parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CompactMetric(input, extensionRegistry);
+      return new CompactMetric(input, extensionRegistry);
     }
   };
 
@@ -685,6 +739,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetric getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

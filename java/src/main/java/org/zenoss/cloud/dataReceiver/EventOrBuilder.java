@@ -13,6 +13,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>int64 timestamp = 1;</code>
+   * @return The timestamp.
    */
   long getTimestamp();
 
@@ -25,6 +26,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The name.
    */
   java.lang.String getName();
   /**
@@ -36,6 +38,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string name = 2;</code>
+   * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
@@ -110,6 +113,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
   /**
@@ -118,6 +122,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
   /**
@@ -137,6 +142,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string type = 5;</code>
+   * @return The type.
    */
   java.lang.String getType();
   /**
@@ -147,6 +153,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string type = 5;</code>
+   * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
@@ -159,6 +166,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string summary = 6;</code>
+   * @return The summary.
    */
   java.lang.String getSummary();
   /**
@@ -169,6 +177,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string summary = 6;</code>
+   * @return The bytes for summary.
    */
   com.google.protobuf.ByteString
       getSummaryBytes();
@@ -180,6 +189,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string body = 7;</code>
+   * @return The body.
    */
   java.lang.String getBody();
   /**
@@ -189,6 +199,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>string body = 7;</code>
+   * @return The bytes for body.
    */
   com.google.protobuf.ByteString
       getBodyBytes();
@@ -205,6 +216,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
   /**
@@ -219,6 +231,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * @return The severity.
    */
   org.zenoss.cloud.dataReceiver.Severity getSeverity();
 
@@ -232,6 +245,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Status status = 9;</code>
+   * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
   /**
@@ -244,6 +258,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.zenoss.cloud.Status status = 9;</code>
+   * @return The status.
    */
   org.zenoss.cloud.dataReceiver.Status getStatus();
 
@@ -253,6 +268,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * @return Whether the acknowledged field is set.
    */
   boolean hasAcknowledged();
   /**
@@ -261,6 +277,7 @@ public interface EventOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * @return The acknowledged.
    */
   com.google.protobuf.BoolValue getAcknowledged();
   /**

@@ -13,6 +13,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>int64 timestamp = 1;</code>
+   * @return The timestamp.
    */
   long getTimestamp();
 
@@ -76,6 +77,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
   /**
@@ -84,6 +86,7 @@ public interface ModelOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
   /**

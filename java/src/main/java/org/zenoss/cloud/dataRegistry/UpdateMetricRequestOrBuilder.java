@@ -9,10 +9,12 @@ public interface UpdateMetricRequestOrBuilder extends
 
   /**
    * <code>string instanceId = 1;</code>
+   * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
    * <code>string instanceId = 1;</code>
+   * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString
       getInstanceIdBytes();
@@ -23,6 +25,7 @@ public interface UpdateMetricRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
   /**
@@ -31,6 +34,7 @@ public interface UpdateMetricRequestOrBuilder extends
    * </pre>
    *
    * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
   /**
@@ -44,15 +48,18 @@ public interface UpdateMetricRequestOrBuilder extends
 
   /**
    * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
   /**
    * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();
 
   /**
    * <code>int64 timestamp = 4;</code>
+   * @return The timestamp.
    */
   long getTimestamp();
 }

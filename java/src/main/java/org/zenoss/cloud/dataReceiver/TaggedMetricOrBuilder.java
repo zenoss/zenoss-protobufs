@@ -13,6 +13,7 @@ public interface TaggedMetricOrBuilder extends
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The metric.
    */
   java.lang.String getMetric();
   /**
@@ -21,6 +22,7 @@ public interface TaggedMetricOrBuilder extends
    * </pre>
    *
    * <code>string metric = 1;</code>
+   * @return The bytes for metric.
    */
   com.google.protobuf.ByteString
       getMetricBytes();
@@ -31,6 +33,7 @@ public interface TaggedMetricOrBuilder extends
    * </pre>
    *
    * <code>int64 timestamp = 2;</code>
+   * @return The timestamp.
    */
   long getTimestamp();
 
@@ -40,6 +43,7 @@ public interface TaggedMetricOrBuilder extends
    * </pre>
    *
    * <code>double value = 3;</code>
+   * @return The value.
    */
   double getValue();
 

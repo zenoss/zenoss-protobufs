@@ -9,20 +9,24 @@ public interface MetricErrorOrBuilder extends
 
   /**
    * <code>string error = 1;</code>
+   * @return The error.
    */
   java.lang.String getError();
   /**
    * <code>string error = 1;</code>
+   * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
 
   /**
    * <code>.zenoss.cloud.Metric metric = 2;</code>
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
    * <code>.zenoss.cloud.Metric metric = 2;</code>
+   * @return The metric.
    */
   org.zenoss.cloud.dataReceiver.Metric getMetric();
   /**

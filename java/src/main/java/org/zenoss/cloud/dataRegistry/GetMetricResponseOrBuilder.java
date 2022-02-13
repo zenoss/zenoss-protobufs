@@ -9,10 +9,12 @@ public interface GetMetricResponseOrBuilder extends
 
   /**
    * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
    * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * @return The metric.
    */
   org.zenoss.cloud.dataReceiver.Metric getMetric();
   /**

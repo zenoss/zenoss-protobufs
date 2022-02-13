@@ -9,10 +9,12 @@ public interface RegisterMetricVerboseResponseOrBuilder extends
 
   /**
    * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * @return Whether the response field is set.
    */
   boolean hasResponse();
   /**
    * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * @return The response.
    */
   org.zenoss.cloud.dataRegistry.RegisterMetricResponse getResponse();
   /**
@@ -22,10 +24,12 @@ public interface RegisterMetricVerboseResponseOrBuilder extends
 
   /**
    * <code>string error = 2;</code>
+   * @return The error.
    */
   java.lang.String getError();
   /**
    * <code>string error = 2;</code>
+   * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
