@@ -124,60 +124,59 @@ public final class CollectionCfg {
   static {
     java.lang.String[] descriptorData = {
       "\n!zenoss/cloud/collection_cfg.proto\022\033zen" +
-      "oss.cloud.collection_cfg\032\034google/api/ann" +
-      "otations.proto\"y\n\006Config\022\n\n\002id\030\001 \001(\t\022\014\n\004" +
-      "name\030\002 \001(\t\022\016\n\006tenant\030\003 \001(\t\022E\n\rconfigurat" +
-      "ion\030\004 \001(\0132..zenoss.cloud.collection_cfg." +
-      "ConfigurationType\"c\n\021ConfigurationType\0228" +
-      "\n\010ms_teams\030\001 \001(\0132$.zenoss.cloud.collecti" +
-      "on_cfg.MSTeamsH\000B\024\n\022configuration_type\"\200" +
-      "\001\n\007MSTeams\022\021\n\tclient_id\030\001 \001(\t\022\025\n\rclient_" +
-      "secret\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\021\n\tobjec" +
-      "t_id\030\004 \001(\t\022\020\n\010endpoint\030\005 \001(\t\022\023\n\013tenant_n" +
-      "ame\030\006 \001(\t\"\024\n\022ListConfigsRequest\"R\n\023ListC" +
-      "onfigsResponse\022;\n\016configurations\030\001 \003(\0132#" +
-      ".zenoss.cloud.collection_cfg.Config\" \n\020G" +
-      "etConfigRequest\022\014\n\004name\030\001 \001(\t\"O\n\021GetConf" +
-      "igResponse\022:\n\rconfiguration\030\001 \001(\0132#.zeno" +
-      "ss.cloud.collection_cfg.Config\"Q\n\023Create" +
-      "ConfigRequest\022:\n\rconfiguration\030\001 \001(\0132#.z" +
-      "enoss.cloud.collection_cfg.Config\"Q\n\023Upd" +
-      "ateConfigRequest\022:\n\rconfiguration\030\001 \001(\0132" +
-      "#.zenoss.cloud.collection_cfg.Config\"#\n\023" +
-      "DeleteConfigRequest\022\014\n\004name\030\001 \001(\t\"$\n\024Del" +
-      "eteConfigResponse\022\014\n\004name\030\001 \001(\t\"\016\n\014Probe" +
-      "Success\"!\n\nProbeError\022\023\n\013description\030\001 \001" +
-      "(\t\"\217\001\n\013ProbeResult\022<\n\007success\030\001 \001(\0132).ze" +
-      "noss.cloud.collection_cfg.ProbeSuccessH\000" +
-      "\0228\n\005error\030\002 \001(\0132\'.zenoss.cloud.collectio" +
-      "n_cfg.ProbeErrorH\000B\010\n\006result\"i\n\031WaitForP" +
-      "robeConfigRequest\022:\n\rconfiguration\030\001 \001(\013" +
-      "2#.zenoss.cloud.collection_cfg.Config\022\020\n" +
-      "\010deadline\030\002 \001(\003\"i\n\032WaitForProbeConfigRes" +
-      "ponse\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006result\030\002 \001(\013" +
-      "2(.zenoss.cloud.collection_cfg.ProbeResu" +
-      "lt\"P\n\022ProbeConfigRequest\022:\n\rconfiguratio" +
-      "n\030\001 \001(\0132#.zenoss.cloud.collection_cfg.Co" +
-      "nfig\"O\n\023ProbeConfigResponse\0228\n\006result\030\001 " +
-      "\001(\0132(.zenoss.cloud.collection_cfg.ProbeR" +
-      "esult\"\030\n\026GetConfigStreamRequest\"U\n\027GetCo" +
-      "nfigStreamResponse\022:\n\rconfiguration\030\001 \003(" +
-      "\0132#.zenoss.cloud.collection_cfg.Config2\252" +
-      "\002\n\027CollectionConfigService\022\213\001\n\022WaitForPr" +
-      "obeConfig\0227.zenoss.cloud.collection_cfg." +
-      "WaitForProbeConfigResponse\0326.zenoss.clou" +
-      "d.collection_cfg.WaitForProbeConfigReque" +
-      "st\"\000(\0010\001\022\200\001\n\017GetConfigStream\0223.zenoss.cl" +
-      "oud.collection_cfg.GetConfigStreamReques" +
-      "t\0324.zenoss.cloud.collection_cfg.GetConfi" +
-      "gStreamResponse\"\0000\001BW\n\033org.zenoss.cloud." +
-      "collectionP\001Z6github.com/zenoss/zenoss-p" +
-      "rotobufs/go/cloud/collectionb\006proto3"
+      "oss.cloud.collection_cfg\"y\n\006Config\022\n\n\002id" +
+      "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006tenant\030\003 \001(\t\022E\n\r" +
+      "configuration\030\004 \001(\0132..zenoss.cloud.colle" +
+      "ction_cfg.ConfigurationType\"c\n\021Configura" +
+      "tionType\0228\n\010ms_teams\030\001 \001(\0132$.zenoss.clou" +
+      "d.collection_cfg.MSTeamsH\000B\024\n\022configurat" +
+      "ion_type\"\200\001\n\007MSTeams\022\021\n\tclient_id\030\001 \001(\t\022" +
+      "\025\n\rclient_secret\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(" +
+      "\t\022\021\n\tobject_id\030\004 \001(\t\022\020\n\010endpoint\030\005 \001(\t\022\023" +
+      "\n\013tenant_name\030\006 \001(\t\"\024\n\022ListConfigsReques" +
+      "t\"R\n\023ListConfigsResponse\022;\n\016configuratio" +
+      "ns\030\001 \003(\0132#.zenoss.cloud.collection_cfg.C" +
+      "onfig\" \n\020GetConfigRequest\022\014\n\004name\030\001 \001(\t\"" +
+      "O\n\021GetConfigResponse\022:\n\rconfiguration\030\001 " +
+      "\001(\0132#.zenoss.cloud.collection_cfg.Config" +
+      "\"Q\n\023CreateConfigRequest\022:\n\rconfiguration" +
+      "\030\001 \001(\0132#.zenoss.cloud.collection_cfg.Con" +
+      "fig\"Q\n\023UpdateConfigRequest\022:\n\rconfigurat" +
+      "ion\030\001 \001(\0132#.zenoss.cloud.collection_cfg." +
+      "Config\"#\n\023DeleteConfigRequest\022\014\n\004name\030\001 " +
+      "\001(\t\"$\n\024DeleteConfigResponse\022\014\n\004name\030\001 \001(" +
+      "\t\"\016\n\014ProbeSuccess\"!\n\nProbeError\022\023\n\013descr" +
+      "iption\030\001 \001(\t\"\217\001\n\013ProbeResult\022<\n\007success\030" +
+      "\001 \001(\0132).zenoss.cloud.collection_cfg.Prob" +
+      "eSuccessH\000\0228\n\005error\030\002 \001(\0132\'.zenoss.cloud" +
+      ".collection_cfg.ProbeErrorH\000B\010\n\006result\"i" +
+      "\n\031WaitForProbeConfigRequest\022:\n\rconfigura" +
+      "tion\030\001 \001(\0132#.zenoss.cloud.collection_cfg" +
+      ".Config\022\020\n\010deadline\030\002 \001(\003\"i\n\032WaitForProb" +
+      "eConfigResponse\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006re" +
+      "sult\030\002 \001(\0132(.zenoss.cloud.collection_cfg" +
+      ".ProbeResult\"P\n\022ProbeConfigRequest\022:\n\rco" +
+      "nfiguration\030\001 \001(\0132#.zenoss.cloud.collect" +
+      "ion_cfg.Config\"O\n\023ProbeConfigResponse\0228\n" +
+      "\006result\030\001 \001(\0132(.zenoss.cloud.collection_" +
+      "cfg.ProbeResult\"\030\n\026GetConfigStreamReques" +
+      "t\"U\n\027GetConfigStreamResponse\022:\n\rconfigur" +
+      "ation\030\001 \003(\0132#.zenoss.cloud.collection_cf" +
+      "g.Config2\252\002\n\027CollectionConfigService\022\213\001\n" +
+      "\022WaitForProbeConfig\0227.zenoss.cloud.colle" +
+      "ction_cfg.WaitForProbeConfigResponse\0326.z" +
+      "enoss.cloud.collection_cfg.WaitForProbeC" +
+      "onfigRequest\"\000(\0010\001\022\200\001\n\017GetConfigStream\0223" +
+      ".zenoss.cloud.collection_cfg.GetConfigSt" +
+      "reamRequest\0324.zenoss.cloud.collection_cf" +
+      "g.GetConfigStreamResponse\"\0000\001BW\n\033org.zen" +
+      "oss.cloud.collectionP\001Z6github.com/zenos" +
+      "s/zenoss-protobufs/go/cloud/collectionb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
         });
     internal_static_zenoss_cloud_collection_cfg_Config_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -299,7 +298,6 @@ public final class CollectionCfg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_GetConfigStreamResponse_descriptor,
         new java.lang.String[] { "Configuration", });
-    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
