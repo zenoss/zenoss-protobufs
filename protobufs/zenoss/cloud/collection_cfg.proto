@@ -1,0 +1,80 @@
+syntax = "proto3";
+package zenoss.cloud.collection_cfg;
+
+option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/collection";
+option java_package = "org.zenoss.cloud.collection";
+option java_multiple_files = true;
+
+// CollectionConfigService is the gRPC & HTTP service responsible for managing
+// collection configurations.
+service CollectionConfigService {
+  rpc WaitForProbeConfig(stream WaitForProbeConfigResponse)
+      returns (stream WaitForProbeConfigRequest) {}
+  rpc GetConfigStream(GetConfigStreamRequest)
+      returns (stream GetConfigStreamResponse) {}
+}
+
+message Config {
+  string id = 1;
+  string name = 2;
+  string tenant = 3;
+  ConfigurationType configuration = 4;
+}
+
+message ConfigurationType {
+  oneof configuration_type { MSTeams ms_teams = 1; }
+}
+
+message MSTeams {
+  string client_id = 1;
+  string client_secret = 2;
+  string tenant_id = 3;
+  string object_id = 4;
+  string endpoint = 5;
+  string tenant_name = 6;
+}
+
+message ListConfigsRequest {}
+
+message ListConfigsResponse { repeated Config configurations = 1; }
+
+message GetConfigRequest { string name = 1; }
+
+message GetConfigResponse { Config configuration = 1; }
+
+message CreateConfigRequest { Config configuration = 1; }
+
+message UpdateConfigRequest { Config configuration = 1; }
+
+message DeleteConfigRequest { string name = 1; }
+
+message DeleteConfigResponse { string name = 1; }
+
+message ProbeSuccess {}
+
+message ProbeError { string description = 1; }
+
+message ProbeResult {
+  oneof result {
+    ProbeSuccess success = 1;
+    ProbeError error = 2;
+  }
+}
+
+message WaitForProbeConfigRequest {
+  Config configuration = 1;
+  int64 deadline = 2;
+}
+
+message WaitForProbeConfigResponse {
+  string config_id = 1;
+  ProbeResult result = 2;
+}
+
+message ProbeConfigRequest { Config configuration = 1; }
+
+message ProbeConfigResponse { ProbeResult result = 1; }
+
+message GetConfigStreamRequest {}
+
+message GetConfigStreamResponse { repeated Config configuration = 1; }
