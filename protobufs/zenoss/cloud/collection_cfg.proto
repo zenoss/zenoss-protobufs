@@ -18,20 +18,12 @@ message Config {
   string id = 1;
   string name = 2;
   string tenant = 3;
-  ConfigurationType configuration = 4;
+  Configuration configuration = 4;
 }
 
-message ConfigurationType {
-  oneof configuration_type { MSTeams ms_teams = 1; }
-}
-
-message MSTeams {
-  string client_id = 1;
-  string client_secret = 2;
-  string tenant_id = 3;
-  string object_id = 4;
-  string endpoint = 5;
-  string tenant_name = 6;
+message Configuration {
+  string type = 1;
+  string data = 2;
 }
 
 message ListConfigsRequest {}
@@ -52,7 +44,15 @@ message DeleteConfigResponse { string name = 1; }
 
 message ProbeSuccess {}
 
-message ProbeError { string description = 1; }
+message ProbeError {
+  string description = 1;
+  repeated FieldError field_errors = 2;
+}
+
+message FieldError {
+  string field = 1;
+  string description = 2;
+}
 
 message ProbeResult {
   oneof result {
