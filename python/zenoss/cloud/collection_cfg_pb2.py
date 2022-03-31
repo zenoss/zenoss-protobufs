@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='zenoss.cloud.collection_cfg',
   syntax='proto3',
   serialized_options=_b('\n\033org.zenoss.cloud.collectionP\001Z6github.com/zenoss/zenoss-protobufs/go/cloud/collection'),
-  serialized_pb=_b('\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\"y\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x45\n\rconfiguration\x18\x04 \x01(\x0b\x32..zenoss.cloud.collection_cfg.ConfigurationType\"c\n\x11\x43onfigurationType\x12\x38\n\x08ms_teams\x18\x01 \x01(\x0b\x32$.zenoss.cloud.collection_cfg.MSTeamsH\x00\x42\x14\n\x12\x63onfiguration_type\"\x80\x01\n\x07MSTeams\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttenant_id\x18\x03 \x01(\t\x12\x11\n\tobject_id\x18\x04 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x05 \x01(\t\x12\x13\n\x0btenant_name\x18\x06 \x01(\t\"\x14\n\x12ListConfigsRequest\"R\n\x13ListConfigsResponse\x12;\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config\" \n\x10GetConfigRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"O\n\x11GetConfigResponse\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"Q\n\x13\x43reateConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"Q\n\x13UpdateConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"#\n\x13\x44\x65leteConfigRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x14\x44\x65leteConfigResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x0e\n\x0cProbeSuccess\"!\n\nProbeError\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\"\x8f\x01\n\x0bProbeResult\x12<\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00\x12\x38\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00\x42\x08\n\x06result\"i\n\x19WaitForProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\x12\x10\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03\"i\n\x1aWaitForProbeConfigResponse\x12\x11\n\tconfig_id\x18\x01 \x01(\t\x12\x38\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"P\n\x12ProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"O\n\x13ProbeConfigResponse\x12\x38\n\x06result\x18\x01 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"\x18\n\x16GetConfigStreamRequest\"U\n\x17GetConfigStreamResponse\x12:\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
+  serialized_pb=_b('\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\"u\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x41\n\rconfiguration\x18\x04 \x01(\x0b\x32*.zenoss.cloud.collection_cfg.Configuration\"+\n\rConfiguration\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"\x14\n\x12ListConfigsRequest\"R\n\x13ListConfigsResponse\x12;\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config\" \n\x10GetConfigRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"O\n\x11GetConfigResponse\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"Q\n\x13\x43reateConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"Q\n\x13UpdateConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"#\n\x13\x44\x65leteConfigRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x14\x44\x65leteConfigResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x0e\n\x0cProbeSuccess\"`\n\nProbeError\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12=\n\x0c\x66ield_errors\x18\x02 \x03(\x0b\x32\'.zenoss.cloud.collection_cfg.FieldError\"0\n\nFieldError\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\x8f\x01\n\x0bProbeResult\x12<\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00\x12\x38\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00\x42\x08\n\x06result\"i\n\x19WaitForProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\x12\x10\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03\"i\n\x1aWaitForProbeConfigResponse\x12\x11\n\tconfig_id\x18\x01 \x01(\t\x12\x38\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"P\n\x12ProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\"O\n\x13ProbeConfigResponse\x12\x38\n\x06result\x18\x01 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"\x18\n\x16GetConfigStreamRequest\"U\n\x17GetConfigStreamResponse\x12:\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
 )
 
 
@@ -74,89 +74,27 @@ _CONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=66,
-  serialized_end=187,
+  serialized_end=183,
 )
 
 
-_CONFIGURATIONTYPE = _descriptor.Descriptor(
-  name='ConfigurationType',
-  full_name='zenoss.cloud.collection_cfg.ConfigurationType',
+_CONFIGURATION = _descriptor.Descriptor(
+  name='Configuration',
+  full_name='zenoss.cloud.collection_cfg.Configuration',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ms_teams', full_name='zenoss.cloud.collection_cfg.ConfigurationType.ms_teams', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='configuration_type', full_name='zenoss.cloud.collection_cfg.ConfigurationType.configuration_type',
-      index=0, containing_type=None, fields=[]),
-  ],
-  serialized_start=189,
-  serialized_end=288,
-)
-
-
-_MSTEAMS = _descriptor.Descriptor(
-  name='MSTeams',
-  full_name='zenoss.cloud.collection_cfg.MSTeams',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='zenoss.cloud.collection_cfg.MSTeams.client_id', index=0,
+      name='type', full_name='zenoss.cloud.collection_cfg.Configuration.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_secret', full_name='zenoss.cloud.collection_cfg.MSTeams.client_secret', index=1,
+      name='data', full_name='zenoss.cloud.collection_cfg.Configuration.data', index=1,
       number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='tenant_id', full_name='zenoss.cloud.collection_cfg.MSTeams.tenant_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='object_id', full_name='zenoss.cloud.collection_cfg.MSTeams.object_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='endpoint', full_name='zenoss.cloud.collection_cfg.MSTeams.endpoint', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='tenant_name', full_name='zenoss.cloud.collection_cfg.MSTeams.tenant_name', index=5,
-      number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -173,8 +111,8 @@ _MSTEAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=291,
-  serialized_end=419,
+  serialized_start=185,
+  serialized_end=228,
 )
 
 
@@ -197,8 +135,8 @@ _LISTCONFIGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=441,
+  serialized_start=230,
+  serialized_end=250,
 )
 
 
@@ -228,8 +166,8 @@ _LISTCONFIGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=525,
+  serialized_start=252,
+  serialized_end=334,
 )
 
 
@@ -259,8 +197,8 @@ _GETCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=559,
+  serialized_start=336,
+  serialized_end=368,
 )
 
 
@@ -290,8 +228,8 @@ _GETCONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=561,
-  serialized_end=640,
+  serialized_start=370,
+  serialized_end=449,
 )
 
 
@@ -321,8 +259,8 @@ _CREATECONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=642,
-  serialized_end=723,
+  serialized_start=451,
+  serialized_end=532,
 )
 
 
@@ -352,8 +290,8 @@ _UPDATECONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=725,
-  serialized_end=806,
+  serialized_start=534,
+  serialized_end=615,
 )
 
 
@@ -383,8 +321,8 @@ _DELETECONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=808,
-  serialized_end=843,
+  serialized_start=617,
+  serialized_end=652,
 )
 
 
@@ -414,8 +352,8 @@ _DELETECONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=881,
+  serialized_start=654,
+  serialized_end=690,
 )
 
 
@@ -438,8 +376,8 @@ _PROBESUCCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=883,
-  serialized_end=897,
+  serialized_start=692,
+  serialized_end=706,
 )
 
 
@@ -457,6 +395,13 @@ _PROBEERROR = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='field_errors', full_name='zenoss.cloud.collection_cfg.ProbeError.field_errors', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -469,8 +414,46 @@ _PROBEERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=932,
+  serialized_start=708,
+  serialized_end=804,
+)
+
+
+_FIELDERROR = _descriptor.Descriptor(
+  name='FieldError',
+  full_name='zenoss.cloud.collection_cfg.FieldError',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='field', full_name='zenoss.cloud.collection_cfg.FieldError.field', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='zenoss.cloud.collection_cfg.FieldError.description', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=806,
+  serialized_end=854,
 )
 
 
@@ -510,8 +493,8 @@ _PROBERESULT = _descriptor.Descriptor(
       name='result', full_name='zenoss.cloud.collection_cfg.ProbeResult.result',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=935,
-  serialized_end=1078,
+  serialized_start=857,
+  serialized_end=1000,
 )
 
 
@@ -548,8 +531,8 @@ _WAITFORPROBECONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1185,
+  serialized_start=1002,
+  serialized_end=1107,
 )
 
 
@@ -586,8 +569,8 @@ _WAITFORPROBECONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1187,
-  serialized_end=1292,
+  serialized_start=1109,
+  serialized_end=1214,
 )
 
 
@@ -617,8 +600,8 @@ _PROBECONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1294,
-  serialized_end=1374,
+  serialized_start=1216,
+  serialized_end=1296,
 )
 
 
@@ -648,8 +631,8 @@ _PROBECONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1455,
+  serialized_start=1298,
+  serialized_end=1377,
 )
 
 
@@ -672,8 +655,8 @@ _GETCONFIGSTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1457,
-  serialized_end=1481,
+  serialized_start=1379,
+  serialized_end=1403,
 )
 
 
@@ -703,19 +686,16 @@ _GETCONFIGSTREAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1483,
-  serialized_end=1568,
+  serialized_start=1405,
+  serialized_end=1490,
 )
 
-_CONFIG.fields_by_name['configuration'].message_type = _CONFIGURATIONTYPE
-_CONFIGURATIONTYPE.fields_by_name['ms_teams'].message_type = _MSTEAMS
-_CONFIGURATIONTYPE.oneofs_by_name['configuration_type'].fields.append(
-  _CONFIGURATIONTYPE.fields_by_name['ms_teams'])
-_CONFIGURATIONTYPE.fields_by_name['ms_teams'].containing_oneof = _CONFIGURATIONTYPE.oneofs_by_name['configuration_type']
+_CONFIG.fields_by_name['configuration'].message_type = _CONFIGURATION
 _LISTCONFIGSRESPONSE.fields_by_name['configurations'].message_type = _CONFIG
 _GETCONFIGRESPONSE.fields_by_name['configuration'].message_type = _CONFIG
 _CREATECONFIGREQUEST.fields_by_name['configuration'].message_type = _CONFIG
 _UPDATECONFIGREQUEST.fields_by_name['configuration'].message_type = _CONFIG
+_PROBEERROR.fields_by_name['field_errors'].message_type = _FIELDERROR
 _PROBERESULT.fields_by_name['success'].message_type = _PROBESUCCESS
 _PROBERESULT.fields_by_name['error'].message_type = _PROBEERROR
 _PROBERESULT.oneofs_by_name['result'].fields.append(
@@ -730,8 +710,7 @@ _PROBECONFIGREQUEST.fields_by_name['configuration'].message_type = _CONFIG
 _PROBECONFIGRESPONSE.fields_by_name['result'].message_type = _PROBERESULT
 _GETCONFIGSTREAMRESPONSE.fields_by_name['configuration'].message_type = _CONFIG
 DESCRIPTOR.message_types_by_name['Config'] = _CONFIG
-DESCRIPTOR.message_types_by_name['ConfigurationType'] = _CONFIGURATIONTYPE
-DESCRIPTOR.message_types_by_name['MSTeams'] = _MSTEAMS
+DESCRIPTOR.message_types_by_name['Configuration'] = _CONFIGURATION
 DESCRIPTOR.message_types_by_name['ListConfigsRequest'] = _LISTCONFIGSREQUEST
 DESCRIPTOR.message_types_by_name['ListConfigsResponse'] = _LISTCONFIGSRESPONSE
 DESCRIPTOR.message_types_by_name['GetConfigRequest'] = _GETCONFIGREQUEST
@@ -742,6 +721,7 @@ DESCRIPTOR.message_types_by_name['DeleteConfigRequest'] = _DELETECONFIGREQUEST
 DESCRIPTOR.message_types_by_name['DeleteConfigResponse'] = _DELETECONFIGRESPONSE
 DESCRIPTOR.message_types_by_name['ProbeSuccess'] = _PROBESUCCESS
 DESCRIPTOR.message_types_by_name['ProbeError'] = _PROBEERROR
+DESCRIPTOR.message_types_by_name['FieldError'] = _FIELDERROR
 DESCRIPTOR.message_types_by_name['ProbeResult'] = _PROBERESULT
 DESCRIPTOR.message_types_by_name['WaitForProbeConfigRequest'] = _WAITFORPROBECONFIGREQUEST
 DESCRIPTOR.message_types_by_name['WaitForProbeConfigResponse'] = _WAITFORPROBECONFIGRESPONSE
@@ -758,19 +738,12 @@ Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,),
   ))
 _sym_db.RegisterMessage(Config)
 
-ConfigurationType = _reflection.GeneratedProtocolMessageType('ConfigurationType', (_message.Message,), dict(
-  DESCRIPTOR = _CONFIGURATIONTYPE,
+Configuration = _reflection.GeneratedProtocolMessageType('Configuration', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIGURATION,
   __module__ = 'zenoss.cloud.collection_cfg_pb2'
-  # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.ConfigurationType)
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.Configuration)
   ))
-_sym_db.RegisterMessage(ConfigurationType)
-
-MSTeams = _reflection.GeneratedProtocolMessageType('MSTeams', (_message.Message,), dict(
-  DESCRIPTOR = _MSTEAMS,
-  __module__ = 'zenoss.cloud.collection_cfg_pb2'
-  # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.MSTeams)
-  ))
-_sym_db.RegisterMessage(MSTeams)
+_sym_db.RegisterMessage(Configuration)
 
 ListConfigsRequest = _reflection.GeneratedProtocolMessageType('ListConfigsRequest', (_message.Message,), dict(
   DESCRIPTOR = _LISTCONFIGSREQUEST,
@@ -842,6 +815,13 @@ ProbeError = _reflection.GeneratedProtocolMessageType('ProbeError', (_message.Me
   ))
 _sym_db.RegisterMessage(ProbeError)
 
+FieldError = _reflection.GeneratedProtocolMessageType('FieldError', (_message.Message,), dict(
+  DESCRIPTOR = _FIELDERROR,
+  __module__ = 'zenoss.cloud.collection_cfg_pb2'
+  # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.FieldError)
+  ))
+_sym_db.RegisterMessage(FieldError)
+
 ProbeResult = _reflection.GeneratedProtocolMessageType('ProbeResult', (_message.Message,), dict(
   DESCRIPTOR = _PROBERESULT,
   __module__ = 'zenoss.cloud.collection_cfg_pb2'
@@ -900,8 +880,8 @@ _COLLECTIONCONFIGSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1571,
-  serialized_end=1869,
+  serialized_start=1493,
+  serialized_end=1791,
   methods=[
   _descriptor.MethodDescriptor(
     name='WaitForProbeConfig',

@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private ProbeError() {
     description_ = "";
+    fieldErrors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -39,6 +40,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -53,6 +55,15 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             description_ = s;
+            break;
+          }
+          case 18: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              fieldErrors_ = new java.util.ArrayList<org.zenoss.cloud.collection.FieldError>();
+              mutable_bitField0_ |= 0x00000001;
+            }
+            fieldErrors_.add(
+                input.readMessage(org.zenoss.cloud.collection.FieldError.parser(), extensionRegistry));
             break;
           }
           default: {
@@ -70,6 +81,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        fieldErrors_ = java.util.Collections.unmodifiableList(fieldErrors_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -125,6 +139,46 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FIELD_ERRORS_FIELD_NUMBER = 2;
+  private java.util.List<org.zenoss.cloud.collection.FieldError> fieldErrors_;
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<org.zenoss.cloud.collection.FieldError> getFieldErrorsList() {
+    return fieldErrors_;
+  }
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends org.zenoss.cloud.collection.FieldErrorOrBuilder> 
+      getFieldErrorsOrBuilderList() {
+    return fieldErrors_;
+  }
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  @java.lang.Override
+  public int getFieldErrorsCount() {
+    return fieldErrors_.size();
+  }
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  @java.lang.Override
+  public org.zenoss.cloud.collection.FieldError getFieldErrors(int index) {
+    return fieldErrors_.get(index);
+  }
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  @java.lang.Override
+  public org.zenoss.cloud.collection.FieldErrorOrBuilder getFieldErrorsOrBuilder(
+      int index) {
+    return fieldErrors_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -142,6 +196,9 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
     }
+    for (int i = 0; i < fieldErrors_.size(); i++) {
+      output.writeMessage(2, fieldErrors_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -153,6 +210,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
+    }
+    for (int i = 0; i < fieldErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, fieldErrors_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -171,6 +232,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getDescription()
         .equals(other.getDescription())) return false;
+    if (!getFieldErrorsList()
+        .equals(other.getFieldErrorsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -184,6 +247,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getFieldErrorsCount() > 0) {
+      hash = (37 * hash) + FIELD_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldErrorsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -312,6 +379,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getFieldErrorsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -319,6 +387,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       description_ = "";
 
+      if (fieldErrorsBuilder_ == null) {
+        fieldErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        fieldErrorsBuilder_.clear();
+      }
       return this;
     }
 
@@ -345,7 +419,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeError buildPartial() {
       org.zenoss.cloud.collection.ProbeError result = new org.zenoss.cloud.collection.ProbeError(this);
+      int from_bitField0_ = bitField0_;
       result.description_ = description_;
+      if (fieldErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          fieldErrors_ = java.util.Collections.unmodifiableList(fieldErrors_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.fieldErrors_ = fieldErrors_;
+      } else {
+        result.fieldErrors_ = fieldErrorsBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -398,6 +482,32 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         onChanged();
       }
+      if (fieldErrorsBuilder_ == null) {
+        if (!other.fieldErrors_.isEmpty()) {
+          if (fieldErrors_.isEmpty()) {
+            fieldErrors_ = other.fieldErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureFieldErrorsIsMutable();
+            fieldErrors_.addAll(other.fieldErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.fieldErrors_.isEmpty()) {
+          if (fieldErrorsBuilder_.isEmpty()) {
+            fieldErrorsBuilder_.dispose();
+            fieldErrorsBuilder_ = null;
+            fieldErrors_ = other.fieldErrors_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            fieldErrorsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getFieldErrorsFieldBuilder() : null;
+          } else {
+            fieldErrorsBuilder_.addAllMessages(other.fieldErrors_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -426,6 +536,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object description_ = "";
     /**
@@ -501,6 +612,246 @@ private static final long serialVersionUID = 0L;
       description_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<org.zenoss.cloud.collection.FieldError> fieldErrors_ =
+      java.util.Collections.emptyList();
+    private void ensureFieldErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        fieldErrors_ = new java.util.ArrayList<org.zenoss.cloud.collection.FieldError>(fieldErrors_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.zenoss.cloud.collection.FieldError, org.zenoss.cloud.collection.FieldError.Builder, org.zenoss.cloud.collection.FieldErrorOrBuilder> fieldErrorsBuilder_;
+
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public java.util.List<org.zenoss.cloud.collection.FieldError> getFieldErrorsList() {
+      if (fieldErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(fieldErrors_);
+      } else {
+        return fieldErrorsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public int getFieldErrorsCount() {
+      if (fieldErrorsBuilder_ == null) {
+        return fieldErrors_.size();
+      } else {
+        return fieldErrorsBuilder_.getCount();
+      }
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public org.zenoss.cloud.collection.FieldError getFieldErrors(int index) {
+      if (fieldErrorsBuilder_ == null) {
+        return fieldErrors_.get(index);
+      } else {
+        return fieldErrorsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder setFieldErrors(
+        int index, org.zenoss.cloud.collection.FieldError value) {
+      if (fieldErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.set(index, value);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder setFieldErrors(
+        int index, org.zenoss.cloud.collection.FieldError.Builder builderForValue) {
+      if (fieldErrorsBuilder_ == null) {
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder addFieldErrors(org.zenoss.cloud.collection.FieldError value) {
+      if (fieldErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.add(value);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder addFieldErrors(
+        int index, org.zenoss.cloud.collection.FieldError value) {
+      if (fieldErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.add(index, value);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder addFieldErrors(
+        org.zenoss.cloud.collection.FieldError.Builder builderForValue) {
+      if (fieldErrorsBuilder_ == null) {
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder addFieldErrors(
+        int index, org.zenoss.cloud.collection.FieldError.Builder builderForValue) {
+      if (fieldErrorsBuilder_ == null) {
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder addAllFieldErrors(
+        java.lang.Iterable<? extends org.zenoss.cloud.collection.FieldError> values) {
+      if (fieldErrorsBuilder_ == null) {
+        ensureFieldErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fieldErrors_);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder clearFieldErrors() {
+      if (fieldErrorsBuilder_ == null) {
+        fieldErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public Builder removeFieldErrors(int index) {
+      if (fieldErrorsBuilder_ == null) {
+        ensureFieldErrorsIsMutable();
+        fieldErrors_.remove(index);
+        onChanged();
+      } else {
+        fieldErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public org.zenoss.cloud.collection.FieldError.Builder getFieldErrorsBuilder(
+        int index) {
+      return getFieldErrorsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public org.zenoss.cloud.collection.FieldErrorOrBuilder getFieldErrorsOrBuilder(
+        int index) {
+      if (fieldErrorsBuilder_ == null) {
+        return fieldErrors_.get(index);  } else {
+        return fieldErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public java.util.List<? extends org.zenoss.cloud.collection.FieldErrorOrBuilder> 
+         getFieldErrorsOrBuilderList() {
+      if (fieldErrorsBuilder_ != null) {
+        return fieldErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(fieldErrors_);
+      }
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public org.zenoss.cloud.collection.FieldError.Builder addFieldErrorsBuilder() {
+      return getFieldErrorsFieldBuilder().addBuilder(
+          org.zenoss.cloud.collection.FieldError.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public org.zenoss.cloud.collection.FieldError.Builder addFieldErrorsBuilder(
+        int index) {
+      return getFieldErrorsFieldBuilder().addBuilder(
+          index, org.zenoss.cloud.collection.FieldError.getDefaultInstance());
+    }
+    /**
+     * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+     */
+    public java.util.List<org.zenoss.cloud.collection.FieldError.Builder> 
+         getFieldErrorsBuilderList() {
+      return getFieldErrorsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        org.zenoss.cloud.collection.FieldError, org.zenoss.cloud.collection.FieldError.Builder, org.zenoss.cloud.collection.FieldErrorOrBuilder> 
+        getFieldErrorsFieldBuilder() {
+      if (fieldErrorsBuilder_ == null) {
+        fieldErrorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            org.zenoss.cloud.collection.FieldError, org.zenoss.cloud.collection.FieldError.Builder, org.zenoss.cloud.collection.FieldErrorOrBuilder>(
+                fieldErrors_,
+                ((bitField0_ & 0x00000001) != 0),
+                getParentForChildren(),
+                isClean());
+        fieldErrors_ = null;
+      }
+      return fieldErrorsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
