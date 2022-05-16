@@ -107,8 +107,12 @@ $(GODIR)/%.pb.gw.go: $(PROTOFILES) $(GODIR)
 vendor: $(GO_FILES) $(GO_GW_FILES)
 	GO111MODULE=on $(GO) mod vendor
 
+.PHONY: tidy
+tidy: $(GOFILES)
+	$(GO) mod tidy
+
 .PHONY: mocks
-mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) vendor
+mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) tidy vendor
 	@$(GOMOCKERY) -all -inpkg -dir $(GODIR)
 
 .PHONY: $(PYTHONDIR)/%_pb2.py
