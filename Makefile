@@ -40,7 +40,7 @@ endif
 PROTOC_PARAMS        := --proto_path=${GOPATH}/googleapis
 LOCAL_USER_ID        := $(shell id -u)
 CONTAINER_DIR        := /tmp/working
-ZENKIT_BUILD_VERSION := 1.7.9
+ZENKIT_BUILD_VERSION := 1.10.0
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
 DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
