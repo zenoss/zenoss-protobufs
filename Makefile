@@ -44,9 +44,10 @@ ZENKIT_BUILD_VERSION := 1.10.0
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
 DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
-	                      -v $(ROOTDIR):/go/src/$(PACKAGE):rw \
+	                    -v $(ROOTDIR):/go/src/$(PACKAGE):rw \
                         -e LOCAL_USER_ID=$(LOCAL_USER_ID) \
                         --network $(DOCKER_NETWORK) \
+                        --security-opt seccomp=unconfined \
                         -w /go/src/$(PACKAGE)
 
 DOCKER_CMD           := docker run -t $(DOCKER_PARAMS) $(BUILD_IMG)
