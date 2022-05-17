@@ -106,15 +106,17 @@ $(GODIR)/%.pb.gw.go: $(PROTOFILES) $(GODIR)
 
 .PHONY: vendor
 vendor: $(GO_FILES) $(GO_GW_FILES)
+	$(GO) mod tidy
 	GO111MODULE=on $(GO) mod vendor
 
-.PHONY: tidy
-tidy: $(GOFILES)
-	$(GO) mod tidy
-
+# We have to make go mod tidy && go mod vendor two times because we should
+# ensure that after generating mocks we have all the dependencies (they get 
+# erased when we do make clean).
 .PHONY: mocks
-mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) tidy vendor
+mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) vendor
 	@$(GOMOCKERY) -all -inpkg -dir $(GODIR)
+	$(GO) mod tidy
+	GO111MODULE=on $(GO) mod vendor
 
 .PHONY: $(PYTHONDIR)/%_pb2.py
 $(PYTHONDIR)/%_pb2.py: $(PROTOFILES) $(PYTHONDIR)
