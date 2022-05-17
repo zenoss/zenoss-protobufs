@@ -44,17 +44,17 @@ public interface ConfigOrBuilder extends
       getTenantBytes();
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    * @return Whether the configuration field is set.
    */
   boolean hasConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    * @return The configuration.
    */
   org.zenoss.cloud.collection.Configuration getConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    */
   org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder();
 }
