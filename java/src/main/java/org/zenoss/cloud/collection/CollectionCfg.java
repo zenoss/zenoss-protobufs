@@ -25,46 +25,6 @@ public final class CollectionCfg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenoss_cloud_collection_cfg_Configuration_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_ListConfigsRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_ListConfigsResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_GetConfigRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_GetConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_GetConfigResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_GetConfigResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_CreateConfigRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_CreateConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_UpdateConfigRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_UpdateConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_DeleteConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_DeleteConfigResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -95,16 +55,6 @@ public final class CollectionCfg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigRequest_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_ProbeConfigRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigResponse_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_zenoss_cloud_collection_cfg_ProbeConfigResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_zenoss_cloud_collection_cfg_GetConfigStreamRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -128,49 +78,33 @@ public final class CollectionCfg {
       "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006tenant\030\003 \001(\t\022A\n\r" +
       "configuration\030\004 \001(\0132*.zenoss.cloud.colle" +
       "ction_cfg.Configuration\"+\n\rConfiguration" +
-      "\022\014\n\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\024\n\022ListConf" +
-      "igsRequest\"R\n\023ListConfigsResponse\022;\n\016con" +
-      "figurations\030\001 \003(\0132#.zenoss.cloud.collect" +
-      "ion_cfg.Config\" \n\020GetConfigRequest\022\014\n\004na" +
-      "me\030\001 \001(\t\"O\n\021GetConfigResponse\022:\n\rconfigu" +
-      "ration\030\001 \001(\0132#.zenoss.cloud.collection_c" +
-      "fg.Config\"Q\n\023CreateConfigRequest\022:\n\rconf" +
-      "iguration\030\001 \001(\0132#.zenoss.cloud.collectio" +
-      "n_cfg.Config\"Q\n\023UpdateConfigRequest\022:\n\rc" +
-      "onfiguration\030\001 \001(\0132#.zenoss.cloud.collec" +
-      "tion_cfg.Config\"#\n\023DeleteConfigRequest\022\014" +
-      "\n\004name\030\001 \001(\t\"$\n\024DeleteConfigResponse\022\014\n\004" +
-      "name\030\001 \001(\t\"\016\n\014ProbeSuccess\"`\n\nProbeError" +
-      "\022\023\n\013description\030\001 \001(\t\022=\n\014field_errors\030\002 " +
-      "\003(\0132\'.zenoss.cloud.collection_cfg.FieldE" +
-      "rror\"0\n\nFieldError\022\r\n\005field\030\001 \001(\t\022\023\n\013des" +
-      "cription\030\002 \001(\t\"\217\001\n\013ProbeResult\022<\n\007succes" +
-      "s\030\001 \001(\0132).zenoss.cloud.collection_cfg.Pr" +
-      "obeSuccessH\000\0228\n\005error\030\002 \001(\0132\'.zenoss.clo" +
-      "ud.collection_cfg.ProbeErrorH\000B\010\n\006result" +
-      "\"i\n\031WaitForProbeConfigRequest\022:\n\rconfigu" +
-      "ration\030\001 \001(\0132#.zenoss.cloud.collection_c" +
-      "fg.Config\022\020\n\010deadline\030\002 \001(\003\"i\n\032WaitForPr" +
-      "obeConfigResponse\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006" +
-      "result\030\002 \001(\0132(.zenoss.cloud.collection_c" +
-      "fg.ProbeResult\"P\n\022ProbeConfigRequest\022:\n\r" +
-      "configuration\030\001 \001(\0132#.zenoss.cloud.colle" +
-      "ction_cfg.Config\"O\n\023ProbeConfigResponse\022" +
-      "8\n\006result\030\001 \001(\0132(.zenoss.cloud.collectio" +
-      "n_cfg.ProbeResult\"\030\n\026GetConfigStreamRequ" +
-      "est\"U\n\027GetConfigStreamResponse\022:\n\rconfig" +
-      "uration\030\001 \003(\0132#.zenoss.cloud.collection_" +
-      "cfg.Config2\252\002\n\027CollectionConfigService\022\213" +
-      "\001\n\022WaitForProbeConfig\0227.zenoss.cloud.col" +
-      "lection_cfg.WaitForProbeConfigResponse\0326" +
-      ".zenoss.cloud.collection_cfg.WaitForProb" +
-      "eConfigRequest\"\000(\0010\001\022\200\001\n\017GetConfigStream" +
-      "\0223.zenoss.cloud.collection_cfg.GetConfig" +
-      "StreamRequest\0324.zenoss.cloud.collection_" +
-      "cfg.GetConfigStreamResponse\"\0000\001BW\n\033org.z" +
-      "enoss.cloud.collectionP\001Z6github.com/zen" +
-      "oss/zenoss-protobufs/go/cloud/collection" +
-      "b\006proto3"
+      "\022\014\n\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\016\n\014ProbeSuc" +
+      "cess\"`\n\nProbeError\022\023\n\013description\030\001 \001(\t\022" +
+      "=\n\014field_errors\030\002 \003(\0132\'.zenoss.cloud.col" +
+      "lection_cfg.FieldError\"0\n\nFieldError\022\r\n\005" +
+      "field\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\217\001\n\013Pro" +
+      "beResult\022<\n\007success\030\001 \001(\0132).zenoss.cloud" +
+      ".collection_cfg.ProbeSuccessH\000\0228\n\005error\030" +
+      "\002 \001(\0132\'.zenoss.cloud.collection_cfg.Prob" +
+      "eErrorH\000B\010\n\006result\"i\n\031WaitForProbeConfig" +
+      "Request\022:\n\rconfiguration\030\001 \001(\0132#.zenoss." +
+      "cloud.collection_cfg.Config\022\020\n\010deadline\030" +
+      "\002 \001(\003\"i\n\032WaitForProbeConfigResponse\022\021\n\tc" +
+      "onfig_id\030\001 \001(\t\0228\n\006result\030\002 \001(\0132(.zenoss." +
+      "cloud.collection_cfg.ProbeResult\"\030\n\026GetC" +
+      "onfigStreamRequest\"U\n\027GetConfigStreamRes" +
+      "ponse\022:\n\rconfiguration\030\001 \003(\0132#.zenoss.cl" +
+      "oud.collection_cfg.Config2\252\002\n\027Collection" +
+      "ConfigService\022\213\001\n\022WaitForProbeConfig\0227.z" +
+      "enoss.cloud.collection_cfg.WaitForProbeC" +
+      "onfigResponse\0326.zenoss.cloud.collection_" +
+      "cfg.WaitForProbeConfigRequest\"\000(\0010\001\022\200\001\n\017" +
+      "GetConfigStream\0223.zenoss.cloud.collectio" +
+      "n_cfg.GetConfigStreamRequest\0324.zenoss.cl" +
+      "oud.collection_cfg.GetConfigStreamRespon" +
+      "se\"\0000\001BW\n\033org.zenoss.cloud.collectionP\001Z" +
+      "6github.com/zenoss/zenoss-protobufs/go/c" +
+      "loud/collectionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -188,110 +122,50 @@ public final class CollectionCfg {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor,
         new java.lang.String[] { "Type", "Data", });
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_ListConfigsRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_zenoss_cloud_collection_cfg_ListConfigsResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_ListConfigsResponse_descriptor,
-        new java.lang.String[] { "Configurations", });
-    internal_static_zenoss_cloud_collection_cfg_GetConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_zenoss_cloud_collection_cfg_GetConfigRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_GetConfigRequest_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_zenoss_cloud_collection_cfg_GetConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_zenoss_cloud_collection_cfg_GetConfigResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_GetConfigResponse_descriptor,
-        new java.lang.String[] { "Configuration", });
-    internal_static_zenoss_cloud_collection_cfg_CreateConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
-    internal_static_zenoss_cloud_collection_cfg_CreateConfigRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_CreateConfigRequest_descriptor,
-        new java.lang.String[] { "Configuration", });
-    internal_static_zenoss_cloud_collection_cfg_UpdateConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_zenoss_cloud_collection_cfg_UpdateConfigRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_UpdateConfigRequest_descriptor,
-        new java.lang.String[] { "Configuration", });
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_DeleteConfigRequest_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_zenoss_cloud_collection_cfg_DeleteConfigResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_DeleteConfigResponse_descriptor,
-        new java.lang.String[] { "Name", });
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_descriptor,
         new java.lang.String[] { });
     internal_static_zenoss_cloud_collection_cfg_ProbeError_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_zenoss_cloud_collection_cfg_ProbeError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_ProbeError_descriptor,
         new java.lang.String[] { "Description", "FieldErrors", });
     internal_static_zenoss_cloud_collection_cfg_FieldError_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_zenoss_cloud_collection_cfg_FieldError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_FieldError_descriptor,
         new java.lang.String[] { "Field", "Description", });
     internal_static_zenoss_cloud_collection_cfg_ProbeResult_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_zenoss_cloud_collection_cfg_ProbeResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_ProbeResult_descriptor,
         new java.lang.String[] { "Success", "Error", "Result", });
     internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigRequest_descriptor,
         new java.lang.String[] { "Configuration", "Deadline", });
     internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigResponse_descriptor,
         new java.lang.String[] { "ConfigId", "Result", });
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_ProbeConfigRequest_descriptor,
-        new java.lang.String[] { "Configuration", });
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
-    internal_static_zenoss_cloud_collection_cfg_ProbeConfigResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_zenoss_cloud_collection_cfg_ProbeConfigResponse_descriptor,
-        new java.lang.String[] { "Result", });
     internal_static_zenoss_cloud_collection_cfg_GetConfigStreamRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_zenoss_cloud_collection_cfg_GetConfigStreamRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_GetConfigStreamRequest_descriptor,
         new java.lang.String[] { });
     internal_static_zenoss_cloud_collection_cfg_GetConfigStreamResponse_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_zenoss_cloud_collection_cfg_GetConfigStreamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_GetConfigStreamResponse_descriptor,
