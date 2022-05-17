@@ -18,7 +18,9 @@ message Config {
   string id = 1;
   string name = 2;
   string tenant = 3;
-  Configuration configuration = 4;
+  Configuration configuration = 5;
+
+  reserved 4;
 }
 
 message Configuration {
