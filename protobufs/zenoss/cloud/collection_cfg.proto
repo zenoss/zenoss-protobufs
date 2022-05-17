@@ -26,22 +26,6 @@ message Configuration {
   string data = 2;
 }
 
-message ListConfigsRequest {}
-
-message ListConfigsResponse { repeated Config configurations = 1; }
-
-message GetConfigRequest { string name = 1; }
-
-message GetConfigResponse { Config configuration = 1; }
-
-message CreateConfigRequest { Config configuration = 1; }
-
-message UpdateConfigRequest { Config configuration = 1; }
-
-message DeleteConfigRequest { string name = 1; }
-
-message DeleteConfigResponse { string name = 1; }
-
 message ProbeSuccess {}
 
 message ProbeError {
@@ -70,10 +54,6 @@ message WaitForProbeConfigResponse {
   string config_id = 1;
   ProbeResult result = 2;
 }
-
-message ProbeConfigRequest { Config configuration = 1; }
-
-message ProbeConfigResponse { ProbeResult result = 1; }
 
 message GetConfigStreamRequest {}
 
