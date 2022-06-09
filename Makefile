@@ -40,7 +40,7 @@ endif
 PROTOC_PARAMS        := --proto_path=${GOPATH}/googleapis
 LOCAL_USER_ID        := $(shell id -u)
 CONTAINER_DIR        := /tmp/working
-ZENKIT_BUILD_VERSION := 1.10.0
+ZENKIT_BUILD_VERSION := 1.11.0
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
 DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
@@ -73,7 +73,7 @@ PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 default: clean all_containerized
 
 .PHONY: all
-all: $(GO_FILES) $(GO_GW_FILES) mocks pybuild
+all: $(GO_FILES) $(GO_GW_FILES) mocks tidy pybuild
 
 .PHONY: all_containerized
 all_containerized: package
@@ -105,18 +105,16 @@ $(GODIR)/%.pb.gw.go: $(PROTOFILES) $(GODIR)
 		--grpc-gateway_out=logtostderr=true:$(GO_SRC_DIR)
 
 .PHONY: vendor
-vendor: $(GO_FILES) $(GO_GW_FILES)
-	$(GO) mod tidy
-	GO111MODULE=on $(GO) mod vendor
+vendor:
+	$(GO) mod vendor
 
-# We have to make go mod tidy && go mod vendor two times because we should
-# ensure that after generating mocks we have all the dependencies (they get 
-# erased when we do make clean).
-.PHONY: mocks
-mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) vendor
-	@$(GOMOCKERY) -all -inpkg -dir $(GODIR)
+.PHONY: tidy
+tidy:
 	$(GO) mod tidy
-	GO111MODULE=on $(GO) mod vendor
+
+.PHONY: mocks
+mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) tidy vendor
+	@$(GOMOCKERY) --dir $(GODIR) --all --inpackage --with-expecter
 
 .PHONY: $(PYTHONDIR)/%_pb2.py
 $(PYTHONDIR)/%_pb2.py: $(PROTOFILES) $(PYTHONDIR)
