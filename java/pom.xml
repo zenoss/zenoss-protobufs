@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.zenoss.zing.proto</groupId>
     <artifactId>zenoss-protobufs</artifactId>
-    <version>0.0.3</version>
+    <version>1.4.0</version>
     <name>zenoss-protobufs</name>
     <properties>
         <!--Coordinate any version changes with the services using the generated protobuf classes.-->
