@@ -4,6 +4,9 @@ java/target
 *.iml
 .idea/
 
+# vscode
+.vscode/
+
 # swap files
 *.swp
 

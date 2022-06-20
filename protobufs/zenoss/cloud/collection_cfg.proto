@@ -18,41 +18,27 @@ message Config {
   string id = 1;
   string name = 2;
   string tenant = 3;
-  ConfigurationType configuration = 4;
+  Configuration configuration = 5;
+
+  reserved 4;
 }
 
-message ConfigurationType {
-  oneof configuration_type { MSTeams ms_teams = 1; }
+message Configuration {
+  string type = 1;
+  string data = 2;
 }
-
-message MSTeams {
-  string client_id = 1;
-  string client_secret = 2;
-  string tenant_id = 3;
-  string object_id = 4;
-  string endpoint = 5;
-  string tenant_name = 6;
-}
-
-message ListConfigsRequest {}
-
-message ListConfigsResponse { repeated Config configurations = 1; }
-
-message GetConfigRequest { string name = 1; }
-
-message GetConfigResponse { Config configuration = 1; }
-
-message CreateConfigRequest { Config configuration = 1; }
-
-message UpdateConfigRequest { Config configuration = 1; }
-
-message DeleteConfigRequest { string name = 1; }
-
-message DeleteConfigResponse { string name = 1; }
 
 message ProbeSuccess {}
 
-message ProbeError { string description = 1; }
+message ProbeError {
+  string description = 1;
+  repeated FieldError field_errors = 2;
+}
+
+message FieldError {
+  string field = 1;
+  string description = 2;
+}
 
 message ProbeResult {
   oneof result {
@@ -70,10 +56,6 @@ message WaitForProbeConfigResponse {
   string config_id = 1;
   ProbeResult result = 2;
 }
-
-message ProbeConfigRequest { Config configuration = 1; }
-
-message ProbeConfigResponse { ProbeResult result = 1; }
 
 message GetConfigStreamRequest {}
 

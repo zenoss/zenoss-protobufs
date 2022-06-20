@@ -18,4 +18,28 @@ public interface ProbeErrorOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
+
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  java.util.List<org.zenoss.cloud.collection.FieldError> 
+      getFieldErrorsList();
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  org.zenoss.cloud.collection.FieldError getFieldErrors(int index);
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  int getFieldErrorsCount();
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  java.util.List<? extends org.zenoss.cloud.collection.FieldErrorOrBuilder> 
+      getFieldErrorsOrBuilderList();
+  /**
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   */
+  org.zenoss.cloud.collection.FieldErrorOrBuilder getFieldErrorsOrBuilder(
+      int index);
 }

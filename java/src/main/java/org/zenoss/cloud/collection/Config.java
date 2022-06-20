@@ -69,12 +69,12 @@ private static final long serialVersionUID = 0L;
             tenant_ = s;
             break;
           }
-          case 34: {
-            org.zenoss.cloud.collection.ConfigurationType.Builder subBuilder = null;
+          case 42: {
+            org.zenoss.cloud.collection.Configuration.Builder subBuilder = null;
             if (configuration_ != null) {
               subBuilder = configuration_.toBuilder();
             }
-            configuration_ = input.readMessage(org.zenoss.cloud.collection.ConfigurationType.parser(), extensionRegistry);
+            configuration_ = input.readMessage(org.zenoss.cloud.collection.Configuration.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(configuration_);
               configuration_ = subBuilder.buildPartial();
@@ -228,10 +228,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONFIGURATION_FIELD_NUMBER = 4;
-  private org.zenoss.cloud.collection.ConfigurationType configuration_;
+  public static final int CONFIGURATION_FIELD_NUMBER = 5;
+  private org.zenoss.cloud.collection.Configuration configuration_;
   /**
-   * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    * @return Whether the configuration field is set.
    */
   @java.lang.Override
@@ -239,18 +239,18 @@ private static final long serialVersionUID = 0L;
     return configuration_ != null;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    * @return The configuration.
    */
   @java.lang.Override
-  public org.zenoss.cloud.collection.ConfigurationType getConfiguration() {
-    return configuration_ == null ? org.zenoss.cloud.collection.ConfigurationType.getDefaultInstance() : configuration_;
+  public org.zenoss.cloud.collection.Configuration getConfiguration() {
+    return configuration_ == null ? org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
    */
   @java.lang.Override
-  public org.zenoss.cloud.collection.ConfigurationTypeOrBuilder getConfigurationOrBuilder() {
+  public org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder() {
     return getConfiguration();
   }
 
@@ -278,7 +278,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenant_);
     }
     if (configuration_ != null) {
-      output.writeMessage(4, getConfiguration());
+      output.writeMessage(5, getConfiguration());
     }
     unknownFields.writeTo(output);
   }
@@ -300,7 +300,7 @@ private static final long serialVersionUID = 0L;
     }
     if (configuration_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getConfiguration());
+        .computeMessageSize(5, getConfiguration());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -848,31 +848,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.zenoss.cloud.collection.ConfigurationType configuration_;
+    private org.zenoss.cloud.collection.Configuration configuration_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.zenoss.cloud.collection.ConfigurationType, org.zenoss.cloud.collection.ConfigurationType.Builder, org.zenoss.cloud.collection.ConfigurationTypeOrBuilder> configurationBuilder_;
+        org.zenoss.cloud.collection.Configuration, org.zenoss.cloud.collection.Configuration.Builder, org.zenoss.cloud.collection.ConfigurationOrBuilder> configurationBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      * @return Whether the configuration field is set.
      */
     public boolean hasConfiguration() {
       return configurationBuilder_ != null || configuration_ != null;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      * @return The configuration.
      */
-    public org.zenoss.cloud.collection.ConfigurationType getConfiguration() {
+    public org.zenoss.cloud.collection.Configuration getConfiguration() {
       if (configurationBuilder_ == null) {
-        return configuration_ == null ? org.zenoss.cloud.collection.ConfigurationType.getDefaultInstance() : configuration_;
+        return configuration_ == null ? org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
       } else {
         return configurationBuilder_.getMessage();
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
-    public Builder setConfiguration(org.zenoss.cloud.collection.ConfigurationType value) {
+    public Builder setConfiguration(org.zenoss.cloud.collection.Configuration value) {
       if (configurationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -886,10 +886,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
     public Builder setConfiguration(
-        org.zenoss.cloud.collection.ConfigurationType.Builder builderForValue) {
+        org.zenoss.cloud.collection.Configuration.Builder builderForValue) {
       if (configurationBuilder_ == null) {
         configuration_ = builderForValue.build();
         onChanged();
@@ -900,13 +900,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
-    public Builder mergeConfiguration(org.zenoss.cloud.collection.ConfigurationType value) {
+    public Builder mergeConfiguration(org.zenoss.cloud.collection.Configuration value) {
       if (configurationBuilder_ == null) {
         if (configuration_ != null) {
           configuration_ =
-            org.zenoss.cloud.collection.ConfigurationType.newBuilder(configuration_).mergeFrom(value).buildPartial();
+            org.zenoss.cloud.collection.Configuration.newBuilder(configuration_).mergeFrom(value).buildPartial();
         } else {
           configuration_ = value;
         }
@@ -918,7 +918,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
     public Builder clearConfiguration() {
       if (configurationBuilder_ == null) {
@@ -932,33 +932,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
-    public org.zenoss.cloud.collection.ConfigurationType.Builder getConfigurationBuilder() {
+    public org.zenoss.cloud.collection.Configuration.Builder getConfigurationBuilder() {
       
       onChanged();
       return getConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
-    public org.zenoss.cloud.collection.ConfigurationTypeOrBuilder getConfigurationOrBuilder() {
+    public org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder() {
       if (configurationBuilder_ != null) {
         return configurationBuilder_.getMessageOrBuilder();
       } else {
         return configuration_ == null ?
-            org.zenoss.cloud.collection.ConfigurationType.getDefaultInstance() : configuration_;
+            org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ConfigurationType configuration = 4;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.zenoss.cloud.collection.ConfigurationType, org.zenoss.cloud.collection.ConfigurationType.Builder, org.zenoss.cloud.collection.ConfigurationTypeOrBuilder> 
+        org.zenoss.cloud.collection.Configuration, org.zenoss.cloud.collection.Configuration.Builder, org.zenoss.cloud.collection.ConfigurationOrBuilder> 
         getConfigurationFieldBuilder() {
       if (configurationBuilder_ == null) {
         configurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.zenoss.cloud.collection.ConfigurationType, org.zenoss.cloud.collection.ConfigurationType.Builder, org.zenoss.cloud.collection.ConfigurationTypeOrBuilder>(
+            org.zenoss.cloud.collection.Configuration, org.zenoss.cloud.collection.Configuration.Builder, org.zenoss.cloud.collection.ConfigurationOrBuilder>(
                 getConfiguration(),
                 getParentForChildren(),
                 isClean());
