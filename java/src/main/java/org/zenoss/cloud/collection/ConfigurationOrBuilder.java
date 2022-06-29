@@ -30,4 +30,384 @@ public interface ConfigurationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDataBytes();
+
+  /**
+   * <code>string interval = 3;</code>
+   * @return The interval.
+   */
+  java.lang.String getInterval();
+  /**
+   * <code>string interval = 3;</code>
+   * @return The bytes for interval.
+   */
+  com.google.protobuf.ByteString
+      getIntervalBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  int getDimensionsCount();
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  boolean containsDimensions(
+      java.lang.String key);
+  /**
+   * Use {@link #getDimensionsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getDimensions();
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getDimensionsMap();
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+
+  java.lang.String getDimensionsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+
+  java.lang.String getDimensionsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  int getMetadataFieldsCount();
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  boolean containsMetadataFields(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetadataFieldsMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataFields();
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataFieldsMap();
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+
+  java.lang.String getMetadataFieldsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+
+  java.lang.String getMetadataFieldsOrThrow(
+      java.lang.String key);
+
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @return A list containing the metricPass.
+   */
+  java.util.List<java.lang.String>
+      getMetricPassList();
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @return The count of metricPass.
+   */
+  int getMetricPassCount();
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @param index The index of the element to return.
+   * @return The metricPass at the given index.
+   */
+  java.lang.String getMetricPass(int index);
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metricPass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getMetricPassBytes(int index);
+
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @return A list containing the metricDrop.
+   */
+  java.util.List<java.lang.String>
+      getMetricDropList();
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @return The count of metricDrop.
+   */
+  int getMetricDropCount();
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @param index The index of the element to return.
+   * @return The metricDrop at the given index.
+   */
+  java.lang.String getMetricDrop(int index);
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metricDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getMetricDropBytes(int index);
+
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @return A list containing the eventPass.
+   */
+  java.util.List<java.lang.String>
+      getEventPassList();
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @return The count of eventPass.
+   */
+  int getEventPassCount();
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @param index The index of the element to return.
+   * @return The eventPass at the given index.
+   */
+  java.lang.String getEventPass(int index);
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventPass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventPassBytes(int index);
+
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @return A list containing the eventDrop.
+   */
+  java.util.List<java.lang.String>
+      getEventDropList();
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @return The count of eventDrop.
+   */
+  int getEventDropCount();
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @param index The index of the element to return.
+   * @return The eventDrop at the given index.
+   */
+  java.lang.String getEventDrop(int index);
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventDropBytes(int index);
+
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @return A list containing the eventTypePass.
+   */
+  java.util.List<java.lang.String>
+      getEventTypePassList();
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @return The count of eventTypePass.
+   */
+  int getEventTypePassCount();
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @param index The index of the element to return.
+   * @return The eventTypePass at the given index.
+   */
+  java.lang.String getEventTypePass(int index);
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventTypePass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventTypePassBytes(int index);
+
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @return A list containing the eventTypeDrop.
+   */
+  java.util.List<java.lang.String>
+      getEventTypeDropList();
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @return The count of eventTypeDrop.
+   */
+  int getEventTypeDropCount();
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @param index The index of the element to return.
+   * @return The eventTypeDrop at the given index.
+   */
+  java.lang.String getEventTypeDrop(int index);
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventTypeDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventTypeDropBytes(int index);
+
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @return A list containing the eventSeverityPass.
+   */
+  java.util.List<java.lang.String>
+      getEventSeverityPassList();
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @return The count of eventSeverityPass.
+   */
+  int getEventSeverityPassCount();
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @param index The index of the element to return.
+   * @return The eventSeverityPass at the given index.
+   */
+  java.lang.String getEventSeverityPass(int index);
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventSeverityPass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventSeverityPassBytes(int index);
+
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @return A list containing the eventSeverityDrop.
+   */
+  java.util.List<java.lang.String>
+      getEventSeverityDropList();
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @return The count of eventSeverityDrop.
+   */
+  int getEventSeverityDropCount();
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @param index The index of the element to return.
+   * @return The eventSeverityDrop at the given index.
+   */
+  java.lang.String getEventSeverityDrop(int index);
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventSeverityDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getEventSeverityDropBytes(int index);
+
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @return A list containing the dimensionPass.
+   */
+  java.util.List<java.lang.String>
+      getDimensionPassList();
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @return The count of dimensionPass.
+   */
+  int getDimensionPassCount();
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @param index The index of the element to return.
+   * @return The dimensionPass at the given index.
+   */
+  java.lang.String getDimensionPass(int index);
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dimensionPass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDimensionPassBytes(int index);
+
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @return A list containing the dimensionDrop.
+   */
+  java.util.List<java.lang.String>
+      getDimensionDropList();
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @return The count of dimensionDrop.
+   */
+  int getDimensionDropCount();
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @param index The index of the element to return.
+   * @return The dimensionDrop at the given index.
+   */
+  java.lang.String getDimensionDrop(int index);
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dimensionDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDimensionDropBytes(int index);
+
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @return A list containing the metadataPass.
+   */
+  java.util.List<java.lang.String>
+      getMetadataPassList();
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @return The count of metadataPass.
+   */
+  int getMetadataPassCount();
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @param index The index of the element to return.
+   * @return The metadataPass at the given index.
+   */
+  java.lang.String getMetadataPass(int index);
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metadataPass at the given index.
+   */
+  com.google.protobuf.ByteString
+      getMetadataPassBytes(int index);
+
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @return A list containing the metadataDrop.
+   */
+  java.util.List<java.lang.String>
+      getMetadataDropList();
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @return The count of metadataDrop.
+   */
+  int getMetadataDropCount();
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @param index The index of the element to return.
+   * @return The metadataDrop at the given index.
+   */
+  java.lang.String getMetadataDrop(int index);
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metadataDrop at the given index.
+   */
+  com.google.protobuf.ByteString
+      getMetadataDropBytes(int index);
 }

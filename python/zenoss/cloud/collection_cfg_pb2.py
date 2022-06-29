@@ -14,12 +14,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\"{\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x41\n\rconfiguration\x18\x05 \x01(\x0b\x32*.zenoss.cloud.collection_cfg.ConfigurationJ\x04\x08\x04\x10\x05\"+\n\rConfiguration\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\"\x0e\n\x0cProbeSuccess\"`\n\nProbeError\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12=\n\x0c\x66ield_errors\x18\x02 \x03(\x0b\x32\'.zenoss.cloud.collection_cfg.FieldError\"0\n\nFieldError\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\x8f\x01\n\x0bProbeResult\x12<\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00\x12\x38\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00\x42\x08\n\x06result\"i\n\x19WaitForProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\x12\x10\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03\"i\n\x1aWaitForProbeConfigResponse\x12\x11\n\tconfig_id\x18\x01 \x01(\t\x12\x38\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"\x18\n\x16GetConfigStreamRequest\"U\n\x17GetConfigStreamResponse\x12:\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\"{\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06tenant\x18\x03 \x01(\t\x12\x41\n\rconfiguration\x18\x05 \x01(\x0b\x32*.zenoss.cloud.collection_cfg.ConfigurationJ\x04\x08\x04\x10\x05\"\xdb\x04\n\rConfiguration\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\t\x12\x10\n\x08interval\x18\x03 \x01(\t\x12N\n\ndimensions\x18\x04 \x03(\x0b\x32:.zenoss.cloud.collection_cfg.Configuration.DimensionsEntry\x12V\n\x0emetadataFields\x18\x05 \x03(\x0b\x32>.zenoss.cloud.collection_cfg.Configuration.MetadataFieldsEntry\x12\x12\n\nmetricPass\x18\x06 \x03(\t\x12\x12\n\nmetricDrop\x18\x07 \x03(\t\x12\x11\n\teventPass\x18\x08 \x03(\t\x12\x11\n\teventDrop\x18\t \x03(\t\x12\x15\n\reventTypePass\x18\n \x03(\t\x12\x15\n\reventTypeDrop\x18\x0b \x03(\t\x12\x19\n\x11\x65ventSeverityPass\x18\x0c \x03(\t\x12\x19\n\x11\x65ventSeverityDrop\x18\r \x03(\t\x12\x15\n\rdimensionPass\x18\x0e \x03(\t\x12\x15\n\rdimensionDrop\x18\x0f \x03(\t\x12\x14\n\x0cmetadataPass\x18\x10 \x03(\t\x12\x14\n\x0cmetadataDrop\x18\x11 \x03(\t\x1a\x31\n\x0f\x44imensionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x35\n\x13MetadataFieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x0e\n\x0cProbeSuccess\"`\n\nProbeError\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12=\n\x0c\x66ield_errors\x18\x02 \x03(\x0b\x32\'.zenoss.cloud.collection_cfg.FieldError\"0\n\nFieldError\x12\r\n\x05\x66ield\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\x8f\x01\n\x0bProbeResult\x12<\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00\x12\x38\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00\x42\x08\n\x06result\"i\n\x19WaitForProbeConfigRequest\x12:\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.Config\x12\x10\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03\"i\n\x1aWaitForProbeConfigResponse\x12\x11\n\tconfig_id\x18\x01 \x01(\t\x12\x38\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResult\"\x18\n\x16GetConfigStreamRequest\"U\n\x17GetConfigStreamResponse\x12:\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.Config2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
 
 
 
 _CONFIG = DESCRIPTOR.message_types_by_name['Config']
 _CONFIGURATION = DESCRIPTOR.message_types_by_name['Configuration']
+_CONFIGURATION_DIMENSIONSENTRY = _CONFIGURATION.nested_types_by_name['DimensionsEntry']
+_CONFIGURATION_METADATAFIELDSENTRY = _CONFIGURATION.nested_types_by_name['MetadataFieldsEntry']
 _PROBESUCCESS = DESCRIPTOR.message_types_by_name['ProbeSuccess']
 _PROBEERROR = DESCRIPTOR.message_types_by_name['ProbeError']
 _FIELDERROR = DESCRIPTOR.message_types_by_name['FieldError']
@@ -36,11 +38,27 @@ Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,),
 _sym_db.RegisterMessage(Config)
 
 Configuration = _reflection.GeneratedProtocolMessageType('Configuration', (_message.Message,), {
+
+  'DimensionsEntry' : _reflection.GeneratedProtocolMessageType('DimensionsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CONFIGURATION_DIMENSIONSENTRY,
+    '__module__' : 'zenoss.cloud.collection_cfg_pb2'
+    # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.Configuration.DimensionsEntry)
+    })
+  ,
+
+  'MetadataFieldsEntry' : _reflection.GeneratedProtocolMessageType('MetadataFieldsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CONFIGURATION_METADATAFIELDSENTRY,
+    '__module__' : 'zenoss.cloud.collection_cfg_pb2'
+    # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.Configuration.MetadataFieldsEntry)
+    })
+  ,
   'DESCRIPTOR' : _CONFIGURATION,
   '__module__' : 'zenoss.cloud.collection_cfg_pb2'
   # @@protoc_insertion_point(class_scope:zenoss.cloud.collection_cfg.Configuration)
   })
 _sym_db.RegisterMessage(Configuration)
+_sym_db.RegisterMessage(Configuration.DimensionsEntry)
+_sym_db.RegisterMessage(Configuration.MetadataFieldsEntry)
 
 ProbeSuccess = _reflection.GeneratedProtocolMessageType('ProbeSuccess', (_message.Message,), {
   'DESCRIPTOR' : _PROBESUCCESS,
@@ -103,26 +121,34 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033org.zenoss.cloud.collectionP\001Z6github.com/zenoss/zenoss-protobufs/go/cloud/collection'
+  _CONFIGURATION_DIMENSIONSENTRY._options = None
+  _CONFIGURATION_DIMENSIONSENTRY._serialized_options = b'8\001'
+  _CONFIGURATION_METADATAFIELDSENTRY._options = None
+  _CONFIGURATION_METADATAFIELDSENTRY._serialized_options = b'8\001'
   _CONFIG._serialized_start=66
   _CONFIG._serialized_end=189
-  _CONFIGURATION._serialized_start=191
-  _CONFIGURATION._serialized_end=234
-  _PROBESUCCESS._serialized_start=236
-  _PROBESUCCESS._serialized_end=250
-  _PROBEERROR._serialized_start=252
-  _PROBEERROR._serialized_end=348
-  _FIELDERROR._serialized_start=350
-  _FIELDERROR._serialized_end=398
-  _PROBERESULT._serialized_start=401
-  _PROBERESULT._serialized_end=544
-  _WAITFORPROBECONFIGREQUEST._serialized_start=546
-  _WAITFORPROBECONFIGREQUEST._serialized_end=651
-  _WAITFORPROBECONFIGRESPONSE._serialized_start=653
-  _WAITFORPROBECONFIGRESPONSE._serialized_end=758
-  _GETCONFIGSTREAMREQUEST._serialized_start=760
-  _GETCONFIGSTREAMREQUEST._serialized_end=784
-  _GETCONFIGSTREAMRESPONSE._serialized_start=786
-  _GETCONFIGSTREAMRESPONSE._serialized_end=871
-  _COLLECTIONCONFIGSERVICE._serialized_start=874
-  _COLLECTIONCONFIGSERVICE._serialized_end=1172
+  _CONFIGURATION._serialized_start=192
+  _CONFIGURATION._serialized_end=795
+  _CONFIGURATION_DIMENSIONSENTRY._serialized_start=691
+  _CONFIGURATION_DIMENSIONSENTRY._serialized_end=740
+  _CONFIGURATION_METADATAFIELDSENTRY._serialized_start=742
+  _CONFIGURATION_METADATAFIELDSENTRY._serialized_end=795
+  _PROBESUCCESS._serialized_start=797
+  _PROBESUCCESS._serialized_end=811
+  _PROBEERROR._serialized_start=813
+  _PROBEERROR._serialized_end=909
+  _FIELDERROR._serialized_start=911
+  _FIELDERROR._serialized_end=959
+  _PROBERESULT._serialized_start=962
+  _PROBERESULT._serialized_end=1105
+  _WAITFORPROBECONFIGREQUEST._serialized_start=1107
+  _WAITFORPROBECONFIGREQUEST._serialized_end=1212
+  _WAITFORPROBECONFIGRESPONSE._serialized_start=1214
+  _WAITFORPROBECONFIGRESPONSE._serialized_end=1319
+  _GETCONFIGSTREAMREQUEST._serialized_start=1321
+  _GETCONFIGSTREAMREQUEST._serialized_end=1345
+  _GETCONFIGSTREAMRESPONSE._serialized_start=1347
+  _GETCONFIGSTREAMRESPONSE._serialized_end=1432
+  _COLLECTIONCONFIGSERVICE._serialized_start=1435
+  _COLLECTIONCONFIGSERVICE._serialized_end=1733
 # @@protoc_insertion_point(module_scope)

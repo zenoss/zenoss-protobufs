@@ -26,6 +26,21 @@ message Config {
 message Configuration {
   string type = 1;
   string data = 2;
+  string interval = 3;
+  map<string, string> dimensions = 4;
+  map<string, string> metadataFields = 5;
+  repeated string metricPass = 6;
+  repeated string metricDrop = 7;
+  repeated string eventPass = 8;
+  repeated string eventDrop = 9;
+  repeated string eventTypePass = 10;
+  repeated string eventTypeDrop = 11;
+  repeated string eventSeverityPass = 12;
+  repeated string eventSeverityDrop = 13;
+  repeated string dimensionPass = 14;
+  repeated string dimensionDrop = 15;
+  repeated string metadataPass = 16;
+  repeated string metadataDrop = 17;
 }
 
 message ProbeSuccess {}

@@ -25,6 +25,16 @@ public final class CollectionCfg {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_zenoss_cloud_collection_cfg_Configuration_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -77,34 +87,48 @@ public final class CollectionCfg {
       "oss.cloud.collection_cfg\"{\n\006Config\022\n\n\002id" +
       "\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\016\n\006tenant\030\003 \001(\t\022A\n\r" +
       "configuration\030\005 \001(\0132*.zenoss.cloud.colle" +
-      "ction_cfg.ConfigurationJ\004\010\004\020\005\"+\n\rConfigu" +
-      "ration\022\014\n\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\016\n\014Pr" +
-      "obeSuccess\"`\n\nProbeError\022\023\n\013description\030" +
-      "\001 \001(\t\022=\n\014field_errors\030\002 \003(\0132\'.zenoss.clo" +
-      "ud.collection_cfg.FieldError\"0\n\nFieldErr" +
-      "or\022\r\n\005field\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\217" +
-      "\001\n\013ProbeResult\022<\n\007success\030\001 \001(\0132).zenoss" +
-      ".cloud.collection_cfg.ProbeSuccessH\000\0228\n\005" +
-      "error\030\002 \001(\0132\'.zenoss.cloud.collection_cf" +
-      "g.ProbeErrorH\000B\010\n\006result\"i\n\031WaitForProbe" +
-      "ConfigRequest\022:\n\rconfiguration\030\001 \001(\0132#.z" +
-      "enoss.cloud.collection_cfg.Config\022\020\n\010dea" +
-      "dline\030\002 \001(\003\"i\n\032WaitForProbeConfigRespons" +
-      "e\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006result\030\002 \001(\0132(.z" +
-      "enoss.cloud.collection_cfg.ProbeResult\"\030" +
-      "\n\026GetConfigStreamRequest\"U\n\027GetConfigStr" +
-      "eamResponse\022:\n\rconfiguration\030\001 \003(\0132#.zen" +
-      "oss.cloud.collection_cfg.Config2\252\002\n\027Coll" +
-      "ectionConfigService\022\213\001\n\022WaitForProbeConf" +
-      "ig\0227.zenoss.cloud.collection_cfg.WaitFor" +
-      "ProbeConfigResponse\0326.zenoss.cloud.colle" +
-      "ction_cfg.WaitForProbeConfigRequest\"\000(\0010" +
-      "\001\022\200\001\n\017GetConfigStream\0223.zenoss.cloud.col" +
-      "lection_cfg.GetConfigStreamRequest\0324.zen" +
-      "oss.cloud.collection_cfg.GetConfigStream" +
-      "Response\"\0000\001BW\n\033org.zenoss.cloud.collect" +
-      "ionP\001Z6github.com/zenoss/zenoss-protobuf" +
-      "s/go/cloud/collectionb\006proto3"
+      "ction_cfg.ConfigurationJ\004\010\004\020\005\"\333\004\n\rConfig" +
+      "uration\022\014\n\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\022\020\n\010i" +
+      "nterval\030\003 \001(\t\022N\n\ndimensions\030\004 \003(\0132:.zeno" +
+      "ss.cloud.collection_cfg.Configuration.Di" +
+      "mensionsEntry\022V\n\016metadataFields\030\005 \003(\0132>." +
+      "zenoss.cloud.collection_cfg.Configuratio" +
+      "n.MetadataFieldsEntry\022\022\n\nmetricPass\030\006 \003(" +
+      "\t\022\022\n\nmetricDrop\030\007 \003(\t\022\021\n\teventPass\030\010 \003(\t" +
+      "\022\021\n\teventDrop\030\t \003(\t\022\025\n\reventTypePass\030\n \003" +
+      "(\t\022\025\n\reventTypeDrop\030\013 \003(\t\022\031\n\021eventSeveri" +
+      "tyPass\030\014 \003(\t\022\031\n\021eventSeverityDrop\030\r \003(\t\022" +
+      "\025\n\rdimensionPass\030\016 \003(\t\022\025\n\rdimensionDrop\030" +
+      "\017 \003(\t\022\024\n\014metadataPass\030\020 \003(\t\022\024\n\014metadataD" +
+      "rop\030\021 \003(\t\0321\n\017DimensionsEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\0325\n\023MetadataFieldsEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\016\n\014P" +
+      "robeSuccess\"`\n\nProbeError\022\023\n\013description" +
+      "\030\001 \001(\t\022=\n\014field_errors\030\002 \003(\0132\'.zenoss.cl" +
+      "oud.collection_cfg.FieldError\"0\n\nFieldEr" +
+      "ror\022\r\n\005field\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"" +
+      "\217\001\n\013ProbeResult\022<\n\007success\030\001 \001(\0132).zenos" +
+      "s.cloud.collection_cfg.ProbeSuccessH\000\0228\n" +
+      "\005error\030\002 \001(\0132\'.zenoss.cloud.collection_c" +
+      "fg.ProbeErrorH\000B\010\n\006result\"i\n\031WaitForProb" +
+      "eConfigRequest\022:\n\rconfiguration\030\001 \001(\0132#." +
+      "zenoss.cloud.collection_cfg.Config\022\020\n\010de" +
+      "adline\030\002 \001(\003\"i\n\032WaitForProbeConfigRespon" +
+      "se\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006result\030\002 \001(\0132(." +
+      "zenoss.cloud.collection_cfg.ProbeResult\"" +
+      "\030\n\026GetConfigStreamRequest\"U\n\027GetConfigSt" +
+      "reamResponse\022:\n\rconfiguration\030\001 \003(\0132#.ze" +
+      "noss.cloud.collection_cfg.Config2\252\002\n\027Col" +
+      "lectionConfigService\022\213\001\n\022WaitForProbeCon" +
+      "fig\0227.zenoss.cloud.collection_cfg.WaitFo" +
+      "rProbeConfigResponse\0326.zenoss.cloud.coll" +
+      "ection_cfg.WaitForProbeConfigRequest\"\000(\001" +
+      "0\001\022\200\001\n\017GetConfigStream\0223.zenoss.cloud.co" +
+      "llection_cfg.GetConfigStreamRequest\0324.ze" +
+      "noss.cloud.collection_cfg.GetConfigStrea" +
+      "mResponse\"\0000\001BW\n\033org.zenoss.cloud.collec" +
+      "tionP\001Z6github.com/zenoss/zenoss-protobu" +
+      "fs/go/cloud/collectionb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -121,7 +145,19 @@ public final class CollectionCfg {
     internal_static_zenoss_cloud_collection_cfg_Configuration_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor,
-        new java.lang.String[] { "Type", "Data", });
+        new java.lang.String[] { "Type", "Data", "Interval", "Dimensions", "MetadataFields", "MetricPass", "MetricDrop", "EventPass", "EventDrop", "EventTypePass", "EventTypeDrop", "EventSeverityPass", "EventSeverityDrop", "DimensionPass", "DimensionDrop", "MetadataPass", "MetadataDrop", });
+    internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_descriptor =
+      internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor.getNestedTypes().get(0);
+    internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_descriptor =
+      internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor.getNestedTypes().get(1);
+    internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_zenoss_cloud_collection_cfg_ProbeSuccess_fieldAccessorTable = new

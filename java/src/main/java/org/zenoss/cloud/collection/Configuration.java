@@ -18,6 +18,19 @@ private static final long serialVersionUID = 0L;
   private Configuration() {
     type_ = "";
     data_ = "";
+    interval_ = "";
+    metricPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    metricDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventTypePass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventTypeDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventSeverityPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    eventSeverityDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dimensionPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    dimensionDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    metadataPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    metadataDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -40,6 +53,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -62,6 +76,146 @@ private static final long serialVersionUID = 0L;
             data_ = s;
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            interval_ = s;
+            break;
+          }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              dimensions_ = com.google.protobuf.MapField.newMapField(
+                  DimensionsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            dimensions__ = input.readMessage(
+                DimensionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            dimensions_.getMutableMap().put(
+                dimensions__.getKey(), dimensions__.getValue());
+            break;
+          }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              metadataFields_ = com.google.protobuf.MapField.newMapField(
+                  MetadataFieldsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000002;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            metadataFields__ = input.readMessage(
+                MetadataFieldsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            metadataFields_.getMutableMap().put(
+                metadataFields__.getKey(), metadataFields__.getValue());
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              metricPass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000004;
+            }
+            metricPass_.add(s);
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              metricDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000008;
+            }
+            metricDrop_.add(s);
+            break;
+          }
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              eventPass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000010;
+            }
+            eventPass_.add(s);
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              eventDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            eventDrop_.add(s);
+            break;
+          }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              eventTypePass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000040;
+            }
+            eventTypePass_.add(s);
+            break;
+          }
+          case 90: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+              eventTypeDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            eventTypeDrop_.add(s);
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+              eventSeverityPass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            eventSeverityPass_.add(s);
+            break;
+          }
+          case 106: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+              eventSeverityDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000200;
+            }
+            eventSeverityDrop_.add(s);
+            break;
+          }
+          case 114: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000400) != 0)) {
+              dimensionPass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000400;
+            }
+            dimensionPass_.add(s);
+            break;
+          }
+          case 122: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000800) != 0)) {
+              dimensionDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000800;
+            }
+            dimensionDrop_.add(s);
+            break;
+          }
+          case 130: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00001000) != 0)) {
+              metadataPass_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00001000;
+            }
+            metadataPass_.add(s);
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00002000) != 0)) {
+              metadataDrop_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00002000;
+            }
+            metadataDrop_.add(s);
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -77,6 +231,42 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        metricPass_ = metricPass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        metricDrop_ = metricDrop_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        eventPass_ = eventPass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        eventDrop_ = eventDrop_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000040) != 0)) {
+        eventTypePass_ = eventTypePass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000080) != 0)) {
+        eventTypeDrop_ = eventTypeDrop_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000100) != 0)) {
+        eventSeverityPass_ = eventSeverityPass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000200) != 0)) {
+        eventSeverityDrop_ = eventSeverityDrop_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000400) != 0)) {
+        dimensionPass_ = dimensionPass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000800) != 0)) {
+        dimensionDrop_ = dimensionDrop_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00001000) != 0)) {
+        metadataPass_ = metadataPass_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00002000) != 0)) {
+        metadataDrop_ = metadataDrop_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -86,6 +276,20 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetDimensions();
+      case 5:
+        return internalGetMetadataFields();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -170,6 +374,626 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int INTERVAL_FIELD_NUMBER = 3;
+  private volatile java.lang.Object interval_;
+  /**
+   * <code>string interval = 3;</code>
+   * @return The interval.
+   */
+  @java.lang.Override
+  public java.lang.String getInterval() {
+    java.lang.Object ref = interval_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interval_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string interval = 3;</code>
+   * @return The bytes for interval.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIntervalBytes() {
+    java.lang.Object ref = interval_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interval_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DIMENSIONS_FIELD_NUMBER = 4;
+  private static final class DimensionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_Configuration_DimensionsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> dimensions_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetDimensions() {
+    if (dimensions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          DimensionsDefaultEntryHolder.defaultEntry);
+    }
+    return dimensions_;
+  }
+
+  public int getDimensionsCount() {
+    return internalGetDimensions().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsDimensions(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetDimensions().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getDimensionsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
+    return getDimensionsMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
+    return internalGetDimensions().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getDimensionsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDimensions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; dimensions = 4;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getDimensionsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetDimensions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int METADATAFIELDS_FIELD_NUMBER = 5;
+  private static final class MetadataFieldsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_Configuration_MetadataFieldsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> metadataFields_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetMetadataFields() {
+    if (metadataFields_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MetadataFieldsDefaultEntryHolder.defaultEntry);
+    }
+    return metadataFields_;
+  }
+
+  public int getMetadataFieldsCount() {
+    return internalGetMetadataFields().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsMetadataFields(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetMetadataFields().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getMetadataFieldsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataFields() {
+    return getMetadataFieldsMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataFieldsMap() {
+    return internalGetMetadataFields().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getMetadataFieldsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadataFields().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getMetadataFieldsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadataFields().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int METRICPASS_FIELD_NUMBER = 6;
+  private com.google.protobuf.LazyStringList metricPass_;
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @return A list containing the metricPass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getMetricPassList() {
+    return metricPass_;
+  }
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @return The count of metricPass.
+   */
+  public int getMetricPassCount() {
+    return metricPass_.size();
+  }
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @param index The index of the element to return.
+   * @return The metricPass at the given index.
+   */
+  public java.lang.String getMetricPass(int index) {
+    return metricPass_.get(index);
+  }
+  /**
+   * <code>repeated string metricPass = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metricPass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getMetricPassBytes(int index) {
+    return metricPass_.getByteString(index);
+  }
+
+  public static final int METRICDROP_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList metricDrop_;
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @return A list containing the metricDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getMetricDropList() {
+    return metricDrop_;
+  }
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @return The count of metricDrop.
+   */
+  public int getMetricDropCount() {
+    return metricDrop_.size();
+  }
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @param index The index of the element to return.
+   * @return The metricDrop at the given index.
+   */
+  public java.lang.String getMetricDrop(int index) {
+    return metricDrop_.get(index);
+  }
+  /**
+   * <code>repeated string metricDrop = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metricDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getMetricDropBytes(int index) {
+    return metricDrop_.getByteString(index);
+  }
+
+  public static final int EVENTPASS_FIELD_NUMBER = 8;
+  private com.google.protobuf.LazyStringList eventPass_;
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @return A list containing the eventPass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventPassList() {
+    return eventPass_;
+  }
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @return The count of eventPass.
+   */
+  public int getEventPassCount() {
+    return eventPass_.size();
+  }
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @param index The index of the element to return.
+   * @return The eventPass at the given index.
+   */
+  public java.lang.String getEventPass(int index) {
+    return eventPass_.get(index);
+  }
+  /**
+   * <code>repeated string eventPass = 8;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventPass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventPassBytes(int index) {
+    return eventPass_.getByteString(index);
+  }
+
+  public static final int EVENTDROP_FIELD_NUMBER = 9;
+  private com.google.protobuf.LazyStringList eventDrop_;
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @return A list containing the eventDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventDropList() {
+    return eventDrop_;
+  }
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @return The count of eventDrop.
+   */
+  public int getEventDropCount() {
+    return eventDrop_.size();
+  }
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @param index The index of the element to return.
+   * @return The eventDrop at the given index.
+   */
+  public java.lang.String getEventDrop(int index) {
+    return eventDrop_.get(index);
+  }
+  /**
+   * <code>repeated string eventDrop = 9;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventDropBytes(int index) {
+    return eventDrop_.getByteString(index);
+  }
+
+  public static final int EVENTTYPEPASS_FIELD_NUMBER = 10;
+  private com.google.protobuf.LazyStringList eventTypePass_;
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @return A list containing the eventTypePass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventTypePassList() {
+    return eventTypePass_;
+  }
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @return The count of eventTypePass.
+   */
+  public int getEventTypePassCount() {
+    return eventTypePass_.size();
+  }
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @param index The index of the element to return.
+   * @return The eventTypePass at the given index.
+   */
+  public java.lang.String getEventTypePass(int index) {
+    return eventTypePass_.get(index);
+  }
+  /**
+   * <code>repeated string eventTypePass = 10;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventTypePass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventTypePassBytes(int index) {
+    return eventTypePass_.getByteString(index);
+  }
+
+  public static final int EVENTTYPEDROP_FIELD_NUMBER = 11;
+  private com.google.protobuf.LazyStringList eventTypeDrop_;
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @return A list containing the eventTypeDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventTypeDropList() {
+    return eventTypeDrop_;
+  }
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @return The count of eventTypeDrop.
+   */
+  public int getEventTypeDropCount() {
+    return eventTypeDrop_.size();
+  }
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @param index The index of the element to return.
+   * @return The eventTypeDrop at the given index.
+   */
+  public java.lang.String getEventTypeDrop(int index) {
+    return eventTypeDrop_.get(index);
+  }
+  /**
+   * <code>repeated string eventTypeDrop = 11;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventTypeDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventTypeDropBytes(int index) {
+    return eventTypeDrop_.getByteString(index);
+  }
+
+  public static final int EVENTSEVERITYPASS_FIELD_NUMBER = 12;
+  private com.google.protobuf.LazyStringList eventSeverityPass_;
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @return A list containing the eventSeverityPass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventSeverityPassList() {
+    return eventSeverityPass_;
+  }
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @return The count of eventSeverityPass.
+   */
+  public int getEventSeverityPassCount() {
+    return eventSeverityPass_.size();
+  }
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @param index The index of the element to return.
+   * @return The eventSeverityPass at the given index.
+   */
+  public java.lang.String getEventSeverityPass(int index) {
+    return eventSeverityPass_.get(index);
+  }
+  /**
+   * <code>repeated string eventSeverityPass = 12;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventSeverityPass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventSeverityPassBytes(int index) {
+    return eventSeverityPass_.getByteString(index);
+  }
+
+  public static final int EVENTSEVERITYDROP_FIELD_NUMBER = 13;
+  private com.google.protobuf.LazyStringList eventSeverityDrop_;
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @return A list containing the eventSeverityDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getEventSeverityDropList() {
+    return eventSeverityDrop_;
+  }
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @return The count of eventSeverityDrop.
+   */
+  public int getEventSeverityDropCount() {
+    return eventSeverityDrop_.size();
+  }
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @param index The index of the element to return.
+   * @return The eventSeverityDrop at the given index.
+   */
+  public java.lang.String getEventSeverityDrop(int index) {
+    return eventSeverityDrop_.get(index);
+  }
+  /**
+   * <code>repeated string eventSeverityDrop = 13;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the eventSeverityDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getEventSeverityDropBytes(int index) {
+    return eventSeverityDrop_.getByteString(index);
+  }
+
+  public static final int DIMENSIONPASS_FIELD_NUMBER = 14;
+  private com.google.protobuf.LazyStringList dimensionPass_;
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @return A list containing the dimensionPass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDimensionPassList() {
+    return dimensionPass_;
+  }
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @return The count of dimensionPass.
+   */
+  public int getDimensionPassCount() {
+    return dimensionPass_.size();
+  }
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @param index The index of the element to return.
+   * @return The dimensionPass at the given index.
+   */
+  public java.lang.String getDimensionPass(int index) {
+    return dimensionPass_.get(index);
+  }
+  /**
+   * <code>repeated string dimensionPass = 14;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dimensionPass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDimensionPassBytes(int index) {
+    return dimensionPass_.getByteString(index);
+  }
+
+  public static final int DIMENSIONDROP_FIELD_NUMBER = 15;
+  private com.google.protobuf.LazyStringList dimensionDrop_;
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @return A list containing the dimensionDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDimensionDropList() {
+    return dimensionDrop_;
+  }
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @return The count of dimensionDrop.
+   */
+  public int getDimensionDropCount() {
+    return dimensionDrop_.size();
+  }
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @param index The index of the element to return.
+   * @return The dimensionDrop at the given index.
+   */
+  public java.lang.String getDimensionDrop(int index) {
+    return dimensionDrop_.get(index);
+  }
+  /**
+   * <code>repeated string dimensionDrop = 15;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the dimensionDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDimensionDropBytes(int index) {
+    return dimensionDrop_.getByteString(index);
+  }
+
+  public static final int METADATAPASS_FIELD_NUMBER = 16;
+  private com.google.protobuf.LazyStringList metadataPass_;
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @return A list containing the metadataPass.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getMetadataPassList() {
+    return metadataPass_;
+  }
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @return The count of metadataPass.
+   */
+  public int getMetadataPassCount() {
+    return metadataPass_.size();
+  }
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @param index The index of the element to return.
+   * @return The metadataPass at the given index.
+   */
+  public java.lang.String getMetadataPass(int index) {
+    return metadataPass_.get(index);
+  }
+  /**
+   * <code>repeated string metadataPass = 16;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metadataPass at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getMetadataPassBytes(int index) {
+    return metadataPass_.getByteString(index);
+  }
+
+  public static final int METADATADROP_FIELD_NUMBER = 17;
+  private com.google.protobuf.LazyStringList metadataDrop_;
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @return A list containing the metadataDrop.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getMetadataDropList() {
+    return metadataDrop_;
+  }
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @return The count of metadataDrop.
+   */
+  public int getMetadataDropCount() {
+    return metadataDrop_.size();
+  }
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @param index The index of the element to return.
+   * @return The metadataDrop at the given index.
+   */
+  public java.lang.String getMetadataDrop(int index) {
+    return metadataDrop_.get(index);
+  }
+  /**
+   * <code>repeated string metadataDrop = 17;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the metadataDrop at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getMetadataDropBytes(int index) {
+    return metadataDrop_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +1014,57 @@ private static final long serialVersionUID = 0L;
     if (!getDataBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, data_);
     }
+    if (!getIntervalBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, interval_);
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetDimensions(),
+        DimensionsDefaultEntryHolder.defaultEntry,
+        4);
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetMetadataFields(),
+        MetadataFieldsDefaultEntryHolder.defaultEntry,
+        5);
+    for (int i = 0; i < metricPass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, metricPass_.getRaw(i));
+    }
+    for (int i = 0; i < metricDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, metricDrop_.getRaw(i));
+    }
+    for (int i = 0; i < eventPass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, eventPass_.getRaw(i));
+    }
+    for (int i = 0; i < eventDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, eventDrop_.getRaw(i));
+    }
+    for (int i = 0; i < eventTypePass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, eventTypePass_.getRaw(i));
+    }
+    for (int i = 0; i < eventTypeDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, eventTypeDrop_.getRaw(i));
+    }
+    for (int i = 0; i < eventSeverityPass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, eventSeverityPass_.getRaw(i));
+    }
+    for (int i = 0; i < eventSeverityDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, eventSeverityDrop_.getRaw(i));
+    }
+    for (int i = 0; i < dimensionPass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, dimensionPass_.getRaw(i));
+    }
+    for (int i = 0; i < dimensionDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, dimensionDrop_.getRaw(i));
+    }
+    for (int i = 0; i < metadataPass_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16, metadataPass_.getRaw(i));
+    }
+    for (int i = 0; i < metadataDrop_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, metadataDrop_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -204,6 +1079,125 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDataBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, data_);
+    }
+    if (!getIntervalBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, interval_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetDimensions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      dimensions__ = DimensionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, dimensions__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetMetadataFields().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      metadataFields__ = MetadataFieldsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, metadataFields__);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < metricPass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(metricPass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMetricPassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < metricDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(metricDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMetricDropList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventPass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventPass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventPassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventDropList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventTypePass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventTypePass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventTypePassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventTypeDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventTypeDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventTypeDropList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventSeverityPass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventSeverityPass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventSeverityPassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < eventSeverityDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(eventSeverityDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getEventSeverityDropList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dimensionPass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dimensionPass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDimensionPassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dimensionDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dimensionDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDimensionDropList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < metadataPass_.size(); i++) {
+        dataSize += computeStringSizeNoTag(metadataPass_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getMetadataPassList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < metadataDrop_.size(); i++) {
+        dataSize += computeStringSizeNoTag(metadataDrop_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getMetadataDropList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -224,6 +1218,36 @@ private static final long serialVersionUID = 0L;
         .equals(other.getType())) return false;
     if (!getData()
         .equals(other.getData())) return false;
+    if (!getInterval()
+        .equals(other.getInterval())) return false;
+    if (!internalGetDimensions().equals(
+        other.internalGetDimensions())) return false;
+    if (!internalGetMetadataFields().equals(
+        other.internalGetMetadataFields())) return false;
+    if (!getMetricPassList()
+        .equals(other.getMetricPassList())) return false;
+    if (!getMetricDropList()
+        .equals(other.getMetricDropList())) return false;
+    if (!getEventPassList()
+        .equals(other.getEventPassList())) return false;
+    if (!getEventDropList()
+        .equals(other.getEventDropList())) return false;
+    if (!getEventTypePassList()
+        .equals(other.getEventTypePassList())) return false;
+    if (!getEventTypeDropList()
+        .equals(other.getEventTypeDropList())) return false;
+    if (!getEventSeverityPassList()
+        .equals(other.getEventSeverityPassList())) return false;
+    if (!getEventSeverityDropList()
+        .equals(other.getEventSeverityDropList())) return false;
+    if (!getDimensionPassList()
+        .equals(other.getDimensionPassList())) return false;
+    if (!getDimensionDropList()
+        .equals(other.getDimensionDropList())) return false;
+    if (!getMetadataPassList()
+        .equals(other.getMetadataPassList())) return false;
+    if (!getMetadataDropList()
+        .equals(other.getMetadataDropList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -239,6 +1263,64 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
     hash = (53 * hash) + getData().hashCode();
+    hash = (37 * hash) + INTERVAL_FIELD_NUMBER;
+    hash = (53 * hash) + getInterval().hashCode();
+    if (!internalGetDimensions().getMap().isEmpty()) {
+      hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetDimensions().hashCode();
+    }
+    if (!internalGetMetadataFields().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATAFIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadataFields().hashCode();
+    }
+    if (getMetricPassCount() > 0) {
+      hash = (37 * hash) + METRICPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricPassList().hashCode();
+    }
+    if (getMetricDropCount() > 0) {
+      hash = (37 * hash) + METRICDROP_FIELD_NUMBER;
+      hash = (53 * hash) + getMetricDropList().hashCode();
+    }
+    if (getEventPassCount() > 0) {
+      hash = (37 * hash) + EVENTPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventPassList().hashCode();
+    }
+    if (getEventDropCount() > 0) {
+      hash = (37 * hash) + EVENTDROP_FIELD_NUMBER;
+      hash = (53 * hash) + getEventDropList().hashCode();
+    }
+    if (getEventTypePassCount() > 0) {
+      hash = (37 * hash) + EVENTTYPEPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventTypePassList().hashCode();
+    }
+    if (getEventTypeDropCount() > 0) {
+      hash = (37 * hash) + EVENTTYPEDROP_FIELD_NUMBER;
+      hash = (53 * hash) + getEventTypeDropList().hashCode();
+    }
+    if (getEventSeverityPassCount() > 0) {
+      hash = (37 * hash) + EVENTSEVERITYPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getEventSeverityPassList().hashCode();
+    }
+    if (getEventSeverityDropCount() > 0) {
+      hash = (37 * hash) + EVENTSEVERITYDROP_FIELD_NUMBER;
+      hash = (53 * hash) + getEventSeverityDropList().hashCode();
+    }
+    if (getDimensionPassCount() > 0) {
+      hash = (37 * hash) + DIMENSIONPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getDimensionPassList().hashCode();
+    }
+    if (getDimensionDropCount() > 0) {
+      hash = (37 * hash) + DIMENSIONDROP_FIELD_NUMBER;
+      hash = (53 * hash) + getDimensionDropList().hashCode();
+    }
+    if (getMetadataPassCount() > 0) {
+      hash = (37 * hash) + METADATAPASS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataPassList().hashCode();
+    }
+    if (getMetadataDropCount() > 0) {
+      hash = (37 * hash) + METADATADROP_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataDropList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -346,6 +1428,32 @@ private static final long serialVersionUID = 0L;
       return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetDimensions();
+        case 5:
+          return internalGetMetadataFields();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableDimensions();
+        case 5:
+          return internalGetMutableMetadataFields();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -376,6 +1484,34 @@ private static final long serialVersionUID = 0L;
 
       data_ = "";
 
+      interval_ = "";
+
+      internalGetMutableDimensions().clear();
+      internalGetMutableMetadataFields().clear();
+      metricPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metricDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      eventPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      eventDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      eventTypePass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      eventTypeDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      eventSeverityPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      eventSeverityDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      dimensionPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      dimensionDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      metadataPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      metadataDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
 
@@ -402,8 +1538,74 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.Configuration buildPartial() {
       org.zenoss.cloud.collection.Configuration result = new org.zenoss.cloud.collection.Configuration(this);
+      int from_bitField0_ = bitField0_;
       result.type_ = type_;
       result.data_ = data_;
+      result.interval_ = interval_;
+      result.dimensions_ = internalGetDimensions();
+      result.dimensions_.makeImmutable();
+      result.metadataFields_ = internalGetMetadataFields();
+      result.metadataFields_.makeImmutable();
+      if (((bitField0_ & 0x00000004) != 0)) {
+        metricPass_ = metricPass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.metricPass_ = metricPass_;
+      if (((bitField0_ & 0x00000008) != 0)) {
+        metricDrop_ = metricDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.metricDrop_ = metricDrop_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        eventPass_ = eventPass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.eventPass_ = eventPass_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        eventDrop_ = eventDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.eventDrop_ = eventDrop_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        eventTypePass_ = eventTypePass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.eventTypePass_ = eventTypePass_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        eventTypeDrop_ = eventTypeDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.eventTypeDrop_ = eventTypeDrop_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        eventSeverityPass_ = eventSeverityPass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.eventSeverityPass_ = eventSeverityPass_;
+      if (((bitField0_ & 0x00000200) != 0)) {
+        eventSeverityDrop_ = eventSeverityDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.eventSeverityDrop_ = eventSeverityDrop_;
+      if (((bitField0_ & 0x00000400) != 0)) {
+        dimensionPass_ = dimensionPass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.dimensionPass_ = dimensionPass_;
+      if (((bitField0_ & 0x00000800) != 0)) {
+        dimensionDrop_ = dimensionDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      }
+      result.dimensionDrop_ = dimensionDrop_;
+      if (((bitField0_ & 0x00001000) != 0)) {
+        metadataPass_ = metadataPass_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00001000);
+      }
+      result.metadataPass_ = metadataPass_;
+      if (((bitField0_ & 0x00002000) != 0)) {
+        metadataDrop_ = metadataDrop_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00002000);
+      }
+      result.metadataDrop_ = metadataDrop_;
       onBuilt();
       return result;
     }
@@ -460,6 +1662,134 @@ private static final long serialVersionUID = 0L;
         data_ = other.data_;
         onChanged();
       }
+      if (!other.getInterval().isEmpty()) {
+        interval_ = other.interval_;
+        onChanged();
+      }
+      internalGetMutableDimensions().mergeFrom(
+          other.internalGetDimensions());
+      internalGetMutableMetadataFields().mergeFrom(
+          other.internalGetMetadataFields());
+      if (!other.metricPass_.isEmpty()) {
+        if (metricPass_.isEmpty()) {
+          metricPass_ = other.metricPass_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureMetricPassIsMutable();
+          metricPass_.addAll(other.metricPass_);
+        }
+        onChanged();
+      }
+      if (!other.metricDrop_.isEmpty()) {
+        if (metricDrop_.isEmpty()) {
+          metricDrop_ = other.metricDrop_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureMetricDropIsMutable();
+          metricDrop_.addAll(other.metricDrop_);
+        }
+        onChanged();
+      }
+      if (!other.eventPass_.isEmpty()) {
+        if (eventPass_.isEmpty()) {
+          eventPass_ = other.eventPass_;
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          ensureEventPassIsMutable();
+          eventPass_.addAll(other.eventPass_);
+        }
+        onChanged();
+      }
+      if (!other.eventDrop_.isEmpty()) {
+        if (eventDrop_.isEmpty()) {
+          eventDrop_ = other.eventDrop_;
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          ensureEventDropIsMutable();
+          eventDrop_.addAll(other.eventDrop_);
+        }
+        onChanged();
+      }
+      if (!other.eventTypePass_.isEmpty()) {
+        if (eventTypePass_.isEmpty()) {
+          eventTypePass_ = other.eventTypePass_;
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          ensureEventTypePassIsMutable();
+          eventTypePass_.addAll(other.eventTypePass_);
+        }
+        onChanged();
+      }
+      if (!other.eventTypeDrop_.isEmpty()) {
+        if (eventTypeDrop_.isEmpty()) {
+          eventTypeDrop_ = other.eventTypeDrop_;
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          ensureEventTypeDropIsMutable();
+          eventTypeDrop_.addAll(other.eventTypeDrop_);
+        }
+        onChanged();
+      }
+      if (!other.eventSeverityPass_.isEmpty()) {
+        if (eventSeverityPass_.isEmpty()) {
+          eventSeverityPass_ = other.eventSeverityPass_;
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          ensureEventSeverityPassIsMutable();
+          eventSeverityPass_.addAll(other.eventSeverityPass_);
+        }
+        onChanged();
+      }
+      if (!other.eventSeverityDrop_.isEmpty()) {
+        if (eventSeverityDrop_.isEmpty()) {
+          eventSeverityDrop_ = other.eventSeverityDrop_;
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          ensureEventSeverityDropIsMutable();
+          eventSeverityDrop_.addAll(other.eventSeverityDrop_);
+        }
+        onChanged();
+      }
+      if (!other.dimensionPass_.isEmpty()) {
+        if (dimensionPass_.isEmpty()) {
+          dimensionPass_ = other.dimensionPass_;
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          ensureDimensionPassIsMutable();
+          dimensionPass_.addAll(other.dimensionPass_);
+        }
+        onChanged();
+      }
+      if (!other.dimensionDrop_.isEmpty()) {
+        if (dimensionDrop_.isEmpty()) {
+          dimensionDrop_ = other.dimensionDrop_;
+          bitField0_ = (bitField0_ & ~0x00000800);
+        } else {
+          ensureDimensionDropIsMutable();
+          dimensionDrop_.addAll(other.dimensionDrop_);
+        }
+        onChanged();
+      }
+      if (!other.metadataPass_.isEmpty()) {
+        if (metadataPass_.isEmpty()) {
+          metadataPass_ = other.metadataPass_;
+          bitField0_ = (bitField0_ & ~0x00001000);
+        } else {
+          ensureMetadataPassIsMutable();
+          metadataPass_.addAll(other.metadataPass_);
+        }
+        onChanged();
+      }
+      if (!other.metadataDrop_.isEmpty()) {
+        if (metadataDrop_.isEmpty()) {
+          metadataDrop_ = other.metadataDrop_;
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          ensureMetadataDropIsMutable();
+          metadataDrop_.addAll(other.metadataDrop_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -488,6 +1818,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -637,6 +1968,1658 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       data_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object interval_ = "";
+    /**
+     * <code>string interval = 3;</code>
+     * @return The interval.
+     */
+    public java.lang.String getInterval() {
+      java.lang.Object ref = interval_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interval_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string interval = 3;</code>
+     * @return The bytes for interval.
+     */
+    public com.google.protobuf.ByteString
+        getIntervalBytes() {
+      java.lang.Object ref = interval_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interval_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string interval = 3;</code>
+     * @param value The interval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInterval(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      interval_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string interval = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInterval() {
+      
+      interval_ = getDefaultInstance().getInterval();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string interval = 3;</code>
+     * @param value The bytes for interval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntervalBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      interval_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> dimensions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetDimensions() {
+      if (dimensions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            DimensionsDefaultEntryHolder.defaultEntry);
+      }
+      return dimensions_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableDimensions() {
+      onChanged();;
+      if (dimensions_ == null) {
+        dimensions_ = com.google.protobuf.MapField.newMapField(
+            DimensionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!dimensions_.isMutable()) {
+        dimensions_ = dimensions_.copy();
+      }
+      return dimensions_;
+    }
+
+    public int getDimensionsCount() {
+      return internalGetDimensions().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsDimensions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetDimensions().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getDimensionsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getDimensions() {
+      return getDimensionsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
+      return internalGetDimensions().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getDimensionsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDimensions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getDimensionsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetDimensions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearDimensions() {
+      internalGetMutableDimensions().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+
+    public Builder removeDimensions(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableDimensions().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableDimensions() {
+      return internalGetMutableDimensions().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+    public Builder putDimensions(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableDimensions().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; dimensions = 4;</code>
+     */
+
+    public Builder putAllDimensions(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableDimensions().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadataFields_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadataFields() {
+      if (metadataFields_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataFieldsDefaultEntryHolder.defaultEntry);
+      }
+      return metadataFields_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableMetadataFields() {
+      onChanged();;
+      if (metadataFields_ == null) {
+        metadataFields_ = com.google.protobuf.MapField.newMapField(
+            MetadataFieldsDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadataFields_.isMutable()) {
+        metadataFields_ = metadataFields_.copy();
+      }
+      return metadataFields_;
+    }
+
+    public int getMetadataFieldsCount() {
+      return internalGetMetadataFields().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsMetadataFields(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadataFields().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataFieldsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataFields() {
+      return getMetadataFieldsMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataFieldsMap() {
+      return internalGetMetadataFields().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataFieldsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadataFields().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getMetadataFieldsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadataFields().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearMetadataFields() {
+      internalGetMutableMetadataFields().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+
+    public Builder removeMetadataFields(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableMetadataFields().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableMetadataFields() {
+      return internalGetMutableMetadataFields().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+    public Builder putMetadataFields(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableMetadataFields().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadataFields = 5;</code>
+     */
+
+    public Builder putAllMetadataFields(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadataFields().getMutableMap()
+          .putAll(values);
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList metricPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMetricPassIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        metricPass_ = new com.google.protobuf.LazyStringArrayList(metricPass_);
+        bitField0_ |= 0x00000004;
+       }
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @return A list containing the metricPass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMetricPassList() {
+      return metricPass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @return The count of metricPass.
+     */
+    public int getMetricPassCount() {
+      return metricPass_.size();
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param index The index of the element to return.
+     * @return The metricPass at the given index.
+     */
+    public java.lang.String getMetricPass(int index) {
+      return metricPass_.get(index);
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the metricPass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMetricPassBytes(int index) {
+      return metricPass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The metricPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetricPass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetricPassIsMutable();
+      metricPass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param value The metricPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetricPass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetricPassIsMutable();
+      metricPass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param values The metricPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMetricPass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMetricPassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, metricPass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetricPass() {
+      metricPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricPass = 6;</code>
+     * @param value The bytes of the metricPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetricPassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureMetricPassIsMutable();
+      metricPass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList metricDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMetricDropIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        metricDrop_ = new com.google.protobuf.LazyStringArrayList(metricDrop_);
+        bitField0_ |= 0x00000008;
+       }
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @return A list containing the metricDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMetricDropList() {
+      return metricDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @return The count of metricDrop.
+     */
+    public int getMetricDropCount() {
+      return metricDrop_.size();
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param index The index of the element to return.
+     * @return The metricDrop at the given index.
+     */
+    public java.lang.String getMetricDrop(int index) {
+      return metricDrop_.get(index);
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the metricDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMetricDropBytes(int index) {
+      return metricDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The metricDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetricDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetricDropIsMutable();
+      metricDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param value The metricDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetricDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetricDropIsMutable();
+      metricDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param values The metricDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMetricDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMetricDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, metricDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetricDrop() {
+      metricDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metricDrop = 7;</code>
+     * @param value The bytes of the metricDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetricDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureMetricDropIsMutable();
+      metricDrop_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventPassIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        eventPass_ = new com.google.protobuf.LazyStringArrayList(eventPass_);
+        bitField0_ |= 0x00000010;
+       }
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @return A list containing the eventPass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventPassList() {
+      return eventPass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @return The count of eventPass.
+     */
+    public int getEventPassCount() {
+      return eventPass_.size();
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param index The index of the element to return.
+     * @return The eventPass at the given index.
+     */
+    public java.lang.String getEventPass(int index) {
+      return eventPass_.get(index);
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventPass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventPassBytes(int index) {
+      return eventPass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param index The index to set the value at.
+     * @param value The eventPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventPass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventPassIsMutable();
+      eventPass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param value The eventPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventPass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventPassIsMutable();
+      eventPass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param values The eventPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventPass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventPassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventPass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventPass() {
+      eventPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventPass = 8;</code>
+     * @param value The bytes of the eventPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventPassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventPassIsMutable();
+      eventPass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventDropIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        eventDrop_ = new com.google.protobuf.LazyStringArrayList(eventDrop_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @return A list containing the eventDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventDropList() {
+      return eventDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @return The count of eventDrop.
+     */
+    public int getEventDropCount() {
+      return eventDrop_.size();
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param index The index of the element to return.
+     * @return The eventDrop at the given index.
+     */
+    public java.lang.String getEventDrop(int index) {
+      return eventDrop_.get(index);
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventDropBytes(int index) {
+      return eventDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param index The index to set the value at.
+     * @param value The eventDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventDropIsMutable();
+      eventDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param value The eventDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventDropIsMutable();
+      eventDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param values The eventDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventDrop() {
+      eventDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventDrop = 9;</code>
+     * @param value The bytes of the eventDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventDropIsMutable();
+      eventDrop_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventTypePass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventTypePassIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        eventTypePass_ = new com.google.protobuf.LazyStringArrayList(eventTypePass_);
+        bitField0_ |= 0x00000040;
+       }
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @return A list containing the eventTypePass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventTypePassList() {
+      return eventTypePass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @return The count of eventTypePass.
+     */
+    public int getEventTypePassCount() {
+      return eventTypePass_.size();
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param index The index of the element to return.
+     * @return The eventTypePass at the given index.
+     */
+    public java.lang.String getEventTypePass(int index) {
+      return eventTypePass_.get(index);
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventTypePass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventTypePassBytes(int index) {
+      return eventTypePass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param index The index to set the value at.
+     * @param value The eventTypePass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventTypePass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventTypePassIsMutable();
+      eventTypePass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param value The eventTypePass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventTypePass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventTypePassIsMutable();
+      eventTypePass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param values The eventTypePass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventTypePass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventTypePassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventTypePass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventTypePass() {
+      eventTypePass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypePass = 10;</code>
+     * @param value The bytes of the eventTypePass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventTypePassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventTypePassIsMutable();
+      eventTypePass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventTypeDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventTypeDropIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        eventTypeDrop_ = new com.google.protobuf.LazyStringArrayList(eventTypeDrop_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @return A list containing the eventTypeDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventTypeDropList() {
+      return eventTypeDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @return The count of eventTypeDrop.
+     */
+    public int getEventTypeDropCount() {
+      return eventTypeDrop_.size();
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param index The index of the element to return.
+     * @return The eventTypeDrop at the given index.
+     */
+    public java.lang.String getEventTypeDrop(int index) {
+      return eventTypeDrop_.get(index);
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventTypeDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventTypeDropBytes(int index) {
+      return eventTypeDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param index The index to set the value at.
+     * @param value The eventTypeDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventTypeDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventTypeDropIsMutable();
+      eventTypeDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param value The eventTypeDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventTypeDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventTypeDropIsMutable();
+      eventTypeDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param values The eventTypeDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventTypeDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventTypeDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventTypeDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventTypeDrop() {
+      eventTypeDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventTypeDrop = 11;</code>
+     * @param value The bytes of the eventTypeDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventTypeDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventTypeDropIsMutable();
+      eventTypeDrop_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventSeverityPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventSeverityPassIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        eventSeverityPass_ = new com.google.protobuf.LazyStringArrayList(eventSeverityPass_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @return A list containing the eventSeverityPass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventSeverityPassList() {
+      return eventSeverityPass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @return The count of eventSeverityPass.
+     */
+    public int getEventSeverityPassCount() {
+      return eventSeverityPass_.size();
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param index The index of the element to return.
+     * @return The eventSeverityPass at the given index.
+     */
+    public java.lang.String getEventSeverityPass(int index) {
+      return eventSeverityPass_.get(index);
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventSeverityPass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventSeverityPassBytes(int index) {
+      return eventSeverityPass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param index The index to set the value at.
+     * @param value The eventSeverityPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventSeverityPass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventSeverityPassIsMutable();
+      eventSeverityPass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param value The eventSeverityPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventSeverityPass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventSeverityPassIsMutable();
+      eventSeverityPass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param values The eventSeverityPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventSeverityPass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventSeverityPassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventSeverityPass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventSeverityPass() {
+      eventSeverityPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityPass = 12;</code>
+     * @param value The bytes of the eventSeverityPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventSeverityPassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventSeverityPassIsMutable();
+      eventSeverityPass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList eventSeverityDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureEventSeverityDropIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        eventSeverityDrop_ = new com.google.protobuf.LazyStringArrayList(eventSeverityDrop_);
+        bitField0_ |= 0x00000200;
+       }
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @return A list containing the eventSeverityDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getEventSeverityDropList() {
+      return eventSeverityDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @return The count of eventSeverityDrop.
+     */
+    public int getEventSeverityDropCount() {
+      return eventSeverityDrop_.size();
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param index The index of the element to return.
+     * @return The eventSeverityDrop at the given index.
+     */
+    public java.lang.String getEventSeverityDrop(int index) {
+      return eventSeverityDrop_.get(index);
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the eventSeverityDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getEventSeverityDropBytes(int index) {
+      return eventSeverityDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param index The index to set the value at.
+     * @param value The eventSeverityDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventSeverityDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventSeverityDropIsMutable();
+      eventSeverityDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param value The eventSeverityDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventSeverityDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureEventSeverityDropIsMutable();
+      eventSeverityDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param values The eventSeverityDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllEventSeverityDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureEventSeverityDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, eventSeverityDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventSeverityDrop() {
+      eventSeverityDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string eventSeverityDrop = 13;</code>
+     * @param value The bytes of the eventSeverityDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addEventSeverityDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureEventSeverityDropIsMutable();
+      eventSeverityDrop_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList dimensionPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureDimensionPassIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        dimensionPass_ = new com.google.protobuf.LazyStringArrayList(dimensionPass_);
+        bitField0_ |= 0x00000400;
+       }
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @return A list containing the dimensionPass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDimensionPassList() {
+      return dimensionPass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @return The count of dimensionPass.
+     */
+    public int getDimensionPassCount() {
+      return dimensionPass_.size();
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param index The index of the element to return.
+     * @return The dimensionPass at the given index.
+     */
+    public java.lang.String getDimensionPass(int index) {
+      return dimensionPass_.get(index);
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dimensionPass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDimensionPassBytes(int index) {
+      return dimensionPass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param index The index to set the value at.
+     * @param value The dimensionPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDimensionPass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDimensionPassIsMutable();
+      dimensionPass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param value The dimensionPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDimensionPass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDimensionPassIsMutable();
+      dimensionPass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param values The dimensionPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDimensionPass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDimensionPassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, dimensionPass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDimensionPass() {
+      dimensionPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionPass = 14;</code>
+     * @param value The bytes of the dimensionPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDimensionPassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureDimensionPassIsMutable();
+      dimensionPass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList dimensionDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureDimensionDropIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        dimensionDrop_ = new com.google.protobuf.LazyStringArrayList(dimensionDrop_);
+        bitField0_ |= 0x00000800;
+       }
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @return A list containing the dimensionDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDimensionDropList() {
+      return dimensionDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @return The count of dimensionDrop.
+     */
+    public int getDimensionDropCount() {
+      return dimensionDrop_.size();
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param index The index of the element to return.
+     * @return The dimensionDrop at the given index.
+     */
+    public java.lang.String getDimensionDrop(int index) {
+      return dimensionDrop_.get(index);
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the dimensionDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDimensionDropBytes(int index) {
+      return dimensionDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param index The index to set the value at.
+     * @param value The dimensionDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDimensionDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDimensionDropIsMutable();
+      dimensionDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param value The dimensionDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDimensionDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDimensionDropIsMutable();
+      dimensionDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param values The dimensionDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDimensionDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDimensionDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, dimensionDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDimensionDrop() {
+      dimensionDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string dimensionDrop = 15;</code>
+     * @param value The bytes of the dimensionDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDimensionDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureDimensionDropIsMutable();
+      dimensionDrop_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList metadataPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMetadataPassIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        metadataPass_ = new com.google.protobuf.LazyStringArrayList(metadataPass_);
+        bitField0_ |= 0x00001000;
+       }
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @return A list containing the metadataPass.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMetadataPassList() {
+      return metadataPass_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @return The count of metadataPass.
+     */
+    public int getMetadataPassCount() {
+      return metadataPass_.size();
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param index The index of the element to return.
+     * @return The metadataPass at the given index.
+     */
+    public java.lang.String getMetadataPass(int index) {
+      return metadataPass_.get(index);
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the metadataPass at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataPassBytes(int index) {
+      return metadataPass_.getByteString(index);
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param index The index to set the value at.
+     * @param value The metadataPass to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataPass(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetadataPassIsMutable();
+      metadataPass_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param value The metadataPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetadataPass(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetadataPassIsMutable();
+      metadataPass_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param values The metadataPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMetadataPass(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMetadataPassIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, metadataPass_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataPass() {
+      metadataPass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataPass = 16;</code>
+     * @param value The bytes of the metadataPass to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetadataPassBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureMetadataPassIsMutable();
+      metadataPass_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList metadataDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMetadataDropIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        metadataDrop_ = new com.google.protobuf.LazyStringArrayList(metadataDrop_);
+        bitField0_ |= 0x00002000;
+       }
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @return A list containing the metadataDrop.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMetadataDropList() {
+      return metadataDrop_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @return The count of metadataDrop.
+     */
+    public int getMetadataDropCount() {
+      return metadataDrop_.size();
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param index The index of the element to return.
+     * @return The metadataDrop at the given index.
+     */
+    public java.lang.String getMetadataDrop(int index) {
+      return metadataDrop_.get(index);
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the metadataDrop at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataDropBytes(int index) {
+      return metadataDrop_.getByteString(index);
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param index The index to set the value at.
+     * @param value The metadataDrop to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMetadataDrop(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetadataDropIsMutable();
+      metadataDrop_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param value The metadataDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetadataDrop(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMetadataDropIsMutable();
+      metadataDrop_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param values The metadataDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMetadataDrop(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMetadataDropIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, metadataDrop_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMetadataDrop() {
+      metadataDrop_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string metadataDrop = 17;</code>
+     * @param value The bytes of the metadataDrop to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMetadataDropBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureMetadataDropIsMutable();
+      metadataDrop_.add(value);
       onChanged();
       return this;
     }
