@@ -31,6 +31,9 @@ message Configuration {
 message ProbeSuccess {}
 
 message ProbeError {
+  // message is a short human-friendly text. Can be emtpy.
+  string message = 3;
+  // description is a parsed API error. Usually long and technical.
   string description = 1;
   repeated FieldError field_errors = 2;
 }
