@@ -8,11 +8,39 @@ public interface ProbeErrorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * message is a short human-friendly text. Can be emtpy.
+   * </pre>
+   *
+   * <code>string message = 3;</code>
+   * @return The message.
+   */
+  java.lang.String getMessage();
+  /**
+   * <pre>
+   * message is a short human-friendly text. Can be emtpy.
+   * </pre>
+   *
+   * <code>string message = 3;</code>
+   * @return The bytes for message.
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
+
+  /**
+   * <pre>
+   * description is a parsed API error. Usually long and technical.
+   * </pre>
+   *
    * <code>string description = 1;</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
+   * <pre>
+   * description is a parsed API error. Usually long and technical.
+   * </pre>
+   *
    * <code>string description = 1;</code>
    * @return The bytes for description.
    */

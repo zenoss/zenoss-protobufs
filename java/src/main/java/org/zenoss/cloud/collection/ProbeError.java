@@ -16,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ProbeError() {
+    message_ = "";
     description_ = "";
     fieldErrors_ = java.util.Collections.emptyList();
   }
@@ -66,6 +67,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(org.zenoss.cloud.collection.FieldError.parser(), extensionRegistry));
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            message_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -101,9 +108,59 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.collection.ProbeError.class, org.zenoss.cloud.collection.ProbeError.Builder.class);
   }
 
+  public static final int MESSAGE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object message_;
+  /**
+   * <pre>
+   * message is a short human-friendly text. Can be emtpy.
+   * </pre>
+   *
+   * <code>string message = 3;</code>
+   * @return The message.
+   */
+  @java.lang.Override
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      message_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * message is a short human-friendly text. Can be emtpy.
+   * </pre>
+   *
+   * <code>string message = 3;</code>
+   * @return The bytes for message.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMessageBytes() {
+    java.lang.Object ref = message_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      message_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object description_;
   /**
+   * <pre>
+   * description is a parsed API error. Usually long and technical.
+   * </pre>
+   *
    * <code>string description = 1;</code>
    * @return The description.
    */
@@ -121,6 +178,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * description is a parsed API error. Usually long and technical.
+   * </pre>
+   *
    * <code>string description = 1;</code>
    * @return The bytes for description.
    */
@@ -199,6 +260,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < fieldErrors_.size(); i++) {
       output.writeMessage(2, fieldErrors_.get(i));
     }
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -215,6 +279,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, fieldErrors_.get(i));
     }
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -230,6 +297,8 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.collection.ProbeError other = (org.zenoss.cloud.collection.ProbeError) obj;
 
+    if (!getMessage()
+        .equals(other.getMessage())) return false;
     if (!getDescription()
         .equals(other.getDescription())) return false;
     if (!getFieldErrorsList()
@@ -245,6 +314,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     if (getFieldErrorsCount() > 0) {
@@ -385,6 +456,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      message_ = "";
+
       description_ = "";
 
       if (fieldErrorsBuilder_ == null) {
@@ -420,6 +493,7 @@ private static final long serialVersionUID = 0L;
     public org.zenoss.cloud.collection.ProbeError buildPartial() {
       org.zenoss.cloud.collection.ProbeError result = new org.zenoss.cloud.collection.ProbeError(this);
       int from_bitField0_ = bitField0_;
+      result.message_ = message_;
       result.description_ = description_;
       if (fieldErrorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -478,6 +552,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.zenoss.cloud.collection.ProbeError other) {
       if (other == org.zenoss.cloud.collection.ProbeError.getDefaultInstance()) return this;
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
+        onChanged();
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
@@ -538,8 +616,108 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object message_ = "";
+    /**
+     * <pre>
+     * message is a short human-friendly text. Can be emtpy.
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * message is a short human-friendly text. Can be emtpy.
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * message is a short human-friendly text. Can be emtpy.
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     * @param value The message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessage(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * message is a short human-friendly text. Can be emtpy.
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * message is a short human-friendly text. Can be emtpy.
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     * @param value The bytes for message to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMessageBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      message_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object description_ = "";
     /**
+     * <pre>
+     * description is a parsed API error. Usually long and technical.
+     * </pre>
+     *
      * <code>string description = 1;</code>
      * @return The description.
      */
@@ -556,6 +734,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * description is a parsed API error. Usually long and technical.
+     * </pre>
+     *
      * <code>string description = 1;</code>
      * @return The bytes for description.
      */
@@ -573,6 +755,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * description is a parsed API error. Usually long and technical.
+     * </pre>
+     *
      * <code>string description = 1;</code>
      * @param value The description to set.
      * @return This builder for chaining.
@@ -588,6 +774,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * description is a parsed API error. Usually long and technical.
+     * </pre>
+     *
      * <code>string description = 1;</code>
      * @return This builder for chaining.
      */
@@ -598,6 +788,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * description is a parsed API error. Usually long and technical.
+     * </pre>
+     *
      * <code>string description = 1;</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.

@@ -79,32 +79,33 @@ public final class CollectionCfg {
       "configuration\030\005 \001(\0132*.zenoss.cloud.colle" +
       "ction_cfg.ConfigurationJ\004\010\004\020\005\"+\n\rConfigu" +
       "ration\022\014\n\004type\030\001 \001(\t\022\014\n\004data\030\002 \001(\t\"\016\n\014Pr" +
-      "obeSuccess\"`\n\nProbeError\022\023\n\013description\030" +
-      "\001 \001(\t\022=\n\014field_errors\030\002 \003(\0132\'.zenoss.clo" +
-      "ud.collection_cfg.FieldError\"0\n\nFieldErr" +
-      "or\022\r\n\005field\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\217" +
-      "\001\n\013ProbeResult\022<\n\007success\030\001 \001(\0132).zenoss" +
-      ".cloud.collection_cfg.ProbeSuccessH\000\0228\n\005" +
-      "error\030\002 \001(\0132\'.zenoss.cloud.collection_cf" +
-      "g.ProbeErrorH\000B\010\n\006result\"i\n\031WaitForProbe" +
-      "ConfigRequest\022:\n\rconfiguration\030\001 \001(\0132#.z" +
-      "enoss.cloud.collection_cfg.Config\022\020\n\010dea" +
-      "dline\030\002 \001(\003\"i\n\032WaitForProbeConfigRespons" +
-      "e\022\021\n\tconfig_id\030\001 \001(\t\0228\n\006result\030\002 \001(\0132(.z" +
-      "enoss.cloud.collection_cfg.ProbeResult\"\030" +
-      "\n\026GetConfigStreamRequest\"U\n\027GetConfigStr" +
-      "eamResponse\022:\n\rconfiguration\030\001 \003(\0132#.zen" +
-      "oss.cloud.collection_cfg.Config2\252\002\n\027Coll" +
-      "ectionConfigService\022\213\001\n\022WaitForProbeConf" +
-      "ig\0227.zenoss.cloud.collection_cfg.WaitFor" +
-      "ProbeConfigResponse\0326.zenoss.cloud.colle" +
-      "ction_cfg.WaitForProbeConfigRequest\"\000(\0010" +
-      "\001\022\200\001\n\017GetConfigStream\0223.zenoss.cloud.col" +
-      "lection_cfg.GetConfigStreamRequest\0324.zen" +
-      "oss.cloud.collection_cfg.GetConfigStream" +
-      "Response\"\0000\001BW\n\033org.zenoss.cloud.collect" +
-      "ionP\001Z6github.com/zenoss/zenoss-protobuf" +
-      "s/go/cloud/collectionb\006proto3"
+      "obeSuccess\"q\n\nProbeError\022\017\n\007message\030\003 \001(" +
+      "\t\022\023\n\013description\030\001 \001(\t\022=\n\014field_errors\030\002" +
+      " \003(\0132\'.zenoss.cloud.collection_cfg.Field" +
+      "Error\"0\n\nFieldError\022\r\n\005field\030\001 \001(\t\022\023\n\013de" +
+      "scription\030\002 \001(\t\"\217\001\n\013ProbeResult\022<\n\007succe" +
+      "ss\030\001 \001(\0132).zenoss.cloud.collection_cfg.P" +
+      "robeSuccessH\000\0228\n\005error\030\002 \001(\0132\'.zenoss.cl" +
+      "oud.collection_cfg.ProbeErrorH\000B\010\n\006resul" +
+      "t\"i\n\031WaitForProbeConfigRequest\022:\n\rconfig" +
+      "uration\030\001 \001(\0132#.zenoss.cloud.collection_" +
+      "cfg.Config\022\020\n\010deadline\030\002 \001(\003\"i\n\032WaitForP" +
+      "robeConfigResponse\022\021\n\tconfig_id\030\001 \001(\t\0228\n" +
+      "\006result\030\002 \001(\0132(.zenoss.cloud.collection_" +
+      "cfg.ProbeResult\"\030\n\026GetConfigStreamReques" +
+      "t\"U\n\027GetConfigStreamResponse\022:\n\rconfigur" +
+      "ation\030\001 \003(\0132#.zenoss.cloud.collection_cf" +
+      "g.Config2\252\002\n\027CollectionConfigService\022\213\001\n" +
+      "\022WaitForProbeConfig\0227.zenoss.cloud.colle" +
+      "ction_cfg.WaitForProbeConfigResponse\0326.z" +
+      "enoss.cloud.collection_cfg.WaitForProbeC" +
+      "onfigRequest\"\000(\0010\001\022\200\001\n\017GetConfigStream\0223" +
+      ".zenoss.cloud.collection_cfg.GetConfigSt" +
+      "reamRequest\0324.zenoss.cloud.collection_cf" +
+      "g.GetConfigStreamResponse\"\0000\001BW\n\033org.zen" +
+      "oss.cloud.collectionP\001Z6github.com/zenos" +
+      "s/zenoss-protobufs/go/cloud/collectionb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -133,7 +134,7 @@ public final class CollectionCfg {
     internal_static_zenoss_cloud_collection_cfg_ProbeError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_collection_cfg_ProbeError_descriptor,
-        new java.lang.String[] { "Description", "FieldErrors", });
+        new java.lang.String[] { "Message", "Description", "FieldErrors", });
     internal_static_zenoss_cloud_collection_cfg_FieldError_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_zenoss_cloud_collection_cfg_FieldError_fieldAccessorTable = new
