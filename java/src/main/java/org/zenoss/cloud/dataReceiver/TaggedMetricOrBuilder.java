@@ -12,7 +12,7 @@ public interface TaggedMetricOrBuilder extends
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   java.lang.String getMetric();
@@ -21,7 +21,7 @@ public interface TaggedMetricOrBuilder extends
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The bytes for metric.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface TaggedMetricOrBuilder extends
    * The time at which the value was captured
    * </pre>
    *
-   * <code>int64 timestamp = 2;</code>
+   * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   long getTimestamp();
@@ -42,7 +42,7 @@ public interface TaggedMetricOrBuilder extends
    * The metric value
    * </pre>
    *
-   * <code>double value = 3;</code>
+   * <code>double value = 3 [json_name = "value"];</code>
    * @return The value.
    */
   double getValue();
@@ -52,7 +52,7 @@ public interface TaggedMetricOrBuilder extends
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   int getTagsCount();
   /**
@@ -60,7 +60,7 @@ public interface TaggedMetricOrBuilder extends
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   boolean containsTags(
       java.lang.String key);
@@ -75,7 +75,7 @@ public interface TaggedMetricOrBuilder extends
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getTagsMap();
@@ -84,18 +84,20 @@ public interface TaggedMetricOrBuilder extends
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
 
-  java.lang.String getTagsOrDefault(
+  /* nullable */
+java.lang.String getTagsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <pre>
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
 
   java.lang.String getTagsOrThrow(

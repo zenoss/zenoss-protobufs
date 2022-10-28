@@ -151,6 +151,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -191,7 +193,7 @@ private static final long serialVersionUID = 0L;
    * timestamp is the time (in ms since epoch) at which the event occurred.
    * </pre>
    *
-   * <code>int64 timestamp = 1;</code>
+   * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -209,7 +211,7 @@ private static final long serialVersionUID = 0L;
    *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -233,7 +235,7 @@ private static final long serialVersionUID = 0L;
    *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -284,13 +286,13 @@ private static final long serialVersionUID = 0L;
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
 
   @java.lang.Override
   public boolean containsDimensions(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetDimensions().getMap().containsKey(key);
   }
   /**
@@ -308,7 +310,7 @@ private static final long serialVersionUID = 0L;
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
@@ -322,14 +324,14 @@ private static final long serialVersionUID = 0L;
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getDimensionsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetDimensions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -341,13 +343,13 @@ private static final long serialVersionUID = 0L;
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getDimensionsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetDimensions().getMap();
     if (!map.containsKey(key)) {
@@ -363,7 +365,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   @java.lang.Override
@@ -375,7 +377,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   @java.lang.Override
@@ -387,7 +389,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
@@ -403,7 +405,7 @@ private static final long serialVersionUID = 0L;
    *   - e.g. linkDown, fault-F0157
    * </pre>
    *
-   * <code>string type = 5;</code>
+   * <code>string type = 5 [json_name = "type"];</code>
    * @return The type.
    */
   @java.lang.Override
@@ -426,7 +428,7 @@ private static final long serialVersionUID = 0L;
    *   - e.g. linkDown, fault-F0157
    * </pre>
    *
-   * <code>string type = 5;</code>
+   * <code>string type = 5 [json_name = "type"];</code>
    * @return The bytes for type.
    */
   @java.lang.Override
@@ -453,7 +455,7 @@ private static final long serialVersionUID = 0L;
    *   - highly recommend to set this
    * </pre>
    *
-   * <code>string summary = 6;</code>
+   * <code>string summary = 6 [json_name = "summary"];</code>
    * @return The summary.
    */
   @java.lang.Override
@@ -476,7 +478,7 @@ private static final long serialVersionUID = 0L;
    *   - highly recommend to set this
    * </pre>
    *
-   * <code>string summary = 6;</code>
+   * <code>string summary = 6 [json_name = "summary"];</code>
    * @return The bytes for summary.
    */
   @java.lang.Override
@@ -502,7 +504,7 @@ private static final long serialVersionUID = 0L;
    *   - it is not necessary to repeat summary in the body
    * </pre>
    *
-   * <code>string body = 7;</code>
+   * <code>string body = 7 [json_name = "body"];</code>
    * @return The body.
    */
   @java.lang.Override
@@ -524,7 +526,7 @@ private static final long serialVersionUID = 0L;
    *   - it is not necessary to repeat summary in the body
    * </pre>
    *
-   * <code>string body = 7;</code>
+   * <code>string body = 7 [json_name = "body"];</code>
    * @return The bytes for body.
    */
   @java.lang.Override
@@ -555,7 +557,7 @@ private static final long serialVersionUID = 0L;
    *   - use SEVERITY_CRITICAL for system down
    * </pre>
    *
-   * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
    * @return The enum numeric value on the wire for severity.
    */
   @java.lang.Override public int getSeverityValue() {
@@ -572,7 +574,7 @@ private static final long serialVersionUID = 0L;
    *   - use SEVERITY_CRITICAL for system down
    * </pre>
    *
-   * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
    * @return The severity.
    */
   @java.lang.Override public org.zenoss.cloud.dataReceiver.Severity getSeverity() {
@@ -592,7 +594,7 @@ private static final long serialVersionUID = 0L;
    *   - use STATUS_CLOSED when the event is known to have subsided
    * </pre>
    *
-   * <code>.zenoss.cloud.Status status = 9;</code>
+   * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   @java.lang.Override public int getStatusValue() {
@@ -607,7 +609,7 @@ private static final long serialVersionUID = 0L;
    *   - use STATUS_CLOSED when the event is known to have subsided
    * </pre>
    *
-   * <code>.zenoss.cloud.Status status = 9;</code>
+   * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
    * @return The status.
    */
   @java.lang.Override public org.zenoss.cloud.dataReceiver.Status getStatus() {
@@ -623,7 +625,7 @@ private static final long serialVersionUID = 0L;
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    * @return Whether the acknowledged field is set.
    */
   @java.lang.Override
@@ -635,7 +637,7 @@ private static final long serialVersionUID = 0L;
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    * @return The acknowledged.
    */
   @java.lang.Override
@@ -647,7 +649,7 @@ private static final long serialVersionUID = 0L;
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getAcknowledgedOrBuilder() {
@@ -671,7 +673,7 @@ private static final long serialVersionUID = 0L;
     if (timestamp_ != 0L) {
       output.writeInt64(1, timestamp_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -683,13 +685,13 @@ private static final long serialVersionUID = 0L;
     if (metadataFields_ != null) {
       output.writeMessage(4, getMetadataFields());
     }
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, type_);
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, summary_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, body_);
     }
     if (severity_ != org.zenoss.cloud.dataReceiver.Severity.SEVERITY_DEFAULT.getNumber()) {
@@ -714,7 +716,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, timestamp_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
@@ -731,13 +733,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getMetadataFields());
     }
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, type_);
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, summary_);
     }
-    if (!getBodyBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, body_);
     }
     if (severity_ != org.zenoss.cloud.dataReceiver.Severity.SEVERITY_DEFAULT.getNumber()) {
@@ -1179,7 +1181,7 @@ private static final long serialVersionUID = 0L;
      * timestamp is the time (in ms since epoch) at which the event occurred.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -1191,7 +1193,7 @@ private static final long serialVersionUID = 0L;
      * timestamp is the time (in ms since epoch) at which the event occurred.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -1206,7 +1208,7 @@ private static final long serialVersionUID = 0L;
      * timestamp is the time (in ms since epoch) at which the event occurred.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
@@ -1225,7 +1227,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1248,7 +1250,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1272,7 +1274,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1294,7 +1296,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1311,7 +1313,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
      * </pre>
      *
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1360,13 +1362,13 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
 
     @java.lang.Override
     public boolean containsDimensions(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetDimensions().getMap().containsKey(key);
     }
     /**
@@ -1384,7 +1386,7 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
@@ -1398,14 +1400,14 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getDimensionsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDimensions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1417,13 +1419,13 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getDimensionsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDimensions().getMap();
       if (!map.containsKey(key)) {
@@ -1444,12 +1446,12 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
 
     public Builder removeDimensions(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableDimensions().getMutableMap()
           .remove(key);
       return this;
@@ -1469,13 +1471,16 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
     public Builder putDimensions(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableDimensions().getMutableMap()
           .put(key, value);
       return this;
@@ -1487,7 +1492,7 @@ private static final long serialVersionUID = 0L;
      *   - typically set the same as the entity to which event is related
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 3;</code>
+     * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
      */
 
     public Builder putAllDimensions(
@@ -1505,7 +1510,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
@@ -1516,7 +1521,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
@@ -1531,7 +1536,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -1551,7 +1556,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -1569,7 +1574,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -1591,7 +1596,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -1609,7 +1614,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
@@ -1621,7 +1626,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
       if (metadataFieldsBuilder_ != null) {
@@ -1636,7 +1641,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this event.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 4;</code>
+     * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -1660,7 +1665,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157
      * </pre>
      *
-     * <code>string type = 5;</code>
+     * <code>string type = 5 [json_name = "type"];</code>
      * @return The type.
      */
     public java.lang.String getType() {
@@ -1682,7 +1687,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157
      * </pre>
      *
-     * <code>string type = 5;</code>
+     * <code>string type = 5 [json_name = "type"];</code>
      * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
@@ -1705,7 +1710,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157
      * </pre>
      *
-     * <code>string type = 5;</code>
+     * <code>string type = 5 [json_name = "type"];</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1726,7 +1731,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157
      * </pre>
      *
-     * <code>string type = 5;</code>
+     * <code>string type = 5 [json_name = "type"];</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -1742,7 +1747,7 @@ private static final long serialVersionUID = 0L;
      *   - e.g. linkDown, fault-F0157
      * </pre>
      *
-     * <code>string type = 5;</code>
+     * <code>string type = 5 [json_name = "type"];</code>
      * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
@@ -1766,7 +1771,7 @@ private static final long serialVersionUID = 0L;
      *   - highly recommend to set this
      * </pre>
      *
-     * <code>string summary = 6;</code>
+     * <code>string summary = 6 [json_name = "summary"];</code>
      * @return The summary.
      */
     public java.lang.String getSummary() {
@@ -1788,7 +1793,7 @@ private static final long serialVersionUID = 0L;
      *   - highly recommend to set this
      * </pre>
      *
-     * <code>string summary = 6;</code>
+     * <code>string summary = 6 [json_name = "summary"];</code>
      * @return The bytes for summary.
      */
     public com.google.protobuf.ByteString
@@ -1811,7 +1816,7 @@ private static final long serialVersionUID = 0L;
      *   - highly recommend to set this
      * </pre>
      *
-     * <code>string summary = 6;</code>
+     * <code>string summary = 6 [json_name = "summary"];</code>
      * @param value The summary to set.
      * @return This builder for chaining.
      */
@@ -1832,7 +1837,7 @@ private static final long serialVersionUID = 0L;
      *   - highly recommend to set this
      * </pre>
      *
-     * <code>string summary = 6;</code>
+     * <code>string summary = 6 [json_name = "summary"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSummary() {
@@ -1848,7 +1853,7 @@ private static final long serialVersionUID = 0L;
      *   - highly recommend to set this
      * </pre>
      *
-     * <code>string summary = 6;</code>
+     * <code>string summary = 6 [json_name = "summary"];</code>
      * @param value The bytes for summary to set.
      * @return This builder for chaining.
      */
@@ -1871,7 +1876,7 @@ private static final long serialVersionUID = 0L;
      *   - it is not necessary to repeat summary in the body
      * </pre>
      *
-     * <code>string body = 7;</code>
+     * <code>string body = 7 [json_name = "body"];</code>
      * @return The body.
      */
     public java.lang.String getBody() {
@@ -1892,7 +1897,7 @@ private static final long serialVersionUID = 0L;
      *   - it is not necessary to repeat summary in the body
      * </pre>
      *
-     * <code>string body = 7;</code>
+     * <code>string body = 7 [json_name = "body"];</code>
      * @return The bytes for body.
      */
     public com.google.protobuf.ByteString
@@ -1914,7 +1919,7 @@ private static final long serialVersionUID = 0L;
      *   - it is not necessary to repeat summary in the body
      * </pre>
      *
-     * <code>string body = 7;</code>
+     * <code>string body = 7 [json_name = "body"];</code>
      * @param value The body to set.
      * @return This builder for chaining.
      */
@@ -1934,7 +1939,7 @@ private static final long serialVersionUID = 0L;
      *   - it is not necessary to repeat summary in the body
      * </pre>
      *
-     * <code>string body = 7;</code>
+     * <code>string body = 7 [json_name = "body"];</code>
      * @return This builder for chaining.
      */
     public Builder clearBody() {
@@ -1949,7 +1954,7 @@ private static final long serialVersionUID = 0L;
      *   - it is not necessary to repeat summary in the body
      * </pre>
      *
-     * <code>string body = 7;</code>
+     * <code>string body = 7 [json_name = "body"];</code>
      * @param value The bytes for body to set.
      * @return This builder for chaining.
      */
@@ -1977,7 +1982,7 @@ private static final long serialVersionUID = 0L;
      *   - use SEVERITY_CRITICAL for system down
      * </pre>
      *
-     * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
      * @return The enum numeric value on the wire for severity.
      */
     @java.lang.Override public int getSeverityValue() {
@@ -1994,7 +1999,7 @@ private static final long serialVersionUID = 0L;
      *   - use SEVERITY_CRITICAL for system down
      * </pre>
      *
-     * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
      * @param value The enum numeric value on the wire for severity to set.
      * @return This builder for chaining.
      */
@@ -2015,7 +2020,7 @@ private static final long serialVersionUID = 0L;
      *   - use SEVERITY_CRITICAL for system down
      * </pre>
      *
-     * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
      * @return The severity.
      */
     @java.lang.Override
@@ -2035,7 +2040,7 @@ private static final long serialVersionUID = 0L;
      *   - use SEVERITY_CRITICAL for system down
      * </pre>
      *
-     * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
      * @param value The severity to set.
      * @return This builder for chaining.
      */
@@ -2059,7 +2064,7 @@ private static final long serialVersionUID = 0L;
      *   - use SEVERITY_CRITICAL for system down
      * </pre>
      *
-     * <code>.zenoss.cloud.Severity severity = 8;</code>
+     * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
@@ -2079,7 +2084,7 @@ private static final long serialVersionUID = 0L;
      *   - use STATUS_CLOSED when the event is known to have subsided
      * </pre>
      *
-     * <code>.zenoss.cloud.Status status = 9;</code>
+     * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
      * @return The enum numeric value on the wire for status.
      */
     @java.lang.Override public int getStatusValue() {
@@ -2094,7 +2099,7 @@ private static final long serialVersionUID = 0L;
      *   - use STATUS_CLOSED when the event is known to have subsided
      * </pre>
      *
-     * <code>.zenoss.cloud.Status status = 9;</code>
+     * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
      * @param value The enum numeric value on the wire for status to set.
      * @return This builder for chaining.
      */
@@ -2113,7 +2118,7 @@ private static final long serialVersionUID = 0L;
      *   - use STATUS_CLOSED when the event is known to have subsided
      * </pre>
      *
-     * <code>.zenoss.cloud.Status status = 9;</code>
+     * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
      * @return The status.
      */
     @java.lang.Override
@@ -2131,7 +2136,7 @@ private static final long serialVersionUID = 0L;
      *   - use STATUS_CLOSED when the event is known to have subsided
      * </pre>
      *
-     * <code>.zenoss.cloud.Status status = 9;</code>
+     * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
      * @param value The status to set.
      * @return This builder for chaining.
      */
@@ -2153,7 +2158,7 @@ private static final long serialVersionUID = 0L;
      *   - use STATUS_CLOSED when the event is known to have subsided
      * </pre>
      *
-     * <code>.zenoss.cloud.Status status = 9;</code>
+     * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
@@ -2171,7 +2176,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      * @return Whether the acknowledged field is set.
      */
     public boolean hasAcknowledged() {
@@ -2182,7 +2187,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      * @return The acknowledged.
      */
     public com.google.protobuf.BoolValue getAcknowledged() {
@@ -2197,7 +2202,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public Builder setAcknowledged(com.google.protobuf.BoolValue value) {
       if (acknowledgedBuilder_ == null) {
@@ -2217,7 +2222,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public Builder setAcknowledged(
         com.google.protobuf.BoolValue.Builder builderForValue) {
@@ -2235,7 +2240,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public Builder mergeAcknowledged(com.google.protobuf.BoolValue value) {
       if (acknowledgedBuilder_ == null) {
@@ -2257,7 +2262,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public Builder clearAcknowledged() {
       if (acknowledgedBuilder_ == null) {
@@ -2275,7 +2280,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public com.google.protobuf.BoolValue.Builder getAcknowledgedBuilder() {
       
@@ -2287,7 +2292,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     public com.google.protobuf.BoolValueOrBuilder getAcknowledgedOrBuilder() {
       if (acknowledgedBuilder_ != null) {
@@ -2302,7 +2307,7 @@ private static final long serialVersionUID = 0L;
      * acknowledged explicitly sets the events acknowledged state.
      * </pre>
      *
-     * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+     * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 

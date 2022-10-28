@@ -8,12 +8,12 @@ public interface UpdateMetricRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString
@@ -24,7 +24,7 @@ public interface UpdateMetricRequestOrBuilder extends
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
@@ -33,7 +33,7 @@ public interface UpdateMetricRequestOrBuilder extends
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
@@ -42,23 +42,23 @@ public interface UpdateMetricRequestOrBuilder extends
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder();
 
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();
 
   /**
-   * <code>int64 timestamp = 4;</code>
+   * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   long getTimestamp();

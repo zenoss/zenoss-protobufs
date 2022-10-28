@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -154,13 +156,13 @@ private static final long serialVersionUID = 0L;
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
 
   @java.lang.Override
   public boolean containsGlobalTags(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetGlobalTags().getMap().containsKey(key);
   }
   /**
@@ -176,7 +178,7 @@ private static final long serialVersionUID = 0L;
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
 
@@ -188,14 +190,14 @@ private static final long serialVersionUID = 0L;
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getGlobalTagsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetGlobalTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -205,13 +207,13 @@ private static final long serialVersionUID = 0L;
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getGlobalTagsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetGlobalTags().getMap();
     if (!map.containsKey(key)) {
@@ -227,7 +229,7 @@ private static final long serialVersionUID = 0L;
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> getMetricsList() {
@@ -238,7 +240,7 @@ private static final long serialVersionUID = 0L;
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> 
@@ -250,7 +252,7 @@ private static final long serialVersionUID = 0L;
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public int getMetricsCount() {
@@ -261,7 +263,7 @@ private static final long serialVersionUID = 0L;
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapper getMetrics(int index) {
@@ -272,7 +274,7 @@ private static final long serialVersionUID = 0L;
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricsOrBuilder(
@@ -706,13 +708,13 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
 
     @java.lang.Override
     public boolean containsGlobalTags(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetGlobalTags().getMap().containsKey(key);
     }
     /**
@@ -728,7 +730,7 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
 
@@ -740,14 +742,14 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getGlobalTagsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetGlobalTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -757,13 +759,13 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getGlobalTagsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetGlobalTags().getMap();
       if (!map.containsKey(key)) {
@@ -782,12 +784,12 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
 
     public Builder removeGlobalTags(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableGlobalTags().getMutableMap()
           .remove(key);
       return this;
@@ -805,13 +807,16 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     public Builder putGlobalTags(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableGlobalTags().getMutableMap()
           .put(key, value);
       return this;
@@ -821,7 +826,7 @@ private static final long serialVersionUID = 0L;
      * Tags that apply to all metrics in the batch
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_tags = 2;</code>
+     * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
 
     public Builder putAllGlobalTags(
@@ -848,7 +853,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> getMetricsList() {
       if (metricsBuilder_ == null) {
@@ -862,7 +867,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public int getMetricsCount() {
       if (metricsBuilder_ == null) {
@@ -876,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper getMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -890,7 +895,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(
         int index, org.zenoss.cloud.dataReceiver.MetricWrapper value) {
@@ -911,7 +916,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(
         int index, org.zenoss.cloud.dataReceiver.MetricWrapper.Builder builderForValue) {
@@ -929,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(org.zenoss.cloud.dataReceiver.MetricWrapper value) {
       if (metricsBuilder_ == null) {
@@ -949,7 +954,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         int index, org.zenoss.cloud.dataReceiver.MetricWrapper value) {
@@ -970,7 +975,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         org.zenoss.cloud.dataReceiver.MetricWrapper.Builder builderForValue) {
@@ -988,7 +993,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         int index, org.zenoss.cloud.dataReceiver.MetricWrapper.Builder builderForValue) {
@@ -1006,7 +1011,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder addAllMetrics(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.MetricWrapper> values) {
@@ -1025,7 +1030,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -1042,7 +1047,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public Builder removeMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -1059,7 +1064,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper.Builder getMetricsBuilder(
         int index) {
@@ -1070,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricsOrBuilder(
         int index) {
@@ -1084,7 +1089,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> 
          getMetricsOrBuilderList() {
@@ -1099,7 +1104,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper.Builder addMetricsBuilder() {
       return getMetricsFieldBuilder().addBuilder(
@@ -1110,7 +1115,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper.Builder addMetricsBuilder(
         int index) {
@@ -1122,7 +1127,7 @@ private static final long serialVersionUID = 0L;
      * The metrics
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+     * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper.Builder> 
          getMetricsBuilderList() {

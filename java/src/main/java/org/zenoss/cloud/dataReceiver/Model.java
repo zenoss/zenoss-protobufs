@@ -91,6 +91,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -131,7 +133,7 @@ private static final long serialVersionUID = 0L;
    * The time when the value was sent.
    * </pre>
    *
-   * <code>int64 timestamp = 1;</code>
+   * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -170,13 +172,13 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
 
   @java.lang.Override
   public boolean containsDimensions(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetDimensions().getMap().containsKey(key);
   }
   /**
@@ -192,7 +194,7 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
@@ -204,14 +206,14 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getDimensionsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetDimensions().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -221,13 +223,13 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getDimensionsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetDimensions().getMap();
     if (!map.containsKey(key)) {
@@ -243,7 +245,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   @java.lang.Override
@@ -255,7 +257,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   @java.lang.Override
@@ -267,7 +269,7 @@ private static final long serialVersionUID = 0L;
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
@@ -664,7 +666,7 @@ private static final long serialVersionUID = 0L;
      * The time when the value was sent.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -676,7 +678,7 @@ private static final long serialVersionUID = 0L;
      * The time when the value was sent.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -691,7 +693,7 @@ private static final long serialVersionUID = 0L;
      * The time when the value was sent.
      * </pre>
      *
-     * <code>int64 timestamp = 1;</code>
+     * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
@@ -732,13 +734,13 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
 
     @java.lang.Override
     public boolean containsDimensions(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetDimensions().getMap().containsKey(key);
     }
     /**
@@ -754,7 +756,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
@@ -766,14 +768,14 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getDimensionsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDimensions().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -783,13 +785,13 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getDimensionsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDimensions().getMap();
       if (!map.containsKey(key)) {
@@ -808,12 +810,12 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
 
     public Builder removeDimensions(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableDimensions().getMutableMap()
           .remove(key);
       return this;
@@ -831,13 +833,16 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
     public Builder putDimensions(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableDimensions().getMutableMap()
           .put(key, value);
       return this;
@@ -847,7 +852,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this model.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; dimensions = 2;</code>
+     * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
      */
 
     public Builder putAllDimensions(
@@ -865,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
@@ -876,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
@@ -891,7 +896,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -911,7 +916,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -929,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -951,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -969,7 +974,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
@@ -981,7 +986,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
       if (metadataFieldsBuilder_ != null) {
@@ -996,7 +1001,7 @@ private static final long serialVersionUID = 0L;
      * Fields associated with this model.
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 

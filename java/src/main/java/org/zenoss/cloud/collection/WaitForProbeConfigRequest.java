@@ -77,6 +77,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -101,7 +103,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIGURATION_FIELD_NUMBER = 1;
   private org.zenoss.cloud.collection.Config configuration_;
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    * @return Whether the configuration field is set.
    */
   @java.lang.Override
@@ -109,7 +111,7 @@ private static final long serialVersionUID = 0L;
     return configuration_ != null;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    * @return The configuration.
    */
   @java.lang.Override
@@ -117,7 +119,7 @@ private static final long serialVersionUID = 0L;
     return configuration_ == null ? org.zenoss.cloud.collection.Config.getDefaultInstance() : configuration_;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ConfigOrBuilder getConfigurationOrBuilder() {
@@ -127,7 +129,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEADLINE_FIELD_NUMBER = 2;
   private long deadline_;
   /**
-   * <code>int64 deadline = 2;</code>
+   * <code>int64 deadline = 2 [json_name = "deadline"];</code>
    * @return The deadline.
    */
   @java.lang.Override
@@ -472,14 +474,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.Config, org.zenoss.cloud.collection.Config.Builder, org.zenoss.cloud.collection.ConfigOrBuilder> configurationBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      * @return Whether the configuration field is set.
      */
     public boolean hasConfiguration() {
       return configurationBuilder_ != null || configuration_ != null;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      * @return The configuration.
      */
     public org.zenoss.cloud.collection.Config getConfiguration() {
@@ -490,7 +492,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(org.zenoss.cloud.collection.Config value) {
       if (configurationBuilder_ == null) {
@@ -506,7 +508,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(
         org.zenoss.cloud.collection.Config.Builder builderForValue) {
@@ -520,7 +522,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder mergeConfiguration(org.zenoss.cloud.collection.Config value) {
       if (configurationBuilder_ == null) {
@@ -538,7 +540,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder clearConfiguration() {
       if (configurationBuilder_ == null) {
@@ -552,7 +554,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Config.Builder getConfigurationBuilder() {
       
@@ -560,7 +562,7 @@ private static final long serialVersionUID = 0L;
       return getConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.ConfigOrBuilder getConfigurationOrBuilder() {
       if (configurationBuilder_ != null) {
@@ -571,7 +573,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.Config, org.zenoss.cloud.collection.Config.Builder, org.zenoss.cloud.collection.ConfigOrBuilder> 
@@ -589,7 +591,7 @@ private static final long serialVersionUID = 0L;
 
     private long deadline_ ;
     /**
-     * <code>int64 deadline = 2;</code>
+     * <code>int64 deadline = 2 [json_name = "deadline"];</code>
      * @return The deadline.
      */
     @java.lang.Override
@@ -597,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return deadline_;
     }
     /**
-     * <code>int64 deadline = 2;</code>
+     * <code>int64 deadline = 2 [json_name = "deadline"];</code>
      * @param value The deadline to set.
      * @return This builder for chaining.
      */
@@ -608,7 +610,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 deadline = 2;</code>
+     * <code>int64 deadline = 2 [json_name = "deadline"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDeadline() {

@@ -12,7 +12,7 @@ public interface EventOrBuilder extends
    * timestamp is the time (in ms since epoch) at which the event occurred.
    * </pre>
    *
-   * <code>int64 timestamp = 1;</code>
+   * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   long getTimestamp();
@@ -25,7 +25,7 @@ public interface EventOrBuilder extends
    *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -37,7 +37,7 @@ public interface EventOrBuilder extends
    *   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -50,7 +50,7 @@ public interface EventOrBuilder extends
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   int getDimensionsCount();
   /**
@@ -60,7 +60,7 @@ public interface EventOrBuilder extends
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   boolean containsDimensions(
       java.lang.String key);
@@ -77,7 +77,7 @@ public interface EventOrBuilder extends
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getDimensionsMap();
@@ -88,12 +88,14 @@ public interface EventOrBuilder extends
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
 
-  java.lang.String getDimensionsOrDefault(
+  /* nullable */
+java.lang.String getDimensionsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <pre>
    * Dimensions associated with this event.
@@ -101,7 +103,7 @@ public interface EventOrBuilder extends
    *   - typically set the same as the entity to which event is related
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 3;</code>
+   * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
 
   java.lang.String getDimensionsOrThrow(
@@ -112,7 +114,7 @@ public interface EventOrBuilder extends
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
@@ -121,7 +123,7 @@ public interface EventOrBuilder extends
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
@@ -130,7 +132,7 @@ public interface EventOrBuilder extends
    * Fields associated with this event.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 4;</code>
+   * <code>.google.protobuf.Struct metadataFields = 4 [json_name = "metadataFields"];</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder();
 
@@ -141,7 +143,7 @@ public interface EventOrBuilder extends
    *   - e.g. linkDown, fault-F0157
    * </pre>
    *
-   * <code>string type = 5;</code>
+   * <code>string type = 5 [json_name = "type"];</code>
    * @return The type.
    */
   java.lang.String getType();
@@ -152,7 +154,7 @@ public interface EventOrBuilder extends
    *   - e.g. linkDown, fault-F0157
    * </pre>
    *
-   * <code>string type = 5;</code>
+   * <code>string type = 5 [json_name = "type"];</code>
    * @return The bytes for type.
    */
   com.google.protobuf.ByteString
@@ -165,7 +167,7 @@ public interface EventOrBuilder extends
    *   - highly recommend to set this
    * </pre>
    *
-   * <code>string summary = 6;</code>
+   * <code>string summary = 6 [json_name = "summary"];</code>
    * @return The summary.
    */
   java.lang.String getSummary();
@@ -176,7 +178,7 @@ public interface EventOrBuilder extends
    *   - highly recommend to set this
    * </pre>
    *
-   * <code>string summary = 6;</code>
+   * <code>string summary = 6 [json_name = "summary"];</code>
    * @return The bytes for summary.
    */
   com.google.protobuf.ByteString
@@ -188,7 +190,7 @@ public interface EventOrBuilder extends
    *   - it is not necessary to repeat summary in the body
    * </pre>
    *
-   * <code>string body = 7;</code>
+   * <code>string body = 7 [json_name = "body"];</code>
    * @return The body.
    */
   java.lang.String getBody();
@@ -198,7 +200,7 @@ public interface EventOrBuilder extends
    *   - it is not necessary to repeat summary in the body
    * </pre>
    *
-   * <code>string body = 7;</code>
+   * <code>string body = 7 [json_name = "body"];</code>
    * @return The bytes for body.
    */
   com.google.protobuf.ByteString
@@ -215,7 +217,7 @@ public interface EventOrBuilder extends
    *   - use SEVERITY_CRITICAL for system down
    * </pre>
    *
-   * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
@@ -230,7 +232,7 @@ public interface EventOrBuilder extends
    *   - use SEVERITY_CRITICAL for system down
    * </pre>
    *
-   * <code>.zenoss.cloud.Severity severity = 8;</code>
+   * <code>.zenoss.cloud.Severity severity = 8 [json_name = "severity"];</code>
    * @return The severity.
    */
   org.zenoss.cloud.dataReceiver.Severity getSeverity();
@@ -244,7 +246,7 @@ public interface EventOrBuilder extends
    *   - use STATUS_CLOSED when the event is known to have subsided
    * </pre>
    *
-   * <code>.zenoss.cloud.Status status = 9;</code>
+   * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
@@ -257,7 +259,7 @@ public interface EventOrBuilder extends
    *   - use STATUS_CLOSED when the event is known to have subsided
    * </pre>
    *
-   * <code>.zenoss.cloud.Status status = 9;</code>
+   * <code>.zenoss.cloud.Status status = 9 [json_name = "status"];</code>
    * @return The status.
    */
   org.zenoss.cloud.dataReceiver.Status getStatus();
@@ -267,7 +269,7 @@ public interface EventOrBuilder extends
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    * @return Whether the acknowledged field is set.
    */
   boolean hasAcknowledged();
@@ -276,7 +278,7 @@ public interface EventOrBuilder extends
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    * @return The acknowledged.
    */
   com.google.protobuf.BoolValue getAcknowledged();
@@ -285,7 +287,7 @@ public interface EventOrBuilder extends
    * acknowledged explicitly sets the events acknowledged state.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue acknowledged = 10;</code>
+   * <code>.google.protobuf.BoolValue acknowledged = 10 [json_name = "acknowledged"];</code>
    */
   com.google.protobuf.BoolValueOrBuilder getAcknowledgedOrBuilder();
 }

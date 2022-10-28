@@ -12,7 +12,7 @@ public interface EventsOrBuilder extends
    * detailedResponse: if true, return any events that failed to be sent.
    * </pre>
    *
-   * <code>bool detailedResponse = 1;</code>
+   * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
    * @return The detailedResponse.
    */
   boolean getDetailedResponse();
@@ -22,7 +22,7 @@ public interface EventsOrBuilder extends
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   java.util.List<org.zenoss.cloud.dataReceiver.Event> 
       getEventsList();
@@ -31,7 +31,7 @@ public interface EventsOrBuilder extends
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   org.zenoss.cloud.dataReceiver.Event getEvents(int index);
   /**
@@ -39,7 +39,7 @@ public interface EventsOrBuilder extends
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   int getEventsCount();
   /**
@@ -47,7 +47,7 @@ public interface EventsOrBuilder extends
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   java.util.List<? extends org.zenoss.cloud.dataReceiver.EventOrBuilder> 
       getEventsOrBuilderList();
@@ -56,7 +56,7 @@ public interface EventsOrBuilder extends
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   org.zenoss.cloud.dataReceiver.EventOrBuilder getEventsOrBuilder(
       int index);

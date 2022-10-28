@@ -8,24 +8,24 @@ public interface ConfigurationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [json_name = "type"];</code>
    * @return The type.
    */
   java.lang.String getType();
   /**
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [json_name = "type"];</code>
    * @return The bytes for type.
    */
   com.google.protobuf.ByteString
       getTypeBytes();
 
   /**
-   * <code>string data = 2;</code>
+   * <code>string data = 2 [json_name = "data"];</code>
    * @return The data.
    */
   java.lang.String getData();
   /**
-   * <code>string data = 2;</code>
+   * <code>string data = 2 [json_name = "data"];</code>
    * @return The bytes for data.
    */
   com.google.protobuf.ByteString

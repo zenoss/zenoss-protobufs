@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,7 +105,7 @@ private static final long serialVersionUID = 0L;
   public static final int METRIC_FIELD_NUMBER = 1;
   private org.zenoss.cloud.dataReceiver.MetricWrapper metric_;
   /**
-   * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+   * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
    * @return Whether the metric field is set.
    */
   @java.lang.Override
@@ -111,7 +113,7 @@ private static final long serialVersionUID = 0L;
     return metric_ != null;
   }
   /**
-   * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+   * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   @java.lang.Override
@@ -119,7 +121,7 @@ private static final long serialVersionUID = 0L;
     return metric_ == null ? org.zenoss.cloud.dataReceiver.MetricWrapper.getDefaultInstance() : metric_;
   }
   /**
-   * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+   * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricOrBuilder() {
@@ -129,14 +131,14 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MODE_FIELD_NUMBER = 2;
   private int updateMode_;
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   @java.lang.Override public int getUpdateModeValue() {
     return updateMode_;
   }
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   @java.lang.Override public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
@@ -480,14 +482,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.MetricWrapper.Builder, org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> metricBuilder_;
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
       return metricBuilder_ != null || metric_ != null;
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      * @return The metric.
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper getMetric() {
@@ -498,7 +500,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public Builder setMetric(org.zenoss.cloud.dataReceiver.MetricWrapper value) {
       if (metricBuilder_ == null) {
@@ -514,7 +516,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public Builder setMetric(
         org.zenoss.cloud.dataReceiver.MetricWrapper.Builder builderForValue) {
@@ -528,7 +530,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public Builder mergeMetric(org.zenoss.cloud.dataReceiver.MetricWrapper value) {
       if (metricBuilder_ == null) {
@@ -546,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public Builder clearMetric() {
       if (metricBuilder_ == null) {
@@ -560,7 +562,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapper.Builder getMetricBuilder() {
       
@@ -568,7 +570,7 @@ private static final long serialVersionUID = 0L;
       return getMetricFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricOrBuilder() {
       if (metricBuilder_ != null) {
@@ -579,7 +581,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.MetricWrapper metric = 1;</code>
+     * <code>.zenoss.cloud.MetricWrapper metric = 1 [json_name = "metric"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.MetricWrapper.Builder, org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> 
@@ -597,14 +599,14 @@ private static final long serialVersionUID = 0L;
 
     private int updateMode_ = 0;
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
      * @return The enum numeric value on the wire for updateMode.
      */
     @java.lang.Override public int getUpdateModeValue() {
       return updateMode_;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
      * @param value The enum numeric value on the wire for updateMode to set.
      * @return This builder for chaining.
      */
@@ -615,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
      * @return The updateMode.
      */
     @java.lang.Override
@@ -625,7 +627,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? org.zenoss.cloud.dataRegistry.UpdateMode.UNRECOGNIZED : result;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
      * @param value The updateMode to set.
      * @return This builder for chaining.
      */
@@ -639,7 +641,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 2;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 2 [json_name = "updateMode"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdateMode() {

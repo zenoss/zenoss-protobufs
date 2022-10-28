@@ -12,7 +12,7 @@ public interface MetricBatchOrBuilder extends
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   int getGlobalTagsCount();
   /**
@@ -20,7 +20,7 @@ public interface MetricBatchOrBuilder extends
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   boolean containsGlobalTags(
       java.lang.String key);
@@ -35,7 +35,7 @@ public interface MetricBatchOrBuilder extends
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getGlobalTagsMap();
@@ -44,18 +44,20 @@ public interface MetricBatchOrBuilder extends
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
 
-  java.lang.String getGlobalTagsOrDefault(
+  /* nullable */
+java.lang.String getGlobalTagsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <pre>
    * Tags that apply to all metrics in the batch
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_tags = 2;</code>
+   * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
 
   java.lang.String getGlobalTagsOrThrow(
@@ -66,7 +68,7 @@ public interface MetricBatchOrBuilder extends
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> 
       getMetricsList();
@@ -75,7 +77,7 @@ public interface MetricBatchOrBuilder extends
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   org.zenoss.cloud.dataReceiver.MetricWrapper getMetrics(int index);
   /**
@@ -83,7 +85,7 @@ public interface MetricBatchOrBuilder extends
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   int getMetricsCount();
   /**
@@ -91,7 +93,7 @@ public interface MetricBatchOrBuilder extends
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder> 
       getMetricsOrBuilderList();
@@ -100,7 +102,7 @@ public interface MetricBatchOrBuilder extends
    * The metrics
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3;</code>
+   * <code>repeated .zenoss.cloud.MetricWrapper metrics = 3 [json_name = "metrics"];</code>
    */
   org.zenoss.cloud.dataReceiver.MetricWrapperOrBuilder getMetricsOrBuilder(
       int index);

@@ -1,25 +1,13 @@
 package org.zenoss.cloud.dataRegistry;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.13.1)",
+    value = "by gRPC proto compiler (version 1.48.1)",
     comments = "Source: zenoss/cloud/data_registry.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DataRegistryServiceGrpc {
 
   private DataRegistryServiceGrpc() {}
@@ -30,170 +18,201 @@ public final class DataRegistryServiceGrpc {
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getCreateOrUpdateMetricMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOrUpdateMetric",
+      requestType = org.zenoss.cloud.dataRegistry.RegisterMetricRequest.class,
+      responseType = org.zenoss.cloud.dataRegistry.RegisterMetricResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getCreateOrUpdateMetricMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getCreateOrUpdateMetricMethod;
     if ((getCreateOrUpdateMetricMethod = DataRegistryServiceGrpc.getCreateOrUpdateMetricMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getCreateOrUpdateMetricMethod = DataRegistryServiceGrpc.getCreateOrUpdateMetricMethod) == null) {
-          DataRegistryServiceGrpc.getCreateOrUpdateMetricMethod = getCreateOrUpdateMetricMethod = 
+          DataRegistryServiceGrpc.getCreateOrUpdateMetricMethod = getCreateOrUpdateMetricMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.RegisterMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "CreateOrUpdateMetric"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateOrUpdateMetric"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.RegisterMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("CreateOrUpdateMetric"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("CreateOrUpdateMetric"))
+              .build();
         }
-     }
-     return getCreateOrUpdateMetricMethod;
+      }
+    }
+    return getCreateOrUpdateMetricMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricsResponse> getCreateOrUpdateMetricsMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOrUpdateMetrics",
+      requestType = org.zenoss.cloud.dataRegistry.RegisterMetricRequest.class,
+      responseType = org.zenoss.cloud.dataRegistry.RegisterMetricsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricsResponse> getCreateOrUpdateMetricsMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.RegisterMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricsResponse> getCreateOrUpdateMetricsMethod;
     if ((getCreateOrUpdateMetricsMethod = DataRegistryServiceGrpc.getCreateOrUpdateMetricsMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getCreateOrUpdateMetricsMethod = DataRegistryServiceGrpc.getCreateOrUpdateMetricsMethod) == null) {
-          DataRegistryServiceGrpc.getCreateOrUpdateMetricsMethod = getCreateOrUpdateMetricsMethod = 
+          DataRegistryServiceGrpc.getCreateOrUpdateMetricsMethod = getCreateOrUpdateMetricsMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.RegisterMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "CreateOrUpdateMetrics"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateOrUpdateMetrics"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.RegisterMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.RegisterMetricsResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("CreateOrUpdateMetrics"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("CreateOrUpdateMetrics"))
+              .build();
         }
-     }
-     return getCreateOrUpdateMetricsMethod;
+      }
+    }
+    return getCreateOrUpdateMetricsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.UpdateMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getUpdateMetricMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMetric",
+      requestType = org.zenoss.cloud.dataRegistry.UpdateMetricRequest.class,
+      responseType = org.zenoss.cloud.dataRegistry.RegisterMetricResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.UpdateMetricRequest,
       org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getUpdateMetricMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.UpdateMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricResponse> getUpdateMetricMethod;
     if ((getUpdateMetricMethod = DataRegistryServiceGrpc.getUpdateMetricMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getUpdateMetricMethod = DataRegistryServiceGrpc.getUpdateMetricMethod) == null) {
-          DataRegistryServiceGrpc.getUpdateMetricMethod = getUpdateMetricMethod = 
+          DataRegistryServiceGrpc.getUpdateMetricMethod = getUpdateMetricMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.UpdateMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "UpdateMetric"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMetric"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.UpdateMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("UpdateMetric"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("UpdateMetric"))
+              .build();
         }
-     }
-     return getUpdateMetricMethod;
+      }
+    }
+    return getUpdateMetricMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.Definition,
       org.zenoss.cloud.dataRegistry.DefinitionResponse> getRegisterDefinitionMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegisterDefinition",
+      requestType = org.zenoss.cloud.dataRegistry.Definition.class,
+      responseType = org.zenoss.cloud.dataRegistry.DefinitionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.Definition,
       org.zenoss.cloud.dataRegistry.DefinitionResponse> getRegisterDefinitionMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.Definition, org.zenoss.cloud.dataRegistry.DefinitionResponse> getRegisterDefinitionMethod;
     if ((getRegisterDefinitionMethod = DataRegistryServiceGrpc.getRegisterDefinitionMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getRegisterDefinitionMethod = DataRegistryServiceGrpc.getRegisterDefinitionMethod) == null) {
-          DataRegistryServiceGrpc.getRegisterDefinitionMethod = getRegisterDefinitionMethod = 
+          DataRegistryServiceGrpc.getRegisterDefinitionMethod = getRegisterDefinitionMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.Definition, org.zenoss.cloud.dataRegistry.DefinitionResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "RegisterDefinition"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterDefinition"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.Definition.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.DefinitionResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("RegisterDefinition"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("RegisterDefinition"))
+              .build();
         }
-     }
-     return getRegisterDefinitionMethod;
+      }
+    }
+    return getRegisterDefinitionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.DefinitionUpdate,
       org.zenoss.cloud.dataRegistry.DefinitionResponse> getUpdateDefinitionMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDefinition",
+      requestType = org.zenoss.cloud.dataRegistry.DefinitionUpdate.class,
+      responseType = org.zenoss.cloud.dataRegistry.DefinitionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.DefinitionUpdate,
       org.zenoss.cloud.dataRegistry.DefinitionResponse> getUpdateDefinitionMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.DefinitionUpdate, org.zenoss.cloud.dataRegistry.DefinitionResponse> getUpdateDefinitionMethod;
     if ((getUpdateDefinitionMethod = DataRegistryServiceGrpc.getUpdateDefinitionMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getUpdateDefinitionMethod = DataRegistryServiceGrpc.getUpdateDefinitionMethod) == null) {
-          DataRegistryServiceGrpc.getUpdateDefinitionMethod = getUpdateDefinitionMethod = 
+          DataRegistryServiceGrpc.getUpdateDefinitionMethod = getUpdateDefinitionMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.DefinitionUpdate, org.zenoss.cloud.dataRegistry.DefinitionResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "UpdateDefinition"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDefinition"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.DefinitionUpdate.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.DefinitionResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("UpdateDefinition"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("UpdateDefinition"))
+              .build();
         }
-     }
-     return getUpdateDefinitionMethod;
+      }
+    }
+    return getUpdateDefinitionMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.GetMetricRequest,
       org.zenoss.cloud.dataRegistry.GetMetricResponse> getGetMetricMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMetric",
+      requestType = org.zenoss.cloud.dataRegistry.GetMetricRequest.class,
+      responseType = org.zenoss.cloud.dataRegistry.GetMetricResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.GetMetricRequest,
       org.zenoss.cloud.dataRegistry.GetMetricResponse> getGetMetricMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataRegistry.GetMetricRequest, org.zenoss.cloud.dataRegistry.GetMetricResponse> getGetMetricMethod;
     if ((getGetMetricMethod = DataRegistryServiceGrpc.getGetMetricMethod) == null) {
       synchronized (DataRegistryServiceGrpc.class) {
         if ((getGetMetricMethod = DataRegistryServiceGrpc.getGetMetricMethod) == null) {
-          DataRegistryServiceGrpc.getGetMetricMethod = getGetMetricMethod = 
+          DataRegistryServiceGrpc.getGetMetricMethod = getGetMetricMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataRegistry.GetMetricRequest, org.zenoss.cloud.dataRegistry.GetMetricResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataRegistryService", "GetMetric"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMetric"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.GetMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataRegistry.GetMetricResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("GetMetric"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataRegistryServiceMethodDescriptorSupplier("GetMetric"))
+              .build();
         }
-     }
-     return getGetMetricMethod;
+      }
+    }
+    return getGetMetricMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static DataRegistryServiceStub newStub(io.grpc.Channel channel) {
-    return new DataRegistryServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceStub>() {
+        @java.lang.Override
+        public DataRegistryServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataRegistryServiceStub(channel, callOptions);
+        }
+      };
+    return DataRegistryServiceStub.newStub(factory, channel);
   }
 
   /**
@@ -201,7 +220,14 @@ public final class DataRegistryServiceGrpc {
    */
   public static DataRegistryServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DataRegistryServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceBlockingStub>() {
+        @java.lang.Override
+        public DataRegistryServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataRegistryServiceBlockingStub(channel, callOptions);
+        }
+      };
+    return DataRegistryServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -209,7 +235,14 @@ public final class DataRegistryServiceGrpc {
    */
   public static DataRegistryServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DataRegistryServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceFutureStub>() {
+        @java.lang.Override
+        public DataRegistryServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataRegistryServiceFutureStub(channel, callOptions);
+        }
+      };
+    return DataRegistryServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -220,84 +253,84 @@ public final class DataRegistryServiceGrpc {
      */
     public void createOrUpdateMetric(org.zenoss.cloud.dataRegistry.RegisterMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getCreateOrUpdateMetricMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateOrUpdateMetricMethod(), responseObserver);
     }
 
     /**
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricRequest> createOrUpdateMetrics(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricsResponse> responseObserver) {
-      return asyncUnimplementedStreamingCall(getCreateOrUpdateMetricsMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getCreateOrUpdateMetricsMethod(), responseObserver);
     }
 
     /**
      */
     public void updateMetric(org.zenoss.cloud.dataRegistry.UpdateMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateMetricMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateMetricMethod(), responseObserver);
     }
 
     /**
      */
     public void registerDefinition(org.zenoss.cloud.dataRegistry.Definition request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.DefinitionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRegisterDefinitionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterDefinitionMethod(), responseObserver);
     }
 
     /**
      */
     public void updateDefinition(org.zenoss.cloud.dataRegistry.DefinitionUpdate request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.DefinitionResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getUpdateDefinitionMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDefinitionMethod(), responseObserver);
     }
 
     /**
      */
     public void getMetric(org.zenoss.cloud.dataRegistry.GetMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.GetMetricResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMetricMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetricMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getCreateOrUpdateMetricMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
                 org.zenoss.cloud.dataRegistry.RegisterMetricResponse>(
                   this, METHODID_CREATE_OR_UPDATE_METRIC)))
           .addMethod(
             getCreateOrUpdateMetricsMethod(),
-            asyncClientStreamingCall(
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.RegisterMetricRequest,
                 org.zenoss.cloud.dataRegistry.RegisterMetricsResponse>(
                   this, METHODID_CREATE_OR_UPDATE_METRICS)))
           .addMethod(
             getUpdateMetricMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.UpdateMetricRequest,
                 org.zenoss.cloud.dataRegistry.RegisterMetricResponse>(
                   this, METHODID_UPDATE_METRIC)))
           .addMethod(
             getRegisterDefinitionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.Definition,
                 org.zenoss.cloud.dataRegistry.DefinitionResponse>(
                   this, METHODID_REGISTER_DEFINITION)))
           .addMethod(
             getUpdateDefinitionMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.DefinitionUpdate,
                 org.zenoss.cloud.dataRegistry.DefinitionResponse>(
                   this, METHODID_UPDATE_DEFINITION)))
           .addMethod(
             getGetMetricMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataRegistry.GetMetricRequest,
                 org.zenoss.cloud.dataRegistry.GetMetricResponse>(
@@ -308,19 +341,15 @@ public final class DataRegistryServiceGrpc {
 
   /**
    */
-  public static final class DataRegistryServiceStub extends io.grpc.stub.AbstractStub<DataRegistryServiceStub> {
-    private DataRegistryServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataRegistryServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataRegistryServiceStub extends io.grpc.stub.AbstractAsyncStub<DataRegistryServiceStub> {
+    private DataRegistryServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataRegistryServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataRegistryServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataRegistryServiceStub(channel, callOptions);
     }
 
@@ -328,7 +357,7 @@ public final class DataRegistryServiceGrpc {
      */
     public void createOrUpdateMetric(org.zenoss.cloud.dataRegistry.RegisterMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateOrUpdateMetricMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -336,7 +365,7 @@ public final class DataRegistryServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricRequest> createOrUpdateMetrics(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricsResponse> responseObserver) {
-      return asyncClientStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getCreateOrUpdateMetricsMethod(), getCallOptions()), responseObserver);
     }
 
@@ -344,7 +373,7 @@ public final class DataRegistryServiceGrpc {
      */
     public void updateMetric(org.zenoss.cloud.dataRegistry.UpdateMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateMetricMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -352,7 +381,7 @@ public final class DataRegistryServiceGrpc {
      */
     public void registerDefinition(org.zenoss.cloud.dataRegistry.Definition request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.DefinitionResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRegisterDefinitionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -360,7 +389,7 @@ public final class DataRegistryServiceGrpc {
      */
     public void updateDefinition(org.zenoss.cloud.dataRegistry.DefinitionUpdate request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.DefinitionResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDefinitionMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -368,80 +397,72 @@ public final class DataRegistryServiceGrpc {
      */
     public void getMetric(org.zenoss.cloud.dataRegistry.GetMetricRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataRegistry.GetMetricResponse> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetMetricMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    */
-  public static final class DataRegistryServiceBlockingStub extends io.grpc.stub.AbstractStub<DataRegistryServiceBlockingStub> {
-    private DataRegistryServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataRegistryServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataRegistryServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<DataRegistryServiceBlockingStub> {
+    private DataRegistryServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataRegistryServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataRegistryServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataRegistryServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse createOrUpdateMetric(org.zenoss.cloud.dataRegistry.RegisterMetricRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateOrUpdateMetricMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse updateMetric(org.zenoss.cloud.dataRegistry.UpdateMetricRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateMetricMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.zenoss.cloud.dataRegistry.DefinitionResponse registerDefinition(org.zenoss.cloud.dataRegistry.Definition request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRegisterDefinitionMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.zenoss.cloud.dataRegistry.DefinitionResponse updateDefinition(org.zenoss.cloud.dataRegistry.DefinitionUpdate request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDefinitionMethod(), getCallOptions(), request);
     }
 
     /**
      */
     public org.zenoss.cloud.dataRegistry.GetMetricResponse getMetric(org.zenoss.cloud.dataRegistry.GetMetricRequest request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetricMethod(), getCallOptions(), request);
     }
   }
 
   /**
    */
-  public static final class DataRegistryServiceFutureStub extends io.grpc.stub.AbstractStub<DataRegistryServiceFutureStub> {
-    private DataRegistryServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataRegistryServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataRegistryServiceFutureStub extends io.grpc.stub.AbstractFutureStub<DataRegistryServiceFutureStub> {
+    private DataRegistryServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataRegistryServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataRegistryServiceFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataRegistryServiceFutureStub(channel, callOptions);
     }
 
@@ -449,7 +470,7 @@ public final class DataRegistryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> createOrUpdateMetric(
         org.zenoss.cloud.dataRegistry.RegisterMetricRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateOrUpdateMetricMethod(), getCallOptions()), request);
     }
 
@@ -457,7 +478,7 @@ public final class DataRegistryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataRegistry.RegisterMetricResponse> updateMetric(
         org.zenoss.cloud.dataRegistry.UpdateMetricRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateMetricMethod(), getCallOptions()), request);
     }
 
@@ -465,7 +486,7 @@ public final class DataRegistryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataRegistry.DefinitionResponse> registerDefinition(
         org.zenoss.cloud.dataRegistry.Definition request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRegisterDefinitionMethod(), getCallOptions()), request);
     }
 
@@ -473,7 +494,7 @@ public final class DataRegistryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataRegistry.DefinitionResponse> updateDefinition(
         org.zenoss.cloud.dataRegistry.DefinitionUpdate request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDefinitionMethod(), getCallOptions()), request);
     }
 
@@ -481,7 +502,7 @@ public final class DataRegistryServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataRegistry.GetMetricResponse> getMetric(
         org.zenoss.cloud.dataRegistry.GetMetricRequest request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetMetricMethod(), getCallOptions()), request);
     }
   }

@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -97,7 +99,7 @@ private static final long serialVersionUID = 0L;
   public static final int FIELD_FIELD_NUMBER = 1;
   private volatile java.lang.Object field_;
   /**
-   * <code>string field = 1;</code>
+   * <code>string field = 1 [json_name = "field"];</code>
    * @return The field.
    */
   @java.lang.Override
@@ -114,7 +116,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string field = 1;</code>
+   * <code>string field = 1 [json_name = "field"];</code>
    * @return The bytes for field.
    */
   @java.lang.Override
@@ -135,7 +137,7 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [json_name = "description"];</code>
    * @return The description.
    */
   @java.lang.Override
@@ -152,7 +154,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [json_name = "description"];</code>
    * @return The bytes for description.
    */
   @java.lang.Override
@@ -184,10 +186,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getFieldBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, field_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
     unknownFields.writeTo(output);
@@ -199,10 +201,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getFieldBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(field_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, field_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     size += unknownFields.getSerializedSize();
@@ -491,7 +493,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object field_ = "";
     /**
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [json_name = "field"];</code>
      * @return The field.
      */
     public java.lang.String getField() {
@@ -507,7 +509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [json_name = "field"];</code>
      * @return The bytes for field.
      */
     public com.google.protobuf.ByteString
@@ -524,7 +526,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [json_name = "field"];</code>
      * @param value The field to set.
      * @return This builder for chaining.
      */
@@ -539,7 +541,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [json_name = "field"];</code>
      * @return This builder for chaining.
      */
     public Builder clearField() {
@@ -549,7 +551,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string field = 1;</code>
+     * <code>string field = 1 [json_name = "field"];</code>
      * @param value The bytes for field to set.
      * @return This builder for chaining.
      */
@@ -567,7 +569,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [json_name = "description"];</code>
      * @return The description.
      */
     public java.lang.String getDescription() {
@@ -583,7 +585,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [json_name = "description"];</code>
      * @return The bytes for description.
      */
     public com.google.protobuf.ByteString
@@ -600,7 +602,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [json_name = "description"];</code>
      * @param value The description to set.
      * @return This builder for chaining.
      */
@@ -615,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [json_name = "description"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
@@ -625,7 +627,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string description = 2;</code>
+     * <code>string description = 2 [json_name = "description"];</code>
      * @param value The bytes for description to set.
      * @return This builder for chaining.
      */

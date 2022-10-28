@@ -8,17 +8,17 @@ public interface GetMetricResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   org.zenoss.cloud.dataReceiver.Metric getMetric();
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    */
   org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricOrBuilder();
 }

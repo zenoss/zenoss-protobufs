@@ -70,6 +70,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -97,14 +99,14 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIGURATION_FIELD_NUMBER = 1;
   private java.util.List<org.zenoss.cloud.collection.Config> configuration_;
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.collection.Config> getConfigurationList() {
     return configuration_;
   }
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.collection.ConfigOrBuilder> 
@@ -112,21 +114,21 @@ private static final long serialVersionUID = 0L;
     return configuration_;
   }
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public int getConfigurationCount() {
     return configuration_.size();
   }
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.Config getConfiguration(int index) {
     return configuration_.get(index);
   }
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ConfigOrBuilder getConfigurationOrBuilder(
@@ -489,7 +491,7 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.collection.Config, org.zenoss.cloud.collection.Config.Builder, org.zenoss.cloud.collection.ConfigOrBuilder> configurationBuilder_;
 
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public java.util.List<org.zenoss.cloud.collection.Config> getConfigurationList() {
       if (configurationBuilder_ == null) {
@@ -499,7 +501,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public int getConfigurationCount() {
       if (configurationBuilder_ == null) {
@@ -509,7 +511,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Config getConfiguration(int index) {
       if (configurationBuilder_ == null) {
@@ -519,7 +521,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(
         int index, org.zenoss.cloud.collection.Config value) {
@@ -536,7 +538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(
         int index, org.zenoss.cloud.collection.Config.Builder builderForValue) {
@@ -550,7 +552,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder addConfiguration(org.zenoss.cloud.collection.Config value) {
       if (configurationBuilder_ == null) {
@@ -566,7 +568,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder addConfiguration(
         int index, org.zenoss.cloud.collection.Config value) {
@@ -583,7 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder addConfiguration(
         org.zenoss.cloud.collection.Config.Builder builderForValue) {
@@ -597,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder addConfiguration(
         int index, org.zenoss.cloud.collection.Config.Builder builderForValue) {
@@ -611,7 +613,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder addAllConfiguration(
         java.lang.Iterable<? extends org.zenoss.cloud.collection.Config> values) {
@@ -626,7 +628,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder clearConfiguration() {
       if (configurationBuilder_ == null) {
@@ -639,7 +641,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public Builder removeConfiguration(int index) {
       if (configurationBuilder_ == null) {
@@ -652,14 +654,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Config.Builder getConfigurationBuilder(
         int index) {
       return getConfigurationFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.ConfigOrBuilder getConfigurationOrBuilder(
         int index) {
@@ -669,7 +671,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.collection.ConfigOrBuilder> 
          getConfigurationOrBuilderList() {
@@ -680,14 +682,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Config.Builder addConfigurationBuilder() {
       return getConfigurationFieldBuilder().addBuilder(
           org.zenoss.cloud.collection.Config.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Config.Builder addConfigurationBuilder(
         int index) {
@@ -695,7 +697,7 @@ private static final long serialVersionUID = 0L;
           index, org.zenoss.cloud.collection.Config.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+     * <code>repeated .zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
      */
     public java.util.List<org.zenoss.cloud.collection.Config.Builder> 
          getConfigurationBuilderList() {

@@ -12,7 +12,7 @@ public interface DefinitionOrBuilder extends
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   java.lang.String getMetric();
@@ -21,7 +21,7 @@ public interface DefinitionOrBuilder extends
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The bytes for metric.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface DefinitionOrBuilder extends
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @return A list containing the dimensions.
    */
   java.util.List<java.lang.String>
@@ -42,7 +42,7 @@ public interface DefinitionOrBuilder extends
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @return The count of dimensions.
    */
   int getDimensionsCount();
@@ -51,7 +51,7 @@ public interface DefinitionOrBuilder extends
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @param index The index of the element to return.
    * @return The dimensions at the given index.
    */
@@ -61,7 +61,7 @@ public interface DefinitionOrBuilder extends
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the dimensions at the given index.
    */
@@ -73,7 +73,7 @@ public interface DefinitionOrBuilder extends
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
@@ -82,7 +82,7 @@ public interface DefinitionOrBuilder extends
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
@@ -91,7 +91,7 @@ public interface DefinitionOrBuilder extends
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder();
 
@@ -102,7 +102,7 @@ public interface DefinitionOrBuilder extends
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   int getUpdateModeValue();
@@ -113,7 +113,7 @@ public interface DefinitionOrBuilder extends
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode();

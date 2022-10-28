@@ -72,6 +72,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -96,7 +98,7 @@ private static final long serialVersionUID = 0L;
   public static final int METRIC_FIELD_NUMBER = 1;
   private org.zenoss.cloud.dataReceiver.Metric metric_;
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    * @return Whether the metric field is set.
    */
   @java.lang.Override
@@ -104,7 +106,7 @@ private static final long serialVersionUID = 0L;
     return metric_ != null;
   }
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   @java.lang.Override
@@ -112,7 +114,7 @@ private static final long serialVersionUID = 0L;
     return metric_ == null ? org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance() : metric_;
   }
   /**
-   * <code>.zenoss.cloud.Metric metric = 1;</code>
+   * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricOrBuilder() {
@@ -438,14 +440,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Metric, org.zenoss.cloud.dataReceiver.Metric.Builder, org.zenoss.cloud.dataReceiver.MetricOrBuilder> metricBuilder_;
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
       return metricBuilder_ != null || metric_ != null;
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      * @return The metric.
      */
     public org.zenoss.cloud.dataReceiver.Metric getMetric() {
@@ -456,7 +458,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public Builder setMetric(org.zenoss.cloud.dataReceiver.Metric value) {
       if (metricBuilder_ == null) {
@@ -472,7 +474,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public Builder setMetric(
         org.zenoss.cloud.dataReceiver.Metric.Builder builderForValue) {
@@ -486,7 +488,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public Builder mergeMetric(org.zenoss.cloud.dataReceiver.Metric value) {
       if (metricBuilder_ == null) {
@@ -504,7 +506,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public Builder clearMetric() {
       if (metricBuilder_ == null) {
@@ -518,7 +520,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric.Builder getMetricBuilder() {
       
@@ -526,7 +528,7 @@ private static final long serialVersionUID = 0L;
       return getMetricFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricOrBuilder() {
       if (metricBuilder_ != null) {
@@ -537,7 +539,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.Metric metric = 1;</code>
+     * <code>.zenoss.cloud.Metric metric = 1 [json_name = "metric"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Metric, org.zenoss.cloud.dataReceiver.Metric.Builder, org.zenoss.cloud.dataReceiver.MetricOrBuilder> 

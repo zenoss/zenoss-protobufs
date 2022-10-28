@@ -1,94 +1,97 @@
 syntax = "proto3";
+
 package zenoss.cloud;
-option java_package = "org.zenoss.cloud.dataRegistry";
-option java_multiple_files = true;
-option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data-registry";
-import "zenoss/cloud/data_receiver.proto";
+
 import "google/protobuf/struct.proto";
+import "zenoss/cloud/data_receiver.proto";
+
+option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data-registry";
+option java_multiple_files = true;
+option java_package = "org.zenoss.cloud.dataRegistry";
 
 service DataRegistryService {
-    rpc CreateOrUpdateMetric(RegisterMetricRequest) returns (RegisterMetricResponse) {}
-    rpc CreateOrUpdateMetrics(stream RegisterMetricRequest) returns (RegisterMetricsResponse) {}
-    rpc UpdateMetric(UpdateMetricRequest) returns (RegisterMetricResponse) {}
-    rpc RegisterDefinition(Definition) returns (DefinitionResponse) {}
-    rpc UpdateDefinition(DefinitionUpdate) returns(DefinitionResponse) {}
-    rpc GetMetric(GetMetricRequest) returns(GetMetricResponse) {}
+  rpc CreateOrUpdateMetric(RegisterMetricRequest) returns (RegisterMetricResponse) {}
+  rpc CreateOrUpdateMetrics(stream RegisterMetricRequest) returns (RegisterMetricsResponse) {}
+  rpc UpdateMetric(UpdateMetricRequest) returns (RegisterMetricResponse) {}
+  rpc RegisterDefinition(Definition) returns (DefinitionResponse) {}
+  rpc UpdateDefinition(DefinitionUpdate) returns (DefinitionResponse) {}
+  rpc GetMetric(GetMetricRequest) returns (GetMetricResponse) {}
 }
 
 enum UpdateMode {
-    MERGE = 0;
-    REPLACE = 1;
-    REPLACEALL = 2;
+  MERGE = 0;
+  REPLACE = 1;
+  REPLACEALL = 2;
 }
 
 message Definition {
-    // The metric name
-    string metric = 1;
+  // The metric name
+  string metric = 1;
 
-    // Dimensions associated with this datapoint.
-    repeated string dimensions = 2;
+  // Dimensions associated with this datapoint.
+  repeated string dimensions = 2;
 
-    // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
-    google.protobuf.Struct metadataFields = 3;
+  // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
+  google.protobuf.Struct metadataFields = 3;
 
-    // Determines what happens to the existing definition metadata fields.  If MERGE (default), the provided metadata
-    // is merged with the existing metadata.  If REPLACE, the provided metadata replaces the metadata on the existing
-    // definition.
-    UpdateMode update_mode = 4;
+  // Determines what happens to the existing definition metadata fields.  If MERGE (default), the provided metadata
+  // is merged with the existing metadata.  If REPLACE, the provided metadata replaces the metadata on the existing
+  // definition.
+  UpdateMode update_mode = 4;
 }
 
 message DefinitionUpdate {
-    // The metric name
-    string definition_id = 1;
+  // The metric name
+  string definition_id = 1;
 
-    // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
-    google.protobuf.Struct metadataFields = 2;
+  // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
+  google.protobuf.Struct metadataFields = 2;
 
-    // Determines what happens to the existing definition metadata fields.  If MERGE (default), the provided metadata
-    // is merged with the existing metadata.  If REPLACE, the provided metadata replaces the metadata on the existing
-    // definition.
-    UpdateMode update_mode = 3;
+  // Determines what happens to the existing definition metadata fields.  If MERGE (default), the provided metadata
+  // is merged with the existing metadata.  If REPLACE, the provided metadata replaces the metadata on the existing
+  // definition.
+  UpdateMode update_mode = 3;
 }
 
 message RegisterMetricRequest {
-    MetricWrapper metric = 1;
-    UpdateMode update_mode = 2;
+  MetricWrapper metric = 1;
+  UpdateMode update_mode = 2;
 }
 
 message UpdateMetricRequest {
-    string instanceId = 1;
+  string instanceId = 1;
 
-    // Metadata for the datapoint
-    google.protobuf.Struct metadataFields = 2;
+  // Metadata for the datapoint
+  google.protobuf.Struct metadataFields = 2;
 
-    UpdateMode update_mode = 3;
+  UpdateMode update_mode = 3;
 
-    int64 timestamp = 4;
+  int64 timestamp = 4;
 }
 
 message RegisterMetricResponse {
-    string instanceId = 1;
-    string definitionId = 2;
-    string name = 3;
+  string instanceId = 1;
+  string definitionId = 2;
+  string name = 3;
 }
 
 message RegisterMetricVerboseResponse {
-    RegisterMetricResponse response = 1;
-    string error = 2;
+  RegisterMetricResponse response = 1;
+  string error = 2;
 }
 
 message RegisterMetricsResponse {
-    repeated RegisterMetricVerboseResponse responses = 1;
+  repeated RegisterMetricVerboseResponse responses = 1;
 }
 
 message DefinitionResponse {
-    string definitionId = 1;
+  string definitionId = 1;
 }
 
 message GetMetricRequest {
-    string instanceId = 1;
+  string instanceId = 1;
 }
 
 message GetMetricResponse {
-    Metric metric = 1;
+  Metric metric = 1;
 }

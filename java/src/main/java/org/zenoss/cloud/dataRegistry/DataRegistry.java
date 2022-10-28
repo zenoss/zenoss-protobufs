@@ -74,57 +74,63 @@ public final class DataRegistry {
   static {
     java.lang.String[] descriptorData = {
       "\n zenoss/cloud/data_registry.proto\022\014zeno" +
-      "ss.cloud\032 zenoss/cloud/data_receiver.pro" +
-      "to\032\034google/protobuf/struct.proto\"\220\001\n\nDef" +
-      "inition\022\016\n\006metric\030\001 \001(\t\022\022\n\ndimensions\030\002 " +
-      "\003(\t\022/\n\016metadataFields\030\003 \001(\0132\027.google.pro" +
-      "tobuf.Struct\022-\n\013update_mode\030\004 \001(\0162\030.zeno" +
-      "ss.cloud.UpdateMode\"\211\001\n\020DefinitionUpdate" +
-      "\022\025\n\rdefinition_id\030\001 \001(\t\022/\n\016metadataField" +
-      "s\030\002 \001(\0132\027.google.protobuf.Struct\022-\n\013upda" +
-      "te_mode\030\003 \001(\0162\030.zenoss.cloud.UpdateMode\"" +
-      "s\n\025RegisterMetricRequest\022+\n\006metric\030\001 \001(\013" +
-      "2\033.zenoss.cloud.MetricWrapper\022-\n\013update_" +
-      "mode\030\002 \001(\0162\030.zenoss.cloud.UpdateMode\"\234\001\n" +
-      "\023UpdateMetricRequest\022\022\n\ninstanceId\030\001 \001(\t" +
-      "\022/\n\016metadataFields\030\002 \001(\0132\027.google.protob" +
-      "uf.Struct\022-\n\013update_mode\030\003 \001(\0162\030.zenoss." +
-      "cloud.UpdateMode\022\021\n\ttimestamp\030\004 \001(\003\"P\n\026R" +
-      "egisterMetricResponse\022\022\n\ninstanceId\030\001 \001(" +
-      "\t\022\024\n\014definitionId\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\"f\n" +
-      "\035RegisterMetricVerboseResponse\0226\n\010respon" +
-      "se\030\001 \001(\0132$.zenoss.cloud.RegisterMetricRe" +
-      "sponse\022\r\n\005error\030\002 \001(\t\"Y\n\027RegisterMetrics" +
-      "Response\022>\n\tresponses\030\001 \003(\0132+.zenoss.clo" +
-      "ud.RegisterMetricVerboseResponse\"*\n\022Defi" +
-      "nitionResponse\022\024\n\014definitionId\030\001 \001(\t\"&\n\020" +
-      "GetMetricRequest\022\022\n\ninstanceId\030\001 \001(\t\"9\n\021" +
-      "GetMetricResponse\022$\n\006metric\030\001 \001(\0132\024.zeno" +
-      "ss.cloud.Metric*4\n\nUpdateMode\022\t\n\005MERGE\020\000" +
-      "\022\013\n\007REPLACE\020\001\022\016\n\nREPLACEALL\020\0022\272\004\n\023DataRe" +
-      "gistryService\022c\n\024CreateOrUpdateMetric\022#." +
-      "zenoss.cloud.RegisterMetricRequest\032$.zen" +
-      "oss.cloud.RegisterMetricResponse\"\000\022g\n\025Cr" +
-      "eateOrUpdateMetrics\022#.zenoss.cloud.Regis" +
-      "terMetricRequest\032%.zenoss.cloud.Register" +
-      "MetricsResponse\"\000(\001\022Y\n\014UpdateMetric\022!.ze" +
-      "noss.cloud.UpdateMetricRequest\032$.zenoss." +
-      "cloud.RegisterMetricResponse\"\000\022R\n\022Regist" +
-      "erDefinition\022\030.zenoss.cloud.Definition\032 " +
-      ".zenoss.cloud.DefinitionResponse\"\000\022V\n\020Up" +
-      "dateDefinition\022\036.zenoss.cloud.Definition" +
-      "Update\032 .zenoss.cloud.DefinitionResponse" +
-      "\"\000\022N\n\tGetMetric\022\036.zenoss.cloud.GetMetric" +
-      "Request\032\037.zenoss.cloud.GetMetricResponse" +
-      "\"\000B\\\n\035org.zenoss.cloud.dataRegistryP\001Z9g" +
-      "ithub.com/zenoss/zenoss-protobufs/go/clo" +
-      "ud/data-registryb\006proto3"
+      "ss.cloud\032\034google/protobuf/struct.proto\032 " +
+      "zenoss/cloud/data_receiver.proto\"\300\001\n\nDef" +
+      "inition\022\026\n\006metric\030\001 \001(\tR\006metric\022\036\n\ndimen" +
+      "sions\030\002 \003(\tR\ndimensions\022?\n\016metadataField" +
+      "s\030\003 \001(\0132\027.google.protobuf.StructR\016metada" +
+      "taFields\0229\n\013update_mode\030\004 \001(\0162\030.zenoss.c" +
+      "loud.UpdateModeR\nupdateMode\"\263\001\n\020Definiti" +
+      "onUpdate\022#\n\rdefinition_id\030\001 \001(\tR\014definit" +
+      "ionId\022?\n\016metadataFields\030\002 \001(\0132\027.google.p" +
+      "rotobuf.StructR\016metadataFields\0229\n\013update" +
+      "_mode\030\003 \001(\0162\030.zenoss.cloud.UpdateModeR\nu" +
+      "pdateMode\"\207\001\n\025RegisterMetricRequest\0223\n\006m" +
+      "etric\030\001 \001(\0132\033.zenoss.cloud.MetricWrapper" +
+      "R\006metric\0229\n\013update_mode\030\002 \001(\0162\030.zenoss.c" +
+      "loud.UpdateModeR\nupdateMode\"\317\001\n\023UpdateMe" +
+      "tricRequest\022\036\n\ninstanceId\030\001 \001(\tR\ninstanc" +
+      "eId\022?\n\016metadataFields\030\002 \001(\0132\027.google.pro" +
+      "tobuf.StructR\016metadataFields\0229\n\013update_m" +
+      "ode\030\003 \001(\0162\030.zenoss.cloud.UpdateModeR\nupd" +
+      "ateMode\022\034\n\ttimestamp\030\004 \001(\003R\ttimestamp\"p\n" +
+      "\026RegisterMetricResponse\022\036\n\ninstanceId\030\001 " +
+      "\001(\tR\ninstanceId\022\"\n\014definitionId\030\002 \001(\tR\014d" +
+      "efinitionId\022\022\n\004name\030\003 \001(\tR\004name\"w\n\035Regis" +
+      "terMetricVerboseResponse\022@\n\010response\030\001 \001" +
+      "(\0132$.zenoss.cloud.RegisterMetricResponse" +
+      "R\010response\022\024\n\005error\030\002 \001(\tR\005error\"d\n\027Regi" +
+      "sterMetricsResponse\022I\n\tresponses\030\001 \003(\0132+" +
+      ".zenoss.cloud.RegisterMetricVerboseRespo" +
+      "nseR\tresponses\"8\n\022DefinitionResponse\022\"\n\014" +
+      "definitionId\030\001 \001(\tR\014definitionId\"2\n\020GetM" +
+      "etricRequest\022\036\n\ninstanceId\030\001 \001(\tR\ninstan" +
+      "ceId\"A\n\021GetMetricResponse\022,\n\006metric\030\001 \001(" +
+      "\0132\024.zenoss.cloud.MetricR\006metric*4\n\nUpdat" +
+      "eMode\022\t\n\005MERGE\020\000\022\013\n\007REPLACE\020\001\022\016\n\nREPLACE" +
+      "ALL\020\0022\272\004\n\023DataRegistryService\022c\n\024CreateO" +
+      "rUpdateMetric\022#.zenoss.cloud.RegisterMet" +
+      "ricRequest\032$.zenoss.cloud.RegisterMetric" +
+      "Response\"\000\022g\n\025CreateOrUpdateMetrics\022#.ze" +
+      "noss.cloud.RegisterMetricRequest\032%.zenos" +
+      "s.cloud.RegisterMetricsResponse\"\000(\001\022Y\n\014U" +
+      "pdateMetric\022!.zenoss.cloud.UpdateMetricR" +
+      "equest\032$.zenoss.cloud.RegisterMetricResp" +
+      "onse\"\000\022R\n\022RegisterDefinition\022\030.zenoss.cl" +
+      "oud.Definition\032 .zenoss.cloud.Definition" +
+      "Response\"\000\022V\n\020UpdateDefinition\022\036.zenoss." +
+      "cloud.DefinitionUpdate\032 .zenoss.cloud.De" +
+      "finitionResponse\"\000\022N\n\tGetMetric\022\036.zenoss" +
+      ".cloud.GetMetricRequest\032\037.zenoss.cloud.G" +
+      "etMetricResponse\"\000B\\\n\035org.zenoss.cloud.d" +
+      "ataRegistryP\001Z9github.com/zenoss/zenoss-" +
+      "protobufs/go/cloud/data-registryb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.zenoss.cloud.dataReceiver.DataReceiver.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
+          org.zenoss.cloud.dataReceiver.DataReceiver.getDescriptor(),
         });
     internal_static_zenoss_cloud_Definition_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -186,8 +192,8 @@ public final class DataRegistry {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_zenoss_cloud_GetMetricResponse_descriptor,
         new java.lang.String[] { "Metric", });
-    org.zenoss.cloud.dataReceiver.DataReceiver.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    org.zenoss.cloud.dataReceiver.DataReceiver.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

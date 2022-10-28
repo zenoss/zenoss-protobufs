@@ -9,19 +9,19 @@ public interface ProbeErrorOrBuilder extends
 
   /**
    * <pre>
-   * message is a short human-friendly text. Can be emtpy.
+   * message is a short human-friendly text. Can be empty.
    * </pre>
    *
-   * <code>string message = 3;</code>
+   * <code>string message = 3 [json_name = "message"];</code>
    * @return The message.
    */
   java.lang.String getMessage();
   /**
    * <pre>
-   * message is a short human-friendly text. Can be emtpy.
+   * message is a short human-friendly text. Can be empty.
    * </pre>
    *
-   * <code>string message = 3;</code>
+   * <code>string message = 3 [json_name = "message"];</code>
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface ProbeErrorOrBuilder extends
    * description is a parsed API error. Usually long and technical.
    * </pre>
    *
-   * <code>string description = 1;</code>
+   * <code>string description = 1 [json_name = "description"];</code>
    * @return The description.
    */
   java.lang.String getDescription();
@@ -41,32 +41,32 @@ public interface ProbeErrorOrBuilder extends
    * description is a parsed API error. Usually long and technical.
    * </pre>
    *
-   * <code>string description = 1;</code>
+   * <code>string description = 1 [json_name = "description"];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString
       getDescriptionBytes();
 
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
    */
   java.util.List<org.zenoss.cloud.collection.FieldError> 
       getFieldErrorsList();
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
    */
   org.zenoss.cloud.collection.FieldError getFieldErrors(int index);
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
    */
   int getFieldErrorsCount();
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
    */
   java.util.List<? extends org.zenoss.cloud.collection.FieldErrorOrBuilder> 
       getFieldErrorsOrBuilderList();
   /**
-   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2;</code>
+   * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
    */
   org.zenoss.cloud.collection.FieldErrorOrBuilder getFieldErrorsOrBuilder(
       int index);

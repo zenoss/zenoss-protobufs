@@ -8,27 +8,27 @@ public interface RegisterMetricVerboseResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    * @return Whether the response field is set.
    */
   boolean hasResponse();
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    * @return The response.
    */
   org.zenoss.cloud.dataRegistry.RegisterMetricResponse getResponse();
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    */
   org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder getResponseOrBuilder();
 
   /**
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [json_name = "error"];</code>
    * @return The error.
    */
   java.lang.String getError();
   /**
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [json_name = "error"];</code>
    * @return The bytes for error.
    */
   com.google.protobuf.ByteString

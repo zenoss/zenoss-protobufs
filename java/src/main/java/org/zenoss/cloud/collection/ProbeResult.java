@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
 
   public static final int SUCCESS_FIELD_NUMBER = 1;
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    * @return Whether the success field is set.
    */
   @java.lang.Override
@@ -159,7 +161,7 @@ private static final long serialVersionUID = 0L;
     return resultCase_ == 1;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    * @return The success.
    */
   @java.lang.Override
@@ -170,7 +172,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.collection.ProbeSuccess.getDefaultInstance();
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ProbeSuccessOrBuilder getSuccessOrBuilder() {
@@ -182,7 +184,7 @@ private static final long serialVersionUID = 0L;
 
   public static final int ERROR_FIELD_NUMBER = 2;
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    * @return Whether the error field is set.
    */
   @java.lang.Override
@@ -190,7 +192,7 @@ private static final long serialVersionUID = 0L;
     return resultCase_ == 2;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    * @return The error.
    */
   @java.lang.Override
@@ -201,7 +203,7 @@ private static final long serialVersionUID = 0L;
     return org.zenoss.cloud.collection.ProbeError.getDefaultInstance();
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ProbeErrorOrBuilder getErrorOrBuilder() {
@@ -583,7 +585,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeSuccess, org.zenoss.cloud.collection.ProbeSuccess.Builder, org.zenoss.cloud.collection.ProbeSuccessOrBuilder> successBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      * @return Whether the success field is set.
      */
     @java.lang.Override
@@ -591,7 +593,7 @@ private static final long serialVersionUID = 0L;
       return resultCase_ == 1;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      * @return The success.
      */
     @java.lang.Override
@@ -609,7 +611,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     public Builder setSuccess(org.zenoss.cloud.collection.ProbeSuccess value) {
       if (successBuilder_ == null) {
@@ -625,7 +627,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     public Builder setSuccess(
         org.zenoss.cloud.collection.ProbeSuccess.Builder builderForValue) {
@@ -639,7 +641,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     public Builder mergeSuccess(org.zenoss.cloud.collection.ProbeSuccess value) {
       if (successBuilder_ == null) {
@@ -654,14 +656,15 @@ private static final long serialVersionUID = 0L;
       } else {
         if (resultCase_ == 1) {
           successBuilder_.mergeFrom(value);
+        } else {
+          successBuilder_.setMessage(value);
         }
-        successBuilder_.setMessage(value);
       }
       resultCase_ = 1;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     public Builder clearSuccess() {
       if (successBuilder_ == null) {
@@ -680,13 +683,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     public org.zenoss.cloud.collection.ProbeSuccess.Builder getSuccessBuilder() {
       return getSuccessFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeSuccessOrBuilder getSuccessOrBuilder() {
@@ -700,7 +703,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeSuccess, org.zenoss.cloud.collection.ProbeSuccess.Builder, org.zenoss.cloud.collection.ProbeSuccessOrBuilder> 
@@ -724,7 +727,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeError, org.zenoss.cloud.collection.ProbeError.Builder, org.zenoss.cloud.collection.ProbeErrorOrBuilder> errorBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -732,7 +735,7 @@ private static final long serialVersionUID = 0L;
       return resultCase_ == 2;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
@@ -750,7 +753,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     public Builder setError(org.zenoss.cloud.collection.ProbeError value) {
       if (errorBuilder_ == null) {
@@ -766,7 +769,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     public Builder setError(
         org.zenoss.cloud.collection.ProbeError.Builder builderForValue) {
@@ -780,7 +783,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     public Builder mergeError(org.zenoss.cloud.collection.ProbeError value) {
       if (errorBuilder_ == null) {
@@ -795,14 +798,15 @@ private static final long serialVersionUID = 0L;
       } else {
         if (resultCase_ == 2) {
           errorBuilder_.mergeFrom(value);
+        } else {
+          errorBuilder_.setMessage(value);
         }
-        errorBuilder_.setMessage(value);
       }
       resultCase_ = 2;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     public Builder clearError() {
       if (errorBuilder_ == null) {
@@ -821,13 +825,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     public org.zenoss.cloud.collection.ProbeError.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeErrorOrBuilder getErrorOrBuilder() {
@@ -841,7 +845,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeError, org.zenoss.cloud.collection.ProbeError.Builder, org.zenoss.cloud.collection.ProbeErrorOrBuilder> 

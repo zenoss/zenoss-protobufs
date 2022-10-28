@@ -149,74 +149,92 @@ public final class DataReceiver {
   static {
     java.lang.String[] descriptorData = {
       "\n zenoss/cloud/data_receiver.proto\022\014zeno" +
-      "ss.cloud\032\034google/protobuf/struct.proto\032\034" +
-      "google/api/annotations.proto\032\036google/pro" +
-      "tobuf/wrappers.proto\"\006\n\004Void\"\364\002\n\005Event\022\021" +
-      "\n\ttimestamp\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\0227\n\ndimen" +
-      "sions\030\003 \003(\0132#.zenoss.cloud.Event.Dimensi" +
-      "onsEntry\022/\n\016metadataFields\030\004 \001(\0132\027.googl" +
-      "e.protobuf.Struct\022\014\n\004type\030\005 \001(\t\022\017\n\007summa" +
-      "ry\030\006 \001(\t\022\014\n\004body\030\007 \001(\t\022(\n\010severity\030\010 \001(\016" +
-      "2\026.zenoss.cloud.Severity\022$\n\006status\030\t \001(\016" +
-      "2\024.zenoss.cloud.Status\0220\n\014acknowledged\030\n" +
-      " \001(\0132\032.google.protobuf.BoolValue\0321\n\017Dime" +
-      "nsionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001\"G\n\006Events\022\030\n\020detailedResponse\030\001 \001(\010\022" +
-      "#\n\006events\030\002 \003(\0132\023.zenoss.cloud.Event\"?\n\n" +
-      "EventError\022\r\n\005error\030\001 \001(\t\022\"\n\005event\030\002 \001(\013" +
-      "2\023.zenoss.cloud.Event\"\241\001\n\014TaggedMetric\022\016" +
-      "\n\006metric\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005val" +
-      "ue\030\003 \001(\001\0222\n\004tags\030\004 \003(\0132$.zenoss.cloud.Ta" +
-      "ggedMetric.TagsEntry\032+\n\tTagsEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"=\n\rCompactMetr" +
-      "ic\022\n\n\002id\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\022\r\n\005val" +
-      "ue\030\003 \001(\001\"\330\001\n\006Metric\022\016\n\006metric\030\001 \001(\t\022\021\n\tt" +
-      "imestamp\030\002 \001(\003\022\r\n\005value\030\003 \001(\001\0228\n\ndimensi" +
-      "ons\030\004 \003(\0132$.zenoss.cloud.Metric.Dimensio" +
-      "nsEntry\022/\n\016metadataFields\030\006 \001(\0132\027.google" +
-      ".protobuf.Struct\0321\n\017DimensionsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\267\001\n\005Model\022\021\n" +
-      "\ttimestamp\030\001 \001(\003\0227\n\ndimensions\030\002 \003(\0132#.z" +
-      "enoss.cloud.Model.DimensionsEntry\022/\n\016met" +
-      "adataFields\030\003 \001(\0132\027.google.protobuf.Stru" +
-      "ct\0321\n\017DimensionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
-      "lue\030\002 \001(\t:\0028\001\"G\n\006Models\022\030\n\020detailedRespo" +
-      "nse\030\001 \001(\010\022#\n\006models\030\002 \003(\0132\023.zenoss.cloud" +
-      ".Model\"?\n\nModelError\022\r\n\005error\030\001 \001(\t\022\"\n\005m" +
-      "odel\030\002 \001(\0132\023.zenoss.cloud.Model\"w\n\021Event" +
-      "StatusResult\022\016\n\006failed\030\001 \001(\005\022\021\n\tsucceede" +
-      "d\030\002 \001(\005\022\017\n\007message\030\003 \001(\t\022.\n\014failedEvents" +
-      "\030\004 \003(\0132\030.zenoss.cloud.EventError\"w\n\021Mode" +
-      "lStatusResult\022\016\n\006failed\030\001 \001(\005\022\021\n\tsucceed" +
-      "ed\030\002 \001(\005\022\017\n\007message\030\003 \001(\t\022.\n\014failedModel" +
-      "s\030\004 \003(\0132\030.zenoss.cloud.ModelError\"\362\001\n\014St" +
-      "atusResult\022\016\n\006failed\030\001 \001(\005\022\021\n\tsucceeded\030" +
-      "\002 \001(\005\022\017\n\007message\030\003 \001(\t\022>\n\024failedCompactM" +
-      "etrics\030\004 \003(\0132 .zenoss.cloud.CompactMetri" +
-      "cError\022<\n\023failedTaggedMetrics\030\005 \003(\0132\037.ze" +
-      "noss.cloud.TaggedMetricError\0220\n\rfailedMe" +
-      "trics\030\006 \003(\0132\031.zenoss.cloud.MetricError\"F" +
-      "\n\014EventWrapper\022(\n\tcanonical\030\001 \001(\0132\023.zeno" +
-      "ss.cloud.EventH\000B\014\n\nevent_type\"\247\001\n\rMetri" +
-      "cWrapper\022,\n\006tagged\030\001 \001(\0132\032.zenoss.cloud." +
-      "TaggedMetricH\000\022.\n\007compact\030\002 \001(\0132\033.zenoss" +
-      ".cloud.CompactMetricH\000\022)\n\tcanonical\030\003 \001(" +
-      "\0132\024.zenoss.cloud.MetricH\000B\r\n\013metric_type" +
-      "\"\256\001\n\013MetricBatch\022>\n\013global_tags\030\002 \003(\0132)." +
-      "zenoss.cloud.MetricBatch.GlobalTagsEntry" +
-      "\022,\n\007metrics\030\003 \003(\0132\033.zenoss.cloud.MetricW" +
-      "rapper\0321\n\017GlobalTagsEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\"P\n\022CompactMetricError\022" +
-      "\r\n\005error\030\001 \001(\t\022+\n\006metric\030\002 \001(\0132\033.zenoss." +
-      "cloud.CompactMetric\"B\n\013MetricError\022\r\n\005er" +
-      "ror\030\001 \001(\t\022$\n\006metric\030\002 \001(\0132\024.zenoss.cloud" +
-      ".Metric\"N\n\021TaggedMetricError\022\r\n\005error\030\001 " +
-      "\001(\t\022*\n\006metric\030\002 \001(\0132\032.zenoss.cloud.Tagge" +
-      "dMetric\"\262\001\n\007Metrics\022\030\n\020detailedResponse\030" +
-      "\001 \001(\010\0223\n\016compactMetrics\030\003 \003(\0132\033.zenoss.c" +
-      "loud.CompactMetric\0221\n\rtaggedMetrics\030\004 \003(" +
-      "\0132\032.zenoss.cloud.TaggedMetric\022%\n\007metrics" +
-      "\030\005 \003(\0132\024.zenoss.cloud.Metric*\210\001\n\010Severit" +
+      "ss.cloud\032\034google/api/annotations.proto\032\034" +
+      "google/protobuf/struct.proto\032\036google/pro" +
+      "tobuf/wrappers.proto\"\006\n\004Void\"\342\003\n\005Event\022\034" +
+      "\n\ttimestamp\030\001 \001(\003R\ttimestamp\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022C\n\ndimensions\030\003 \003(\0132#.zenoss.cl" +
+      "oud.Event.DimensionsEntryR\ndimensions\022?\n" +
+      "\016metadataFields\030\004 \001(\0132\027.google.protobuf." +
+      "StructR\016metadataFields\022\022\n\004type\030\005 \001(\tR\004ty" +
+      "pe\022\030\n\007summary\030\006 \001(\tR\007summary\022\022\n\004body\030\007 \001" +
+      "(\tR\004body\0222\n\010severity\030\010 \001(\0162\026.zenoss.clou" +
+      "d.SeverityR\010severity\022,\n\006status\030\t \001(\0162\024.z" +
+      "enoss.cloud.StatusR\006status\022>\n\014acknowledg" +
+      "ed\030\n \001(\0132\032.google.protobuf.BoolValueR\014ac" +
+      "knowledged\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Eve" +
+      "nts\022*\n\020detailedResponse\030\001 \001(\010R\020detailedR" +
+      "esponse\022+\n\006events\030\002 \003(\0132\023.zenoss.cloud.E" +
+      "ventR\006events\"M\n\nEventError\022\024\n\005error\030\001 \001(" +
+      "\tR\005error\022)\n\005event\030\002 \001(\0132\023.zenoss.cloud.E" +
+      "ventR\005event\"\315\001\n\014TaggedMetric\022\026\n\006metric\030\001" +
+      " \001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\ttimesta" +
+      "mp\022\024\n\005value\030\003 \001(\001R\005value\0228\n\004tags\030\004 \003(\0132$" +
+      ".zenoss.cloud.TaggedMetric.TagsEntryR\004ta" +
+      "gs\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val" +
+      "ue\030\002 \001(\tR\005value:\0028\001\"S\n\rCompactMetric\022\016\n\002" +
+      "id\030\001 \001(\tR\002id\022\034\n\ttimestamp\030\002 \001(\003R\ttimesta" +
+      "mp\022\024\n\005value\030\003 \001(\001R\005value\"\232\002\n\006Metric\022\026\n\006m" +
+      "etric\030\001 \001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\t" +
+      "timestamp\022\024\n\005value\030\003 \001(\001R\005value\022D\n\ndimen" +
+      "sions\030\004 \003(\0132$.zenoss.cloud.Metric.Dimens" +
+      "ionsEntryR\ndimensions\022?\n\016metadataFields\030" +
+      "\006 \001(\0132\027.google.protobuf.StructR\016metadata" +
+      "Fields\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003" +
+      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\352\001\n\005Model\022" +
+      "\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022C\n\ndimensi" +
+      "ons\030\002 \003(\0132#.zenoss.cloud.Model.Dimension" +
+      "sEntryR\ndimensions\022?\n\016metadataFields\030\003 \001" +
+      "(\0132\027.google.protobuf.StructR\016metadataFie" +
+      "lds\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003key" +
+      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Models\022*\n\020" +
+      "detailedResponse\030\001 \001(\010R\020detailedResponse" +
+      "\022+\n\006models\030\002 \003(\0132\023.zenoss.cloud.ModelR\006m" +
+      "odels\"M\n\nModelError\022\024\n\005error\030\001 \001(\tR\005erro" +
+      "r\022)\n\005model\030\002 \001(\0132\023.zenoss.cloud.ModelR\005m" +
+      "odel\"\241\001\n\021EventStatusResult\022\026\n\006failed\030\001 \001" +
+      "(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucceeded" +
+      "\022\030\n\007message\030\003 \001(\tR\007message\022<\n\014failedEven" +
+      "ts\030\004 \003(\0132\030.zenoss.cloud.EventErrorR\014fail" +
+      "edEvents\"\241\001\n\021ModelStatusResult\022\026\n\006failed" +
+      "\030\001 \001(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucce" +
+      "eded\022\030\n\007message\030\003 \001(\tR\007message\022<\n\014failed" +
+      "Models\030\004 \003(\0132\030.zenoss.cloud.ModelErrorR\014" +
+      "failedModels\"\310\002\n\014StatusResult\022\026\n\006failed\030" +
+      "\001 \001(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsuccee" +
+      "ded\022\030\n\007message\030\003 \001(\tR\007message\022T\n\024failedC" +
+      "ompactMetrics\030\004 \003(\0132 .zenoss.cloud.Compa" +
+      "ctMetricErrorR\024failedCompactMetrics\022Q\n\023f" +
+      "ailedTaggedMetrics\030\005 \003(\0132\037.zenoss.cloud." +
+      "TaggedMetricErrorR\023failedTaggedMetrics\022?" +
+      "\n\rfailedMetrics\030\006 \003(\0132\031.zenoss.cloud.Met" +
+      "ricErrorR\rfailedMetrics\"Q\n\014EventWrapper\022" +
+      "3\n\tcanonical\030\001 \001(\0132\023.zenoss.cloud.EventH" +
+      "\000R\tcanonicalB\014\n\nevent_type\"\303\001\n\rMetricWra" +
+      "pper\0224\n\006tagged\030\001 \001(\0132\032.zenoss.cloud.Tagg" +
+      "edMetricH\000R\006tagged\0227\n\007compact\030\002 \001(\0132\033.ze" +
+      "noss.cloud.CompactMetricH\000R\007compact\0224\n\tc" +
+      "anonical\030\003 \001(\0132\024.zenoss.cloud.MetricH\000R\t" +
+      "canonicalB\r\n\013metric_type\"\317\001\n\013MetricBatch" +
+      "\022J\n\013global_tags\030\002 \003(\0132).zenoss.cloud.Met" +
+      "ricBatch.GlobalTagsEntryR\nglobalTags\0225\n\007" +
+      "metrics\030\003 \003(\0132\033.zenoss.cloud.MetricWrapp" +
+      "erR\007metrics\032=\n\017GlobalTagsEntry\022\020\n\003key\030\001 " +
+      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"_\n\022Co" +
+      "mpactMetricError\022\024\n\005error\030\001 \001(\tR\005error\0223" +
+      "\n\006metric\030\002 \001(\0132\033.zenoss.cloud.CompactMet" +
+      "ricR\006metric\"Q\n\013MetricError\022\024\n\005error\030\001 \001(" +
+      "\tR\005error\022,\n\006metric\030\002 \001(\0132\024.zenoss.cloud." +
+      "MetricR\006metric\"]\n\021TaggedMetricError\022\024\n\005e" +
+      "rror\030\001 \001(\tR\005error\0222\n\006metric\030\002 \001(\0132\032.zeno" +
+      "ss.cloud.TaggedMetricR\006metric\"\354\001\n\007Metric" +
+      "s\022*\n\020detailedResponse\030\001 \001(\010R\020detailedRes" +
+      "ponse\022C\n\016compactMetrics\030\003 \003(\0132\033.zenoss.c" +
+      "loud.CompactMetricR\016compactMetrics\022@\n\rta" +
+      "ggedMetrics\030\004 \003(\0132\032.zenoss.cloud.TaggedM" +
+      "etricR\rtaggedMetrics\022.\n\007metrics\030\005 \003(\0132\024." +
+      "zenoss.cloud.MetricR\007metrics*\210\001\n\010Severit" +
       "y\022\024\n\020SEVERITY_DEFAULT\020\000\022\022\n\016SEVERITY_DEBU" +
       "G\020\001\022\021\n\rSEVERITY_INFO\020\002\022\024\n\020SEVERITY_WARNI" +
       "NG\020\003\022\022\n\016SEVERITY_ERROR\020\004\022\025\n\021SEVERITY_CRI" +
@@ -224,25 +242,25 @@ public final class DataReceiver {
       "\013STATUS_OPEN\020\001\022\025\n\021STATUS_SUPPRESSED\020\002\022\021\n" +
       "\rSTATUS_CLOSED\020\0032\320\003\n\023DataReceiverService" +
       "\022g\n\tPutEvents\022\024.zenoss.cloud.Events\032\037.ze" +
-      "noss.cloud.EventStatusResult\"#\202\323\344\223\002\035\"\030/v" +
-      "1/data-receiver/events:\001*\022>\n\010PutEvent\022\032." +
+      "noss.cloud.EventStatusResult\"#\202\323\344\223\002\035:\001*\"" +
+      "\030/v1/data-receiver/events\022>\n\010PutEvent\022\032." +
       "zenoss.cloud.EventWrapper\032\022.zenoss.cloud" +
       ".Void\"\000(\001\022e\n\nPutMetrics\022\025.zenoss.cloud.M" +
       "etrics\032\032.zenoss.cloud.StatusResult\"$\202\323\344\223" +
-      "\002\036\"\031/v1/data-receiver/metrics:\001*\022@\n\tPutM" +
+      "\002\036:\001*\"\031/v1/data-receiver/metrics\022@\n\tPutM" +
       "etric\022\033.zenoss.cloud.MetricWrapper\032\022.zen" +
       "oss.cloud.Void\"\000(\001\022g\n\tPutModels\022\024.zenoss" +
       ".cloud.Models\032\037.zenoss.cloud.ModelStatus" +
-      "Result\"#\202\323\344\223\002\035\"\030/v1/data-receiver/models" +
-      ":\001*B\\\n\035org.zenoss.cloud.dataReceiverP\001Z9" +
+      "Result\"#\202\323\344\223\002\035:\001*\"\030/v1/data-receiver/mod" +
+      "elsB\\\n\035org.zenoss.cloud.dataReceiverP\001Z9" +
       "github.com/zenoss/zenoss-protobufs/go/cl" +
       "oud/data_receiverb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.StructProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
         });
     internal_static_zenoss_cloud_Void_descriptor =
@@ -400,8 +418,8 @@ public final class DataReceiver {
     registry.add(com.google.api.AnnotationsProto.http);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.protobuf.StructProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();
   }
 

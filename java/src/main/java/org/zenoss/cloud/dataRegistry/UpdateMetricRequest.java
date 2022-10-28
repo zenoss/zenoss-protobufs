@@ -91,6 +91,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -115,7 +117,7 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCEID_FIELD_NUMBER = 1;
   private volatile java.lang.Object instanceId_;
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
    */
   @java.lang.Override
@@ -132,7 +134,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The bytes for instanceId.
    */
   @java.lang.Override
@@ -157,7 +159,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   @java.lang.Override
@@ -169,7 +171,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   @java.lang.Override
@@ -181,7 +183,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
@@ -191,14 +193,14 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MODE_FIELD_NUMBER = 3;
   private int updateMode_;
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   @java.lang.Override public int getUpdateModeValue() {
     return updateMode_;
   }
   /**
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   @java.lang.Override public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
@@ -210,7 +212,7 @@ private static final long serialVersionUID = 0L;
   public static final int TIMESTAMP_FIELD_NUMBER = 4;
   private long timestamp_;
   /**
-   * <code>int64 timestamp = 4;</code>
+   * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -232,7 +234,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
     }
     if (metadataFields_ != null) {
@@ -253,7 +255,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
     }
     if (metadataFields_ != null) {
@@ -586,7 +588,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object instanceId_ = "";
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
@@ -602,7 +604,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString
@@ -619,7 +621,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @param value The instanceId to set.
      * @return This builder for chaining.
      */
@@ -634,7 +636,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
@@ -644,7 +646,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @param value The bytes for instanceId to set.
      * @return This builder for chaining.
      */
@@ -668,7 +670,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
@@ -679,7 +681,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
@@ -694,7 +696,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -714,7 +716,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -732,7 +734,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -754,7 +756,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -772,7 +774,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
@@ -784,7 +786,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
       if (metadataFieldsBuilder_ != null) {
@@ -799,7 +801,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -817,14 +819,14 @@ private static final long serialVersionUID = 0L;
 
     private int updateMode_ = 0;
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return The enum numeric value on the wire for updateMode.
      */
     @java.lang.Override public int getUpdateModeValue() {
       return updateMode_;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @param value The enum numeric value on the wire for updateMode to set.
      * @return This builder for chaining.
      */
@@ -835,7 +837,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return The updateMode.
      */
     @java.lang.Override
@@ -845,7 +847,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? org.zenoss.cloud.dataRegistry.UpdateMode.UNRECOGNIZED : result;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @param value The updateMode to set.
      * @return This builder for chaining.
      */
@@ -859,7 +861,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdateMode() {
@@ -871,7 +873,7 @@ private static final long serialVersionUID = 0L;
 
     private long timestamp_ ;
     /**
-     * <code>int64 timestamp = 4;</code>
+     * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -879,7 +881,7 @@ private static final long serialVersionUID = 0L;
       return timestamp_;
     }
     /**
-     * <code>int64 timestamp = 4;</code>
+     * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -890,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 timestamp = 4;</code>
+     * <code>int64 timestamp = 4 [json_name = "timestamp"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {

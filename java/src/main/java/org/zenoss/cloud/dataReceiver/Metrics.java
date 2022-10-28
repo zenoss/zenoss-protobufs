@@ -95,6 +95,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -132,7 +134,7 @@ private static final long serialVersionUID = 0L;
    * detailedResponse if set to true will return any metrics that failed to be sent
    * </pre>
    *
-   * <code>bool detailedResponse = 1;</code>
+   * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
    * @return The detailedResponse.
    */
   @java.lang.Override
@@ -143,14 +145,14 @@ private static final long serialVersionUID = 0L;
   public static final int COMPACTMETRICS_FIELD_NUMBER = 3;
   private java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric> compactMetrics_;
   /**
-   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric> getCompactMetricsList() {
     return compactMetrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder> 
@@ -158,21 +160,21 @@ private static final long serialVersionUID = 0L;
     return compactMetrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
    */
   @java.lang.Override
   public int getCompactMetricsCount() {
     return compactMetrics_.size();
   }
   /**
-   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetric getCompactMetrics(int index) {
     return compactMetrics_.get(index);
   }
   /**
-   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+   * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getCompactMetricsOrBuilder(
@@ -183,14 +185,14 @@ private static final long serialVersionUID = 0L;
   public static final int TAGGEDMETRICS_FIELD_NUMBER = 4;
   private java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric> taggedMetrics_;
   /**
-   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric> getTaggedMetricsList() {
     return taggedMetrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder> 
@@ -198,21 +200,21 @@ private static final long serialVersionUID = 0L;
     return taggedMetrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
    */
   @java.lang.Override
   public int getTaggedMetricsCount() {
     return taggedMetrics_.size();
   }
   /**
-   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetric getTaggedMetrics(int index) {
     return taggedMetrics_.get(index);
   }
   /**
-   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+   * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder getTaggedMetricsOrBuilder(
@@ -223,14 +225,14 @@ private static final long serialVersionUID = 0L;
   public static final int METRICS_FIELD_NUMBER = 5;
   private java.util.List<org.zenoss.cloud.dataReceiver.Metric> metrics_;
   /**
-   * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+   * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.Metric> getMetricsList() {
     return metrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+   * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricOrBuilder> 
@@ -238,21 +240,21 @@ private static final long serialVersionUID = 0L;
     return metrics_;
   }
   /**
-   * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+   * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public int getMetricsCount() {
     return metrics_.size();
   }
   /**
-   * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+   * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Metric getMetrics(int index) {
     return metrics_.get(index);
   }
   /**
-   * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+   * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricsOrBuilder(
@@ -736,7 +738,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse if set to true will return any metrics that failed to be sent
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @return The detailedResponse.
      */
     @java.lang.Override
@@ -748,7 +750,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse if set to true will return any metrics that failed to be sent
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @param value The detailedResponse to set.
      * @return This builder for chaining.
      */
@@ -763,7 +765,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse if set to true will return any metrics that failed to be sent
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDetailedResponse() {
@@ -786,7 +788,7 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataReceiver.CompactMetric, org.zenoss.cloud.dataReceiver.CompactMetric.Builder, org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder> compactMetricsBuilder_;
 
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric> getCompactMetricsList() {
       if (compactMetricsBuilder_ == null) {
@@ -796,7 +798,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public int getCompactMetricsCount() {
       if (compactMetricsBuilder_ == null) {
@@ -806,7 +808,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.CompactMetric getCompactMetrics(int index) {
       if (compactMetricsBuilder_ == null) {
@@ -816,7 +818,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder setCompactMetrics(
         int index, org.zenoss.cloud.dataReceiver.CompactMetric value) {
@@ -833,7 +835,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder setCompactMetrics(
         int index, org.zenoss.cloud.dataReceiver.CompactMetric.Builder builderForValue) {
@@ -847,7 +849,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder addCompactMetrics(org.zenoss.cloud.dataReceiver.CompactMetric value) {
       if (compactMetricsBuilder_ == null) {
@@ -863,7 +865,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder addCompactMetrics(
         int index, org.zenoss.cloud.dataReceiver.CompactMetric value) {
@@ -880,7 +882,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder addCompactMetrics(
         org.zenoss.cloud.dataReceiver.CompactMetric.Builder builderForValue) {
@@ -894,7 +896,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder addCompactMetrics(
         int index, org.zenoss.cloud.dataReceiver.CompactMetric.Builder builderForValue) {
@@ -908,7 +910,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder addAllCompactMetrics(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.CompactMetric> values) {
@@ -923,7 +925,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder clearCompactMetrics() {
       if (compactMetricsBuilder_ == null) {
@@ -936,7 +938,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public Builder removeCompactMetrics(int index) {
       if (compactMetricsBuilder_ == null) {
@@ -949,14 +951,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.CompactMetric.Builder getCompactMetricsBuilder(
         int index) {
       return getCompactMetricsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getCompactMetricsOrBuilder(
         int index) {
@@ -966,7 +968,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder> 
          getCompactMetricsOrBuilderList() {
@@ -977,14 +979,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.CompactMetric.Builder addCompactMetricsBuilder() {
       return getCompactMetricsFieldBuilder().addBuilder(
           org.zenoss.cloud.dataReceiver.CompactMetric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.CompactMetric.Builder addCompactMetricsBuilder(
         int index) {
@@ -992,7 +994,7 @@ private static final long serialVersionUID = 0L;
           index, org.zenoss.cloud.dataReceiver.CompactMetric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3;</code>
+     * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric.Builder> 
          getCompactMetricsBuilderList() {
@@ -1026,7 +1028,7 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataReceiver.TaggedMetric, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder, org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder> taggedMetricsBuilder_;
 
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric> getTaggedMetricsList() {
       if (taggedMetricsBuilder_ == null) {
@@ -1036,7 +1038,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public int getTaggedMetricsCount() {
       if (taggedMetricsBuilder_ == null) {
@@ -1046,7 +1048,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.TaggedMetric getTaggedMetrics(int index) {
       if (taggedMetricsBuilder_ == null) {
@@ -1056,7 +1058,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder setTaggedMetrics(
         int index, org.zenoss.cloud.dataReceiver.TaggedMetric value) {
@@ -1073,7 +1075,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder setTaggedMetrics(
         int index, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder builderForValue) {
@@ -1087,7 +1089,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder addTaggedMetrics(org.zenoss.cloud.dataReceiver.TaggedMetric value) {
       if (taggedMetricsBuilder_ == null) {
@@ -1103,7 +1105,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder addTaggedMetrics(
         int index, org.zenoss.cloud.dataReceiver.TaggedMetric value) {
@@ -1120,7 +1122,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder addTaggedMetrics(
         org.zenoss.cloud.dataReceiver.TaggedMetric.Builder builderForValue) {
@@ -1134,7 +1136,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder addTaggedMetrics(
         int index, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder builderForValue) {
@@ -1148,7 +1150,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder addAllTaggedMetrics(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.TaggedMetric> values) {
@@ -1163,7 +1165,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder clearTaggedMetrics() {
       if (taggedMetricsBuilder_ == null) {
@@ -1176,7 +1178,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public Builder removeTaggedMetrics(int index) {
       if (taggedMetricsBuilder_ == null) {
@@ -1189,14 +1191,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.TaggedMetric.Builder getTaggedMetricsBuilder(
         int index) {
       return getTaggedMetricsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder getTaggedMetricsOrBuilder(
         int index) {
@@ -1206,7 +1208,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder> 
          getTaggedMetricsOrBuilderList() {
@@ -1217,14 +1219,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.TaggedMetric.Builder addTaggedMetricsBuilder() {
       return getTaggedMetricsFieldBuilder().addBuilder(
           org.zenoss.cloud.dataReceiver.TaggedMetric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.TaggedMetric.Builder addTaggedMetricsBuilder(
         int index) {
@@ -1232,7 +1234,7 @@ private static final long serialVersionUID = 0L;
           index, org.zenoss.cloud.dataReceiver.TaggedMetric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4;</code>
+     * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric.Builder> 
          getTaggedMetricsBuilderList() {
@@ -1266,7 +1268,7 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataReceiver.Metric, org.zenoss.cloud.dataReceiver.Metric.Builder, org.zenoss.cloud.dataReceiver.MetricOrBuilder> metricsBuilder_;
 
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.Metric> getMetricsList() {
       if (metricsBuilder_ == null) {
@@ -1276,7 +1278,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public int getMetricsCount() {
       if (metricsBuilder_ == null) {
@@ -1286,7 +1288,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric getMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -1296,7 +1298,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(
         int index, org.zenoss.cloud.dataReceiver.Metric value) {
@@ -1313,7 +1315,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder setMetrics(
         int index, org.zenoss.cloud.dataReceiver.Metric.Builder builderForValue) {
@@ -1327,7 +1329,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(org.zenoss.cloud.dataReceiver.Metric value) {
       if (metricsBuilder_ == null) {
@@ -1343,7 +1345,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         int index, org.zenoss.cloud.dataReceiver.Metric value) {
@@ -1360,7 +1362,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         org.zenoss.cloud.dataReceiver.Metric.Builder builderForValue) {
@@ -1374,7 +1376,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder addMetrics(
         int index, org.zenoss.cloud.dataReceiver.Metric.Builder builderForValue) {
@@ -1388,7 +1390,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder addAllMetrics(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.Metric> values) {
@@ -1403,7 +1405,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
@@ -1416,7 +1418,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public Builder removeMetrics(int index) {
       if (metricsBuilder_ == null) {
@@ -1429,14 +1431,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric.Builder getMetricsBuilder(
         int index) {
       return getMetricsFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricsOrBuilder(
         int index) {
@@ -1446,7 +1448,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.MetricOrBuilder> 
          getMetricsOrBuilderList() {
@@ -1457,14 +1459,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric.Builder addMetricsBuilder() {
       return getMetricsFieldBuilder().addBuilder(
           org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric.Builder addMetricsBuilder(
         int index) {
@@ -1472,7 +1474,7 @@ private static final long serialVersionUID = 0L;
           index, org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.Metric metrics = 5;</code>
+     * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.Metric.Builder> 
          getMetricsBuilderList() {

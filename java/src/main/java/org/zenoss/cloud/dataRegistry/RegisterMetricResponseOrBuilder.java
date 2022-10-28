@@ -8,36 +8,36 @@ public interface RegisterMetricResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString
       getInstanceIdBytes();
 
   /**
-   * <code>string definitionId = 2;</code>
+   * <code>string definitionId = 2 [json_name = "definitionId"];</code>
    * @return The definitionId.
    */
   java.lang.String getDefinitionId();
   /**
-   * <code>string definitionId = 2;</code>
+   * <code>string definitionId = 2 [json_name = "definitionId"];</code>
    * @return The bytes for definitionId.
    */
   com.google.protobuf.ByteString
       getDefinitionIdBytes();
 
   /**
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 3;</code>
+   * <code>string name = 3 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

@@ -86,6 +86,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -114,7 +116,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string definition_id = 1;</code>
+   * <code>string definition_id = 1 [json_name = "definitionId"];</code>
    * @return The definitionId.
    */
   @java.lang.Override
@@ -135,7 +137,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string definition_id = 1;</code>
+   * <code>string definition_id = 1 [json_name = "definitionId"];</code>
    * @return The bytes for definitionId.
    */
   @java.lang.Override
@@ -160,7 +162,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   @java.lang.Override
@@ -172,7 +174,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   @java.lang.Override
@@ -184,7 +186,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 2;</code>
+   * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
@@ -200,7 +202,7 @@ private static final long serialVersionUID = 0L;
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   @java.lang.Override public int getUpdateModeValue() {
@@ -213,7 +215,7 @@ private static final long serialVersionUID = 0L;
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   @java.lang.Override public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
@@ -236,7 +238,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDefinitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, definitionId_);
     }
     if (metadataFields_ != null) {
@@ -254,7 +256,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDefinitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, definitionId_);
     }
     if (metadataFields_ != null) {
@@ -576,7 +578,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string definition_id = 1;</code>
+     * <code>string definition_id = 1 [json_name = "definitionId"];</code>
      * @return The definitionId.
      */
     public java.lang.String getDefinitionId() {
@@ -596,7 +598,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string definition_id = 1;</code>
+     * <code>string definition_id = 1 [json_name = "definitionId"];</code>
      * @return The bytes for definitionId.
      */
     public com.google.protobuf.ByteString
@@ -617,7 +619,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string definition_id = 1;</code>
+     * <code>string definition_id = 1 [json_name = "definitionId"];</code>
      * @param value The definitionId to set.
      * @return This builder for chaining.
      */
@@ -636,7 +638,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string definition_id = 1;</code>
+     * <code>string definition_id = 1 [json_name = "definitionId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDefinitionId() {
@@ -650,7 +652,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string definition_id = 1;</code>
+     * <code>string definition_id = 1 [json_name = "definitionId"];</code>
      * @param value The bytes for definitionId to set.
      * @return This builder for chaining.
      */
@@ -674,7 +676,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
@@ -685,7 +687,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
@@ -700,7 +702,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -720,7 +722,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -738,7 +740,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -760,7 +762,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -778,7 +780,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
@@ -790,7 +792,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
       if (metadataFieldsBuilder_ != null) {
@@ -805,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 2;</code>
+     * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -829,7 +831,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return The enum numeric value on the wire for updateMode.
      */
     @java.lang.Override public int getUpdateModeValue() {
@@ -842,7 +844,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @param value The enum numeric value on the wire for updateMode to set.
      * @return This builder for chaining.
      */
@@ -859,7 +861,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return The updateMode.
      */
     @java.lang.Override
@@ -875,7 +877,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @param value The updateMode to set.
      * @return This builder for chaining.
      */
@@ -895,7 +897,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 3;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 3 [json_name = "updateMode"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdateMode() {

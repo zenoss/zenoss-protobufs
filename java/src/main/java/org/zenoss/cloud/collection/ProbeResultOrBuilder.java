@@ -8,32 +8,32 @@ public interface ProbeResultOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    * @return Whether the success field is set.
    */
   boolean hasSuccess();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    * @return The success.
    */
   org.zenoss.cloud.collection.ProbeSuccess getSuccess();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeSuccess success = 1 [json_name = "success"];</code>
    */
   org.zenoss.cloud.collection.ProbeSuccessOrBuilder getSuccessOrBuilder();
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    * @return Whether the error field is set.
    */
   boolean hasError();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    * @return The error.
    */
   org.zenoss.cloud.collection.ProbeError getError();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeError error = 2 [json_name = "error"];</code>
    */
   org.zenoss.cloud.collection.ProbeErrorOrBuilder getErrorOrBuilder();
 

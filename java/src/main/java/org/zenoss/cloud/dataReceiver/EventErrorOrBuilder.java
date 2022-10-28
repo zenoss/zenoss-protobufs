@@ -8,29 +8,29 @@ public interface EventErrorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The error.
    */
   java.lang.String getError();
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
 
   /**
-   * <code>.zenoss.cloud.Event event = 2;</code>
+   * <code>.zenoss.cloud.Event event = 2 [json_name = "event"];</code>
    * @return Whether the event field is set.
    */
   boolean hasEvent();
   /**
-   * <code>.zenoss.cloud.Event event = 2;</code>
+   * <code>.zenoss.cloud.Event event = 2 [json_name = "event"];</code>
    * @return The event.
    */
   org.zenoss.cloud.dataReceiver.Event getEvent();
   /**
-   * <code>.zenoss.cloud.Event event = 2;</code>
+   * <code>.zenoss.cloud.Event event = 2 [json_name = "event"];</code>
    */
   org.zenoss.cloud.dataReceiver.EventOrBuilder getEventOrBuilder();
 }

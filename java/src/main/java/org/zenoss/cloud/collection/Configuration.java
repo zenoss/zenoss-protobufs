@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -97,7 +99,7 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [json_name = "type"];</code>
    * @return The type.
    */
   @java.lang.Override
@@ -114,7 +116,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string type = 1;</code>
+   * <code>string type = 1 [json_name = "type"];</code>
    * @return The bytes for type.
    */
   @java.lang.Override
@@ -135,7 +137,7 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_FIELD_NUMBER = 2;
   private volatile java.lang.Object data_;
   /**
-   * <code>string data = 2;</code>
+   * <code>string data = 2 [json_name = "data"];</code>
    * @return The data.
    */
   @java.lang.Override
@@ -152,7 +154,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string data = 2;</code>
+   * <code>string data = 2 [json_name = "data"];</code>
    * @return The bytes for data.
    */
   @java.lang.Override
@@ -184,10 +186,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
-    if (!getDataBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, data_);
     }
     unknownFields.writeTo(output);
@@ -199,10 +201,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(type_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
     }
-    if (!getDataBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, data_);
     }
     size += unknownFields.getSerializedSize();
@@ -491,7 +493,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object type_ = "";
     /**
-     * <code>string type = 1;</code>
+     * <code>string type = 1 [json_name = "type"];</code>
      * @return The type.
      */
     public java.lang.String getType() {
@@ -507,7 +509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string type = 1;</code>
+     * <code>string type = 1 [json_name = "type"];</code>
      * @return The bytes for type.
      */
     public com.google.protobuf.ByteString
@@ -524,7 +526,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string type = 1;</code>
+     * <code>string type = 1 [json_name = "type"];</code>
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -539,7 +541,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string type = 1;</code>
+     * <code>string type = 1 [json_name = "type"];</code>
      * @return This builder for chaining.
      */
     public Builder clearType() {
@@ -549,7 +551,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string type = 1;</code>
+     * <code>string type = 1 [json_name = "type"];</code>
      * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
@@ -567,7 +569,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object data_ = "";
     /**
-     * <code>string data = 2;</code>
+     * <code>string data = 2 [json_name = "data"];</code>
      * @return The data.
      */
     public java.lang.String getData() {
@@ -583,7 +585,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string data = 2;</code>
+     * <code>string data = 2 [json_name = "data"];</code>
      * @return The bytes for data.
      */
     public com.google.protobuf.ByteString
@@ -600,7 +602,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string data = 2;</code>
+     * <code>string data = 2 [json_name = "data"];</code>
      * @param value The data to set.
      * @return This builder for chaining.
      */
@@ -615,7 +617,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string data = 2;</code>
+     * <code>string data = 2 [json_name = "data"];</code>
      * @return This builder for chaining.
      */
     public Builder clearData() {
@@ -625,7 +627,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string data = 2;</code>
+     * <code>string data = 2 [json_name = "data"];</code>
      * @param value The bytes for data to set.
      * @return This builder for chaining.
      */

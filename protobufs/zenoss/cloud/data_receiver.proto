@@ -1,285 +1,284 @@
 syntax = "proto3";
+
 package zenoss.cloud;
-option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver";
-option java_package = "org.zenoss.cloud.dataReceiver";
-option java_multiple_files = true;
-import "google/protobuf/struct.proto";
+
 import "google/api/annotations.proto";
+import "google/protobuf/struct.proto";
 import "google/protobuf/wrappers.proto";
+
+option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver";
+option java_multiple_files = true;
+option java_package = "org.zenoss.cloud.dataReceiver";
 
 message Void {}
 
 // Public Event struct.
 // Note the conspicuous absence of 'id' and 'tenant' which are inferred by auth.
 message Event {
+  // timestamp is the time (in ms since epoch) at which the event occurred.
+  int64 timestamp = 1;
 
-    // timestamp is the time (in ms since epoch) at which the event occurred.
-    int64 timestamp = 1;
+  // name, when combined with dimensions, makes this event unique.
+  //   - should be set to the ID for systems that have an event ID concept
+  //   - otherwise the same as "type"
+  //   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
+  string name = 2;
 
-    // name, when combined with dimensions, makes this event unique.
-    //   - should be set to the ID for systems that have an event ID concept
-    //   - otherwise the same as "type"
-    //   - e.g. linkDown, fault-F0157, adaeff80-b1b0-47fe-92a1-69e958145e10
-    string name = 2;
+  // Dimensions associated with this event.
+  // Dimensions, when combined with name, make this event unique.
+  //   - typically set the same as the entity to which event is related
+  map<string, string> dimensions = 3;
 
-    // Dimensions associated with this event.
-    // Dimensions, when combined with name, make this event unique.
-    //   - typically set the same as the entity to which event is related
-    map<string, string> dimensions = 3;
+  // Fields associated with this event.
+  google.protobuf.Struct metadataFields = 4;
 
-    // Fields associated with this event.
-    google.protobuf.Struct metadataFields = 4;
+  // type uniquely identifies the context-free type of event.
+  //   - typically set the same as "name" for systems that have an event ID.
+  //   - e.g. linkDown, fault-F0157
+  string type = 5;
 
-    // type uniquely identifies the context-free type of event.
-    //   - typically set the same as "name" for systems that have an event ID.
-    //   - e.g. linkDown, fault-F0157
-    string type = 5;
+  // summary is a short (<128 character) summary of the event.
+  //   - most commonly displayed per-event field
+  //   - highly recommend to set this
+  string summary = 6;
 
-    // summary is a short (<128 character) summary of the event.
-    //   - most commonly displayed per-event field
-    //   - highly recommend to set this
-    string summary = 6;
+  // body is a long (? character) further description of the event.
+  //   - it is not necessary to repeat summary in the body
+  string body = 7;
 
-    // body is a long (? character) further description of the event.
-    //   - it is not necessary to repeat summary in the body
-    string body = 7;
+  // severity defines how severe the event is.
+  //   - use SEVERITY_DEFAULT when not currently known
+  //   - use SEVERITY_DEBUG when not severe enough to show by default
+  //   - use SEVERITY_INFO when when no action is likely required
+  //   - use SEVERITY_WARNING when delayed action may be required
+  //   - use SEVERITY_ERROR when system is degraded, but not down
+  //   - use SEVERITY_CRITICAL for system down
+  Severity severity = 8;
 
-    // severity defines how severe the event is.
-    //   - use SEVERITY_DEFAULT when not currently known
-    //   - use SEVERITY_DEBUG when not severe enough to show by default
-    //   - use SEVERITY_INFO when when no action is likely required
-    //   - use SEVERITY_WARNING when delayed action may be required
-    //   - use SEVERITY_ERROR when system is degraded, but not down
-    //   - use SEVERITY_CRITICAL for system down
-    Severity severity = 8;
+  // status defines the event's disposition from the system perspective.
+  //   - use STATUS_DEFAULT when not currently known
+  //   - use STATUS_OPEN when event is known to be actively ongoing
+  //   - use STATUS_SUPPRESSED when event should be suppressed
+  //   - use STATUS_CLOSED when the event is known to have subsided
+  Status status = 9;
 
-    // status defines the event's disposition from the system perspective.
-    //   - use STATUS_DEFAULT when not currently known
-    //   - use STATUS_OPEN when event is known to be actively ongoing
-    //   - use STATUS_SUPPRESSED when event should be suppressed
-    //   - use STATUS_CLOSED when the event is known to have subsided
-    Status status = 9;
-
-    // acknowledged explicitly sets the events acknowledged state.
-    google.protobuf.BoolValue acknowledged = 10;
+  // acknowledged explicitly sets the events acknowledged state.
+  google.protobuf.BoolValue acknowledged = 10;
 }
 
 enum Severity {
-    SEVERITY_DEFAULT = 0;
-    SEVERITY_DEBUG = 1;
-    SEVERITY_INFO = 2;
-    SEVERITY_WARNING = 3;
-    SEVERITY_ERROR = 4;
-    SEVERITY_CRITICAL = 5;
+  SEVERITY_DEFAULT = 0;
+  SEVERITY_DEBUG = 1;
+  SEVERITY_INFO = 2;
+  SEVERITY_WARNING = 3;
+  SEVERITY_ERROR = 4;
+  SEVERITY_CRITICAL = 5;
 }
 
 enum Status {
-    STATUS_DEFAULT = 0;
-    STATUS_OPEN = 1;
-    STATUS_SUPPRESSED = 2;
-    STATUS_CLOSED = 3;
+  STATUS_DEFAULT = 0;
+  STATUS_OPEN = 1;
+  STATUS_SUPPRESSED = 2;
+  STATUS_CLOSED = 3;
 }
 
 message Events {
-    // detailedResponse: if true, return any events that failed to be sent.
-    bool detailedResponse = 1;
+  // detailedResponse: if true, return any events that failed to be sent.
+  bool detailedResponse = 1;
 
-    // The events
-    repeated Event events = 2;
+  // The events
+  repeated Event events = 2;
 }
 
-message  EventError {
-    string error = 1;
-    Event event = 2;
+message EventError {
+  string error = 1;
+  Event event = 2;
 }
 
 message TaggedMetric {
-    // The metric name
-    string metric = 1;
+  // The metric name
+  string metric = 1;
 
-    // The time at which the value was captured
-    int64 timestamp = 2;
+  // The time at which the value was captured
+  int64 timestamp = 2;
 
-    // The metric value
-    double value = 3;
+  // The metric value
+  double value = 3;
 
-    // Metadata associated with this datapoint.
-    map<string, string> tags = 4;
+  // Metadata associated with this datapoint.
+  map<string, string> tags = 4;
 }
 
 message CompactMetric {
-    // The metric id
-    string id = 1;
+  // The metric id
+  string id = 1;
 
-    // The time at which the value was captured
-    int64 timestamp = 2;
+  // The time at which the value was captured
+  int64 timestamp = 2;
 
-    // The metric value
-    double value = 3;
+  // The metric value
+  double value = 3;
 }
 
 // Canonical Metric format
 message Metric {
-    // The metric name
-    string metric = 1;
+  // The metric name
+  string metric = 1;
 
-    // The time at which the value was captured
-    int64 timestamp = 2;
+  // The time at which the value was captured
+  int64 timestamp = 2;
 
-    // The metric value
-    double value = 3;
+  // The metric value
+  double value = 3;
 
-    // Dimensions associated with this datapoint.
-    map<string, string> dimensions = 4;
+  // Dimensions associated with this datapoint.
+  map<string, string> dimensions = 4;
 
-    // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
-    google.protobuf.Struct metadataFields = 6;
-
+  // Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
+  google.protobuf.Struct metadataFields = 6;
 }
 
 message Model {
-    // The time when the value was sent.
-    int64 timestamp = 1;
+  // The time when the value was sent.
+  int64 timestamp = 1;
 
-    // Dimensions associated with this model.
-    map<string, string> dimensions = 2;
+  // Dimensions associated with this model.
+  map<string, string> dimensions = 2;
 
-    // Fields associated with this model.
-    google.protobuf.Struct metadataFields = 3;
+  // Fields associated with this model.
+  google.protobuf.Struct metadataFields = 3;
 }
 
 message Models {
-    // detailedResponse if set to true will return any models that failed to be sent
-    bool detailedResponse = 1;
+  // detailedResponse if set to true will return any models that failed to be sent
+  bool detailedResponse = 1;
 
-    // The models
-    repeated Model models = 2;
+  // The models
+  repeated Model models = 2;
 }
 
 message ModelError {
-    string error = 1;
-    Model model =2;
+  string error = 1;
+  Model model = 2;
 }
 
 message EventStatusResult {
-    // failed is the count of events that failed to be accepted
-    int32 failed = 1;
-    // succeeded is the count of events that were accepted
-    int32 succeeded = 2;
-    // message is an informational message that may or may not be set
-    string message = 3;
-    // Failed events only returned if detailedResponse is set to true
-    repeated EventError failedEvents = 4;
+  // failed is the count of events that failed to be accepted
+  int32 failed = 1;
+  // succeeded is the count of events that were accepted
+  int32 succeeded = 2;
+  // message is an informational message that may or may not be set
+  string message = 3;
+  // Failed events only returned if detailedResponse is set to true
+  repeated EventError failedEvents = 4;
 }
 
 message ModelStatusResult {
-    // failed is the count of models that failed to be accepted
-    int32 failed = 1;
-    // succeeded is the count of models that were accepted
-    int32 succeeded = 2;
-    // message is an informational message that may or may not be set
-    string message = 3;
-    // Failed models only returned if detailedResponse is set to true
-    repeated ModelError failedModels = 4;
+  // failed is the count of models that failed to be accepted
+  int32 failed = 1;
+  // succeeded is the count of models that were accepted
+  int32 succeeded = 2;
+  // message is an informational message that may or may not be set
+  string message = 3;
+  // Failed models only returned if detailedResponse is set to true
+  repeated ModelError failedModels = 4;
 }
 
 message StatusResult {
-    // failed is the count of metrics that failed to be accepted
-    int32 failed = 1;
-    // succeeded is the count of metrics that were accepted
-    int32 succeeded = 2;
-    // message is an informational message that may or may not be set
-    string message = 3;
-    //Failed metrics only returned if detailedResponse is set to true
-    repeated CompactMetricError failedCompactMetrics = 4;
-    repeated TaggedMetricError failedTaggedMetrics = 5;
-    repeated MetricError failedMetrics = 6;
+  // failed is the count of metrics that failed to be accepted
+  int32 failed = 1;
+  // succeeded is the count of metrics that were accepted
+  int32 succeeded = 2;
+  // message is an informational message that may or may not be set
+  string message = 3;
+  //Failed metrics only returned if detailedResponse is set to true
+  repeated CompactMetricError failedCompactMetrics = 4;
+  repeated TaggedMetricError failedTaggedMetrics = 5;
+  repeated MetricError failedMetrics = 6;
 }
 
 message EventWrapper {
-    oneof event_type {
-        // Canonical format
-        Event canonical = 1;
-    }
+  oneof event_type {
+    // Canonical format
+    Event canonical = 1;
+  }
 }
 
 message MetricWrapper {
-    oneof metric_type {
-        // Verbose format
-        TaggedMetric tagged = 1;
+  oneof metric_type {
+    // Verbose format
+    TaggedMetric tagged = 1;
 
-        // Compact format
-        CompactMetric compact = 2;
+    // Compact format
+    CompactMetric compact = 2;
 
-        // Canonical format
-        Metric canonical = 3;
-    }
+    // Canonical format
+    Metric canonical = 3;
+  }
 }
 
 // DEPRECATED Batch of metrics
 message MetricBatch {
-    // Tags that apply to all metrics in the batch
-    map<string, string> global_tags = 2;
+  // Tags that apply to all metrics in the batch
+  map<string, string> global_tags = 2;
 
-    // The metrics
-    repeated MetricWrapper metrics = 3;
+  // The metrics
+  repeated MetricWrapper metrics = 3;
 }
 
-message CompactMetricError{
-    string error = 1;
-    CompactMetric metric =2;
+message CompactMetricError {
+  string error = 1;
+  CompactMetric metric = 2;
 }
 
-message MetricError{
-    string error = 1;
-    Metric metric =2;
+message MetricError {
+  string error = 1;
+  Metric metric = 2;
 }
 
-message TaggedMetricError{
-    string error = 1;
-    TaggedMetric metric =2;
+message TaggedMetricError {
+  string error = 1;
+  TaggedMetric metric = 2;
 }
 
-message Metrics{
-    // detailedResponse if set to true will return any metrics that failed to be sent
-    bool detailedResponse = 1;
+message Metrics {
+  // detailedResponse if set to true will return any metrics that failed to be sent
+  bool detailedResponse = 1;
 
-    repeated CompactMetric compactMetrics = 3;
-    repeated TaggedMetric taggedMetrics = 4;
-    repeated Metric metrics = 5;
+  repeated CompactMetric compactMetrics = 3;
+  repeated TaggedMetric taggedMetrics = 4;
+  repeated Metric metrics = 5;
 }
 
 // Data Receiver API
 service DataReceiverService {
+  // Send Events
+  rpc PutEvents(Events) returns (EventStatusResult) {
+    option (google.api.http) = {
+      post: "/v1/data-receiver/events"
+      body: "*"
+    };
+  }
 
-    // Send Events
-    rpc PutEvents(Events) returns(EventStatusResult) {
-        option (google.api.http) = {
-            post: "/v1/data-receiver/events"
-            body: "*"
-        };
-    }
+  // Stream Events of any type.
+  rpc PutEvent(stream EventWrapper) returns (Void) {}
 
-    // Stream Events of any type.
-    rpc PutEvent(stream EventWrapper) returns(Void) {}
+  // Send Metrics
+  rpc PutMetrics(Metrics) returns (StatusResult) {
+    option (google.api.http) = {
+      post: "/v1/data-receiver/metrics"
+      body: "*"
+    };
+  }
 
+  // Stream Metric of any type
+  rpc PutMetric(stream MetricWrapper) returns (Void) {}
 
-    // Send Metrics
-    rpc PutMetrics(Metrics) returns(StatusResult) {
-        option (google.api.http) = {
-            post: "/v1/data-receiver/metrics"
-            body: "*"
-        };
-    }
-
-    // Stream Metric of any type
-    rpc PutMetric(stream MetricWrapper) returns(Void) {}
-
-    // Send batch of models
-    rpc PutModels(Models) returns(ModelStatusResult) {
-        option (google.api.http) = {
-            post: "/v1/data-receiver/models"
-            body: "*"
-        };
-    }
+  // Send batch of models
+  rpc PutModels(Models) returns (ModelStatusResult) {
+    option (google.api.http) = {
+      post: "/v1/data-receiver/models"
+      body: "*"
+    };
+  }
 }

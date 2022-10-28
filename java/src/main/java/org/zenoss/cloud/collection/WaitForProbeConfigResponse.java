@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,7 +105,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIG_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object configId_;
   /**
-   * <code>string config_id = 1;</code>
+   * <code>string config_id = 1 [json_name = "configId"];</code>
    * @return The configId.
    */
   @java.lang.Override
@@ -120,7 +122,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string config_id = 1;</code>
+   * <code>string config_id = 1 [json_name = "configId"];</code>
    * @return The bytes for configId.
    */
   @java.lang.Override
@@ -141,7 +143,7 @@ private static final long serialVersionUID = 0L;
   public static final int RESULT_FIELD_NUMBER = 2;
   private org.zenoss.cloud.collection.ProbeResult result_;
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    * @return Whether the result field is set.
    */
   @java.lang.Override
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
     return result_ != null;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    * @return The result.
    */
   @java.lang.Override
@@ -157,7 +159,7 @@ private static final long serialVersionUID = 0L;
     return result_ == null ? org.zenoss.cloud.collection.ProbeResult.getDefaultInstance() : result_;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ProbeResultOrBuilder getResultOrBuilder() {
@@ -178,7 +180,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, configId_);
     }
     if (result_ != null) {
@@ -193,7 +195,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getConfigIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, configId_);
     }
     if (result_ != null) {
@@ -498,7 +500,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object configId_ = "";
     /**
-     * <code>string config_id = 1;</code>
+     * <code>string config_id = 1 [json_name = "configId"];</code>
      * @return The configId.
      */
     public java.lang.String getConfigId() {
@@ -514,7 +516,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string config_id = 1;</code>
+     * <code>string config_id = 1 [json_name = "configId"];</code>
      * @return The bytes for configId.
      */
     public com.google.protobuf.ByteString
@@ -531,7 +533,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string config_id = 1;</code>
+     * <code>string config_id = 1 [json_name = "configId"];</code>
      * @param value The configId to set.
      * @return This builder for chaining.
      */
@@ -546,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string config_id = 1;</code>
+     * <code>string config_id = 1 [json_name = "configId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
@@ -556,7 +558,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string config_id = 1;</code>
+     * <code>string config_id = 1 [json_name = "configId"];</code>
      * @param value The bytes for configId to set.
      * @return This builder for chaining.
      */
@@ -576,14 +578,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeResult, org.zenoss.cloud.collection.ProbeResult.Builder, org.zenoss.cloud.collection.ProbeResultOrBuilder> resultBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
       return resultBuilder_ != null || result_ != null;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      * @return The result.
      */
     public org.zenoss.cloud.collection.ProbeResult getResult() {
@@ -594,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public Builder setResult(org.zenoss.cloud.collection.ProbeResult value) {
       if (resultBuilder_ == null) {
@@ -610,7 +612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public Builder setResult(
         org.zenoss.cloud.collection.ProbeResult.Builder builderForValue) {
@@ -624,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public Builder mergeResult(org.zenoss.cloud.collection.ProbeResult value) {
       if (resultBuilder_ == null) {
@@ -642,7 +644,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public Builder clearResult() {
       if (resultBuilder_ == null) {
@@ -656,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public org.zenoss.cloud.collection.ProbeResult.Builder getResultBuilder() {
       
@@ -664,7 +666,7 @@ private static final long serialVersionUID = 0L;
       return getResultFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public org.zenoss.cloud.collection.ProbeResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+     * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeResult, org.zenoss.cloud.collection.ProbeResult.Builder, org.zenoss.cloud.collection.ProbeResultOrBuilder> 

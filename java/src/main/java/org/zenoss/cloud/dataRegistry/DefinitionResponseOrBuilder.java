@@ -8,12 +8,12 @@ public interface DefinitionResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string definitionId = 1;</code>
+   * <code>string definitionId = 1 [json_name = "definitionId"];</code>
    * @return The definitionId.
    */
   java.lang.String getDefinitionId();
   /**
-   * <code>string definitionId = 1;</code>
+   * <code>string definitionId = 1 [json_name = "definitionId"];</code>
    * @return The bytes for definitionId.
    */
   com.google.protobuf.ByteString

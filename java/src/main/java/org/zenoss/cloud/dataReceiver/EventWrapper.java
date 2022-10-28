@@ -73,6 +73,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -139,7 +141,7 @@ private static final long serialVersionUID = 0L;
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Event canonical = 1;</code>
+   * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
    * @return Whether the canonical field is set.
    */
   @java.lang.Override
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Event canonical = 1;</code>
+   * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
    * @return The canonical.
    */
   @java.lang.Override
@@ -166,7 +168,7 @@ private static final long serialVersionUID = 0L;
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Event canonical = 1;</code>
+   * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.EventOrBuilder getCanonicalOrBuilder() {
@@ -526,7 +528,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      * @return Whether the canonical field is set.
      */
     @java.lang.Override
@@ -538,7 +540,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      * @return The canonical.
      */
     @java.lang.Override
@@ -560,7 +562,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     public Builder setCanonical(org.zenoss.cloud.dataReceiver.Event value) {
       if (canonicalBuilder_ == null) {
@@ -580,7 +582,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     public Builder setCanonical(
         org.zenoss.cloud.dataReceiver.Event.Builder builderForValue) {
@@ -598,7 +600,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     public Builder mergeCanonical(org.zenoss.cloud.dataReceiver.Event value) {
       if (canonicalBuilder_ == null) {
@@ -613,8 +615,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (eventTypeCase_ == 1) {
           canonicalBuilder_.mergeFrom(value);
+        } else {
+          canonicalBuilder_.setMessage(value);
         }
-        canonicalBuilder_.setMessage(value);
       }
       eventTypeCase_ = 1;
       return this;
@@ -624,7 +627,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     public Builder clearCanonical() {
       if (canonicalBuilder_ == null) {
@@ -647,7 +650,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Event.Builder getCanonicalBuilder() {
       return getCanonicalFieldBuilder().getBuilder();
@@ -657,7 +660,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.EventOrBuilder getCanonicalOrBuilder() {
@@ -675,7 +678,7 @@ private static final long serialVersionUID = 0L;
      * Canonical format
      * </pre>
      *
-     * <code>.zenoss.cloud.Event canonical = 1;</code>
+     * <code>.zenoss.cloud.Event canonical = 1 [json_name = "canonical"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Event, org.zenoss.cloud.dataReceiver.Event.Builder, org.zenoss.cloud.dataReceiver.EventOrBuilder> 

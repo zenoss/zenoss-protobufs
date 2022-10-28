@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,7 +105,7 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_FIELD_NUMBER = 1;
   private org.zenoss.cloud.dataRegistry.RegisterMetricResponse response_;
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    * @return Whether the response field is set.
    */
   @java.lang.Override
@@ -111,7 +113,7 @@ private static final long serialVersionUID = 0L;
     return response_ != null;
   }
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    * @return The response.
    */
   @java.lang.Override
@@ -119,7 +121,7 @@ private static final long serialVersionUID = 0L;
     return response_ == null ? org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance() : response_;
   }
   /**
-   * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+   * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder getResponseOrBuilder() {
@@ -129,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int ERROR_FIELD_NUMBER = 2;
   private volatile java.lang.Object error_;
   /**
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [json_name = "error"];</code>
    * @return The error.
    */
   @java.lang.Override
@@ -146,7 +148,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string error = 2;</code>
+   * <code>string error = 2 [json_name = "error"];</code>
    * @return The bytes for error.
    */
   @java.lang.Override
@@ -181,7 +183,7 @@ private static final long serialVersionUID = 0L;
     if (response_ != null) {
       output.writeMessage(1, getResponse());
     }
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, error_);
     }
     unknownFields.writeTo(output);
@@ -197,7 +199,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getResponse());
     }
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, error_);
     }
     size += unknownFields.getSerializedSize();
@@ -500,14 +502,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataRegistry.RegisterMetricResponse, org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder, org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder> responseBuilder_;
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      * @return Whether the response field is set.
      */
     public boolean hasResponse() {
       return responseBuilder_ != null || response_ != null;
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      * @return The response.
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse getResponse() {
@@ -518,7 +520,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public Builder setResponse(org.zenoss.cloud.dataRegistry.RegisterMetricResponse value) {
       if (responseBuilder_ == null) {
@@ -534,7 +536,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public Builder setResponse(
         org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder builderForValue) {
@@ -548,7 +550,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public Builder mergeResponse(org.zenoss.cloud.dataRegistry.RegisterMetricResponse value) {
       if (responseBuilder_ == null) {
@@ -566,7 +568,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public Builder clearResponse() {
       if (responseBuilder_ == null) {
@@ -580,7 +582,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder getResponseBuilder() {
       
@@ -588,7 +590,7 @@ private static final long serialVersionUID = 0L;
       return getResponseFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder getResponseOrBuilder() {
       if (responseBuilder_ != null) {
@@ -599,7 +601,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.RegisterMetricResponse response = 1;</code>
+     * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataRegistry.RegisterMetricResponse, org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder, org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder> 
@@ -617,7 +619,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object error_ = "";
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     public java.lang.String getError() {
@@ -633,7 +635,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @return The bytes for error.
      */
     public com.google.protobuf.ByteString
@@ -650,7 +652,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @param value The error to set.
      * @return This builder for chaining.
      */
@@ -665,7 +667,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @return This builder for chaining.
      */
     public Builder clearError() {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string error = 2;</code>
+     * <code>string error = 2 [json_name = "error"];</code>
      * @param value The bytes for error to set.
      * @return This builder for chaining.
      */

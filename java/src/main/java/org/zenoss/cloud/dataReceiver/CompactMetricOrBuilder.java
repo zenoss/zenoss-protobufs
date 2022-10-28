@@ -12,7 +12,7 @@ public interface CompactMetricOrBuilder extends
    * The metric id
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   java.lang.String getId();
@@ -21,7 +21,7 @@ public interface CompactMetricOrBuilder extends
    * The metric id
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
@@ -32,7 +32,7 @@ public interface CompactMetricOrBuilder extends
    * The time at which the value was captured
    * </pre>
    *
-   * <code>int64 timestamp = 2;</code>
+   * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   long getTimestamp();
@@ -42,7 +42,7 @@ public interface CompactMetricOrBuilder extends
    * The metric value
    * </pre>
    *
-   * <code>double value = 3;</code>
+   * <code>double value = 3 [json_name = "value"];</code>
    * @return The value.
    */
   double getValue();
