@@ -8,12 +8,12 @@ public interface GetMetricRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The bytes for instanceId.
    */
   com.google.protobuf.ByteString

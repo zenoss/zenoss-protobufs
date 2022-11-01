@@ -90,6 +90,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -130,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   @java.lang.Override
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The bytes for metric.
    */
   @java.lang.Override
@@ -176,7 +178,7 @@ private static final long serialVersionUID = 0L;
    * The time at which the value was captured
    * </pre>
    *
-   * <code>int64 timestamp = 2;</code>
+   * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -191,7 +193,7 @@ private static final long serialVersionUID = 0L;
    * The metric value
    * </pre>
    *
-   * <code>double value = 3;</code>
+   * <code>double value = 3 [json_name = "value"];</code>
    * @return The value.
    */
   @java.lang.Override
@@ -230,13 +232,13 @@ private static final long serialVersionUID = 0L;
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
 
   @java.lang.Override
   public boolean containsTags(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetTags().getMap().containsKey(key);
   }
   /**
@@ -252,7 +254,7 @@ private static final long serialVersionUID = 0L;
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
 
@@ -264,14 +266,14 @@ private static final long serialVersionUID = 0L;
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getTagsOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -281,13 +283,13 @@ private static final long serialVersionUID = 0L;
    * Metadata associated with this datapoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; tags = 4;</code>
+   * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
 
   public java.lang.String getTagsOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetTags().getMap();
     if (!map.containsKey(key)) {
@@ -310,13 +312,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metric_);
     }
     if (timestamp_ != 0L) {
       output.writeInt64(2, timestamp_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       output.writeDouble(3, value_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -334,14 +336,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metric_);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, timestamp_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, value_);
     }
@@ -692,7 +694,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return The metric.
      */
     public java.lang.String getMetric() {
@@ -712,7 +714,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return The bytes for metric.
      */
     public com.google.protobuf.ByteString
@@ -733,7 +735,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @param value The metric to set.
      * @return This builder for chaining.
      */
@@ -752,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
@@ -766,7 +768,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @param value The bytes for metric to set.
      * @return This builder for chaining.
      */
@@ -788,7 +790,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -800,7 +802,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -815,7 +817,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
@@ -831,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @return The value.
      */
     @java.lang.Override
@@ -843,7 +845,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @param value The value to set.
      * @return This builder for chaining.
      */
@@ -858,7 +860,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @return This builder for chaining.
      */
     public Builder clearValue() {
@@ -899,13 +901,13 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
 
     @java.lang.Override
     public boolean containsTags(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetTags().getMap().containsKey(key);
     }
     /**
@@ -921,7 +923,7 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
 
@@ -933,14 +935,14 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getTagsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -950,13 +952,13 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
 
     public java.lang.String getTagsOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTags().getMap();
       if (!map.containsKey(key)) {
@@ -975,12 +977,12 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
 
     public Builder removeTags(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableTags().getMutableMap()
           .remove(key);
       return this;
@@ -998,13 +1000,16 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     public Builder putTags(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableTags().getMutableMap()
           .put(key, value);
       return this;
@@ -1014,7 +1019,7 @@ private static final long serialVersionUID = 0L;
      * Metadata associated with this datapoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; tags = 4;</code>
+     * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
 
     public Builder putAllTags(

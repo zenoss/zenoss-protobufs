@@ -8,24 +8,24 @@ public interface FieldErrorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string field = 1;</code>
+   * <code>string field = 1 [json_name = "field"];</code>
    * @return The field.
    */
   java.lang.String getField();
   /**
-   * <code>string field = 1;</code>
+   * <code>string field = 1 [json_name = "field"];</code>
    * @return The bytes for field.
    */
   com.google.protobuf.ByteString
       getFieldBytes();
 
   /**
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [json_name = "description"];</code>
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 2;</code>
+   * <code>string description = 2 [json_name = "description"];</code>
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString

@@ -12,7 +12,7 @@ public interface ModelOrBuilder extends
    * The time when the value was sent.
    * </pre>
    *
-   * <code>int64 timestamp = 1;</code>
+   * <code>int64 timestamp = 1 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   long getTimestamp();
@@ -22,7 +22,7 @@ public interface ModelOrBuilder extends
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   int getDimensionsCount();
   /**
@@ -30,7 +30,7 @@ public interface ModelOrBuilder extends
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   boolean containsDimensions(
       java.lang.String key);
@@ -45,7 +45,7 @@ public interface ModelOrBuilder extends
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getDimensionsMap();
@@ -54,18 +54,20 @@ public interface ModelOrBuilder extends
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
 
-  java.lang.String getDimensionsOrDefault(
+  /* nullable */
+java.lang.String getDimensionsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <pre>
    * Dimensions associated with this model.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; dimensions = 2;</code>
+   * <code>map&lt;string, string&gt; dimensions = 2 [json_name = "dimensions"];</code>
    */
 
   java.lang.String getDimensionsOrThrow(
@@ -76,7 +78,7 @@ public interface ModelOrBuilder extends
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   boolean hasMetadataFields();
@@ -85,7 +87,7 @@ public interface ModelOrBuilder extends
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   com.google.protobuf.Struct getMetadataFields();
@@ -94,7 +96,7 @@ public interface ModelOrBuilder extends
    * Fields associated with this model.
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    */
   com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder();
 }

@@ -8,25 +8,25 @@ public interface RegisterMetricsResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> 
       getResponsesList();
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse getResponses(int index);
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   int getResponsesCount();
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   java.util.List<? extends org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder> 
       getResponsesOrBuilderList();
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder getResponsesOrBuilder(
       int index);

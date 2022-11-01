@@ -12,7 +12,7 @@ public interface ModelsOrBuilder extends
    * detailedResponse if set to true will return any models that failed to be sent
    * </pre>
    *
-   * <code>bool detailedResponse = 1;</code>
+   * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
    * @return The detailedResponse.
    */
   boolean getDetailedResponse();
@@ -22,7 +22,7 @@ public interface ModelsOrBuilder extends
    * The models
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Model models = 2;</code>
+   * <code>repeated .zenoss.cloud.Model models = 2 [json_name = "models"];</code>
    */
   java.util.List<org.zenoss.cloud.dataReceiver.Model> 
       getModelsList();
@@ -31,7 +31,7 @@ public interface ModelsOrBuilder extends
    * The models
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Model models = 2;</code>
+   * <code>repeated .zenoss.cloud.Model models = 2 [json_name = "models"];</code>
    */
   org.zenoss.cloud.dataReceiver.Model getModels(int index);
   /**
@@ -39,7 +39,7 @@ public interface ModelsOrBuilder extends
    * The models
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Model models = 2;</code>
+   * <code>repeated .zenoss.cloud.Model models = 2 [json_name = "models"];</code>
    */
   int getModelsCount();
   /**
@@ -47,7 +47,7 @@ public interface ModelsOrBuilder extends
    * The models
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Model models = 2;</code>
+   * <code>repeated .zenoss.cloud.Model models = 2 [json_name = "models"];</code>
    */
   java.util.List<? extends org.zenoss.cloud.dataReceiver.ModelOrBuilder> 
       getModelsOrBuilderList();
@@ -56,7 +56,7 @@ public interface ModelsOrBuilder extends
    * The models
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Model models = 2;</code>
+   * <code>repeated .zenoss.cloud.Model models = 2 [json_name = "models"];</code>
    */
   org.zenoss.cloud.dataReceiver.ModelOrBuilder getModelsOrBuilder(
       int index);

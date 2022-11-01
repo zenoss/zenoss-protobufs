@@ -1,17 +1,16 @@
 syntax = "proto3";
+
 package zenoss.cloud.collection_cfg;
 
 option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/collection";
-option java_package = "org.zenoss.cloud.collection";
 option java_multiple_files = true;
+option java_package = "org.zenoss.cloud.collection";
 
 // CollectionConfigService is the gRPC & HTTP service responsible for managing
 // collection configurations.
 service CollectionConfigService {
-  rpc WaitForProbeConfig(stream WaitForProbeConfigResponse)
-      returns (stream WaitForProbeConfigRequest) {}
-  rpc GetConfigStream(GetConfigStreamRequest)
-      returns (stream GetConfigStreamResponse) {}
+  rpc WaitForProbeConfig(stream WaitForProbeConfigResponse) returns (stream WaitForProbeConfigRequest) {}
+  rpc GetConfigStream(GetConfigStreamRequest) returns (stream GetConfigStreamResponse) {}
 }
 
 message Config {
@@ -62,4 +61,6 @@ message WaitForProbeConfigResponse {
 
 message GetConfigStreamRequest {}
 
-message GetConfigStreamResponse { repeated Config configuration = 1; }
+message GetConfigStreamResponse {
+  repeated Config configuration = 1;
+}

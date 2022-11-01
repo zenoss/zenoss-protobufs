@@ -93,6 +93,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -117,7 +119,7 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -134,7 +136,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -155,7 +157,7 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -172,7 +174,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -193,7 +195,7 @@ private static final long serialVersionUID = 0L;
   public static final int TENANT_FIELD_NUMBER = 3;
   private volatile java.lang.Object tenant_;
   /**
-   * <code>string tenant = 3;</code>
+   * <code>string tenant = 3 [json_name = "tenant"];</code>
    * @return The tenant.
    */
   @java.lang.Override
@@ -210,7 +212,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string tenant = 3;</code>
+   * <code>string tenant = 3 [json_name = "tenant"];</code>
    * @return The bytes for tenant.
    */
   @java.lang.Override
@@ -231,7 +233,7 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIGURATION_FIELD_NUMBER = 5;
   private org.zenoss.cloud.collection.Configuration configuration_;
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    * @return Whether the configuration field is set.
    */
   @java.lang.Override
@@ -239,7 +241,7 @@ private static final long serialVersionUID = 0L;
     return configuration_ != null;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    * @return The configuration.
    */
   @java.lang.Override
@@ -247,7 +249,7 @@ private static final long serialVersionUID = 0L;
     return configuration_ == null ? org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
   }
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder() {
@@ -268,13 +270,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
-    if (!getTenantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenant_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenant_);
     }
     if (configuration_ != null) {
@@ -289,13 +291,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
-    if (!getTenantBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenant_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenant_);
     }
     if (configuration_ != null) {
@@ -622,7 +624,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object id_ = "";
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -638,7 +640,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -655,7 +657,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -670,7 +672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -680,7 +682,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -698,7 +700,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -714,7 +716,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -731,7 +733,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -746,7 +748,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -756,7 +758,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 2;</code>
+     * <code>string name = 2 [json_name = "name"];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -774,7 +776,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object tenant_ = "";
     /**
-     * <code>string tenant = 3;</code>
+     * <code>string tenant = 3 [json_name = "tenant"];</code>
      * @return The tenant.
      */
     public java.lang.String getTenant() {
@@ -790,7 +792,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string tenant = 3;</code>
+     * <code>string tenant = 3 [json_name = "tenant"];</code>
      * @return The bytes for tenant.
      */
     public com.google.protobuf.ByteString
@@ -807,7 +809,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string tenant = 3;</code>
+     * <code>string tenant = 3 [json_name = "tenant"];</code>
      * @param value The tenant to set.
      * @return This builder for chaining.
      */
@@ -822,7 +824,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string tenant = 3;</code>
+     * <code>string tenant = 3 [json_name = "tenant"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTenant() {
@@ -832,7 +834,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string tenant = 3;</code>
+     * <code>string tenant = 3 [json_name = "tenant"];</code>
      * @param value The bytes for tenant to set.
      * @return This builder for chaining.
      */
@@ -852,14 +854,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.Configuration, org.zenoss.cloud.collection.Configuration.Builder, org.zenoss.cloud.collection.ConfigurationOrBuilder> configurationBuilder_;
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      * @return Whether the configuration field is set.
      */
     public boolean hasConfiguration() {
       return configurationBuilder_ != null || configuration_ != null;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      * @return The configuration.
      */
     public org.zenoss.cloud.collection.Configuration getConfiguration() {
@@ -870,7 +872,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(org.zenoss.cloud.collection.Configuration value) {
       if (configurationBuilder_ == null) {
@@ -886,7 +888,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public Builder setConfiguration(
         org.zenoss.cloud.collection.Configuration.Builder builderForValue) {
@@ -900,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public Builder mergeConfiguration(org.zenoss.cloud.collection.Configuration value) {
       if (configurationBuilder_ == null) {
@@ -918,7 +920,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public Builder clearConfiguration() {
       if (configurationBuilder_ == null) {
@@ -932,7 +934,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.Configuration.Builder getConfigurationBuilder() {
       
@@ -940,7 +942,7 @@ private static final long serialVersionUID = 0L;
       return getConfigurationFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     public org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder() {
       if (configurationBuilder_ != null) {
@@ -951,7 +953,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+     * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.Configuration, org.zenoss.cloud.collection.Configuration.Builder, org.zenoss.cloud.collection.ConfigurationOrBuilder> 

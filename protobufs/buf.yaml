@@ -1,0 +1,23 @@
+version: v1
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/grpc-ecosystem/grpc-gateway
+breaking:
+  use:
+    - FILE
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+    - PACKAGE_VERSION_SUFFIX
+    - SERVICE_SUFFIX
+    - RPC_REQUEST_RESPONSE_UNIQUE
+  ignore_only:
+    ENUM_ZERO_VALUE_SUFFIX:
+      - zenoss/zing/proto/cloud/event_query_v2.proto
+      - zenoss/zing/proto/cloud/event_query_v2_grpc.proto
+      - zenoss/zing/proto/cloud/model_mgmt.proto
+      - zenoss/zing/proto/cloud/query_v2.proto
+    ENUM_VALUE_PREFIX:
+      - zenoss/zing/proto/cloud/event_query_v2.proto

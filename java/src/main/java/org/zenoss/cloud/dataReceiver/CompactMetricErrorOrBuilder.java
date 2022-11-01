@@ -8,29 +8,29 @@ public interface CompactMetricErrorOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The error.
    */
   java.lang.String getError();
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The bytes for error.
    */
   com.google.protobuf.ByteString
       getErrorBytes();
 
   /**
-   * <code>.zenoss.cloud.CompactMetric metric = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric metric = 2 [json_name = "metric"];</code>
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
-   * <code>.zenoss.cloud.CompactMetric metric = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric metric = 2 [json_name = "metric"];</code>
    * @return The metric.
    */
   org.zenoss.cloud.dataReceiver.CompactMetric getMetric();
   /**
-   * <code>.zenoss.cloud.CompactMetric metric = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric metric = 2 [json_name = "metric"];</code>
    */
   org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getMetricOrBuilder();
 }

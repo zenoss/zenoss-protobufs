@@ -12,7 +12,7 @@ public interface MetricWrapperOrBuilder extends
    * Verbose format
    * </pre>
    *
-   * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * <code>.zenoss.cloud.TaggedMetric tagged = 1 [json_name = "tagged"];</code>
    * @return Whether the tagged field is set.
    */
   boolean hasTagged();
@@ -21,7 +21,7 @@ public interface MetricWrapperOrBuilder extends
    * Verbose format
    * </pre>
    *
-   * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * <code>.zenoss.cloud.TaggedMetric tagged = 1 [json_name = "tagged"];</code>
    * @return The tagged.
    */
   org.zenoss.cloud.dataReceiver.TaggedMetric getTagged();
@@ -30,7 +30,7 @@ public interface MetricWrapperOrBuilder extends
    * Verbose format
    * </pre>
    *
-   * <code>.zenoss.cloud.TaggedMetric tagged = 1;</code>
+   * <code>.zenoss.cloud.TaggedMetric tagged = 1 [json_name = "tagged"];</code>
    */
   org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder getTaggedOrBuilder();
 
@@ -39,7 +39,7 @@ public interface MetricWrapperOrBuilder extends
    * Compact format
    * </pre>
    *
-   * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric compact = 2 [json_name = "compact"];</code>
    * @return Whether the compact field is set.
    */
   boolean hasCompact();
@@ -48,7 +48,7 @@ public interface MetricWrapperOrBuilder extends
    * Compact format
    * </pre>
    *
-   * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric compact = 2 [json_name = "compact"];</code>
    * @return The compact.
    */
   org.zenoss.cloud.dataReceiver.CompactMetric getCompact();
@@ -57,7 +57,7 @@ public interface MetricWrapperOrBuilder extends
    * Compact format
    * </pre>
    *
-   * <code>.zenoss.cloud.CompactMetric compact = 2;</code>
+   * <code>.zenoss.cloud.CompactMetric compact = 2 [json_name = "compact"];</code>
    */
   org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder getCompactOrBuilder();
 
@@ -66,7 +66,7 @@ public interface MetricWrapperOrBuilder extends
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * <code>.zenoss.cloud.Metric canonical = 3 [json_name = "canonical"];</code>
    * @return Whether the canonical field is set.
    */
   boolean hasCanonical();
@@ -75,7 +75,7 @@ public interface MetricWrapperOrBuilder extends
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * <code>.zenoss.cloud.Metric canonical = 3 [json_name = "canonical"];</code>
    * @return The canonical.
    */
   org.zenoss.cloud.dataReceiver.Metric getCanonical();
@@ -84,7 +84,7 @@ public interface MetricWrapperOrBuilder extends
    * Canonical format
    * </pre>
    *
-   * <code>.zenoss.cloud.Metric canonical = 3;</code>
+   * <code>.zenoss.cloud.Metric canonical = 3 [json_name = "canonical"];</code>
    */
   org.zenoss.cloud.dataReceiver.MetricOrBuilder getCanonicalOrBuilder();
 

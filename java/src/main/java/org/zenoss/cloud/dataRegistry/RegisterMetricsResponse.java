@@ -70,6 +70,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -97,14 +99,14 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSES_FIELD_NUMBER = 1;
   private java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> responses_;
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> getResponsesList() {
     return responses_;
   }
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder> 
@@ -112,21 +114,21 @@ private static final long serialVersionUID = 0L;
     return responses_;
   }
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   @java.lang.Override
   public int getResponsesCount() {
     return responses_.size();
   }
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse getResponses(int index) {
     return responses_.get(index);
   }
   /**
-   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+   * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder getResponsesOrBuilder(
@@ -489,7 +491,7 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder> responsesBuilder_;
 
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> getResponsesList() {
       if (responsesBuilder_ == null) {
@@ -499,7 +501,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public int getResponsesCount() {
       if (responsesBuilder_ == null) {
@@ -509,7 +511,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse getResponses(int index) {
       if (responsesBuilder_ == null) {
@@ -519,7 +521,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder setResponses(
         int index, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse value) {
@@ -536,7 +538,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder setResponses(
         int index, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder builderForValue) {
@@ -550,7 +552,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder addResponses(org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse value) {
       if (responsesBuilder_ == null) {
@@ -566,7 +568,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder addResponses(
         int index, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse value) {
@@ -583,7 +585,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder addResponses(
         org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder builderForValue) {
@@ -597,7 +599,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder addResponses(
         int index, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder builderForValue) {
@@ -611,7 +613,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder addAllResponses(
         java.lang.Iterable<? extends org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> values) {
@@ -626,7 +628,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder clearResponses() {
       if (responsesBuilder_ == null) {
@@ -639,7 +641,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public Builder removeResponses(int index) {
       if (responsesBuilder_ == null) {
@@ -652,14 +654,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder getResponsesBuilder(
         int index) {
       return getResponsesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder getResponsesOrBuilder(
         int index) {
@@ -669,7 +671,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponseOrBuilder> 
          getResponsesOrBuilderList() {
@@ -680,14 +682,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder addResponsesBuilder() {
       return getResponsesFieldBuilder().addBuilder(
           org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder addResponsesBuilder(
         int index) {
@@ -695,7 +697,7 @@ private static final long serialVersionUID = 0L;
           index, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.getDefaultInstance());
     }
     /**
-     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1;</code>
+     * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder> 
          getResponsesBuilderList() {

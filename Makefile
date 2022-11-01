@@ -21,26 +21,21 @@ else
 LOCAL_MAVEN_REPO     = $(HOME)/.m2
 endif
 
-PROTODIR             := protobufs
+BUF 				 := $(shell command -v buf 2> /dev/null)
 GO                   := $(shell command -v go 2> /dev/null)
+GOMOCKERY 			 := $(shell which mockery)
 GODIR                := go
-GO_SRC_DIR           ?= $(GOPATH)/src
+PROTODIR             := protobufs
+DESCRIPTORDIR        := descriptors
 PACKAGE              := github.com/zenoss/zenoss-protobufs
 JAVADIR              := java
 JAVA_SRC_DIR         := $(JAVADIR)/src/main/java
 PYTHONDIR            := python
 PROTOFILES           := $(shell find protobufs -name "*.proto")
-GO_FILES             := $(subst $(PROTODIR),$(GODIR),$(subst .proto,.pb.go,$(PROTOFILES)))
-GO_GW_FILES          := $(subst $(PROTODIR),$(GODIR),$(subst .proto,.pb.gw.go,$(PROTOFILES)))
 PYTHON_FILES         := $(subst $(PROTODIR), $(PYTHONDIR),$(subst .proto,_pb2.py,$(PROTOFILES)))
-PROTOC               := /usr/bin/protoc
-ifneq ($(PROTOC), $(shell which protoc))
-    PROTOC           := $(shell which protoc)
-endif
-PROTOC_PARAMS        := --proto_path=${GOPATH}/googleapis
 LOCAL_USER_ID        := $(shell id -u)
 CONTAINER_DIR        := /tmp/working
-ZENKIT_BUILD_VERSION := 1.11.0
+ZENKIT_BUILD_VERSION := 1.14.3
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
 DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
@@ -53,8 +48,6 @@ DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
 DOCKER_CMD           := docker run -t $(DOCKER_PARAMS) $(BUILD_IMG)
 
 DEPLOY_BUILD_IMAGE   = zenoss/zing-java-build-glibc:1.0
-MVN_SETTINGS         ?= /etc/settings.xml
-MVN_OPTS             ?= -s $(MVN_SETTINGS)
 MVN                  = docker run --rm \
                             --network $(DOCKER_NETWORK) \
                             -v $(ROOTDIR)/$(JAVADIR):/usr/src/app:rw \
@@ -63,46 +56,46 @@ MVN                  = docker run --rm \
                             -e LOCAL_USER_ID=$(LOCAL_USER_ID) \
                             -w /usr/src/app \
                             $(DEPLOY_BUILD_IMAGE) \
-                            mvn $(MVN_OPTS)
-
-GOMOCKERY = $(GOPATH)/bin/mockery
-GODEP = $(GOPATH)/bin/dep
+                            mvn
 
 PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 
 default: clean all_containerized
 
 .PHONY: all
-all: $(GO_FILES) $(GO_GW_FILES) mocks tidy pybuild
+all: buf mocks tidy vendor java
 
 .PHONY: all_containerized
 all_containerized: package
 	@mkdir -p $(ROOTDIR)/go
-	$(DOCKER_CMD) make all
+	$(DOCKER_CMD) make buf mocks tidy vendor
+	make java
 
+.PHONY: buf
+buf: format breaking
+	$(BUF) generate $(PROTODIR) --template $(PROTODIR)/buf.gen.yaml
+
+.PHONY: images
+images:
+	[ -d $(DESCRIPTORDIR) ] || mkdir -p $(DESCRIPTORDIR)
+	$(BUF) build $(PROTODIR) -o $(DESCRIPTORDIR)/image.json
+
+.PHONY: breaking
+breaking:
+	[ -f $(DESCRIPTORDIR)/image.json ] && $(BUF) breaking $(PROTODIR) --against $(DESCRIPTORDIR)/image.json
+
+.PHONY: format
+format:
+	$(BUF) format $(PROTODIR) -w
 
 $(GODIR):
-	echo "BLAM"
-	mkdir $(GODIR)
+	[ -d $(GODIR) ] || mkdir -p $(GODIR)
 
 $(JAVA_SRC_DIR):
-	@mkdir -p $(JAVA_SRC_DIR)
+	[ -d $(JAVA_SRC_DIR) ] || mkdir -p $(JAVA_SRC_DIR)
 
 $(PYTHONDIR):
-	@mkdir $(PYTHONDIR)
-	touch __init__.py
-
-$(GODIR)/%.pb.go: $(PROTOFILES) $(GODIR)
-	$(PROTOC) $(PROTOC_PARAMS) \
-		-I $(PROTODIR) \
-		$(PROTODIR)/zenoss/cloud/$(*F).proto \
-		--go_out=plugins=grpc:$(GO_SRC_DIR)
-
-$(GODIR)/%.pb.gw.go: $(PROTOFILES) $(GODIR)
-	$(PROTOC) $(PROTOC_PARAMS) \
-		-I $(PROTODIR) \
-		$(PROTODIR)/zenoss/cloud/$(*F).proto \
-		--grpc-gateway_out=logtostderr=true:$(GO_SRC_DIR)
+	[ -d $(PYTHONDIR) ] || mkdir -p $(PYTHONDIR)
 
 .PHONY: vendor
 vendor:
@@ -113,27 +106,16 @@ tidy:
 	$(GO) mod tidy
 
 .PHONY: mocks
-mocks: $(GO_FILES) $(GO_GW_FILES) $(GODIR) tidy vendor
-	@$(GOMOCKERY) --dir $(GODIR) --all --inpackage --with-expecter
-
-.PHONY: $(PYTHONDIR)/%_pb2.py
-$(PYTHONDIR)/%_pb2.py: $(PROTOFILES) $(PYTHONDIR)
-	python -m grpc_tools.protoc $(PROTOC_PARAMS) \
-		-I $(PROTODIR) \
-		$(PROTODIR)/$*.proto \
-		--python_out=$(PYTHONDIR) \
-		--grpc_python_out=$(PYTHONDIR); \
-
-pybuild: $(PYTHON_FILES)
-	find python/zenoss -type d -exec touch {}/__init__.py \; \
+mocks: $(GODIR)
+	$(GOMOCKERY) --dir $(GODIR) --all --inpackage --with-expecter
 
 .PHONY: clean
 clean:
-	rm -rf $(GODIR)/* $(DESCRIPTORDIR) $(JAVA_SRC_DIR) $(PYTHON_FILES) vendor
+	rm -rf $(GODIR)/* $(JAVA_SRC_DIR) $(PYTHON_FILES) vendor
 	find . -type f -name *grpc.py -exec rm {} \;
 	-$(MVN) -e clean
 
-.PHONY: package
+.PHONY: java
 package:
 	$(MVN) -e clean package
 
@@ -143,7 +125,7 @@ install:
 	$(MVN) -e install
 
 .PHONY: set-relversion
-set-relversion:
+set-relversion: images
 	$(MVN) versions:set -DnewVersion=$(NEW_VERSION) -DgenerateBackupPoms=false
 	@sed -i 's/version=".*"/version="$(NEW_VERSION)"/g' python/setup.py
 

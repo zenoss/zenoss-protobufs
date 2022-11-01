@@ -1,19 +1,6 @@
 package org.zenoss.cloud.collection;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -22,8 +9,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.13.1)",
+    value = "by gRPC proto compiler (version 1.48.1)",
     comments = "Source: zenoss/cloud/collection_cfg.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class CollectionConfigServiceGrpc {
 
   private CollectionConfigServiceGrpc() {}
@@ -34,62 +22,77 @@ public final class CollectionConfigServiceGrpc {
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.collection.WaitForProbeConfigResponse,
       org.zenoss.cloud.collection.WaitForProbeConfigRequest> getWaitForProbeConfigMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "WaitForProbeConfig",
+      requestType = org.zenoss.cloud.collection.WaitForProbeConfigResponse.class,
+      responseType = org.zenoss.cloud.collection.WaitForProbeConfigRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.collection.WaitForProbeConfigResponse,
       org.zenoss.cloud.collection.WaitForProbeConfigRequest> getWaitForProbeConfigMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.collection.WaitForProbeConfigResponse, org.zenoss.cloud.collection.WaitForProbeConfigRequest> getWaitForProbeConfigMethod;
     if ((getWaitForProbeConfigMethod = CollectionConfigServiceGrpc.getWaitForProbeConfigMethod) == null) {
       synchronized (CollectionConfigServiceGrpc.class) {
         if ((getWaitForProbeConfigMethod = CollectionConfigServiceGrpc.getWaitForProbeConfigMethod) == null) {
-          CollectionConfigServiceGrpc.getWaitForProbeConfigMethod = getWaitForProbeConfigMethod = 
+          CollectionConfigServiceGrpc.getWaitForProbeConfigMethod = getWaitForProbeConfigMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.collection.WaitForProbeConfigResponse, org.zenoss.cloud.collection.WaitForProbeConfigRequest>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.collection_cfg.CollectionConfigService", "WaitForProbeConfig"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "WaitForProbeConfig"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.collection.WaitForProbeConfigResponse.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.collection.WaitForProbeConfigRequest.getDefaultInstance()))
-                  .setSchemaDescriptor(new CollectionConfigServiceMethodDescriptorSupplier("WaitForProbeConfig"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CollectionConfigServiceMethodDescriptorSupplier("WaitForProbeConfig"))
+              .build();
         }
-     }
-     return getWaitForProbeConfigMethod;
+      }
+    }
+    return getWaitForProbeConfigMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.collection.GetConfigStreamRequest,
       org.zenoss.cloud.collection.GetConfigStreamResponse> getGetConfigStreamMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConfigStream",
+      requestType = org.zenoss.cloud.collection.GetConfigStreamRequest.class,
+      responseType = org.zenoss.cloud.collection.GetConfigStreamResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.collection.GetConfigStreamRequest,
       org.zenoss.cloud.collection.GetConfigStreamResponse> getGetConfigStreamMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.collection.GetConfigStreamRequest, org.zenoss.cloud.collection.GetConfigStreamResponse> getGetConfigStreamMethod;
     if ((getGetConfigStreamMethod = CollectionConfigServiceGrpc.getGetConfigStreamMethod) == null) {
       synchronized (CollectionConfigServiceGrpc.class) {
         if ((getGetConfigStreamMethod = CollectionConfigServiceGrpc.getGetConfigStreamMethod) == null) {
-          CollectionConfigServiceGrpc.getGetConfigStreamMethod = getGetConfigStreamMethod = 
+          CollectionConfigServiceGrpc.getGetConfigStreamMethod = getGetConfigStreamMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.collection.GetConfigStreamRequest, org.zenoss.cloud.collection.GetConfigStreamResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.collection_cfg.CollectionConfigService", "GetConfigStream"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConfigStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.collection.GetConfigStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.collection.GetConfigStreamResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new CollectionConfigServiceMethodDescriptorSupplier("GetConfigStream"))
-                  .build();
-          }
+              .setSchemaDescriptor(new CollectionConfigServiceMethodDescriptorSupplier("GetConfigStream"))
+              .build();
         }
-     }
-     return getGetConfigStreamMethod;
+      }
+    }
+    return getGetConfigStreamMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static CollectionConfigServiceStub newStub(io.grpc.Channel channel) {
-    return new CollectionConfigServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceStub>() {
+        @java.lang.Override
+        public CollectionConfigServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CollectionConfigServiceStub(channel, callOptions);
+        }
+      };
+    return CollectionConfigServiceStub.newStub(factory, channel);
   }
 
   /**
@@ -97,7 +100,14 @@ public final class CollectionConfigServiceGrpc {
    */
   public static CollectionConfigServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new CollectionConfigServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceBlockingStub>() {
+        @java.lang.Override
+        public CollectionConfigServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CollectionConfigServiceBlockingStub(channel, callOptions);
+        }
+      };
+    return CollectionConfigServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -105,7 +115,14 @@ public final class CollectionConfigServiceGrpc {
    */
   public static CollectionConfigServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new CollectionConfigServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceFutureStub>() {
+        @java.lang.Override
+        public CollectionConfigServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CollectionConfigServiceFutureStub(channel, callOptions);
+        }
+      };
+    return CollectionConfigServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -120,28 +137,28 @@ public final class CollectionConfigServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigResponse> waitForProbeConfig(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigRequest> responseObserver) {
-      return asyncUnimplementedStreamingCall(getWaitForProbeConfigMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getWaitForProbeConfigMethod(), responseObserver);
     }
 
     /**
      */
     public void getConfigStream(org.zenoss.cloud.collection.GetConfigStreamRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.GetConfigStreamResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetConfigStreamMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConfigStreamMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getWaitForProbeConfigMethod(),
-            asyncBidiStreamingCall(
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
               new MethodHandlers<
                 org.zenoss.cloud.collection.WaitForProbeConfigResponse,
                 org.zenoss.cloud.collection.WaitForProbeConfigRequest>(
                   this, METHODID_WAIT_FOR_PROBE_CONFIG)))
           .addMethod(
             getGetConfigStreamMethod(),
-            asyncServerStreamingCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 org.zenoss.cloud.collection.GetConfigStreamRequest,
                 org.zenoss.cloud.collection.GetConfigStreamResponse>(
@@ -156,19 +173,15 @@ public final class CollectionConfigServiceGrpc {
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceStub extends io.grpc.stub.AbstractStub<CollectionConfigServiceStub> {
-    private CollectionConfigServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private CollectionConfigServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class CollectionConfigServiceStub extends io.grpc.stub.AbstractAsyncStub<CollectionConfigServiceStub> {
+    private CollectionConfigServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CollectionConfigServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CollectionConfigServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectionConfigServiceStub(channel, callOptions);
     }
 
@@ -176,7 +189,7 @@ public final class CollectionConfigServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigResponse> waitForProbeConfig(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigRequest> responseObserver) {
-      return asyncBidiStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getWaitForProbeConfigMethod(), getCallOptions()), responseObserver);
     }
 
@@ -184,7 +197,7 @@ public final class CollectionConfigServiceGrpc {
      */
     public void getConfigStream(org.zenoss.cloud.collection.GetConfigStreamRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.GetConfigStreamResponse> responseObserver) {
-      asyncServerStreamingCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetConfigStreamMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -195,19 +208,15 @@ public final class CollectionConfigServiceGrpc {
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceBlockingStub extends io.grpc.stub.AbstractStub<CollectionConfigServiceBlockingStub> {
-    private CollectionConfigServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private CollectionConfigServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class CollectionConfigServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<CollectionConfigServiceBlockingStub> {
+    private CollectionConfigServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CollectionConfigServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CollectionConfigServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectionConfigServiceBlockingStub(channel, callOptions);
     }
 
@@ -215,7 +224,7 @@ public final class CollectionConfigServiceGrpc {
      */
     public java.util.Iterator<org.zenoss.cloud.collection.GetConfigStreamResponse> getConfigStream(
         org.zenoss.cloud.collection.GetConfigStreamRequest request) {
-      return blockingServerStreamingCall(
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGetConfigStreamMethod(), getCallOptions(), request);
     }
   }
@@ -226,19 +235,15 @@ public final class CollectionConfigServiceGrpc {
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceFutureStub extends io.grpc.stub.AbstractStub<CollectionConfigServiceFutureStub> {
-    private CollectionConfigServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private CollectionConfigServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class CollectionConfigServiceFutureStub extends io.grpc.stub.AbstractFutureStub<CollectionConfigServiceFutureStub> {
+    private CollectionConfigServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected CollectionConfigServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected CollectionConfigServiceFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new CollectionConfigServiceFutureStub(channel, callOptions);
     }
   }

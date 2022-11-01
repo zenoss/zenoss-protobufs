@@ -8,53 +8,53 @@ public interface ConfigOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   java.lang.String getId();
   /**
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString
       getIdBytes();
 
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
-   * <code>string name = 2;</code>
+   * <code>string name = 2 [json_name = "name"];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
 
   /**
-   * <code>string tenant = 3;</code>
+   * <code>string tenant = 3 [json_name = "tenant"];</code>
    * @return The tenant.
    */
   java.lang.String getTenant();
   /**
-   * <code>string tenant = 3;</code>
+   * <code>string tenant = 3 [json_name = "tenant"];</code>
    * @return The bytes for tenant.
    */
   com.google.protobuf.ByteString
       getTenantBytes();
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    * @return Whether the configuration field is set.
    */
   boolean hasConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    * @return The configuration.
    */
   org.zenoss.cloud.collection.Configuration getConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5;</code>
+   * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    */
   org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder();
 }

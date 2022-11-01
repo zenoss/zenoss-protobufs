@@ -75,6 +75,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -106,7 +108,7 @@ private static final long serialVersionUID = 0L;
    * detailedResponse: if true, return any events that failed to be sent.
    * </pre>
    *
-   * <code>bool detailedResponse = 1;</code>
+   * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
    * @return The detailedResponse.
    */
   @java.lang.Override
@@ -121,7 +123,7 @@ private static final long serialVersionUID = 0L;
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.Event> getEventsList() {
@@ -132,7 +134,7 @@ private static final long serialVersionUID = 0L;
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.EventOrBuilder> 
@@ -144,7 +146,7 @@ private static final long serialVersionUID = 0L;
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   @java.lang.Override
   public int getEventsCount() {
@@ -155,7 +157,7 @@ private static final long serialVersionUID = 0L;
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.Event getEvents(int index) {
@@ -166,7 +168,7 @@ private static final long serialVersionUID = 0L;
    * The events
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.Event events = 2;</code>
+   * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.EventOrBuilder getEventsOrBuilder(
@@ -540,7 +542,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse: if true, return any events that failed to be sent.
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @return The detailedResponse.
      */
     @java.lang.Override
@@ -552,7 +554,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse: if true, return any events that failed to be sent.
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @param value The detailedResponse to set.
      * @return This builder for chaining.
      */
@@ -567,7 +569,7 @@ private static final long serialVersionUID = 0L;
      * detailedResponse: if true, return any events that failed to be sent.
      * </pre>
      *
-     * <code>bool detailedResponse = 1;</code>
+     * <code>bool detailedResponse = 1 [json_name = "detailedResponse"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDetailedResponse() {
@@ -594,7 +596,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.Event> getEventsList() {
       if (eventsBuilder_ == null) {
@@ -608,7 +610,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public int getEventsCount() {
       if (eventsBuilder_ == null) {
@@ -622,7 +624,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Event getEvents(int index) {
       if (eventsBuilder_ == null) {
@@ -636,7 +638,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder setEvents(
         int index, org.zenoss.cloud.dataReceiver.Event value) {
@@ -657,7 +659,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder setEvents(
         int index, org.zenoss.cloud.dataReceiver.Event.Builder builderForValue) {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder addEvents(org.zenoss.cloud.dataReceiver.Event value) {
       if (eventsBuilder_ == null) {
@@ -695,7 +697,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder addEvents(
         int index, org.zenoss.cloud.dataReceiver.Event value) {
@@ -716,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder addEvents(
         org.zenoss.cloud.dataReceiver.Event.Builder builderForValue) {
@@ -734,7 +736,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder addEvents(
         int index, org.zenoss.cloud.dataReceiver.Event.Builder builderForValue) {
@@ -752,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder addAllEvents(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.Event> values) {
@@ -771,7 +773,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder clearEvents() {
       if (eventsBuilder_ == null) {
@@ -788,7 +790,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public Builder removeEvents(int index) {
       if (eventsBuilder_ == null) {
@@ -805,7 +807,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Event.Builder getEventsBuilder(
         int index) {
@@ -816,7 +818,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public org.zenoss.cloud.dataReceiver.EventOrBuilder getEventsOrBuilder(
         int index) {
@@ -830,7 +832,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.EventOrBuilder> 
          getEventsOrBuilderList() {
@@ -845,7 +847,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Event.Builder addEventsBuilder() {
       return getEventsFieldBuilder().addBuilder(
@@ -856,7 +858,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Event.Builder addEventsBuilder(
         int index) {
@@ -868,7 +870,7 @@ private static final long serialVersionUID = 0L;
      * The events
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.Event events = 2;</code>
+     * <code>repeated .zenoss.cloud.Event events = 2 [json_name = "events"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.Event.Builder> 
          getEventsBuilderList() {

@@ -66,6 +66,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -90,7 +92,7 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCEID_FIELD_NUMBER = 1;
   private volatile java.lang.Object instanceId_;
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
    */
   @java.lang.Override
@@ -107,7 +109,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string instanceId = 1;</code>
+   * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The bytes for instanceId.
    */
   @java.lang.Override
@@ -139,7 +141,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, instanceId_);
     }
     unknownFields.writeTo(output);
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getInstanceIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, instanceId_);
     }
     size += unknownFields.getSerializedSize();
@@ -429,7 +431,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object instanceId_ = "";
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return The instanceId.
      */
     public java.lang.String getInstanceId() {
@@ -445,7 +447,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return The bytes for instanceId.
      */
     public com.google.protobuf.ByteString
@@ -462,7 +464,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @param value The instanceId to set.
      * @return This builder for chaining.
      */
@@ -477,7 +479,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
@@ -487,7 +489,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string instanceId = 1;</code>
+     * <code>string instanceId = 1 [json_name = "instanceId"];</code>
      * @param value The bytes for instanceId to set.
      * @return This builder for chaining.
      */

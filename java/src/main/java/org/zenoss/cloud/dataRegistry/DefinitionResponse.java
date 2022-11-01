@@ -66,6 +66,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -90,7 +92,7 @@ private static final long serialVersionUID = 0L;
   public static final int DEFINITIONID_FIELD_NUMBER = 1;
   private volatile java.lang.Object definitionId_;
   /**
-   * <code>string definitionId = 1;</code>
+   * <code>string definitionId = 1 [json_name = "definitionId"];</code>
    * @return The definitionId.
    */
   @java.lang.Override
@@ -107,7 +109,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string definitionId = 1;</code>
+   * <code>string definitionId = 1 [json_name = "definitionId"];</code>
    * @return The bytes for definitionId.
    */
   @java.lang.Override
@@ -139,7 +141,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getDefinitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, definitionId_);
     }
     unknownFields.writeTo(output);
@@ -151,7 +153,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getDefinitionIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, definitionId_);
     }
     size += unknownFields.getSerializedSize();
@@ -429,7 +431,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object definitionId_ = "";
     /**
-     * <code>string definitionId = 1;</code>
+     * <code>string definitionId = 1 [json_name = "definitionId"];</code>
      * @return The definitionId.
      */
     public java.lang.String getDefinitionId() {
@@ -445,7 +447,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string definitionId = 1;</code>
+     * <code>string definitionId = 1 [json_name = "definitionId"];</code>
      * @return The bytes for definitionId.
      */
     public com.google.protobuf.ByteString
@@ -462,7 +464,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string definitionId = 1;</code>
+     * <code>string definitionId = 1 [json_name = "definitionId"];</code>
      * @param value The definitionId to set.
      * @return This builder for chaining.
      */
@@ -477,7 +479,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string definitionId = 1;</code>
+     * <code>string definitionId = 1 [json_name = "definitionId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDefinitionId() {
@@ -487,7 +489,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string definitionId = 1;</code>
+     * <code>string definitionId = 1 [json_name = "definitionId"];</code>
      * @param value The bytes for definitionId to set.
      * @return This builder for chaining.
      */

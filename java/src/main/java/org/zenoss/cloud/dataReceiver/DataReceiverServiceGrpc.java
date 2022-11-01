@@ -1,19 +1,6 @@
 package org.zenoss.cloud.dataReceiver;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
-import static io.grpc.stub.ClientCalls.blockingUnaryCall;
-import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
@@ -21,8 +8,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.13.1)",
+    value = "by gRPC proto compiler (version 1.48.1)",
     comments = "Source: zenoss/cloud/data_receiver.proto")
+@io.grpc.stub.annotations.GrpcGenerated
 public final class DataReceiverServiceGrpc {
 
   private DataReceiverServiceGrpc() {}
@@ -33,143 +21,170 @@ public final class DataReceiverServiceGrpc {
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events,
       org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutEvents",
+      requestType = org.zenoss.cloud.dataReceiver.Events.class,
+      responseType = org.zenoss.cloud.dataReceiver.EventStatusResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events,
       org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events, org.zenoss.cloud.dataReceiver.EventStatusResult> getPutEventsMethod;
     if ((getPutEventsMethod = DataReceiverServiceGrpc.getPutEventsMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
         if ((getPutEventsMethod = DataReceiverServiceGrpc.getPutEventsMethod) == null) {
-          DataReceiverServiceGrpc.getPutEventsMethod = getPutEventsMethod = 
+          DataReceiverServiceGrpc.getPutEventsMethod = getPutEventsMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.Events, org.zenoss.cloud.dataReceiver.EventStatusResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PutEvents"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutEvents"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.Events.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.EventStatusResult.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvents"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvents"))
+              .build();
         }
-     }
-     return getPutEventsMethod;
+      }
+    }
+    return getPutEventsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper,
       org.zenoss.cloud.dataReceiver.Void> getPutEventMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutEvent",
+      requestType = org.zenoss.cloud.dataReceiver.EventWrapper.class,
+      responseType = org.zenoss.cloud.dataReceiver.Void.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper,
       org.zenoss.cloud.dataReceiver.Void> getPutEventMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.EventWrapper, org.zenoss.cloud.dataReceiver.Void> getPutEventMethod;
     if ((getPutEventMethod = DataReceiverServiceGrpc.getPutEventMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
         if ((getPutEventMethod = DataReceiverServiceGrpc.getPutEventMethod) == null) {
-          DataReceiverServiceGrpc.getPutEventMethod = getPutEventMethod = 
+          DataReceiverServiceGrpc.getPutEventMethod = getPutEventMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.EventWrapper, org.zenoss.cloud.dataReceiver.Void>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PutEvent"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutEvent"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.EventWrapper.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.Void.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvent"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutEvent"))
+              .build();
         }
-     }
-     return getPutEventMethod;
+      }
+    }
+    return getPutEventMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Metrics,
       org.zenoss.cloud.dataReceiver.StatusResult> getPutMetricsMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutMetrics",
+      requestType = org.zenoss.cloud.dataReceiver.Metrics.class,
+      responseType = org.zenoss.cloud.dataReceiver.StatusResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Metrics,
       org.zenoss.cloud.dataReceiver.StatusResult> getPutMetricsMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Metrics, org.zenoss.cloud.dataReceiver.StatusResult> getPutMetricsMethod;
     if ((getPutMetricsMethod = DataReceiverServiceGrpc.getPutMetricsMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
         if ((getPutMetricsMethod = DataReceiverServiceGrpc.getPutMetricsMethod) == null) {
-          DataReceiverServiceGrpc.getPutMetricsMethod = getPutMetricsMethod = 
+          DataReceiverServiceGrpc.getPutMetricsMethod = getPutMetricsMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.Metrics, org.zenoss.cloud.dataReceiver.StatusResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PutMetrics"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutMetrics"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.Metrics.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.StatusResult.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutMetrics"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutMetrics"))
+              .build();
         }
-     }
-     return getPutMetricsMethod;
+      }
+    }
+    return getPutMetricsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.MetricWrapper,
       org.zenoss.cloud.dataReceiver.Void> getPutMetricMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutMetric",
+      requestType = org.zenoss.cloud.dataReceiver.MetricWrapper.class,
+      responseType = org.zenoss.cloud.dataReceiver.Void.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.MetricWrapper,
       org.zenoss.cloud.dataReceiver.Void> getPutMetricMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.Void> getPutMetricMethod;
     if ((getPutMetricMethod = DataReceiverServiceGrpc.getPutMetricMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
         if ((getPutMetricMethod = DataReceiverServiceGrpc.getPutMetricMethod) == null) {
-          DataReceiverServiceGrpc.getPutMetricMethod = getPutMetricMethod = 
+          DataReceiverServiceGrpc.getPutMetricMethod = getPutMetricMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.Void>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PutMetric"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutMetric"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.MetricWrapper.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.Void.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutMetric"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutMetric"))
+              .build();
         }
-     }
-     return getPutMetricMethod;
+      }
+    }
+    return getPutMetricMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models,
       org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod;
 
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PutModels",
+      requestType = org.zenoss.cloud.dataReceiver.Models.class,
+      responseType = org.zenoss.cloud.dataReceiver.ModelStatusResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models,
       org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod() {
     io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Models, org.zenoss.cloud.dataReceiver.ModelStatusResult> getPutModelsMethod;
     if ((getPutModelsMethod = DataReceiverServiceGrpc.getPutModelsMethod) == null) {
       synchronized (DataReceiverServiceGrpc.class) {
         if ((getPutModelsMethod = DataReceiverServiceGrpc.getPutModelsMethod) == null) {
-          DataReceiverServiceGrpc.getPutModelsMethod = getPutModelsMethod = 
+          DataReceiverServiceGrpc.getPutModelsMethod = getPutModelsMethod =
               io.grpc.MethodDescriptor.<org.zenoss.cloud.dataReceiver.Models, org.zenoss.cloud.dataReceiver.ModelStatusResult>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "zenoss.cloud.DataReceiverService", "PutModels"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PutModels"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.Models.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.zenoss.cloud.dataReceiver.ModelStatusResult.getDefaultInstance()))
-                  .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutModels"))
-                  .build();
-          }
+              .setSchemaDescriptor(new DataReceiverServiceMethodDescriptorSupplier("PutModels"))
+              .build();
         }
-     }
-     return getPutModelsMethod;
+      }
+    }
+    return getPutModelsMethod;
   }
 
   /**
    * Creates a new async stub that supports all call types for the service
    */
   public static DataReceiverServiceStub newStub(io.grpc.Channel channel) {
-    return new DataReceiverServiceStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceStub>() {
+        @java.lang.Override
+        public DataReceiverServiceStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataReceiverServiceStub(channel, callOptions);
+        }
+      };
+    return DataReceiverServiceStub.newStub(factory, channel);
   }
 
   /**
@@ -177,7 +192,14 @@ public final class DataReceiverServiceGrpc {
    */
   public static DataReceiverServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new DataReceiverServiceBlockingStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceBlockingStub>() {
+        @java.lang.Override
+        public DataReceiverServiceBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataReceiverServiceBlockingStub(channel, callOptions);
+        }
+      };
+    return DataReceiverServiceBlockingStub.newStub(factory, channel);
   }
 
   /**
@@ -185,7 +207,14 @@ public final class DataReceiverServiceGrpc {
    */
   public static DataReceiverServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new DataReceiverServiceFutureStub(channel);
+    io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceFutureStub>() {
+        @java.lang.Override
+        public DataReceiverServiceFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataReceiverServiceFutureStub(channel, callOptions);
+        }
+      };
+    return DataReceiverServiceFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -202,7 +231,7 @@ public final class DataReceiverServiceGrpc {
      */
     public void putEvents(org.zenoss.cloud.dataReceiver.Events request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult> responseObserver) {
-      asyncUnimplementedUnaryCall(getPutEventsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutEventsMethod(), responseObserver);
     }
 
     /**
@@ -212,7 +241,7 @@ public final class DataReceiverServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
-      return asyncUnimplementedStreamingCall(getPutEventMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPutEventMethod(), responseObserver);
     }
 
     /**
@@ -222,7 +251,7 @@ public final class DataReceiverServiceGrpc {
      */
     public void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.StatusResult> responseObserver) {
-      asyncUnimplementedUnaryCall(getPutMetricsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutMetricsMethod(), responseObserver);
     }
 
     /**
@@ -232,7 +261,7 @@ public final class DataReceiverServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.MetricWrapper> putMetric(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
-      return asyncUnimplementedStreamingCall(getPutMetricMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPutMetricMethod(), responseObserver);
     }
 
     /**
@@ -242,42 +271,42 @@ public final class DataReceiverServiceGrpc {
      */
     public void putModels(org.zenoss.cloud.dataReceiver.Models request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult> responseObserver) {
-      asyncUnimplementedUnaryCall(getPutModelsMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutModelsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
             getPutEventsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataReceiver.Events,
                 org.zenoss.cloud.dataReceiver.EventStatusResult>(
                   this, METHODID_PUT_EVENTS)))
           .addMethod(
             getPutEventMethod(),
-            asyncClientStreamingCall(
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataReceiver.EventWrapper,
                 org.zenoss.cloud.dataReceiver.Void>(
                   this, METHODID_PUT_EVENT)))
           .addMethod(
             getPutMetricsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataReceiver.Metrics,
                 org.zenoss.cloud.dataReceiver.StatusResult>(
                   this, METHODID_PUT_METRICS)))
           .addMethod(
             getPutMetricMethod(),
-            asyncClientStreamingCall(
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataReceiver.MetricWrapper,
                 org.zenoss.cloud.dataReceiver.Void>(
                   this, METHODID_PUT_METRIC)))
           .addMethod(
             getPutModelsMethod(),
-            asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.zenoss.cloud.dataReceiver.Models,
                 org.zenoss.cloud.dataReceiver.ModelStatusResult>(
@@ -291,19 +320,15 @@ public final class DataReceiverServiceGrpc {
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceStub extends io.grpc.stub.AbstractStub<DataReceiverServiceStub> {
-    private DataReceiverServiceStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataReceiverServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataReceiverServiceStub extends io.grpc.stub.AbstractAsyncStub<DataReceiverServiceStub> {
+    private DataReceiverServiceStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataReceiverServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataReceiverServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataReceiverServiceStub(channel, callOptions);
     }
 
@@ -314,7 +339,7 @@ public final class DataReceiverServiceGrpc {
      */
     public void putEvents(org.zenoss.cloud.dataReceiver.Events request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPutEventsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -325,7 +350,7 @@ public final class DataReceiverServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
-      return asyncClientStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getPutEventMethod(), getCallOptions()), responseObserver);
     }
 
@@ -336,7 +361,7 @@ public final class DataReceiverServiceGrpc {
      */
     public void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.StatusResult> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPutMetricsMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -347,7 +372,7 @@ public final class DataReceiverServiceGrpc {
      */
     public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.MetricWrapper> putMetric(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
-      return asyncClientStreamingCall(
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getPutMetricMethod(), getCallOptions()), responseObserver);
     }
 
@@ -358,7 +383,7 @@ public final class DataReceiverServiceGrpc {
      */
     public void putModels(org.zenoss.cloud.dataReceiver.Models request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult> responseObserver) {
-      asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getPutModelsMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -368,19 +393,15 @@ public final class DataReceiverServiceGrpc {
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceBlockingStub extends io.grpc.stub.AbstractStub<DataReceiverServiceBlockingStub> {
-    private DataReceiverServiceBlockingStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataReceiverServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataReceiverServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<DataReceiverServiceBlockingStub> {
+    private DataReceiverServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataReceiverServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataReceiverServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataReceiverServiceBlockingStub(channel, callOptions);
     }
 
@@ -390,7 +411,7 @@ public final class DataReceiverServiceGrpc {
      * </pre>
      */
     public org.zenoss.cloud.dataReceiver.EventStatusResult putEvents(org.zenoss.cloud.dataReceiver.Events request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPutEventsMethod(), getCallOptions(), request);
     }
 
@@ -400,7 +421,7 @@ public final class DataReceiverServiceGrpc {
      * </pre>
      */
     public org.zenoss.cloud.dataReceiver.StatusResult putMetrics(org.zenoss.cloud.dataReceiver.Metrics request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPutMetricsMethod(), getCallOptions(), request);
     }
 
@@ -410,7 +431,7 @@ public final class DataReceiverServiceGrpc {
      * </pre>
      */
     public org.zenoss.cloud.dataReceiver.ModelStatusResult putModels(org.zenoss.cloud.dataReceiver.Models request) {
-      return blockingUnaryCall(
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPutModelsMethod(), getCallOptions(), request);
     }
   }
@@ -420,19 +441,15 @@ public final class DataReceiverServiceGrpc {
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceFutureStub extends io.grpc.stub.AbstractStub<DataReceiverServiceFutureStub> {
-    private DataReceiverServiceFutureStub(io.grpc.Channel channel) {
-      super(channel);
-    }
-
-    private DataReceiverServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+  public static final class DataReceiverServiceFutureStub extends io.grpc.stub.AbstractFutureStub<DataReceiverServiceFutureStub> {
+    private DataReceiverServiceFutureStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected DataReceiverServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected DataReceiverServiceFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new DataReceiverServiceFutureStub(channel, callOptions);
     }
 
@@ -443,7 +460,7 @@ public final class DataReceiverServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.EventStatusResult> putEvents(
         org.zenoss.cloud.dataReceiver.Events request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPutEventsMethod(), getCallOptions()), request);
     }
 
@@ -454,7 +471,7 @@ public final class DataReceiverServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.StatusResult> putMetrics(
         org.zenoss.cloud.dataReceiver.Metrics request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPutMetricsMethod(), getCallOptions()), request);
     }
 
@@ -465,7 +482,7 @@ public final class DataReceiverServiceGrpc {
      */
     public com.google.common.util.concurrent.ListenableFuture<org.zenoss.cloud.dataReceiver.ModelStatusResult> putModels(
         org.zenoss.cloud.dataReceiver.Models request) {
-      return futureUnaryCall(
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPutModelsMethod(), getCallOptions()), request);
     }
   }

@@ -97,6 +97,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -128,7 +130,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The metric.
    */
   @java.lang.Override
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
    * The metric name
    * </pre>
    *
-   * <code>string metric = 1;</code>
+   * <code>string metric = 1 [json_name = "metric"];</code>
    * @return The bytes for metric.
    */
   @java.lang.Override
@@ -174,7 +176,7 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @return A list containing the dimensions.
    */
   public com.google.protobuf.ProtocolStringList
@@ -186,7 +188,7 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @return The count of dimensions.
    */
   public int getDimensionsCount() {
@@ -197,7 +199,7 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @param index The index of the element to return.
    * @return The dimensions at the given index.
    */
@@ -209,7 +211,7 @@ private static final long serialVersionUID = 0L;
    * Dimensions associated with this datapoint.
    * </pre>
    *
-   * <code>repeated string dimensions = 2;</code>
+   * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the dimensions at the given index.
    */
@@ -225,7 +227,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return Whether the metadataFields field is set.
    */
   @java.lang.Override
@@ -237,7 +239,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    * @return The metadataFields.
    */
   @java.lang.Override
@@ -249,7 +251,7 @@ private static final long serialVersionUID = 0L;
    * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
    * </pre>
    *
-   * <code>.google.protobuf.Struct metadataFields = 3;</code>
+   * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
@@ -265,7 +267,7 @@ private static final long serialVersionUID = 0L;
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
    * @return The enum numeric value on the wire for updateMode.
    */
   @java.lang.Override public int getUpdateModeValue() {
@@ -278,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * definition.
    * </pre>
    *
-   * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+   * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
    * @return The updateMode.
    */
   @java.lang.Override public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
@@ -301,7 +303,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, metric_);
     }
     for (int i = 0; i < dimensions_.size(); i++) {
@@ -322,7 +324,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMetricBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(metric_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, metric_);
     }
     {
@@ -677,7 +679,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return The metric.
      */
     public java.lang.String getMetric() {
@@ -697,7 +699,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return The bytes for metric.
      */
     public com.google.protobuf.ByteString
@@ -718,7 +720,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @param value The metric to set.
      * @return This builder for chaining.
      */
@@ -737,7 +739,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
@@ -751,7 +753,7 @@ private static final long serialVersionUID = 0L;
      * The metric name
      * </pre>
      *
-     * <code>string metric = 1;</code>
+     * <code>string metric = 1 [json_name = "metric"];</code>
      * @param value The bytes for metric to set.
      * @return This builder for chaining.
      */
@@ -779,7 +781,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @return A list containing the dimensions.
      */
     public com.google.protobuf.ProtocolStringList
@@ -791,7 +793,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @return The count of dimensions.
      */
     public int getDimensionsCount() {
@@ -802,7 +804,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param index The index of the element to return.
      * @return The dimensions at the given index.
      */
@@ -814,7 +816,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the dimensions at the given index.
      */
@@ -827,7 +829,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param index The index to set the value at.
      * @param value The dimensions to set.
      * @return This builder for chaining.
@@ -847,7 +849,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param value The dimensions to add.
      * @return This builder for chaining.
      */
@@ -866,7 +868,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param values The dimensions to add.
      * @return This builder for chaining.
      */
@@ -883,7 +885,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @return This builder for chaining.
      */
     public Builder clearDimensions() {
@@ -897,7 +899,7 @@ private static final long serialVersionUID = 0L;
      * Dimensions associated with this datapoint.
      * </pre>
      *
-     * <code>repeated string dimensions = 2;</code>
+     * <code>repeated string dimensions = 2 [json_name = "dimensions"];</code>
      * @param value The bytes of the dimensions to add.
      * @return This builder for chaining.
      */
@@ -921,7 +923,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
@@ -932,7 +934,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      * @return The metadataFields.
      */
     public com.google.protobuf.Struct getMetadataFields() {
@@ -947,7 +949,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -967,7 +969,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder setMetadataFields(
         com.google.protobuf.Struct.Builder builderForValue) {
@@ -985,7 +987,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
@@ -1007,7 +1009,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
       if (metadataFieldsBuilder_ == null) {
@@ -1025,7 +1027,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
       
@@ -1037,7 +1039,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
       if (metadataFieldsBuilder_ != null) {
@@ -1052,7 +1054,7 @@ private static final long serialVersionUID = 0L;
      * Metadata for the datapoint. Note: using Struct as it is easier than AnyArray when using json representations
      * </pre>
      *
-     * <code>.google.protobuf.Struct metadataFields = 3;</code>
+     * <code>.google.protobuf.Struct metadataFields = 3 [json_name = "metadataFields"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
@@ -1076,7 +1078,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
      * @return The enum numeric value on the wire for updateMode.
      */
     @java.lang.Override public int getUpdateModeValue() {
@@ -1089,7 +1091,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
      * @param value The enum numeric value on the wire for updateMode to set.
      * @return This builder for chaining.
      */
@@ -1106,7 +1108,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
      * @return The updateMode.
      */
     @java.lang.Override
@@ -1122,7 +1124,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
      * @param value The updateMode to set.
      * @return This builder for chaining.
      */
@@ -1142,7 +1144,7 @@ private static final long serialVersionUID = 0L;
      * definition.
      * </pre>
      *
-     * <code>.zenoss.cloud.UpdateMode update_mode = 4;</code>
+     * <code>.zenoss.cloud.UpdateMode update_mode = 4 [json_name = "updateMode"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUpdateMode() {

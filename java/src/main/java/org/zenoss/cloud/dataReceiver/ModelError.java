@@ -79,6 +79,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -103,7 +105,7 @@ private static final long serialVersionUID = 0L;
   public static final int ERROR_FIELD_NUMBER = 1;
   private volatile java.lang.Object error_;
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The error.
    */
   @java.lang.Override
@@ -120,7 +122,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string error = 1;</code>
+   * <code>string error = 1 [json_name = "error"];</code>
    * @return The bytes for error.
    */
   @java.lang.Override
@@ -141,7 +143,7 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_FIELD_NUMBER = 2;
   private org.zenoss.cloud.dataReceiver.Model model_;
   /**
-   * <code>.zenoss.cloud.Model model = 2;</code>
+   * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
    * @return Whether the model field is set.
    */
   @java.lang.Override
@@ -149,7 +151,7 @@ private static final long serialVersionUID = 0L;
     return model_ != null;
   }
   /**
-   * <code>.zenoss.cloud.Model model = 2;</code>
+   * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
    * @return The model.
    */
   @java.lang.Override
@@ -157,7 +159,7 @@ private static final long serialVersionUID = 0L;
     return model_ == null ? org.zenoss.cloud.dataReceiver.Model.getDefaultInstance() : model_;
   }
   /**
-   * <code>.zenoss.cloud.Model model = 2;</code>
+   * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.ModelOrBuilder getModelOrBuilder() {
@@ -178,7 +180,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, error_);
     }
     if (model_ != null) {
@@ -193,7 +195,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getErrorBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, error_);
     }
     if (model_ != null) {
@@ -498,7 +500,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object error_ = "";
     /**
-     * <code>string error = 1;</code>
+     * <code>string error = 1 [json_name = "error"];</code>
      * @return The error.
      */
     public java.lang.String getError() {
@@ -514,7 +516,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string error = 1;</code>
+     * <code>string error = 1 [json_name = "error"];</code>
      * @return The bytes for error.
      */
     public com.google.protobuf.ByteString
@@ -531,7 +533,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string error = 1;</code>
+     * <code>string error = 1 [json_name = "error"];</code>
      * @param value The error to set.
      * @return This builder for chaining.
      */
@@ -546,7 +548,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string error = 1;</code>
+     * <code>string error = 1 [json_name = "error"];</code>
      * @return This builder for chaining.
      */
     public Builder clearError() {
@@ -556,7 +558,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string error = 1;</code>
+     * <code>string error = 1 [json_name = "error"];</code>
      * @param value The bytes for error to set.
      * @return This builder for chaining.
      */
@@ -576,14 +578,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Model, org.zenoss.cloud.dataReceiver.Model.Builder, org.zenoss.cloud.dataReceiver.ModelOrBuilder> modelBuilder_;
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
       return modelBuilder_ != null || model_ != null;
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      * @return The model.
      */
     public org.zenoss.cloud.dataReceiver.Model getModel() {
@@ -594,7 +596,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public Builder setModel(org.zenoss.cloud.dataReceiver.Model value) {
       if (modelBuilder_ == null) {
@@ -610,7 +612,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public Builder setModel(
         org.zenoss.cloud.dataReceiver.Model.Builder builderForValue) {
@@ -624,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public Builder mergeModel(org.zenoss.cloud.dataReceiver.Model value) {
       if (modelBuilder_ == null) {
@@ -642,7 +644,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public Builder clearModel() {
       if (modelBuilder_ == null) {
@@ -656,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Model.Builder getModelBuilder() {
       
@@ -664,7 +666,7 @@ private static final long serialVersionUID = 0L;
       return getModelFieldBuilder().getBuilder();
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelOrBuilder getModelOrBuilder() {
       if (modelBuilder_ != null) {
@@ -675,7 +677,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.zenoss.cloud.Model model = 2;</code>
+     * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Model, org.zenoss.cloud.dataReceiver.Model.Builder, org.zenoss.cloud.dataReceiver.ModelOrBuilder> 

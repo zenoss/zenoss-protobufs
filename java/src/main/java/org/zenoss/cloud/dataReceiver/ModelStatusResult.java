@@ -87,6 +87,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -118,7 +120,7 @@ private static final long serialVersionUID = 0L;
    * failed is the count of models that failed to be accepted
    * </pre>
    *
-   * <code>int32 failed = 1;</code>
+   * <code>int32 failed = 1 [json_name = "failed"];</code>
    * @return The failed.
    */
   @java.lang.Override
@@ -133,7 +135,7 @@ private static final long serialVersionUID = 0L;
    * succeeded is the count of models that were accepted
    * </pre>
    *
-   * <code>int32 succeeded = 2;</code>
+   * <code>int32 succeeded = 2 [json_name = "succeeded"];</code>
    * @return The succeeded.
    */
   @java.lang.Override
@@ -148,7 +150,7 @@ private static final long serialVersionUID = 0L;
    * message is an informational message that may or may not be set
    * </pre>
    *
-   * <code>string message = 3;</code>
+   * <code>string message = 3 [json_name = "message"];</code>
    * @return The message.
    */
   @java.lang.Override
@@ -169,7 +171,7 @@ private static final long serialVersionUID = 0L;
    * message is an informational message that may or may not be set
    * </pre>
    *
-   * <code>string message = 3;</code>
+   * <code>string message = 3 [json_name = "message"];</code>
    * @return The bytes for message.
    */
   @java.lang.Override
@@ -194,7 +196,7 @@ private static final long serialVersionUID = 0L;
    * Failed models only returned if detailedResponse is set to true
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+   * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
    */
   @java.lang.Override
   public java.util.List<org.zenoss.cloud.dataReceiver.ModelError> getFailedModelsList() {
@@ -205,7 +207,7 @@ private static final long serialVersionUID = 0L;
    * Failed models only returned if detailedResponse is set to true
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+   * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
    */
   @java.lang.Override
   public java.util.List<? extends org.zenoss.cloud.dataReceiver.ModelErrorOrBuilder> 
@@ -217,7 +219,7 @@ private static final long serialVersionUID = 0L;
    * Failed models only returned if detailedResponse is set to true
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+   * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
    */
   @java.lang.Override
   public int getFailedModelsCount() {
@@ -228,7 +230,7 @@ private static final long serialVersionUID = 0L;
    * Failed models only returned if detailedResponse is set to true
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+   * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.ModelError getFailedModels(int index) {
@@ -239,7 +241,7 @@ private static final long serialVersionUID = 0L;
    * Failed models only returned if detailedResponse is set to true
    * </pre>
    *
-   * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+   * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.ModelErrorOrBuilder getFailedModelsOrBuilder(
@@ -267,7 +269,7 @@ private static final long serialVersionUID = 0L;
     if (succeeded_ != 0) {
       output.writeInt32(2, succeeded_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
     }
     for (int i = 0; i < failedModels_.size(); i++) {
@@ -290,7 +292,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, succeeded_);
     }
-    if (!getMessageBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
     }
     for (int i = 0; i < failedModels_.size(); i++) {
@@ -646,7 +648,7 @@ private static final long serialVersionUID = 0L;
      * failed is the count of models that failed to be accepted
      * </pre>
      *
-     * <code>int32 failed = 1;</code>
+     * <code>int32 failed = 1 [json_name = "failed"];</code>
      * @return The failed.
      */
     @java.lang.Override
@@ -658,7 +660,7 @@ private static final long serialVersionUID = 0L;
      * failed is the count of models that failed to be accepted
      * </pre>
      *
-     * <code>int32 failed = 1;</code>
+     * <code>int32 failed = 1 [json_name = "failed"];</code>
      * @param value The failed to set.
      * @return This builder for chaining.
      */
@@ -673,7 +675,7 @@ private static final long serialVersionUID = 0L;
      * failed is the count of models that failed to be accepted
      * </pre>
      *
-     * <code>int32 failed = 1;</code>
+     * <code>int32 failed = 1 [json_name = "failed"];</code>
      * @return This builder for chaining.
      */
     public Builder clearFailed() {
@@ -689,7 +691,7 @@ private static final long serialVersionUID = 0L;
      * succeeded is the count of models that were accepted
      * </pre>
      *
-     * <code>int32 succeeded = 2;</code>
+     * <code>int32 succeeded = 2 [json_name = "succeeded"];</code>
      * @return The succeeded.
      */
     @java.lang.Override
@@ -701,7 +703,7 @@ private static final long serialVersionUID = 0L;
      * succeeded is the count of models that were accepted
      * </pre>
      *
-     * <code>int32 succeeded = 2;</code>
+     * <code>int32 succeeded = 2 [json_name = "succeeded"];</code>
      * @param value The succeeded to set.
      * @return This builder for chaining.
      */
@@ -716,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * succeeded is the count of models that were accepted
      * </pre>
      *
-     * <code>int32 succeeded = 2;</code>
+     * <code>int32 succeeded = 2 [json_name = "succeeded"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSucceeded() {
@@ -732,7 +734,7 @@ private static final long serialVersionUID = 0L;
      * message is an informational message that may or may not be set
      * </pre>
      *
-     * <code>string message = 3;</code>
+     * <code>string message = 3 [json_name = "message"];</code>
      * @return The message.
      */
     public java.lang.String getMessage() {
@@ -752,7 +754,7 @@ private static final long serialVersionUID = 0L;
      * message is an informational message that may or may not be set
      * </pre>
      *
-     * <code>string message = 3;</code>
+     * <code>string message = 3 [json_name = "message"];</code>
      * @return The bytes for message.
      */
     public com.google.protobuf.ByteString
@@ -773,7 +775,7 @@ private static final long serialVersionUID = 0L;
      * message is an informational message that may or may not be set
      * </pre>
      *
-     * <code>string message = 3;</code>
+     * <code>string message = 3 [json_name = "message"];</code>
      * @param value The message to set.
      * @return This builder for chaining.
      */
@@ -792,7 +794,7 @@ private static final long serialVersionUID = 0L;
      * message is an informational message that may or may not be set
      * </pre>
      *
-     * <code>string message = 3;</code>
+     * <code>string message = 3 [json_name = "message"];</code>
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
@@ -806,7 +808,7 @@ private static final long serialVersionUID = 0L;
      * message is an informational message that may or may not be set
      * </pre>
      *
-     * <code>string message = 3;</code>
+     * <code>string message = 3 [json_name = "message"];</code>
      * @param value The bytes for message to set.
      * @return This builder for chaining.
      */
@@ -839,7 +841,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.ModelError> getFailedModelsList() {
       if (failedModelsBuilder_ == null) {
@@ -853,7 +855,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public int getFailedModelsCount() {
       if (failedModelsBuilder_ == null) {
@@ -867,7 +869,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelError getFailedModels(int index) {
       if (failedModelsBuilder_ == null) {
@@ -881,7 +883,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder setFailedModels(
         int index, org.zenoss.cloud.dataReceiver.ModelError value) {
@@ -902,7 +904,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder setFailedModels(
         int index, org.zenoss.cloud.dataReceiver.ModelError.Builder builderForValue) {
@@ -920,7 +922,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder addFailedModels(org.zenoss.cloud.dataReceiver.ModelError value) {
       if (failedModelsBuilder_ == null) {
@@ -940,7 +942,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder addFailedModels(
         int index, org.zenoss.cloud.dataReceiver.ModelError value) {
@@ -961,7 +963,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder addFailedModels(
         org.zenoss.cloud.dataReceiver.ModelError.Builder builderForValue) {
@@ -979,7 +981,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder addFailedModels(
         int index, org.zenoss.cloud.dataReceiver.ModelError.Builder builderForValue) {
@@ -997,7 +999,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder addAllFailedModels(
         java.lang.Iterable<? extends org.zenoss.cloud.dataReceiver.ModelError> values) {
@@ -1016,7 +1018,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder clearFailedModels() {
       if (failedModelsBuilder_ == null) {
@@ -1033,7 +1035,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public Builder removeFailedModels(int index) {
       if (failedModelsBuilder_ == null) {
@@ -1050,7 +1052,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelError.Builder getFailedModelsBuilder(
         int index) {
@@ -1061,7 +1063,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelErrorOrBuilder getFailedModelsOrBuilder(
         int index) {
@@ -1075,7 +1077,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public java.util.List<? extends org.zenoss.cloud.dataReceiver.ModelErrorOrBuilder> 
          getFailedModelsOrBuilderList() {
@@ -1090,7 +1092,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelError.Builder addFailedModelsBuilder() {
       return getFailedModelsFieldBuilder().addBuilder(
@@ -1101,7 +1103,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public org.zenoss.cloud.dataReceiver.ModelError.Builder addFailedModelsBuilder(
         int index) {
@@ -1113,7 +1115,7 @@ private static final long serialVersionUID = 0L;
      * Failed models only returned if detailedResponse is set to true
      * </pre>
      *
-     * <code>repeated .zenoss.cloud.ModelError failedModels = 4;</code>
+     * <code>repeated .zenoss.cloud.ModelError failedModels = 4 [json_name = "failedModels"];</code>
      */
     public java.util.List<org.zenoss.cloud.dataReceiver.ModelError.Builder> 
          getFailedModelsBuilderList() {

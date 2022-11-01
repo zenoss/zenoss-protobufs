@@ -76,6 +76,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -104,7 +106,7 @@ private static final long serialVersionUID = 0L;
    * The metric id
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -125,7 +127,7 @@ private static final long serialVersionUID = 0L;
    * The metric id
    * </pre>
    *
-   * <code>string id = 1;</code>
+   * <code>string id = 1 [json_name = "id"];</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -150,7 +152,7 @@ private static final long serialVersionUID = 0L;
    * The time at which the value was captured
    * </pre>
    *
-   * <code>int64 timestamp = 2;</code>
+   * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
    * @return The timestamp.
    */
   @java.lang.Override
@@ -165,7 +167,7 @@ private static final long serialVersionUID = 0L;
    * The metric value
    * </pre>
    *
-   * <code>double value = 3;</code>
+   * <code>double value = 3 [json_name = "value"];</code>
    * @return The value.
    */
   @java.lang.Override
@@ -187,13 +189,13 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
     if (timestamp_ != 0L) {
       output.writeInt64(2, timestamp_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       output.writeDouble(3, value_);
     }
     unknownFields.writeTo(output);
@@ -205,14 +207,14 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
     if (timestamp_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, timestamp_);
     }
-    if (value_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(3, value_);
     }
@@ -518,7 +520,7 @@ private static final long serialVersionUID = 0L;
      * The metric id
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -538,7 +540,7 @@ private static final long serialVersionUID = 0L;
      * The metric id
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -559,7 +561,7 @@ private static final long serialVersionUID = 0L;
      * The metric id
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -578,7 +580,7 @@ private static final long serialVersionUID = 0L;
      * The metric id
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -592,7 +594,7 @@ private static final long serialVersionUID = 0L;
      * The metric id
      * </pre>
      *
-     * <code>string id = 1;</code>
+     * <code>string id = 1 [json_name = "id"];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -614,7 +616,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @return The timestamp.
      */
     @java.lang.Override
@@ -626,7 +628,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @param value The timestamp to set.
      * @return This builder for chaining.
      */
@@ -641,7 +643,7 @@ private static final long serialVersionUID = 0L;
      * The time at which the value was captured
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
+     * <code>int64 timestamp = 2 [json_name = "timestamp"];</code>
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
@@ -657,7 +659,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @return The value.
      */
     @java.lang.Override
@@ -669,7 +671,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @param value The value to set.
      * @return This builder for chaining.
      */
@@ -684,7 +686,7 @@ private static final long serialVersionUID = 0L;
      * The metric value
      * </pre>
      *
-     * <code>double value = 3;</code>
+     * <code>double value = 3 [json_name = "value"];</code>
      * @return This builder for chaining.
      */
     public Builder clearValue() {

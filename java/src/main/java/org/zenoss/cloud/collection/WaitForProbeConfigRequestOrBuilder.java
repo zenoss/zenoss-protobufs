@@ -8,22 +8,22 @@ public interface WaitForProbeConfigRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    * @return Whether the configuration field is set.
    */
   boolean hasConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    * @return The configuration.
    */
   org.zenoss.cloud.collection.Config getConfiguration();
   /**
-   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1;</code>
+   * <code>.zenoss.cloud.collection_cfg.Config configuration = 1 [json_name = "configuration"];</code>
    */
   org.zenoss.cloud.collection.ConfigOrBuilder getConfigurationOrBuilder();
 
   /**
-   * <code>int64 deadline = 2;</code>
+   * <code>int64 deadline = 2 [json_name = "deadline"];</code>
    * @return The deadline.
    */
   long getDeadline();

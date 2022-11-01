@@ -8,29 +8,29 @@ public interface WaitForProbeConfigResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string config_id = 1;</code>
+   * <code>string config_id = 1 [json_name = "configId"];</code>
    * @return The configId.
    */
   java.lang.String getConfigId();
   /**
-   * <code>string config_id = 1;</code>
+   * <code>string config_id = 1 [json_name = "configId"];</code>
    * @return The bytes for configId.
    */
   com.google.protobuf.ByteString
       getConfigIdBytes();
 
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    * @return Whether the result field is set.
    */
   boolean hasResult();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    * @return The result.
    */
   org.zenoss.cloud.collection.ProbeResult getResult();
   /**
-   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2;</code>
+   * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
    */
   org.zenoss.cloud.collection.ProbeResultOrBuilder getResultOrBuilder();
 }
