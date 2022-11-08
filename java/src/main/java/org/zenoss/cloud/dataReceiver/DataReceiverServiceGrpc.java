@@ -8,7 +8,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.48.1)",
+    value = "by gRPC proto compiler (version 1.50.2)",
     comments = "Source: zenoss/cloud/data_receiver.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataReceiverServiceGrpc {
