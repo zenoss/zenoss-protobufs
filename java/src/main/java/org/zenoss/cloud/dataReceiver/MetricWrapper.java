@@ -30,87 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private MetricWrapper(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.zenoss.cloud.dataReceiver.TaggedMetric.Builder subBuilder = null;
-            if (metricTypeCase_ == 1) {
-              subBuilder = ((org.zenoss.cloud.dataReceiver.TaggedMetric) metricType_).toBuilder();
-            }
-            metricType_ =
-                input.readMessage(org.zenoss.cloud.dataReceiver.TaggedMetric.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.zenoss.cloud.dataReceiver.TaggedMetric) metricType_);
-              metricType_ = subBuilder.buildPartial();
-            }
-            metricTypeCase_ = 1;
-            break;
-          }
-          case 18: {
-            org.zenoss.cloud.dataReceiver.CompactMetric.Builder subBuilder = null;
-            if (metricTypeCase_ == 2) {
-              subBuilder = ((org.zenoss.cloud.dataReceiver.CompactMetric) metricType_).toBuilder();
-            }
-            metricType_ =
-                input.readMessage(org.zenoss.cloud.dataReceiver.CompactMetric.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.zenoss.cloud.dataReceiver.CompactMetric) metricType_);
-              metricType_ = subBuilder.buildPartial();
-            }
-            metricTypeCase_ = 2;
-            break;
-          }
-          case 26: {
-            org.zenoss.cloud.dataReceiver.Metric.Builder subBuilder = null;
-            if (metricTypeCase_ == 3) {
-              subBuilder = ((org.zenoss.cloud.dataReceiver.Metric) metricType_).toBuilder();
-            }
-            metricType_ =
-                input.readMessage(org.zenoss.cloud.dataReceiver.Metric.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.zenoss.cloud.dataReceiver.Metric) metricType_);
-              metricType_ = subBuilder.buildPartial();
-            }
-            metricTypeCase_ = 3;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_descriptor;
@@ -319,7 +238,7 @@ private static final long serialVersionUID = 0L;
     if (metricTypeCase_ == 3) {
       output.writeMessage(3, (org.zenoss.cloud.dataReceiver.Metric) metricType_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -340,7 +259,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (org.zenoss.cloud.dataReceiver.Metric) metricType_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -372,7 +291,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -399,7 +318,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -516,22 +435,26 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataReceiver.MetricWrapper.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (taggedBuilder_ != null) {
+        taggedBuilder_.clear();
+      }
+      if (compactBuilder_ != null) {
+        compactBuilder_.clear();
+      }
+      if (canonicalBuilder_ != null) {
+        canonicalBuilder_.clear();
+      }
       metricTypeCase_ = 0;
       metricType_ = null;
       return this;
@@ -647,7 +570,7 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -662,17 +585,51 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.zenoss.cloud.dataReceiver.MetricWrapper parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getTaggedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              metricTypeCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getCompactFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              metricTypeCase_ = 2;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getCanonicalFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              metricTypeCase_ = 3;
+              break;
+            } // case 26
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.zenoss.cloud.dataReceiver.MetricWrapper) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int metricTypeCase_ = 0;
@@ -1257,7 +1214,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new MetricWrapper(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

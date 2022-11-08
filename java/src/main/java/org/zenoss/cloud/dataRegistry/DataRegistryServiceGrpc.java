@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.48.1)",
+    value = "by gRPC proto compiler (version 1.50.2)",
     comments = "Source: zenoss/cloud/data_registry.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataRegistryServiceGrpc {
