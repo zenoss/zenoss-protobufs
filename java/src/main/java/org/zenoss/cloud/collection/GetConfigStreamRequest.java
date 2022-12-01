@@ -43,6 +43,32 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.collection.GetConfigStreamRequest.class, org.zenoss.cloud.collection.GetConfigStreamRequest.Builder.class);
   }
 
+  public static final int IDENTITY_FIELD_NUMBER = 1;
+  private org.zenoss.cloud.collection.Identity identity_;
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   * @return Whether the identity field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdentity() {
+    return identity_ != null;
+  }
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   * @return The identity.
+   */
+  @java.lang.Override
+  public org.zenoss.cloud.collection.Identity getIdentity() {
+    return identity_ == null ? org.zenoss.cloud.collection.Identity.getDefaultInstance() : identity_;
+  }
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   */
+  @java.lang.Override
+  public org.zenoss.cloud.collection.IdentityOrBuilder getIdentityOrBuilder() {
+    return getIdentity();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -57,6 +83,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (identity_ != null) {
+      output.writeMessage(1, getIdentity());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -66,6 +95,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (identity_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getIdentity());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -81,6 +114,11 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.collection.GetConfigStreamRequest other = (org.zenoss.cloud.collection.GetConfigStreamRequest) obj;
 
+    if (hasIdentity() != other.hasIdentity()) return false;
+    if (hasIdentity()) {
+      if (!getIdentity()
+          .equals(other.getIdentity())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -92,6 +130,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasIdentity()) {
+      hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentity().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -220,6 +262,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (identityBuilder_ == null) {
+        identity_ = null;
+      } else {
+        identity_ = null;
+        identityBuilder_ = null;
+      }
       return this;
     }
 
@@ -246,6 +294,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.GetConfigStreamRequest buildPartial() {
       org.zenoss.cloud.collection.GetConfigStreamRequest result = new org.zenoss.cloud.collection.GetConfigStreamRequest(this);
+      if (identityBuilder_ == null) {
+        result.identity_ = identity_;
+      } else {
+        result.identity_ = identityBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -294,6 +347,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.zenoss.cloud.collection.GetConfigStreamRequest other) {
       if (other == org.zenoss.cloud.collection.GetConfigStreamRequest.getDefaultInstance()) return this;
+      if (other.hasIdentity()) {
+        mergeIdentity(other.getIdentity());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -320,6 +376,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 10: {
+              input.readMessage(
+                  getIdentityFieldBuilder().getBuilder(),
+                  extensionRegistry);
+
+              break;
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -334,6 +397,125 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } // finally
       return this;
+    }
+
+    private org.zenoss.cloud.collection.Identity identity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.zenoss.cloud.collection.Identity, org.zenoss.cloud.collection.Identity.Builder, org.zenoss.cloud.collection.IdentityOrBuilder> identityBuilder_;
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     * @return Whether the identity field is set.
+     */
+    public boolean hasIdentity() {
+      return identityBuilder_ != null || identity_ != null;
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     * @return The identity.
+     */
+    public org.zenoss.cloud.collection.Identity getIdentity() {
+      if (identityBuilder_ == null) {
+        return identity_ == null ? org.zenoss.cloud.collection.Identity.getDefaultInstance() : identity_;
+      } else {
+        return identityBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public Builder setIdentity(org.zenoss.cloud.collection.Identity value) {
+      if (identityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identity_ = value;
+        onChanged();
+      } else {
+        identityBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public Builder setIdentity(
+        org.zenoss.cloud.collection.Identity.Builder builderForValue) {
+      if (identityBuilder_ == null) {
+        identity_ = builderForValue.build();
+        onChanged();
+      } else {
+        identityBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public Builder mergeIdentity(org.zenoss.cloud.collection.Identity value) {
+      if (identityBuilder_ == null) {
+        if (identity_ != null) {
+          identity_ =
+            org.zenoss.cloud.collection.Identity.newBuilder(identity_).mergeFrom(value).buildPartial();
+        } else {
+          identity_ = value;
+        }
+        onChanged();
+      } else {
+        identityBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public Builder clearIdentity() {
+      if (identityBuilder_ == null) {
+        identity_ = null;
+        onChanged();
+      } else {
+        identity_ = null;
+        identityBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public org.zenoss.cloud.collection.Identity.Builder getIdentityBuilder() {
+      
+      onChanged();
+      return getIdentityFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    public org.zenoss.cloud.collection.IdentityOrBuilder getIdentityOrBuilder() {
+      if (identityBuilder_ != null) {
+        return identityBuilder_.getMessageOrBuilder();
+      } else {
+        return identity_ == null ?
+            org.zenoss.cloud.collection.Identity.getDefaultInstance() : identity_;
+      }
+    }
+    /**
+     * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.zenoss.cloud.collection.Identity, org.zenoss.cloud.collection.Identity.Builder, org.zenoss.cloud.collection.IdentityOrBuilder> 
+        getIdentityFieldBuilder() {
+      if (identityBuilder_ == null) {
+        identityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.zenoss.cloud.collection.Identity, org.zenoss.cloud.collection.Identity.Builder, org.zenoss.cloud.collection.IdentityOrBuilder>(
+                getIdentity(),
+                getParentForChildren(),
+                isClean());
+        identity_ = null;
+      }
+      return identityBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

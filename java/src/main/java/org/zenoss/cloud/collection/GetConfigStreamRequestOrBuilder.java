@@ -6,4 +6,19 @@ package org.zenoss.cloud.collection;
 public interface GetConfigStreamRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:zenoss.cloud.collection_cfg.GetConfigStreamRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   * @return Whether the identity field is set.
+   */
+  boolean hasIdentity();
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   * @return The identity.
+   */
+  org.zenoss.cloud.collection.Identity getIdentity();
+  /**
+   * <code>.zenoss.cloud.collection_cfg.Identity identity = 1 [json_name = "identity"];</code>
+   */
+  org.zenoss.cloud.collection.IdentityOrBuilder getIdentityOrBuilder();
 }
