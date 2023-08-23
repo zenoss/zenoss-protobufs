@@ -27,6 +27,14 @@ message Configuration {
   string data = 2;
 }
 
+message Identity {
+  string id = 1;
+  string name = 2;
+  string tenant = 3;
+  string source = 4;
+  repeated string tags = 5;
+}
+
 message ProbeSuccess {}
 
 message ProbeError {
@@ -59,7 +67,9 @@ message WaitForProbeConfigResponse {
   ProbeResult result = 2;
 }
 
-message GetConfigStreamRequest {}
+message GetConfigStreamRequest {
+  Identity identity = 1;
+}
 
 message GetConfigStreamResponse {
   repeated Config configuration = 1;
