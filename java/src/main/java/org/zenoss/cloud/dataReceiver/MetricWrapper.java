@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new MetricWrapper();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricWrapper_descriptor;
@@ -44,6 +39,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private int metricTypeCase_ = 0;
+  @SuppressWarnings("serial")
   private java.lang.Object metricType_;
   public enum MetricTypeCase
       implements com.google.protobuf.Internal.EnumLite,
@@ -367,11 +363,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricWrapper parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricWrapper parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -446,6 +444,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (taggedBuilder_ != null) {
         taggedBuilder_.clear();
       }
@@ -483,30 +482,31 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricWrapper buildPartial() {
       org.zenoss.cloud.dataReceiver.MetricWrapper result = new org.zenoss.cloud.dataReceiver.MetricWrapper(this);
-      if (metricTypeCase_ == 1) {
-        if (taggedBuilder_ == null) {
-          result.metricType_ = metricType_;
-        } else {
-          result.metricType_ = taggedBuilder_.build();
-        }
-      }
-      if (metricTypeCase_ == 2) {
-        if (compactBuilder_ == null) {
-          result.metricType_ = metricType_;
-        } else {
-          result.metricType_ = compactBuilder_.build();
-        }
-      }
-      if (metricTypeCase_ == 3) {
-        if (canonicalBuilder_ == null) {
-          result.metricType_ = metricType_;
-        } else {
-          result.metricType_ = canonicalBuilder_.build();
-        }
-      }
-      result.metricTypeCase_ = metricTypeCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.MetricWrapper result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.zenoss.cloud.dataReceiver.MetricWrapper result) {
+      result.metricTypeCase_ = metricTypeCase_;
+      result.metricType_ = this.metricType_;
+      if (metricTypeCase_ == 1 &&
+          taggedBuilder_ != null) {
+        result.metricType_ = taggedBuilder_.build();
+      }
+      if (metricTypeCase_ == 2 &&
+          compactBuilder_ != null) {
+        result.metricType_ = compactBuilder_.build();
+      }
+      if (metricTypeCase_ == 3 &&
+          canonicalBuilder_ != null) {
+        result.metricType_ = canonicalBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -647,6 +647,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.TaggedMetric, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder, org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder> taggedBuilder_;
@@ -822,7 +823,7 @@ private static final long serialVersionUID = 0L;
         metricType_ = null;
       }
       metricTypeCase_ = 1;
-      onChanged();;
+      onChanged();
       return taggedBuilder_;
     }
 
@@ -1000,7 +1001,7 @@ private static final long serialVersionUID = 0L;
         metricType_ = null;
       }
       metricTypeCase_ = 2;
-      onChanged();;
+      onChanged();
       return compactBuilder_;
     }
 
@@ -1178,7 +1179,7 @@ private static final long serialVersionUID = 0L;
         metricType_ = null;
       }
       metricTypeCase_ = 3;
-      onChanged();;
+      onChanged();
       return canonicalBuilder_;
     }
     @java.lang.Override

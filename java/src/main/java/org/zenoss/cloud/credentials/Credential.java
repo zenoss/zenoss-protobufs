@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new Credential();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.credentials.Credentials.internal_static_zenoss_cloud_credentials_Credential_descriptor;
@@ -56,8 +51,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.credentials.Credential.class, org.zenoss.cloud.credentials.Credential.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    * <code>string id = 1 [json_name = "id"];</code>
    * @return The id.
@@ -102,7 +99,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasInfo() {
-    return info_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.credentials.Info info = 2 [json_name = "info"];</code>
@@ -117,7 +114,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.credentials.InfoOrBuilder getInfoOrBuilder() {
-    return getInfo();
+    return info_ == null ? org.zenoss.cloud.credentials.Info.getDefaultInstance() : info_;
   }
 
   public static final int SECRETS_FIELD_NUMBER = 3;
@@ -132,6 +129,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> secrets_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -142,14 +140,12 @@ private static final long serialVersionUID = 0L;
     }
     return secrets_;
   }
-
   public int getSecretsCount() {
     return internalGetSecrets().getMap().size();
   }
   /**
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
-
   @java.lang.Override
   public boolean containsSecrets(
       java.lang.String key) {
@@ -168,7 +164,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getSecretsMap() {
     return internalGetSecrets().getMap();
   }
@@ -176,10 +171,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getSecretsOrDefault(
+  public /* nullable */
+java.lang.String getSecretsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetSecrets().getMap();
@@ -189,7 +185,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getSecretsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -218,7 +213,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (info_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getInfo());
     }
     com.google.protobuf.GeneratedMessageV3
@@ -239,7 +234,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (info_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getInfo());
     }
@@ -347,11 +342,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.credentials.Credential parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.credentials.Credential parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -437,23 +434,28 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.credentials.Credential.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getInfoFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
-      if (infoBuilder_ == null) {
-        info_ = null;
-      } else {
-        info_ = null;
+      info_ = null;
+      if (infoBuilder_ != null) {
+        infoBuilder_.dispose();
         infoBuilder_ = null;
       }
       internalGetMutableSecrets().clear();
@@ -483,17 +485,28 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.credentials.Credential buildPartial() {
       org.zenoss.cloud.credentials.Credential result = new org.zenoss.cloud.credentials.Credential(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      if (infoBuilder_ == null) {
-        result.info_ = info_;
-      } else {
-        result.info_ = infoBuilder_.build();
-      }
-      result.secrets_ = internalGetSecrets();
-      result.secrets_.makeImmutable();
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.credentials.Credential result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.info_ = infoBuilder_ == null
+            ? info_
+            : infoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secrets_ = internalGetSecrets();
+        result.secrets_.makeImmutable();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -542,6 +555,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.credentials.Credential.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInfo()) {
@@ -549,6 +563,7 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableSecrets().mergeFrom(
           other.internalGetSecrets());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -577,14 +592,14 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               id_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getInfoFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
@@ -593,6 +608,7 @@ private static final long serialVersionUID = 0L;
                   SecretsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableSecrets().getMutableMap().put(
                   secrets__.getKey(), secrets__.getValue());
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -653,11 +669,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -666,8 +680,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -678,12 +692,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,7 +708,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the info field is set.
      */
     public boolean hasInfo() {
-      return infoBuilder_ != null || info_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.zenoss.cloud.credentials.Info info = 2 [json_name = "info"];</code>
@@ -718,11 +730,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         info_ = value;
-        onChanged();
       } else {
         infoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -732,11 +744,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.credentials.Info.Builder builderForValue) {
       if (infoBuilder_ == null) {
         info_ = builderForValue.build();
-        onChanged();
       } else {
         infoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -744,38 +756,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeInfo(org.zenoss.cloud.credentials.Info value) {
       if (infoBuilder_ == null) {
-        if (info_ != null) {
-          info_ =
-            org.zenoss.cloud.credentials.Info.newBuilder(info_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          info_ != null &&
+          info_ != org.zenoss.cloud.credentials.Info.getDefaultInstance()) {
+          getInfoBuilder().mergeFrom(value);
         } else {
           info_ = value;
         }
-        onChanged();
       } else {
         infoBuilder_.mergeFrom(value);
       }
-
+      if (info_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.credentials.Info info = 2 [json_name = "info"];</code>
      */
     public Builder clearInfo() {
-      if (infoBuilder_ == null) {
-        info_ = null;
-        onChanged();
-      } else {
-        info_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      info_ = null;
+      if (infoBuilder_ != null) {
+        infoBuilder_.dispose();
         infoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.credentials.Info info = 2 [json_name = "info"];</code>
      */
     public org.zenoss.cloud.credentials.Info.Builder getInfoBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInfoFieldBuilder().getBuilder();
     }
@@ -810,7 +824,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> secrets_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetSecrets() {
+        internalGetSecrets() {
       if (secrets_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             SecretsDefaultEntryHolder.defaultEntry);
@@ -818,8 +832,7 @@ private static final long serialVersionUID = 0L;
       return secrets_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableSecrets() {
-      onChanged();;
+        internalGetMutableSecrets() {
       if (secrets_ == null) {
         secrets_ = com.google.protobuf.MapField.newMapField(
             SecretsDefaultEntryHolder.defaultEntry);
@@ -827,16 +840,16 @@ private static final long serialVersionUID = 0L;
       if (!secrets_.isMutable()) {
         secrets_ = secrets_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return secrets_;
     }
-
     public int getSecretsCount() {
       return internalGetSecrets().getMap().size();
     }
     /**
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
-
     @java.lang.Override
     public boolean containsSecrets(
         java.lang.String key) {
@@ -855,7 +868,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getSecretsMap() {
       return internalGetSecrets().getMap();
     }
@@ -863,10 +875,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getSecretsOrDefault(
+    public /* nullable */
+java.lang.String getSecretsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetSecrets().getMap();
@@ -876,7 +889,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getSecretsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -887,8 +899,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearSecrets() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableSecrets().getMutableMap()
           .clear();
       return this;
@@ -896,7 +908,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
-
     public Builder removeSecrets(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -909,7 +920,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableSecrets() {
+        getMutableSecrets() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableSecrets().getMutableMap();
     }
     /**
@@ -919,22 +931,20 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableSecrets().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
      * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
      */
-
     public Builder putAllSecrets(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableSecrets().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
     @java.lang.Override

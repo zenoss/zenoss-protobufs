@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new DefinitionUpdate();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_DefinitionUpdate_descriptor;
@@ -45,8 +40,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataRegistry.DefinitionUpdate.class, org.zenoss.cloud.dataRegistry.DefinitionUpdate.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DEFINITION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object definitionId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object definitionId_ = "";
   /**
    * <pre>
    * The metric name
@@ -103,7 +100,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMetadataFields() {
-    return metadataFields_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -126,11 +123,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
-    return getMetadataFields();
+    return metadataFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
   }
 
   public static final int UPDATE_MODE_FIELD_NUMBER = 3;
-  private int updateMode_;
+  private int updateMode_ = 0;
   /**
    * <pre>
    * Determines what happens to the existing definition metadata fields.  If MERGE (default), the provided metadata
@@ -155,8 +152,7 @@ private static final long serialVersionUID = 0L;
    * @return The updateMode.
    */
   @java.lang.Override public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
-    @SuppressWarnings("deprecation")
-    org.zenoss.cloud.dataRegistry.UpdateMode result = org.zenoss.cloud.dataRegistry.UpdateMode.valueOf(updateMode_);
+    org.zenoss.cloud.dataRegistry.UpdateMode result = org.zenoss.cloud.dataRegistry.UpdateMode.forNumber(updateMode_);
     return result == null ? org.zenoss.cloud.dataRegistry.UpdateMode.UNRECOGNIZED : result;
   }
 
@@ -177,7 +173,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, definitionId_);
     }
-    if (metadataFields_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getMetadataFields());
     }
     if (updateMode_ != org.zenoss.cloud.dataRegistry.UpdateMode.MERGE.getNumber()) {
@@ -195,7 +191,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(definitionId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, definitionId_);
     }
-    if (metadataFields_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getMetadataFields());
     }
@@ -294,11 +290,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.DefinitionUpdate parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.DefinitionUpdate parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -362,27 +360,31 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataRegistry.DefinitionUpdate.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMetadataFieldsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       definitionId_ = "";
-
-      if (metadataFieldsBuilder_ == null) {
-        metadataFields_ = null;
-      } else {
-        metadataFields_ = null;
+      metadataFields_ = null;
+      if (metadataFieldsBuilder_ != null) {
+        metadataFieldsBuilder_.dispose();
         metadataFieldsBuilder_ = null;
       }
       updateMode_ = 0;
-
       return this;
     }
 
@@ -409,15 +411,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.DefinitionUpdate buildPartial() {
       org.zenoss.cloud.dataRegistry.DefinitionUpdate result = new org.zenoss.cloud.dataRegistry.DefinitionUpdate(this);
-      result.definitionId_ = definitionId_;
-      if (metadataFieldsBuilder_ == null) {
-        result.metadataFields_ = metadataFields_;
-      } else {
-        result.metadataFields_ = metadataFieldsBuilder_.build();
-      }
-      result.updateMode_ = updateMode_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.DefinitionUpdate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.definitionId_ = definitionId_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadataFields_ = metadataFieldsBuilder_ == null
+            ? metadataFields_
+            : metadataFieldsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMode_ = updateMode_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -466,6 +480,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataRegistry.DefinitionUpdate.getDefaultInstance()) return this;
       if (!other.getDefinitionId().isEmpty()) {
         definitionId_ = other.definitionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetadataFields()) {
@@ -502,19 +517,19 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               definitionId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getMetadataFieldsFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 24: {
               updateMode_ = input.readEnum();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 24
             default: {
@@ -532,6 +547,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object definitionId_ = "";
     /**
@@ -586,11 +602,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       definitionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -603,8 +617,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDefinitionId() {
-      
       definitionId_ = getDefaultInstance().getDefinitionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,12 +633,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       definitionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,7 +653,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
-      return metadataFieldsBuilder_ != null || metadataFields_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
@@ -671,11 +683,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         metadataFields_ = value;
-        onChanged();
       } else {
         metadataFieldsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -689,11 +701,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (metadataFieldsBuilder_ == null) {
         metadataFields_ = builderForValue.build();
-        onChanged();
       } else {
         metadataFieldsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -705,17 +717,20 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
-        if (metadataFields_ != null) {
-          metadataFields_ =
-            com.google.protobuf.Struct.newBuilder(metadataFields_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          metadataFields_ != null &&
+          metadataFields_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getMetadataFieldsBuilder().mergeFrom(value);
         } else {
           metadataFields_ = value;
         }
-        onChanged();
       } else {
         metadataFieldsBuilder_.mergeFrom(value);
       }
-
+      if (metadataFields_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -726,14 +741,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
-      if (metadataFieldsBuilder_ == null) {
-        metadataFields_ = null;
-        onChanged();
-      } else {
-        metadataFields_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadataFields_ = null;
+      if (metadataFieldsBuilder_ != null) {
+        metadataFieldsBuilder_.dispose();
         metadataFieldsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -744,7 +758,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadataFields = 2 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldsFieldBuilder().getBuilder();
     }
@@ -810,8 +824,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setUpdateModeValue(int value) {
-      
       updateMode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -827,8 +841,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.UpdateMode getUpdateMode() {
-      @SuppressWarnings("deprecation")
-      org.zenoss.cloud.dataRegistry.UpdateMode result = org.zenoss.cloud.dataRegistry.UpdateMode.valueOf(updateMode_);
+      org.zenoss.cloud.dataRegistry.UpdateMode result = org.zenoss.cloud.dataRegistry.UpdateMode.forNumber(updateMode_);
       return result == null ? org.zenoss.cloud.dataRegistry.UpdateMode.UNRECOGNIZED : result;
     }
     /**
@@ -846,7 +859,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000004;
       updateMode_ = value.getNumber();
       onChanged();
       return this;
@@ -862,7 +875,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearUpdateMode() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       updateMode_ = 0;
       onChanged();
       return this;

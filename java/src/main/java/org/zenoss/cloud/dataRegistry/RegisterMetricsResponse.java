@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new RegisterMetricsResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_RegisterMetricsResponse_descriptor;
@@ -45,6 +40,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RESPONSES_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse> responses_;
   /**
    * <code>repeated .zenoss.cloud.RegisterMetricVerboseResponse responses = 1 [json_name = "responses"];</code>
@@ -195,11 +191,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricsResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricsResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -274,6 +272,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (responsesBuilder_ == null) {
         responses_ = java.util.Collections.emptyList();
       } else {
@@ -307,7 +306,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.RegisterMetricsResponse buildPartial() {
       org.zenoss.cloud.dataRegistry.RegisterMetricsResponse result = new org.zenoss.cloud.dataRegistry.RegisterMetricsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.zenoss.cloud.dataRegistry.RegisterMetricsResponse result) {
       if (responsesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           responses_ = java.util.Collections.unmodifiableList(responses_);
@@ -317,8 +322,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.responses_ = responsesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.RegisterMetricsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

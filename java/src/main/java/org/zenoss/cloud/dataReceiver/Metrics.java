@@ -28,11 +28,6 @@ private static final long serialVersionUID = 0L;
     return new Metrics();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Metrics_descriptor;
@@ -47,7 +42,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DETAILEDRESPONSE_FIELD_NUMBER = 1;
-  private boolean detailedResponse_;
+  private boolean detailedResponse_ = false;
   /**
    * <pre>
    * detailedResponse if set to true will return any metrics that failed to be sent
@@ -62,6 +57,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMPACTMETRICS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric> compactMetrics_;
   /**
    * <code>repeated .zenoss.cloud.CompactMetric compactMetrics = 3 [json_name = "compactMetrics"];</code>
@@ -102,6 +98,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TAGGEDMETRICS_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric> taggedMetrics_;
   /**
    * <code>repeated .zenoss.cloud.TaggedMetric taggedMetrics = 4 [json_name = "taggedMetrics"];</code>
@@ -142,6 +139,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METRICS_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataReceiver.Metric> metrics_;
   /**
    * <code>repeated .zenoss.cloud.Metric metrics = 5 [json_name = "metrics"];</code>
@@ -330,11 +328,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.Metrics parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.Metrics parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -409,29 +409,29 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       detailedResponse_ = false;
-
       if (compactMetricsBuilder_ == null) {
         compactMetrics_ = java.util.Collections.emptyList();
       } else {
         compactMetrics_ = null;
         compactMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (taggedMetricsBuilder_ == null) {
         taggedMetrics_ = java.util.Collections.emptyList();
       } else {
         taggedMetrics_ = null;
         taggedMetricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -458,37 +458,47 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Metrics buildPartial() {
       org.zenoss.cloud.dataReceiver.Metrics result = new org.zenoss.cloud.dataReceiver.Metrics(this);
-      int from_bitField0_ = bitField0_;
-      result.detailedResponse_ = detailedResponse_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.zenoss.cloud.dataReceiver.Metrics result) {
       if (compactMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           compactMetrics_ = java.util.Collections.unmodifiableList(compactMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.compactMetrics_ = compactMetrics_;
       } else {
         result.compactMetrics_ = compactMetricsBuilder_.build();
       }
       if (taggedMetricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           taggedMetrics_ = java.util.Collections.unmodifiableList(taggedMetrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.taggedMetrics_ = taggedMetrics_;
       } else {
         result.taggedMetrics_ = taggedMetricsBuilder_.build();
       }
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.Metrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detailedResponse_ = detailedResponse_;
+      }
     }
 
     @java.lang.Override
@@ -542,7 +552,7 @@ private static final long serialVersionUID = 0L;
         if (!other.compactMetrics_.isEmpty()) {
           if (compactMetrics_.isEmpty()) {
             compactMetrics_ = other.compactMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCompactMetricsIsMutable();
             compactMetrics_.addAll(other.compactMetrics_);
@@ -555,7 +565,7 @@ private static final long serialVersionUID = 0L;
             compactMetricsBuilder_.dispose();
             compactMetricsBuilder_ = null;
             compactMetrics_ = other.compactMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             compactMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCompactMetricsFieldBuilder() : null;
@@ -568,7 +578,7 @@ private static final long serialVersionUID = 0L;
         if (!other.taggedMetrics_.isEmpty()) {
           if (taggedMetrics_.isEmpty()) {
             taggedMetrics_ = other.taggedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTaggedMetricsIsMutable();
             taggedMetrics_.addAll(other.taggedMetrics_);
@@ -581,7 +591,7 @@ private static final long serialVersionUID = 0L;
             taggedMetricsBuilder_.dispose();
             taggedMetricsBuilder_ = null;
             taggedMetrics_ = other.taggedMetrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             taggedMetricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getTaggedMetricsFieldBuilder() : null;
@@ -594,7 +604,7 @@ private static final long serialVersionUID = 0L;
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -607,7 +617,7 @@ private static final long serialVersionUID = 0L;
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             metricsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMetricsFieldBuilder() : null;
@@ -644,7 +654,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 8: {
               detailedResponse_ = input.readBool();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 26: {
@@ -726,8 +736,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setDetailedResponse(boolean value) {
-      
+
       detailedResponse_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -740,7 +751,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDetailedResponse() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       detailedResponse_ = false;
       onChanged();
       return this;
@@ -749,9 +760,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.CompactMetric> compactMetrics_ =
       java.util.Collections.emptyList();
     private void ensureCompactMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         compactMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.CompactMetric>(compactMetrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
 
@@ -901,7 +912,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCompactMetrics() {
       if (compactMetricsBuilder_ == null) {
         compactMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         compactMetricsBuilder_.clear();
@@ -978,7 +989,7 @@ private static final long serialVersionUID = 0L;
         compactMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.CompactMetric, org.zenoss.cloud.dataReceiver.CompactMetric.Builder, org.zenoss.cloud.dataReceiver.CompactMetricOrBuilder>(
                 compactMetrics_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         compactMetrics_ = null;
@@ -989,9 +1000,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.TaggedMetric> taggedMetrics_ =
       java.util.Collections.emptyList();
     private void ensureTaggedMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         taggedMetrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.TaggedMetric>(taggedMetrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1141,7 +1152,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTaggedMetrics() {
       if (taggedMetricsBuilder_ == null) {
         taggedMetrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         taggedMetricsBuilder_.clear();
@@ -1218,7 +1229,7 @@ private static final long serialVersionUID = 0L;
         taggedMetricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.TaggedMetric, org.zenoss.cloud.dataReceiver.TaggedMetric.Builder, org.zenoss.cloud.dataReceiver.TaggedMetricOrBuilder>(
                 taggedMetrics_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         taggedMetrics_ = null;
@@ -1229,9 +1240,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.Metric> metrics_ =
       java.util.Collections.emptyList();
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         metrics_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.Metric>(metrics_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -1381,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -1458,7 +1469,7 @@ private static final long serialVersionUID = 0L;
         metricsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.Metric, org.zenoss.cloud.dataReceiver.Metric.Builder, org.zenoss.cloud.dataReceiver.MetricOrBuilder>(
                 metrics_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         metrics_ = null;

@@ -2,8 +2,6 @@
 # buf.build/protocolbuffers/... plugins generate protobuf definitions
 
 version: v1
-managed:
-  enabled: true
 plugins:
   # Go
   - plugin: buf.build/grpc/go:v1.2.0

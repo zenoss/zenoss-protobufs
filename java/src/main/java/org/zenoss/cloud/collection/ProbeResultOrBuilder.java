@@ -37,5 +37,5 @@ public interface ProbeResultOrBuilder extends
    */
   org.zenoss.cloud.collection.ProbeErrorOrBuilder getErrorOrBuilder();
 
-  public org.zenoss.cloud.collection.ProbeResult.ResultCase getResultCase();
+  org.zenoss.cloud.collection.ProbeResult.ResultCase getResultCase();
 }

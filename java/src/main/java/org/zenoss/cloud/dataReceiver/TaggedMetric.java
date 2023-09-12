@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new TaggedMetric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_TaggedMetric_descriptor;
@@ -57,7 +52,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METRIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metric_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    * <pre>
    * The metric name
@@ -103,7 +99,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TIMESTAMP_FIELD_NUMBER = 2;
-  private long timestamp_;
+  private long timestamp_ = 0L;
   /**
    * <pre>
    * The time at which the value was captured
@@ -118,7 +114,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
-  private double value_;
+  private double value_ = 0D;
   /**
    * <pre>
    * The metric value
@@ -144,6 +140,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> tags_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -154,7 +151,6 @@ private static final long serialVersionUID = 0L;
     }
     return tags_;
   }
-
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
@@ -165,7 +161,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
-
   @java.lang.Override
   public boolean containsTags(
       java.lang.String key) {
@@ -188,7 +183,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
@@ -200,10 +194,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getTagsOrDefault(
+  public /* nullable */
+java.lang.String getTagsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetTags().getMap();
@@ -217,7 +212,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getTagsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -384,11 +378,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.TaggedMetric parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.TaggedMetric parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -485,12 +481,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metric_ = "";
-
       timestamp_ = 0L;
-
       value_ = 0D;
-
       internalGetMutableTags().clear();
       return this;
     }
@@ -518,14 +512,26 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.TaggedMetric buildPartial() {
       org.zenoss.cloud.dataReceiver.TaggedMetric result = new org.zenoss.cloud.dataReceiver.TaggedMetric(this);
-      int from_bitField0_ = bitField0_;
-      result.metric_ = metric_;
-      result.timestamp_ = timestamp_;
-      result.value_ = value_;
-      result.tags_ = internalGetTags();
-      result.tags_.makeImmutable();
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.TaggedMetric result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timestamp_ = timestamp_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -574,6 +580,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataReceiver.TaggedMetric.getDefaultInstance()) return this;
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTimestamp() != 0L) {
@@ -584,6 +591,7 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableTags().mergeFrom(
           other.internalGetTags());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -612,17 +620,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               metric_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 16: {
               timestamp_ = input.readInt64();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 16
             case 25: {
               value_ = input.readDouble();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 25
             case 34: {
@@ -631,6 +639,7 @@ private static final long serialVersionUID = 0L;
                   TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableTags().getMutableMap().put(
                   tags__.getKey(), tags__.getValue());
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             default: {
@@ -703,11 +712,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMetric(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,8 +727,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-      
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,12 +743,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMetricBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +774,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTimestamp(long value) {
-      
+
       timestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -783,7 +789,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       timestamp_ = 0L;
       onChanged();
       return this;
@@ -812,8 +818,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setValue(double value) {
-      
+
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -826,7 +833,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       value_ = 0D;
       onChanged();
       return this;
@@ -835,7 +842,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> tags_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetTags() {
+        internalGetTags() {
       if (tags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             TagsDefaultEntryHolder.defaultEntry);
@@ -843,8 +850,7 @@ private static final long serialVersionUID = 0L;
       return tags_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableTags() {
-      onChanged();;
+        internalGetMutableTags() {
       if (tags_ == null) {
         tags_ = com.google.protobuf.MapField.newMapField(
             TagsDefaultEntryHolder.defaultEntry);
@@ -852,9 +858,10 @@ private static final long serialVersionUID = 0L;
       if (!tags_.isMutable()) {
         tags_ = tags_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return tags_;
     }
-
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
@@ -865,7 +872,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
-
     @java.lang.Override
     public boolean containsTags(
         java.lang.String key) {
@@ -888,7 +894,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
@@ -900,10 +905,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getTagsOrDefault(
+    public /* nullable */
+java.lang.String getTagsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetTags().getMap();
@@ -917,7 +923,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getTagsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -928,8 +933,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableTags().getMutableMap()
           .clear();
       return this;
@@ -941,7 +946,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
-
     public Builder removeTags(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -954,7 +958,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableTags() {
+        getMutableTags() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableTags().getMutableMap();
     }
     /**
@@ -968,12 +973,10 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableTags().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -983,11 +986,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
      */
-
     public Builder putAllTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
     @java.lang.Override

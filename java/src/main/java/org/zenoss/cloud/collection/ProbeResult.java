@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new ProbeResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_ProbeResult_descriptor;
@@ -44,6 +39,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private int resultCase_ = 0;
+  @SuppressWarnings("serial")
   private java.lang.Object result_;
   public enum ResultCase
       implements com.google.protobuf.Internal.EnumLite,
@@ -283,11 +279,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.collection.ProbeResult parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.collection.ProbeResult parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -362,6 +360,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (successBuilder_ != null) {
         successBuilder_.clear();
       }
@@ -396,23 +395,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeResult buildPartial() {
       org.zenoss.cloud.collection.ProbeResult result = new org.zenoss.cloud.collection.ProbeResult(this);
-      if (resultCase_ == 1) {
-        if (successBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = successBuilder_.build();
-        }
-      }
-      if (resultCase_ == 2) {
-        if (errorBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = errorBuilder_.build();
-        }
-      }
-      result.resultCase_ = resultCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.ProbeResult result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.zenoss.cloud.collection.ProbeResult result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 1 &&
+          successBuilder_ != null) {
+        result.result_ = successBuilder_.build();
+      }
+      if (resultCase_ == 2 &&
+          errorBuilder_ != null) {
+        result.result_ = errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -542,6 +545,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.collection.ProbeSuccess, org.zenoss.cloud.collection.ProbeSuccess.Builder, org.zenoss.cloud.collection.ProbeSuccessOrBuilder> successBuilder_;
@@ -681,7 +685,7 @@ private static final long serialVersionUID = 0L;
         result_ = null;
       }
       resultCase_ = 1;
-      onChanged();;
+      onChanged();
       return successBuilder_;
     }
 
@@ -823,7 +827,7 @@ private static final long serialVersionUID = 0L;
         result_ = null;
       }
       resultCase_ = 2;
-      onChanged();;
+      onChanged();
       return errorBuilder_;
     }
     @java.lang.Override

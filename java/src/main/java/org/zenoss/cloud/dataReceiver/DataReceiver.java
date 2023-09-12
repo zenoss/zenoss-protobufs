@@ -242,17 +242,17 @@ public final class DataReceiver {
       "\013STATUS_OPEN\020\001\022\025\n\021STATUS_SUPPRESSED\020\002\022\021\n" +
       "\rSTATUS_CLOSED\020\0032\320\003\n\023DataReceiverService" +
       "\022g\n\tPutEvents\022\024.zenoss.cloud.Events\032\037.ze" +
-      "noss.cloud.EventStatusResult\"#\202\323\344\223\002\035:\001*\"" +
-      "\030/v1/data-receiver/events\022>\n\010PutEvent\022\032." +
+      "noss.cloud.EventStatusResult\"#\202\323\344\223\002\035\"\030/v" +
+      "1/data-receiver/events:\001*\022>\n\010PutEvent\022\032." +
       "zenoss.cloud.EventWrapper\032\022.zenoss.cloud" +
       ".Void\"\000(\001\022e\n\nPutMetrics\022\025.zenoss.cloud.M" +
       "etrics\032\032.zenoss.cloud.StatusResult\"$\202\323\344\223" +
-      "\002\036:\001*\"\031/v1/data-receiver/metrics\022@\n\tPutM" +
+      "\002\036\"\031/v1/data-receiver/metrics:\001*\022@\n\tPutM" +
       "etric\022\033.zenoss.cloud.MetricWrapper\032\022.zen" +
       "oss.cloud.Void\"\000(\001\022g\n\tPutModels\022\024.zenoss" +
       ".cloud.Models\032\037.zenoss.cloud.ModelStatus" +
-      "Result\"#\202\323\344\223\002\035:\001*\"\030/v1/data-receiver/mod" +
-      "elsB\\\n\035org.zenoss.cloud.dataReceiverP\001Z9" +
+      "Result\"#\202\323\344\223\002\035\"\030/v1/data-receiver/models" +
+      ":\001*B\\\n\035org.zenoss.cloud.dataReceiverP\001Z9" +
       "github.com/zenoss/zenoss-protobufs/go/cl" +
       "oud/data_receiverb\006proto3"
     };

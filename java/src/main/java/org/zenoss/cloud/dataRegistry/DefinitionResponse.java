@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new DefinitionResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_DefinitionResponse_descriptor;
@@ -45,7 +40,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEFINITIONID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object definitionId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object definitionId_ = "";
   /**
    * <code>string definitionId = 1 [json_name = "definitionId"];</code>
    * @return The definitionId.
@@ -190,11 +186,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.DefinitionResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.DefinitionResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -269,8 +267,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       definitionId_ = "";
-
       return this;
     }
 
@@ -297,9 +295,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.DefinitionResponse buildPartial() {
       org.zenoss.cloud.dataRegistry.DefinitionResponse result = new org.zenoss.cloud.dataRegistry.DefinitionResponse(this);
-      result.definitionId_ = definitionId_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.DefinitionResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.definitionId_ = definitionId_;
+      }
     }
 
     @java.lang.Override
@@ -348,6 +353,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataRegistry.DefinitionResponse.getDefaultInstance()) return this;
       if (!other.getDefinitionId().isEmpty()) {
         definitionId_ = other.definitionId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -378,7 +384,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               definitionId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             default: {
@@ -396,6 +402,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object definitionId_ = "";
     /**
@@ -438,11 +445,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       definitionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -451,8 +456,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDefinitionId() {
-      
       definitionId_ = getDefaultInstance().getDefinitionId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -463,12 +468,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       definitionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

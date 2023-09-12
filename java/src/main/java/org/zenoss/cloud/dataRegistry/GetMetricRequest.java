@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new GetMetricRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_GetMetricRequest_descriptor;
@@ -45,7 +40,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTANCEID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
@@ -190,11 +186,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.GetMetricRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.GetMetricRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -269,8 +267,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceId_ = "";
-
       return this;
     }
 
@@ -297,9 +295,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.GetMetricRequest buildPartial() {
       org.zenoss.cloud.dataRegistry.GetMetricRequest result = new org.zenoss.cloud.dataRegistry.GetMetricRequest(this);
-      result.instanceId_ = instanceId_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.GetMetricRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
     }
 
     @java.lang.Override
@@ -348,6 +353,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataRegistry.GetMetricRequest.getDefaultInstance()) return this;
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -378,7 +384,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               instanceId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             default: {
@@ -396,6 +402,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
     /**
@@ -438,11 +445,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -451,8 +456,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-      
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -463,12 +468,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

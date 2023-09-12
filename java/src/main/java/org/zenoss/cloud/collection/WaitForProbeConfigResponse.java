@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new WaitForProbeConfigResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_WaitForProbeConfigResponse_descriptor;
@@ -44,8 +39,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.collection.WaitForProbeConfigResponse.class, org.zenoss.cloud.collection.WaitForProbeConfigResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CONFIG_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object configId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configId_ = "";
   /**
    * <code>string config_id = 1 [json_name = "configId"];</code>
    * @return The configId.
@@ -90,7 +87,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasResult() {
-    return result_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
@@ -105,7 +102,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.collection.ProbeResultOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null ? org.zenoss.cloud.collection.ProbeResult.getDefaultInstance() : result_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -125,7 +122,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, configId_);
     }
-    if (result_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getResult());
     }
     getUnknownFields().writeTo(output);
@@ -140,7 +137,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(configId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, configId_);
     }
-    if (result_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getResult());
     }
@@ -232,11 +229,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.collection.WaitForProbeConfigResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.collection.WaitForProbeConfigResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -300,23 +299,28 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.collection.WaitForProbeConfigResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getResultFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       configId_ = "";
-
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       return this;
@@ -345,14 +349,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.WaitForProbeConfigResponse buildPartial() {
       org.zenoss.cloud.collection.WaitForProbeConfigResponse result = new org.zenoss.cloud.collection.WaitForProbeConfigResponse(this);
-      result.configId_ = configId_;
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.WaitForProbeConfigResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.configId_ = configId_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.result_ = resultBuilder_ == null
+            ? result_
+            : resultBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -401,6 +415,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.collection.WaitForProbeConfigResponse.getDefaultInstance()) return this;
       if (!other.getConfigId().isEmpty()) {
         configId_ = other.configId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResult()) {
@@ -434,14 +449,14 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               configId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getResultFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -459,6 +474,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object configId_ = "";
     /**
@@ -501,11 +517,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setConfigId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       configId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -514,8 +528,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearConfigId() {
-      
       configId_ = getDefaultInstance().getConfigId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -526,12 +540,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setConfigIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       configId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -544,7 +556,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
@@ -566,11 +578,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -580,11 +592,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.collection.ProbeResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -592,38 +604,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeResult(org.zenoss.cloud.collection.ProbeResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-            org.zenoss.cloud.collection.ProbeResult.newBuilder(result_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          result_ != null &&
+          result_ != org.zenoss.cloud.collection.ProbeResult.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      if (result_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.collection_cfg.ProbeResult result = 2 [json_name = "result"];</code>
      */
     public org.zenoss.cloud.collection.ProbeResult.Builder getResultBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
