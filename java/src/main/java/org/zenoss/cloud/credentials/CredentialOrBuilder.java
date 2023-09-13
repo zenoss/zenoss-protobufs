@@ -57,7 +57,6 @@ public interface CredentialOrBuilder extends
   /**
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
-
   /* nullable */
 java.lang.String getSecretsOrDefault(
       java.lang.String key,
@@ -66,7 +65,6 @@ java.lang.String defaultValue);
   /**
    * <code>map&lt;string, string&gt; secrets = 3 [json_name = "secrets"];</code>
    */
-
   java.lang.String getSecretsOrThrow(
       java.lang.String key);
 }

@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new EventWrapper();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_EventWrapper_descriptor;
@@ -44,6 +39,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private int eventTypeCase_ = 0;
+  @SuppressWarnings("serial")
   private java.lang.Object eventType_;
   public enum EventTypeCase
       implements com.google.protobuf.Internal.EnumLite,
@@ -247,11 +243,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.EventWrapper parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.EventWrapper parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -326,6 +324,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (canonicalBuilder_ != null) {
         canonicalBuilder_.clear();
       }
@@ -357,16 +356,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.EventWrapper buildPartial() {
       org.zenoss.cloud.dataReceiver.EventWrapper result = new org.zenoss.cloud.dataReceiver.EventWrapper(this);
-      if (eventTypeCase_ == 1) {
-        if (canonicalBuilder_ == null) {
-          result.eventType_ = eventType_;
-        } else {
-          result.eventType_ = canonicalBuilder_.build();
-        }
-      }
-      result.eventTypeCase_ = eventTypeCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.EventWrapper result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.zenoss.cloud.dataReceiver.EventWrapper result) {
+      result.eventTypeCase_ = eventTypeCase_;
+      result.eventType_ = this.eventType_;
+      if (eventTypeCase_ == 1 &&
+          canonicalBuilder_ != null) {
+        result.eventType_ = canonicalBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +491,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.zenoss.cloud.dataReceiver.Event, org.zenoss.cloud.dataReceiver.Event.Builder, org.zenoss.cloud.dataReceiver.EventOrBuilder> canonicalBuilder_;
@@ -660,7 +667,7 @@ private static final long serialVersionUID = 0L;
         eventType_ = null;
       }
       eventTypeCase_ = 1;
-      onChanged();;
+      onChanged();
       return canonicalBuilder_;
     }
     @java.lang.Override

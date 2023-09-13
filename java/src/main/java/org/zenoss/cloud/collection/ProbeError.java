@@ -28,11 +28,6 @@ private static final long serialVersionUID = 0L;
     return new ProbeError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_ProbeError_descriptor;
@@ -47,7 +42,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    * <pre>
    * message is a short human-friendly text. Can be empty.
@@ -93,7 +89,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object description_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    * <pre>
    * description is a parsed API error. Usually long and technical.
@@ -139,6 +136,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FIELD_ERRORS_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.collection.FieldError> fieldErrors_;
   /**
    * <code>repeated .zenoss.cloud.collection_cfg.FieldError field_errors = 2 [json_name = "fieldErrors"];</code>
@@ -309,11 +307,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.collection.ProbeError parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.collection.ProbeError parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -388,17 +388,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       description_ = "";
-
       if (fieldErrorsBuilder_ == null) {
         fieldErrors_ = java.util.Collections.emptyList();
       } else {
         fieldErrors_ = null;
         fieldErrorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -425,20 +424,32 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeError buildPartial() {
       org.zenoss.cloud.collection.ProbeError result = new org.zenoss.cloud.collection.ProbeError(this);
-      int from_bitField0_ = bitField0_;
-      result.message_ = message_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.zenoss.cloud.collection.ProbeError result) {
       if (fieldErrorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           fieldErrors_ = java.util.Collections.unmodifiableList(fieldErrors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.fieldErrors_ = fieldErrors_;
       } else {
         result.fieldErrors_ = fieldErrorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.ProbeError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -487,17 +498,19 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.collection.ProbeError.getDefaultInstance()) return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (fieldErrorsBuilder_ == null) {
         if (!other.fieldErrors_.isEmpty()) {
           if (fieldErrors_.isEmpty()) {
             fieldErrors_ = other.fieldErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFieldErrorsIsMutable();
             fieldErrors_.addAll(other.fieldErrors_);
@@ -510,7 +523,7 @@ private static final long serialVersionUID = 0L;
             fieldErrorsBuilder_.dispose();
             fieldErrorsBuilder_ = null;
             fieldErrors_ = other.fieldErrors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             fieldErrorsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFieldErrorsFieldBuilder() : null;
@@ -547,7 +560,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               description_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 10
             case 18: {
@@ -565,7 +578,7 @@ private static final long serialVersionUID = 0L;
             } // case 18
             case 26: {
               message_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 26
             default: {
@@ -638,11 +651,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -655,8 +666,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -671,12 +682,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,11 +743,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescription(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -751,8 +758,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -767,12 +774,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -780,9 +785,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.collection.FieldError> fieldErrors_ =
       java.util.Collections.emptyList();
     private void ensureFieldErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         fieldErrors_ = new java.util.ArrayList<org.zenoss.cloud.collection.FieldError>(fieldErrors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -932,7 +937,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFieldErrors() {
       if (fieldErrorsBuilder_ == null) {
         fieldErrors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         fieldErrorsBuilder_.clear();
@@ -1009,7 +1014,7 @@ private static final long serialVersionUID = 0L;
         fieldErrorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.collection.FieldError, org.zenoss.cloud.collection.FieldError.Builder, org.zenoss.cloud.collection.FieldErrorOrBuilder>(
                 fieldErrors_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         fieldErrors_ = null;

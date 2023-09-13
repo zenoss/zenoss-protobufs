@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new Configuration();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_Configuration_descriptor;
@@ -46,7 +41,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    * <code>string type = 1 [json_name = "type"];</code>
    * @return The type.
@@ -84,7 +80,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATA_FIELD_NUMBER = 2;
-  private volatile java.lang.Object data_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object data_ = "";
   /**
    * <code>string data = 2 [json_name = "data"];</code>
    * @return The data.
@@ -239,11 +236,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.collection.Configuration parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.collection.Configuration parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -318,10 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       data_ = "";
-
       return this;
     }
 
@@ -348,10 +346,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.Configuration buildPartial() {
       org.zenoss.cloud.collection.Configuration result = new org.zenoss.cloud.collection.Configuration(this);
-      result.type_ = type_;
-      result.data_ = data_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.Configuration result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.data_ = data_;
+      }
     }
 
     @java.lang.Override
@@ -400,10 +407,12 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.collection.Configuration.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getData().isEmpty()) {
         data_ = other.data_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,12 +443,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               type_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               data_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -457,6 +466,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -499,11 +509,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setType(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -512,8 +520,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -524,12 +532,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTypeBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -575,11 +581,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setData(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -588,8 +592,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearData() {
-      
       data_ = getDefaultInstance().getData();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -600,12 +604,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDataBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       data_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

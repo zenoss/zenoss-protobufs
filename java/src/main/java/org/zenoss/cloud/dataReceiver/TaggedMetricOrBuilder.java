@@ -86,7 +86,6 @@ public interface TaggedMetricOrBuilder extends
    *
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
-
   /* nullable */
 java.lang.String getTagsOrDefault(
       java.lang.String key,
@@ -99,7 +98,6 @@ java.lang.String defaultValue);
    *
    * <code>map&lt;string, string&gt; tags = 4 [json_name = "tags"];</code>
    */
-
   java.lang.String getTagsOrThrow(
       java.lang.String key);
 }

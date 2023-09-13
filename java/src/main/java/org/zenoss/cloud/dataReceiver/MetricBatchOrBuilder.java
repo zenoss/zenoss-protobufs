@@ -46,7 +46,6 @@ public interface MetricBatchOrBuilder extends
    *
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
-
   /* nullable */
 java.lang.String getGlobalTagsOrDefault(
       java.lang.String key,
@@ -59,7 +58,6 @@ java.lang.String defaultValue);
    *
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
-
   java.lang.String getGlobalTagsOrThrow(
       java.lang.String key);
 

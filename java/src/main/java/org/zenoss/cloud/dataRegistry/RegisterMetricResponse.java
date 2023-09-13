@@ -28,11 +28,6 @@ private static final long serialVersionUID = 0L;
     return new RegisterMetricResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_RegisterMetricResponse_descriptor;
@@ -47,7 +42,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTANCEID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    * <code>string instanceId = 1 [json_name = "instanceId"];</code>
    * @return The instanceId.
@@ -85,7 +81,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DEFINITIONID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object definitionId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object definitionId_ = "";
   /**
    * <code>string definitionId = 2 [json_name = "definitionId"];</code>
    * @return The definitionId.
@@ -123,7 +120,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    * <code>string name = 3 [json_name = "name"];</code>
    * @return The name.
@@ -288,11 +286,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -367,12 +367,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceId_ = "";
-
       definitionId_ = "";
-
       name_ = "";
-
       return this;
     }
 
@@ -399,11 +397,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse buildPartial() {
       org.zenoss.cloud.dataRegistry.RegisterMetricResponse result = new org.zenoss.cloud.dataRegistry.RegisterMetricResponse(this);
-      result.instanceId_ = instanceId_;
-      result.definitionId_ = definitionId_;
-      result.name_ = name_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.RegisterMetricResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.definitionId_ = definitionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -452,14 +461,17 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance()) return this;
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDefinitionId().isEmpty()) {
         definitionId_ = other.definitionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -490,17 +502,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               instanceId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               definitionId_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
               name_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -518,6 +530,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
     /**
@@ -560,11 +573,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -573,8 +584,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-      
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -585,12 +596,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -636,11 +645,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       definitionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -649,8 +656,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDefinitionId() {
-      
       definitionId_ = getDefaultInstance().getDefinitionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -661,12 +668,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDefinitionIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       definitionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -712,11 +717,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -725,8 +728,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -737,12 +740,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

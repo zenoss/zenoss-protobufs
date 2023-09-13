@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new GetCredentialResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.credentials.Credentials.internal_static_zenoss_cloud_credentials_GetCredentialResponse_descriptor;
@@ -43,6 +38,7 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.credentials.GetCredentialResponse.class, org.zenoss.cloud.credentials.GetCredentialResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CREDENTIAL_FIELD_NUMBER = 1;
   private org.zenoss.cloud.credentials.Credential credential_;
   /**
@@ -51,7 +47,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasCredential() {
-    return credential_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.credentials.Credential credential = 1 [json_name = "credential"];</code>
@@ -66,7 +62,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.credentials.CredentialOrBuilder getCredentialOrBuilder() {
-    return getCredential();
+    return credential_ == null ? org.zenoss.cloud.credentials.Credential.getDefaultInstance() : credential_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -83,7 +79,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (credential_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getCredential());
     }
     getUnknownFields().writeTo(output);
@@ -95,7 +91,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (credential_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getCredential());
     }
@@ -183,11 +179,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.credentials.GetCredentialResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.credentials.GetCredentialResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -251,21 +249,27 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.credentials.GetCredentialResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getCredentialFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (credentialBuilder_ == null) {
-        credential_ = null;
-      } else {
-        credential_ = null;
+      bitField0_ = 0;
+      credential_ = null;
+      if (credentialBuilder_ != null) {
+        credentialBuilder_.dispose();
         credentialBuilder_ = null;
       }
       return this;
@@ -294,13 +298,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.credentials.GetCredentialResponse buildPartial() {
       org.zenoss.cloud.credentials.GetCredentialResponse result = new org.zenoss.cloud.credentials.GetCredentialResponse(this);
-      if (credentialBuilder_ == null) {
-        result.credential_ = credential_;
-      } else {
-        result.credential_ = credentialBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.credentials.GetCredentialResponse result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.credential_ = credentialBuilder_ == null
+            ? credential_
+            : credentialBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -380,7 +392,7 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getCredentialFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             default: {
@@ -398,6 +410,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private org.zenoss.cloud.credentials.Credential credential_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -407,7 +420,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the credential field is set.
      */
     public boolean hasCredential() {
-      return credentialBuilder_ != null || credential_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.zenoss.cloud.credentials.Credential credential = 1 [json_name = "credential"];</code>
@@ -429,11 +442,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         credential_ = value;
-        onChanged();
       } else {
         credentialBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -443,11 +456,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.credentials.Credential.Builder builderForValue) {
       if (credentialBuilder_ == null) {
         credential_ = builderForValue.build();
-        onChanged();
       } else {
         credentialBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -455,38 +468,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeCredential(org.zenoss.cloud.credentials.Credential value) {
       if (credentialBuilder_ == null) {
-        if (credential_ != null) {
-          credential_ =
-            org.zenoss.cloud.credentials.Credential.newBuilder(credential_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          credential_ != null &&
+          credential_ != org.zenoss.cloud.credentials.Credential.getDefaultInstance()) {
+          getCredentialBuilder().mergeFrom(value);
         } else {
           credential_ = value;
         }
-        onChanged();
       } else {
         credentialBuilder_.mergeFrom(value);
       }
-
+      if (credential_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.credentials.Credential credential = 1 [json_name = "credential"];</code>
      */
     public Builder clearCredential() {
-      if (credentialBuilder_ == null) {
-        credential_ = null;
-        onChanged();
-      } else {
-        credential_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      credential_ = null;
+      if (credentialBuilder_ != null) {
+        credentialBuilder_.dispose();
         credentialBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.credentials.Credential credential = 1 [json_name = "credential"];</code>
      */
     public org.zenoss.cloud.credentials.Credential.Builder getCredentialBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCredentialFieldBuilder().getBuilder();
     }

@@ -88,5 +88,5 @@ public interface MetricWrapperOrBuilder extends
    */
   org.zenoss.cloud.dataReceiver.MetricOrBuilder getCanonicalOrBuilder();
 
-  public org.zenoss.cloud.dataReceiver.MetricWrapper.MetricTypeCase getMetricTypeCase();
+  org.zenoss.cloud.dataReceiver.MetricWrapper.MetricTypeCase getMetricTypeCase();
 }

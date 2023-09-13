@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new MetricError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricError_descriptor;
@@ -44,8 +39,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.MetricError.class, org.zenoss.cloud.dataReceiver.MetricError.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object error_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    * <code>string error = 1 [json_name = "error"];</code>
    * @return The error.
@@ -90,7 +87,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMetric() {
-    return metric_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.Metric metric = 2 [json_name = "metric"];</code>
@@ -105,7 +102,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.MetricOrBuilder getMetricOrBuilder() {
-    return getMetric();
+    return metric_ == null ? org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance() : metric_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -125,7 +122,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, error_);
     }
-    if (metric_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getMetric());
     }
     getUnknownFields().writeTo(output);
@@ -140,7 +137,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, error_);
     }
-    if (metric_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getMetric());
     }
@@ -232,11 +229,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricError parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricError parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -300,23 +299,28 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataReceiver.MetricError.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMetricFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       error_ = "";
-
-      if (metricBuilder_ == null) {
-        metric_ = null;
-      } else {
-        metric_ = null;
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
       return this;
@@ -345,14 +349,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricError buildPartial() {
       org.zenoss.cloud.dataReceiver.MetricError result = new org.zenoss.cloud.dataReceiver.MetricError(this);
-      result.error_ = error_;
-      if (metricBuilder_ == null) {
-        result.metric_ = metric_;
-      } else {
-        result.metric_ = metricBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.MetricError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.error_ = error_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metric_ = metricBuilder_ == null
+            ? metric_
+            : metricBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -401,6 +415,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataReceiver.MetricError.getDefaultInstance()) return this;
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetric()) {
@@ -434,14 +449,14 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               error_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getMetricFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -459,6 +474,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object error_ = "";
     /**
@@ -501,11 +517,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setError(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -514,8 +528,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearError() {
-      
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -526,12 +540,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setErrorBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -544,7 +556,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
-      return metricBuilder_ != null || metric_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.zenoss.cloud.Metric metric = 2 [json_name = "metric"];</code>
@@ -566,11 +578,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         metric_ = value;
-        onChanged();
       } else {
         metricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -580,11 +592,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataReceiver.Metric.Builder builderForValue) {
       if (metricBuilder_ == null) {
         metric_ = builderForValue.build();
-        onChanged();
       } else {
         metricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -592,38 +604,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMetric(org.zenoss.cloud.dataReceiver.Metric value) {
       if (metricBuilder_ == null) {
-        if (metric_ != null) {
-          metric_ =
-            org.zenoss.cloud.dataReceiver.Metric.newBuilder(metric_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          metric_ != null &&
+          metric_ != org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance()) {
+          getMetricBuilder().mergeFrom(value);
         } else {
           metric_ = value;
         }
-        onChanged();
       } else {
         metricBuilder_.mergeFrom(value);
       }
-
+      if (metric_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.Metric metric = 2 [json_name = "metric"];</code>
      */
     public Builder clearMetric() {
-      if (metricBuilder_ == null) {
-        metric_ = null;
-        onChanged();
-      } else {
-        metric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.Metric metric = 2 [json_name = "metric"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Metric.Builder getMetricBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetricFieldBuilder().getBuilder();
     }

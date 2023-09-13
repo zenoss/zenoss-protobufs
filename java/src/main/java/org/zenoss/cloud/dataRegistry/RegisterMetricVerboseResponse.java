@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new RegisterMetricVerboseResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataRegistry.DataRegistry.internal_static_zenoss_cloud_RegisterMetricVerboseResponse_descriptor;
@@ -44,6 +39,7 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.class, org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RESPONSE_FIELD_NUMBER = 1;
   private org.zenoss.cloud.dataRegistry.RegisterMetricResponse response_;
   /**
@@ -52,7 +48,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasResponse() {
-    return response_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
@@ -67,11 +63,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.dataRegistry.RegisterMetricResponseOrBuilder getResponseOrBuilder() {
-    return getResponse();
+    return response_ == null ? org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance() : response_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object error_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    * <code>string error = 2 [json_name = "error"];</code>
    * @return The error.
@@ -122,7 +119,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (response_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getResponse());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
@@ -137,7 +134,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (response_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getResponse());
     }
@@ -232,11 +229,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -300,25 +299,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getResponseFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (responseBuilder_ == null) {
-        response_ = null;
-      } else {
-        response_ = null;
+      bitField0_ = 0;
+      response_ = null;
+      if (responseBuilder_ != null) {
+        responseBuilder_.dispose();
         responseBuilder_ = null;
       }
       error_ = "";
-
       return this;
     }
 
@@ -345,14 +349,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse buildPartial() {
       org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse result = new org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse(this);
-      if (responseBuilder_ == null) {
-        result.response_ = response_;
-      } else {
-        result.response_ = responseBuilder_.build();
-      }
-      result.error_ = error_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataRegistry.RegisterMetricVerboseResponse result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.response_ = responseBuilder_ == null
+            ? response_
+            : responseBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = error_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -404,6 +418,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -436,12 +451,12 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getResponseFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               error_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -459,6 +474,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private org.zenoss.cloud.dataRegistry.RegisterMetricResponse response_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -468,7 +484,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the response field is set.
      */
     public boolean hasResponse() {
-      return responseBuilder_ != null || response_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
@@ -490,11 +506,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         response_ = value;
-        onChanged();
       } else {
         responseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -504,11 +520,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder builderForValue) {
       if (responseBuilder_ == null) {
         response_ = builderForValue.build();
-        onChanged();
       } else {
         responseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -516,38 +532,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeResponse(org.zenoss.cloud.dataRegistry.RegisterMetricResponse value) {
       if (responseBuilder_ == null) {
-        if (response_ != null) {
-          response_ =
-            org.zenoss.cloud.dataRegistry.RegisterMetricResponse.newBuilder(response_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          response_ != null &&
+          response_ != org.zenoss.cloud.dataRegistry.RegisterMetricResponse.getDefaultInstance()) {
+          getResponseBuilder().mergeFrom(value);
         } else {
           response_ = value;
         }
-        onChanged();
       } else {
         responseBuilder_.mergeFrom(value);
       }
-
+      if (response_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public Builder clearResponse() {
-      if (responseBuilder_ == null) {
-        response_ = null;
-        onChanged();
-      } else {
-        response_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      response_ = null;
+      if (responseBuilder_ != null) {
+        responseBuilder_.dispose();
         responseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.RegisterMetricResponse response = 1 [json_name = "response"];</code>
      */
     public org.zenoss.cloud.dataRegistry.RegisterMetricResponse.Builder getResponseBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResponseFieldBuilder().getBuilder();
     }
@@ -620,11 +638,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setError(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -633,8 +649,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearError() {
-      
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -645,12 +661,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setErrorBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

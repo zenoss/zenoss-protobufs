@@ -999,7 +999,7 @@ type StatusResult struct {
 	Succeeded int32 `protobuf:"varint,2,opt,name=succeeded,proto3" json:"succeeded,omitempty"`
 	// message is an informational message that may or may not be set
 	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
-	//Failed metrics only returned if detailedResponse is set to true
+	// Failed metrics only returned if detailedResponse is set to true
 	FailedCompactMetrics []*CompactMetricError `protobuf:"bytes,4,rep,name=failedCompactMetrics,proto3" json:"failedCompactMetrics,omitempty"`
 	FailedTaggedMetrics  []*TaggedMetricError  `protobuf:"bytes,5,rep,name=failedTaggedMetrics,proto3" json:"failedTaggedMetrics,omitempty"`
 	FailedMetrics        []*MetricError        `protobuf:"bytes,6,rep,name=failedMetrics,proto3" json:"failedMetrics,omitempty"`
@@ -1085,6 +1085,7 @@ type EventWrapper struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to EventType:
+	//
 	//	*EventWrapper_Canonical
 	EventType isEventWrapper_EventType `protobuf_oneof:"event_type"`
 }
@@ -1152,6 +1153,7 @@ type MetricWrapper struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to MetricType:
+	//
 	//	*MetricWrapper_Tagged
 	//	*MetricWrapper_Compact
 	//	*MetricWrapper_Canonical

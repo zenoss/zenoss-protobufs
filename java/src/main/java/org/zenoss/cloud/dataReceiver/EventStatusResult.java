@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new EventStatusResult();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_EventStatusResult_descriptor;
@@ -46,7 +41,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FAILED_FIELD_NUMBER = 1;
-  private int failed_;
+  private int failed_ = 0;
   /**
    * <pre>
    * failed is the count of events that failed to be accepted
@@ -61,7 +56,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SUCCEEDED_FIELD_NUMBER = 2;
-  private int succeeded_;
+  private int succeeded_ = 0;
   /**
    * <pre>
    * succeeded is the count of events that were accepted
@@ -76,7 +71,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object message_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    * <pre>
    * message is an informational message that may or may not be set
@@ -122,6 +118,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FAILEDEVENTS_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataReceiver.EventError> failedEvents_;
   /**
    * <pre>
@@ -324,11 +321,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.EventStatusResult parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.EventStatusResult parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -403,19 +402,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       failed_ = 0;
-
       succeeded_ = 0;
-
       message_ = "";
-
       if (failedEventsBuilder_ == null) {
         failedEvents_ = java.util.Collections.emptyList();
       } else {
         failedEvents_ = null;
         failedEventsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -442,21 +439,35 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.EventStatusResult buildPartial() {
       org.zenoss.cloud.dataReceiver.EventStatusResult result = new org.zenoss.cloud.dataReceiver.EventStatusResult(this);
-      int from_bitField0_ = bitField0_;
-      result.failed_ = failed_;
-      result.succeeded_ = succeeded_;
-      result.message_ = message_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.zenoss.cloud.dataReceiver.EventStatusResult result) {
       if (failedEventsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           failedEvents_ = java.util.Collections.unmodifiableList(failedEvents_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.failedEvents_ = failedEvents_;
       } else {
         result.failedEvents_ = failedEventsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.EventStatusResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.failed_ = failed_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.succeeded_ = succeeded_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -511,13 +522,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (failedEventsBuilder_ == null) {
         if (!other.failedEvents_.isEmpty()) {
           if (failedEvents_.isEmpty()) {
             failedEvents_ = other.failedEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFailedEventsIsMutable();
             failedEvents_.addAll(other.failedEvents_);
@@ -530,7 +542,7 @@ private static final long serialVersionUID = 0L;
             failedEventsBuilder_.dispose();
             failedEventsBuilder_ = null;
             failedEvents_ = other.failedEvents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             failedEventsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getFailedEventsFieldBuilder() : null;
@@ -567,17 +579,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 8: {
               failed_ = input.readInt32();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 16: {
               succeeded_ = input.readInt32();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 16
             case 26: {
               message_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
@@ -633,8 +645,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setFailed(int value) {
-      
+
       failed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,7 +660,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearFailed() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       failed_ = 0;
       onChanged();
       return this;
@@ -676,8 +689,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setSucceeded(int value) {
-      
+
       succeeded_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -690,7 +704,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearSucceeded() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       succeeded_ = 0;
       onChanged();
       return this;
@@ -749,11 +763,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -766,8 +778,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -782,12 +794,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       message_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -795,9 +805,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<org.zenoss.cloud.dataReceiver.EventError> failedEvents_ =
       java.util.Collections.emptyList();
     private void ensureFailedEventsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         failedEvents_ = new java.util.ArrayList<org.zenoss.cloud.dataReceiver.EventError>(failedEvents_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
        }
     }
 
@@ -991,7 +1001,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearFailedEvents() {
       if (failedEventsBuilder_ == null) {
         failedEvents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         failedEventsBuilder_.clear();
@@ -1096,7 +1106,7 @@ private static final long serialVersionUID = 0L;
         failedEventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             org.zenoss.cloud.dataReceiver.EventError, org.zenoss.cloud.dataReceiver.EventError.Builder, org.zenoss.cloud.dataReceiver.EventErrorOrBuilder>(
                 failedEvents_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         failedEvents_ = null;

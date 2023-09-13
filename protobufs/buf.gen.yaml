@@ -4,31 +4,31 @@
 version: v1
 plugins:
   # Go
-  - remote: buf.build/grpc/plugins/go:v1.2.0-1
+  - plugin: buf.build/grpc/go:v1.2.0
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
 
-  - remote: buf.build/protocolbuffers/plugins/go:v1.28.1-1
+  - plugin: buf.build/protocolbuffers/go:v1.28.1
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
   
-  - remote: buf.build/grpc-ecosystem/plugins/grpc-gateway:v2.13.0-1 # HTTP Gateway generation
+  - plugin: buf.build/grpc-ecosystem/gateway:v2.17.1 # HTTP Gateway generation
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
 
   # Java
-  - remote: buf.build/protocolbuffers/plugins/java:v21.9.0-1
+  - plugin: buf.build/protocolbuffers/java:v24.2
     out: ./java/src/main/java
 
-  - remote: buf.build/grpc/plugins/java:v1.50.2-1
+  - plugin: buf.build/grpc/java:v1.50.2
     out: ./java/src/main/java
 
   # Python
-  - remote: buf.build/grpc/plugins/python:v1.50.1-1
+  - plugin: buf.build/grpc/python:v1.50.1
     out: ./python
 
-  - remote: buf.build/protocolbuffers/plugins/python:v21.9.0-1
+  - plugin: buf.build/protocolbuffers/python:v24.2
     out: ./python

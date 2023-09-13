@@ -30,11 +30,6 @@ private static final long serialVersionUID = 0L;
     return new MetricBatch();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_MetricBatch_descriptor;
@@ -72,6 +67,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> globalTags_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -82,7 +78,6 @@ private static final long serialVersionUID = 0L;
     }
     return globalTags_;
   }
-
   public int getGlobalTagsCount() {
     return internalGetGlobalTags().getMap().size();
   }
@@ -93,7 +88,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
-
   @java.lang.Override
   public boolean containsGlobalTags(
       java.lang.String key) {
@@ -116,7 +110,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getGlobalTagsMap() {
     return internalGetGlobalTags().getMap();
   }
@@ -128,10 +121,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getGlobalTagsOrDefault(
+  public /* nullable */
+java.lang.String getGlobalTagsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetGlobalTags().getMap();
@@ -145,7 +139,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getGlobalTagsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -158,6 +151,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METRICS_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
   private java.util.List<org.zenoss.cloud.dataReceiver.MetricWrapper> metrics_;
   /**
    * <pre>
@@ -350,11 +344,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricBatch parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.MetricBatch parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -455,6 +451,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableGlobalTags().clear();
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
@@ -489,9 +486,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.MetricBatch buildPartial() {
       org.zenoss.cloud.dataReceiver.MetricBatch result = new org.zenoss.cloud.dataReceiver.MetricBatch(this);
-      int from_bitField0_ = bitField0_;
-      result.globalTags_ = internalGetGlobalTags();
-      result.globalTags_.makeImmutable();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(org.zenoss.cloud.dataReceiver.MetricBatch result) {
       if (metricsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
@@ -501,8 +502,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.MetricBatch result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.globalTags_ = internalGetGlobalTags();
+        result.globalTags_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -551,6 +558,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataReceiver.MetricBatch.getDefaultInstance()) return this;
       internalGetMutableGlobalTags().mergeFrom(
           other.internalGetGlobalTags());
+      bitField0_ |= 0x00000001;
       if (metricsBuilder_ == null) {
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
@@ -609,6 +617,7 @@ private static final long serialVersionUID = 0L;
                   GlobalTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableGlobalTags().getMutableMap().put(
                   globalTags__.getKey(), globalTags__.getValue());
+              bitField0_ |= 0x00000001;
               break;
             } // case 18
             case 26: {
@@ -644,7 +653,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> globalTags_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetGlobalTags() {
+        internalGetGlobalTags() {
       if (globalTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             GlobalTagsDefaultEntryHolder.defaultEntry);
@@ -652,8 +661,7 @@ private static final long serialVersionUID = 0L;
       return globalTags_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableGlobalTags() {
-      onChanged();;
+        internalGetMutableGlobalTags() {
       if (globalTags_ == null) {
         globalTags_ = com.google.protobuf.MapField.newMapField(
             GlobalTagsDefaultEntryHolder.defaultEntry);
@@ -661,9 +669,10 @@ private static final long serialVersionUID = 0L;
       if (!globalTags_.isMutable()) {
         globalTags_ = globalTags_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return globalTags_;
     }
-
     public int getGlobalTagsCount() {
       return internalGetGlobalTags().getMap().size();
     }
@@ -674,7 +683,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
-
     @java.lang.Override
     public boolean containsGlobalTags(
         java.lang.String key) {
@@ -697,7 +705,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getGlobalTagsMap() {
       return internalGetGlobalTags().getMap();
     }
@@ -709,10 +716,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getGlobalTagsOrDefault(
+    public /* nullable */
+java.lang.String getGlobalTagsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetGlobalTags().getMap();
@@ -726,7 +734,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getGlobalTagsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -737,8 +744,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearGlobalTags() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableGlobalTags().getMutableMap()
           .clear();
       return this;
@@ -750,7 +757,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
-
     public Builder removeGlobalTags(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -763,7 +769,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableGlobalTags() {
+        getMutableGlobalTags() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableGlobalTags().getMutableMap();
     }
     /**
@@ -777,12 +784,10 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableGlobalTags().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -792,11 +797,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; global_tags = 2 [json_name = "globalTags"];</code>
      */
-
     public Builder putAllGlobalTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableGlobalTags().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

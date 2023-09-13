@@ -30,11 +30,6 @@ private static final long serialVersionUID = 0L;
     return new Metric();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_Metric_descriptor;
@@ -60,8 +55,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.Metric.class, org.zenoss.cloud.dataReceiver.Metric.Builder.class);
   }
 
+  private int bitField0_;
   public static final int METRIC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object metric_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object metric_ = "";
   /**
    * <pre>
    * The metric name
@@ -107,7 +104,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TIMESTAMP_FIELD_NUMBER = 2;
-  private long timestamp_;
+  private long timestamp_ = 0L;
   /**
    * <pre>
    * The time at which the value was captured
@@ -122,7 +119,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
-  private double value_;
+  private double value_ = 0D;
   /**
    * <pre>
    * The metric value
@@ -148,6 +145,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> dimensions_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -158,7 +156,6 @@ private static final long serialVersionUID = 0L;
     }
     return dimensions_;
   }
-
   public int getDimensionsCount() {
     return internalGetDimensions().getMap().size();
   }
@@ -169,7 +166,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
    */
-
   @java.lang.Override
   public boolean containsDimensions(
       java.lang.String key) {
@@ -192,7 +188,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
     return internalGetDimensions().getMap();
   }
@@ -204,10 +199,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getDimensionsOrDefault(
+  public /* nullable */
+java.lang.String getDimensionsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetDimensions().getMap();
@@ -221,7 +217,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getDimensionsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -245,7 +240,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMetadataFields() {
-    return metadataFields_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -268,7 +263,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetadataFieldsOrBuilder() {
-    return getMetadataFields();
+    return metadataFields_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metadataFields_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -300,7 +295,7 @@ private static final long serialVersionUID = 0L;
         internalGetDimensions(),
         DimensionsDefaultEntryHolder.defaultEntry,
         4);
-    if (metadataFields_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getMetadataFields());
     }
     getUnknownFields().writeTo(output);
@@ -333,7 +328,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, dimensions__);
     }
-    if (metadataFields_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getMetadataFields());
     }
@@ -442,11 +437,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.Metric parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.Metric parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -536,28 +533,31 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataReceiver.Metric.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getMetadataFieldsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metric_ = "";
-
       timestamp_ = 0L;
-
       value_ = 0D;
-
       internalGetMutableDimensions().clear();
-      if (metadataFieldsBuilder_ == null) {
-        metadataFields_ = null;
-      } else {
-        metadataFields_ = null;
+      metadataFields_ = null;
+      if (metadataFieldsBuilder_ != null) {
+        metadataFieldsBuilder_.dispose();
         metadataFieldsBuilder_ = null;
       }
       return this;
@@ -586,19 +586,34 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.Metric buildPartial() {
       org.zenoss.cloud.dataReceiver.Metric result = new org.zenoss.cloud.dataReceiver.Metric(this);
-      int from_bitField0_ = bitField0_;
-      result.metric_ = metric_;
-      result.timestamp_ = timestamp_;
-      result.value_ = value_;
-      result.dimensions_ = internalGetDimensions();
-      result.dimensions_.makeImmutable();
-      if (metadataFieldsBuilder_ == null) {
-        result.metadataFields_ = metadataFields_;
-      } else {
-        result.metadataFields_ = metadataFieldsBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.Metric result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metric_ = metric_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timestamp_ = timestamp_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dimensions_ = internalGetDimensions();
+        result.dimensions_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metadataFields_ = metadataFieldsBuilder_ == null
+            ? metadataFields_
+            : metadataFieldsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -647,6 +662,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataReceiver.Metric.getDefaultInstance()) return this;
       if (!other.getMetric().isEmpty()) {
         metric_ = other.metric_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getTimestamp() != 0L) {
@@ -657,6 +673,7 @@ private static final long serialVersionUID = 0L;
       }
       internalGetMutableDimensions().mergeFrom(
           other.internalGetDimensions());
+      bitField0_ |= 0x00000008;
       if (other.hasMetadataFields()) {
         mergeMetadataFields(other.getMetadataFields());
       }
@@ -688,17 +705,17 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               metric_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 16: {
               timestamp_ = input.readInt64();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 16
             case 25: {
               value_ = input.readDouble();
-
+              bitField0_ |= 0x00000004;
               break;
             } // case 25
             case 34: {
@@ -707,13 +724,14 @@ private static final long serialVersionUID = 0L;
                   DimensionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               internalGetMutableDimensions().getMutableMap().put(
                   dimensions__.getKey(), dimensions__.getValue());
+              bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 50: {
               input.readMessage(
                   getMetadataFieldsFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000010;
               break;
             } // case 50
             default: {
@@ -786,11 +804,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMetric(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +819,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMetric() {
-      
       metric_ = getDefaultInstance().getMetric();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -819,12 +835,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMetricBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       metric_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -852,8 +866,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTimestamp(long value) {
-      
+
       timestamp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -866,7 +881,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTimestamp() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       timestamp_ = 0L;
       onChanged();
       return this;
@@ -895,8 +910,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setValue(double value) {
-      
+
       value_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -909,7 +925,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       value_ = 0D;
       onChanged();
       return this;
@@ -918,7 +934,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> dimensions_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetDimensions() {
+        internalGetDimensions() {
       if (dimensions_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             DimensionsDefaultEntryHolder.defaultEntry);
@@ -926,8 +942,7 @@ private static final long serialVersionUID = 0L;
       return dimensions_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableDimensions() {
-      onChanged();;
+        internalGetMutableDimensions() {
       if (dimensions_ == null) {
         dimensions_ = com.google.protobuf.MapField.newMapField(
             DimensionsDefaultEntryHolder.defaultEntry);
@@ -935,9 +950,10 @@ private static final long serialVersionUID = 0L;
       if (!dimensions_.isMutable()) {
         dimensions_ = dimensions_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return dimensions_;
     }
-
     public int getDimensionsCount() {
       return internalGetDimensions().getMap().size();
     }
@@ -948,7 +964,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
-
     @java.lang.Override
     public boolean containsDimensions(
         java.lang.String key) {
@@ -971,7 +986,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getDimensionsMap() {
       return internalGetDimensions().getMap();
     }
@@ -983,10 +997,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getDimensionsOrDefault(
+    public /* nullable */
+java.lang.String getDimensionsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetDimensions().getMap();
@@ -1000,7 +1015,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getDimensionsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1011,8 +1025,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearDimensions() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableDimensions().getMutableMap()
           .clear();
       return this;
@@ -1024,7 +1038,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
-
     public Builder removeDimensions(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1037,7 +1050,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableDimensions() {
+        getMutableDimensions() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableDimensions().getMutableMap();
     }
     /**
@@ -1051,12 +1065,10 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableDimensions().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1066,11 +1078,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; dimensions = 4 [json_name = "dimensions"];</code>
      */
-
     public Builder putAllDimensions(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDimensions().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1086,7 +1098,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the metadataFields field is set.
      */
     public boolean hasMetadataFields() {
-      return metadataFieldsBuilder_ != null || metadataFields_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -1116,11 +1128,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         metadataFields_ = value;
-        onChanged();
       } else {
         metadataFieldsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1134,11 +1146,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (metadataFieldsBuilder_ == null) {
         metadataFields_ = builderForValue.build();
-        onChanged();
       } else {
         metadataFieldsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1150,17 +1162,20 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMetadataFields(com.google.protobuf.Struct value) {
       if (metadataFieldsBuilder_ == null) {
-        if (metadataFields_ != null) {
-          metadataFields_ =
-            com.google.protobuf.Struct.newBuilder(metadataFields_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0) &&
+          metadataFields_ != null &&
+          metadataFields_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getMetadataFieldsBuilder().mergeFrom(value);
         } else {
           metadataFields_ = value;
         }
-        onChanged();
       } else {
         metadataFieldsBuilder_.mergeFrom(value);
       }
-
+      if (metadataFields_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1171,14 +1186,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadataFields = 6 [json_name = "metadataFields"];</code>
      */
     public Builder clearMetadataFields() {
-      if (metadataFieldsBuilder_ == null) {
-        metadataFields_ = null;
-        onChanged();
-      } else {
-        metadataFields_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metadataFields_ = null;
+      if (metadataFieldsBuilder_ != null) {
+        metadataFieldsBuilder_.dispose();
         metadataFieldsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1189,7 +1203,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct metadataFields = 6 [json_name = "metadataFields"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetadataFieldsBuilder() {
-      
+      bitField0_ |= 0x00000010;
       onChanged();
       return getMetadataFieldsFieldBuilder().getBuilder();
     }

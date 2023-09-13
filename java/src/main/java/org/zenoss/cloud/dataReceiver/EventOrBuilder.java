@@ -90,7 +90,6 @@ public interface EventOrBuilder extends
    *
    * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
-
   /* nullable */
 java.lang.String getDimensionsOrDefault(
       java.lang.String key,
@@ -105,7 +104,6 @@ java.lang.String defaultValue);
    *
    * <code>map&lt;string, string&gt; dimensions = 3 [json_name = "dimensions"];</code>
    */
-
   java.lang.String getDimensionsOrThrow(
       java.lang.String key);
 

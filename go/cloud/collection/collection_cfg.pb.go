@@ -310,6 +310,7 @@ type ProbeResult struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Types that are assignable to Result:
+	//
 	//	*ProbeResult_Success
 	//	*ProbeResult_Error
 	Result isProbeResult_Result `protobuf_oneof:"result"`

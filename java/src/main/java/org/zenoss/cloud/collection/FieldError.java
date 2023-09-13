@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new FieldError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.collection.CollectionCfg.internal_static_zenoss_cloud_collection_cfg_FieldError_descriptor;
@@ -46,7 +41,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FIELD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object field_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object field_ = "";
   /**
    * <code>string field = 1 [json_name = "field"];</code>
    * @return The field.
@@ -84,7 +80,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    * <code>string description = 2 [json_name = "description"];</code>
    * @return The description.
@@ -239,11 +236,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.collection.FieldError parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.collection.FieldError parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -318,10 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       field_ = "";
-
       description_ = "";
-
       return this;
     }
 
@@ -348,10 +346,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.FieldError buildPartial() {
       org.zenoss.cloud.collection.FieldError result = new org.zenoss.cloud.collection.FieldError(this);
-      result.field_ = field_;
-      result.description_ = description_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.FieldError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.field_ = field_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -400,10 +407,12 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.collection.FieldError.getDefaultInstance()) return this;
       if (!other.getField().isEmpty()) {
         field_ = other.field_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,12 +443,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               field_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               description_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -457,6 +466,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object field_ = "";
     /**
@@ -499,11 +509,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setField(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       field_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -512,8 +520,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearField() {
-      
       field_ = getDefaultInstance().getField();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -524,12 +532,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setFieldBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       field_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -575,11 +581,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescription(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -588,8 +592,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -600,12 +604,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

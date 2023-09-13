@@ -34,5 +34,5 @@ public interface EventWrapperOrBuilder extends
    */
   org.zenoss.cloud.dataReceiver.EventOrBuilder getCanonicalOrBuilder();
 
-  public org.zenoss.cloud.dataReceiver.EventWrapper.EventTypeCase getEventTypeCase();
+  org.zenoss.cloud.dataReceiver.EventWrapper.EventTypeCase getEventTypeCase();
 }

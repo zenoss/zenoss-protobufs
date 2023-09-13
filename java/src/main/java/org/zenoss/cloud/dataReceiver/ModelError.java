@@ -26,11 +26,6 @@ private static final long serialVersionUID = 0L;
     return new ModelError();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.zenoss.cloud.dataReceiver.DataReceiver.internal_static_zenoss_cloud_ModelError_descriptor;
@@ -44,8 +39,10 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.dataReceiver.ModelError.class, org.zenoss.cloud.dataReceiver.ModelError.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object error_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    * <code>string error = 1 [json_name = "error"];</code>
    * @return The error.
@@ -90,7 +87,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasModel() {
-    return model_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
@@ -105,7 +102,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.zenoss.cloud.dataReceiver.ModelOrBuilder getModelOrBuilder() {
-    return getModel();
+    return model_ == null ? org.zenoss.cloud.dataReceiver.Model.getDefaultInstance() : model_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -125,7 +122,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, error_);
     }
-    if (model_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getModel());
     }
     getUnknownFields().writeTo(output);
@@ -140,7 +137,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(error_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, error_);
     }
-    if (model_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getModel());
     }
@@ -232,11 +229,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.zenoss.cloud.dataReceiver.ModelError parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.zenoss.cloud.dataReceiver.ModelError parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -300,23 +299,28 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.dataReceiver.ModelError.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getModelFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       error_ = "";
-
-      if (modelBuilder_ == null) {
-        model_ = null;
-      } else {
-        model_ = null;
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
       return this;
@@ -345,14 +349,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.dataReceiver.ModelError buildPartial() {
       org.zenoss.cloud.dataReceiver.ModelError result = new org.zenoss.cloud.dataReceiver.ModelError(this);
-      result.error_ = error_;
-      if (modelBuilder_ == null) {
-        result.model_ = model_;
-      } else {
-        result.model_ = modelBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.dataReceiver.ModelError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.error_ = error_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.model_ = modelBuilder_ == null
+            ? model_
+            : modelBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -401,6 +415,7 @@ private static final long serialVersionUID = 0L;
       if (other == org.zenoss.cloud.dataReceiver.ModelError.getDefaultInstance()) return this;
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasModel()) {
@@ -434,14 +449,14 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               error_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getModelFieldBuilder().getBuilder(),
                   extensionRegistry);
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -459,6 +474,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object error_ = "";
     /**
@@ -501,11 +517,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setError(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -514,8 +528,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearError() {
-      
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -526,12 +540,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setErrorBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       error_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -544,7 +556,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the model field is set.
      */
     public boolean hasModel() {
-      return modelBuilder_ != null || model_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
@@ -566,11 +578,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         model_ = value;
-        onChanged();
       } else {
         modelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -580,11 +592,11 @@ private static final long serialVersionUID = 0L;
         org.zenoss.cloud.dataReceiver.Model.Builder builderForValue) {
       if (modelBuilder_ == null) {
         model_ = builderForValue.build();
-        onChanged();
       } else {
         modelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -592,38 +604,40 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeModel(org.zenoss.cloud.dataReceiver.Model value) {
       if (modelBuilder_ == null) {
-        if (model_ != null) {
-          model_ =
-            org.zenoss.cloud.dataReceiver.Model.newBuilder(model_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          model_ != null &&
+          model_ != org.zenoss.cloud.dataReceiver.Model.getDefaultInstance()) {
+          getModelBuilder().mergeFrom(value);
         } else {
           model_ = value;
         }
-        onChanged();
       } else {
         modelBuilder_.mergeFrom(value);
       }
-
+      if (model_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
      * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public Builder clearModel() {
-      if (modelBuilder_ == null) {
-        model_ = null;
-        onChanged();
-      } else {
-        model_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      model_ = null;
+      if (modelBuilder_ != null) {
+        modelBuilder_.dispose();
         modelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.zenoss.cloud.Model model = 2 [json_name = "model"];</code>
      */
     public org.zenoss.cloud.dataReceiver.Model.Builder getModelBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
