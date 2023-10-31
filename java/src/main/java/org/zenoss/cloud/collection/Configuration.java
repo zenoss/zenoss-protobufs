@@ -118,6 +118,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ENABLED_FIELD_NUMBER = 3;
+  private boolean enabled_ = false;
+  /**
+   * <code>bool enabled = 3 [json_name = "enabled"];</code>
+   * @return The enabled.
+   */
+  @java.lang.Override
+  public boolean getEnabled() {
+    return enabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -138,6 +149,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, data_);
     }
+    if (enabled_ != false) {
+      output.writeBool(3, enabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +166,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(data_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, data_);
+    }
+    if (enabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, enabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -172,6 +190,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getType())) return false;
     if (!getData()
         .equals(other.getData())) return false;
+    if (getEnabled()
+        != other.getEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -187,6 +207,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getType().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
     hash = (53 * hash) + getData().hashCode();
+    hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -320,6 +343,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       type_ = "";
       data_ = "";
+      enabled_ = false;
       return this;
     }
 
@@ -358,6 +382,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.data_ = data_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enabled_ = enabled_;
       }
     }
 
@@ -415,6 +442,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getEnabled() != false) {
+        setEnabled(other.getEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +481,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 24: {
+              enabled_ = input.readBool();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -608,6 +643,38 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       data_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean enabled_ ;
+    /**
+     * <code>bool enabled = 3 [json_name = "enabled"];</code>
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+    /**
+     * <code>bool enabled = 3 [json_name = "enabled"];</code>
+     * @param value The enabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnabled(boolean value) {
+
+      enabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enabled = 3 [json_name = "enabled"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      enabled_ = false;
       onChanged();
       return this;
     }

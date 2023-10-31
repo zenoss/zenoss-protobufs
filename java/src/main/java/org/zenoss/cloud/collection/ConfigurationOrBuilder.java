@@ -30,4 +30,10 @@ public interface ConfigurationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDataBytes();
+
+  /**
+   * <code>bool enabled = 3 [json_name = "enabled"];</code>
+   * @return The enabled.
+   */
+  boolean getEnabled();
 }

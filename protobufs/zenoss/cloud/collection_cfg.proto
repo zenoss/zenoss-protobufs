@@ -25,6 +25,7 @@ message Config {
 message Configuration {
   string type = 1;
   string data = 2;
+  bool enabled = 3;
 }
 
 message ProbeSuccess {}
