@@ -1,0 +1,5 @@
+/go.sum -diff linguist-generated
+/python/zenoss/** -diff linguist-generated
+/java/src/** -diff linguist-generated
+/go/** -diff linguist-generated
+/descriptors/** -diff linguist-generated binary
