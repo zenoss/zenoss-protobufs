@@ -20,12 +20,12 @@ class CollectionConfigServiceStub(object):
                 '/zenoss.cloud.collection_cfg.CollectionConfigService/WaitForProbeConfig',
                 request_serializer=zenoss_dot_cloud_dot_collection__cfg__pb2.WaitForProbeConfigResponse.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_collection__cfg__pb2.WaitForProbeConfigRequest.FromString,
-                )
+                _registered_method=True)
         self.GetConfigStream = channel.unary_stream(
                 '/zenoss.cloud.collection_cfg.CollectionConfigService/GetConfigStream',
                 request_serializer=zenoss_dot_cloud_dot_collection__cfg__pb2.GetConfigStreamRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_collection__cfg__pb2.GetConfigStreamResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class CollectionConfigServiceServicer(object):
@@ -81,11 +81,21 @@ class CollectionConfigService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_stream(request_iterator, target, '/zenoss.cloud.collection_cfg.CollectionConfigService/WaitForProbeConfig',
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/zenoss.cloud.collection_cfg.CollectionConfigService/WaitForProbeConfig',
             zenoss_dot_cloud_dot_collection__cfg__pb2.WaitForProbeConfigResponse.SerializeToString,
             zenoss_dot_cloud_dot_collection__cfg__pb2.WaitForProbeConfigRequest.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetConfigStream(request,
@@ -98,8 +108,18 @@ class CollectionConfigService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/zenoss.cloud.collection_cfg.CollectionConfigService/GetConfigStream',
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/zenoss.cloud.collection_cfg.CollectionConfigService/GetConfigStream',
             zenoss_dot_cloud_dot_collection__cfg__pb2.GetConfigStreamRequest.SerializeToString,
             zenoss_dot_cloud_dot_collection__cfg__pb2.GetConfigStreamResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

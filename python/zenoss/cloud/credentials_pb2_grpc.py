@@ -18,7 +18,7 @@ class CredentialManagementStub(object):
                 '/zenoss.cloud.credentials.CredentialManagement/GetCredential',
                 request_serializer=zenoss_dot_cloud_dot_credentials__pb2.GetCredentialRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_credentials__pb2.GetCredentialResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class CredentialManagementServicer(object):
@@ -59,8 +59,18 @@ class CredentialManagement(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.credentials.CredentialManagement/GetCredential',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.credentials.CredentialManagement/GetCredential',
             zenoss_dot_cloud_dot_credentials__pb2.GetCredentialRequest.SerializeToString,
             zenoss_dot_cloud_dot_credentials__pb2.GetCredentialResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

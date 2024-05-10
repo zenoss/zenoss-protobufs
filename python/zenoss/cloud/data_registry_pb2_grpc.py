@@ -18,32 +18,32 @@ class DataRegistryServiceStub(object):
                 '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetric',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricResponse.FromString,
-                )
+                _registered_method=True)
         self.CreateOrUpdateMetrics = channel.stream_unary(
                 '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetrics',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricsResponse.FromString,
-                )
+                _registered_method=True)
         self.UpdateMetric = channel.unary_unary(
                 '/zenoss.cloud.DataRegistryService/UpdateMetric',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.UpdateMetricRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricResponse.FromString,
-                )
+                _registered_method=True)
         self.RegisterDefinition = channel.unary_unary(
                 '/zenoss.cloud.DataRegistryService/RegisterDefinition',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.Definition.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.DefinitionResponse.FromString,
-                )
+                _registered_method=True)
         self.UpdateDefinition = channel.unary_unary(
                 '/zenoss.cloud.DataRegistryService/UpdateDefinition',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.DefinitionUpdate.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.DefinitionResponse.FromString,
-                )
+                _registered_method=True)
         self.GetMetric = channel.unary_unary(
                 '/zenoss.cloud.DataRegistryService/GetMetric',
                 request_serializer=zenoss_dot_cloud_dot_data__registry__pb2.GetMetricRequest.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__registry__pb2.GetMetricResponse.FromString,
-                )
+                _registered_method=True)
 
 
 class DataRegistryServiceServicer(object):
@@ -139,11 +139,21 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetric',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetric',
             zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricRequest.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def CreateOrUpdateMetrics(request_iterator,
@@ -156,11 +166,21 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetrics',
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/zenoss.cloud.DataRegistryService/CreateOrUpdateMetrics',
             zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricRequest.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateMetric(request,
@@ -173,11 +193,21 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataRegistryService/UpdateMetric',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataRegistryService/UpdateMetric',
             zenoss_dot_cloud_dot_data__registry__pb2.UpdateMetricRequest.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.RegisterMetricResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def RegisterDefinition(request,
@@ -190,11 +220,21 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataRegistryService/RegisterDefinition',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataRegistryService/RegisterDefinition',
             zenoss_dot_cloud_dot_data__registry__pb2.Definition.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.DefinitionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def UpdateDefinition(request,
@@ -207,11 +247,21 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataRegistryService/UpdateDefinition',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataRegistryService/UpdateDefinition',
             zenoss_dot_cloud_dot_data__registry__pb2.DefinitionUpdate.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.DefinitionResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def GetMetric(request,
@@ -224,8 +274,18 @@ class DataRegistryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataRegistryService/GetMetric',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataRegistryService/GetMetric',
             zenoss_dot_cloud_dot_data__registry__pb2.GetMetricRequest.SerializeToString,
             zenoss_dot_cloud_dot_data__registry__pb2.GetMetricResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

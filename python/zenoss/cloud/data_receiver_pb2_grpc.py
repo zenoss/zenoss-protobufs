@@ -19,27 +19,27 @@ class DataReceiverServiceStub(object):
                 '/zenoss.cloud.DataReceiverService/PutEvents',
                 request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Events.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventStatusResult.FromString,
-                )
+                _registered_method=True)
         self.PutEvent = channel.stream_unary(
                 '/zenoss.cloud.DataReceiverService/PutEvent',
                 request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.EventWrapper.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
-                )
+                _registered_method=True)
         self.PutMetrics = channel.unary_unary(
                 '/zenoss.cloud.DataReceiverService/PutMetrics',
                 request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Metrics.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.StatusResult.FromString,
-                )
+                _registered_method=True)
         self.PutMetric = channel.stream_unary(
                 '/zenoss.cloud.DataReceiverService/PutMetric',
                 request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.MetricWrapper.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
-                )
+                _registered_method=True)
         self.PutModels = channel.unary_unary(
                 '/zenoss.cloud.DataReceiverService/PutModels',
                 request_serializer=zenoss_dot_cloud_dot_data__receiver__pb2.Models.SerializeToString,
                 response_deserializer=zenoss_dot_cloud_dot_data__receiver__pb2.ModelStatusResult.FromString,
-                )
+                _registered_method=True)
 
 
 class DataReceiverServiceServicer(object):
@@ -131,11 +131,21 @@ class DataReceiverService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataReceiverService/PutEvents',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataReceiverService/PutEvents',
             zenoss_dot_cloud_dot_data__receiver__pb2.Events.SerializeToString,
             zenoss_dot_cloud_dot_data__receiver__pb2.EventStatusResult.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def PutEvent(request_iterator,
@@ -148,11 +158,21 @@ class DataReceiverService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/zenoss.cloud.DataReceiverService/PutEvent',
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/zenoss.cloud.DataReceiverService/PutEvent',
             zenoss_dot_cloud_dot_data__receiver__pb2.EventWrapper.SerializeToString,
             zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def PutMetrics(request,
@@ -165,11 +185,21 @@ class DataReceiverService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataReceiverService/PutMetrics',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataReceiverService/PutMetrics',
             zenoss_dot_cloud_dot_data__receiver__pb2.Metrics.SerializeToString,
             zenoss_dot_cloud_dot_data__receiver__pb2.StatusResult.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def PutMetric(request_iterator,
@@ -182,11 +212,21 @@ class DataReceiverService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/zenoss.cloud.DataReceiverService/PutMetric',
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/zenoss.cloud.DataReceiverService/PutMetric',
             zenoss_dot_cloud_dot_data__receiver__pb2.MetricWrapper.SerializeToString,
             zenoss_dot_cloud_dot_data__receiver__pb2.Void.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def PutModels(request,
@@ -199,8 +239,18 @@ class DataReceiverService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/zenoss.cloud.DataReceiverService/PutModels',
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/zenoss.cloud.DataReceiverService/PutModels',
             zenoss_dot_cloud_dot_data__receiver__pb2.Models.SerializeToString,
             zenoss_dot_cloud_dot_data__receiver__pb2.ModelStatusResult.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

@@ -8,14 +8,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.50.2)",
+    value = "by gRPC proto compiler (version 1.63.0)",
     comments = "Source: zenoss/cloud/data_receiver.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataReceiverServiceGrpc {
 
   private DataReceiverServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "zenoss.cloud.DataReceiverService";
+  public static final java.lang.String SERVICE_NAME = "zenoss.cloud.DataReceiverService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.dataReceiver.Events,
@@ -222,14 +222,14 @@ public final class DataReceiverServiceGrpc {
    * Data Receiver API
    * </pre>
    */
-  public static abstract class DataReceiverServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      * <pre>
      * Send Events
      * </pre>
      */
-    public void putEvents(org.zenoss.cloud.dataReceiver.Events request,
+    default void putEvents(org.zenoss.cloud.dataReceiver.Events request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventStatusResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutEventsMethod(), responseObserver);
     }
@@ -239,7 +239,7 @@ public final class DataReceiverServiceGrpc {
      * Stream Events of any type.
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
+    default io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.EventWrapper> putEvent(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPutEventMethod(), responseObserver);
     }
@@ -249,7 +249,7 @@ public final class DataReceiverServiceGrpc {
      * Send Metrics
      * </pre>
      */
-    public void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
+    default void putMetrics(org.zenoss.cloud.dataReceiver.Metrics request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.StatusResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutMetricsMethod(), responseObserver);
     }
@@ -259,7 +259,7 @@ public final class DataReceiverServiceGrpc {
      * Stream Metric of any type
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.MetricWrapper> putMetric(
+    default io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.MetricWrapper> putMetric(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.Void> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getPutMetricMethod(), responseObserver);
     }
@@ -269,58 +269,34 @@ public final class DataReceiverServiceGrpc {
      * Send batch of models
      * </pre>
      */
-    public void putModels(org.zenoss.cloud.dataReceiver.Models request,
+    default void putModels(org.zenoss.cloud.dataReceiver.Models request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.dataReceiver.ModelStatusResult> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPutModelsMethod(), responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getPutEventsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.Events,
-                org.zenoss.cloud.dataReceiver.EventStatusResult>(
-                  this, METHODID_PUT_EVENTS)))
-          .addMethod(
-            getPutEventMethod(),
-            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
-              new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.EventWrapper,
-                org.zenoss.cloud.dataReceiver.Void>(
-                  this, METHODID_PUT_EVENT)))
-          .addMethod(
-            getPutMetricsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.Metrics,
-                org.zenoss.cloud.dataReceiver.StatusResult>(
-                  this, METHODID_PUT_METRICS)))
-          .addMethod(
-            getPutMetricMethod(),
-            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
-              new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.MetricWrapper,
-                org.zenoss.cloud.dataReceiver.Void>(
-                  this, METHODID_PUT_METRIC)))
-          .addMethod(
-            getPutModelsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                org.zenoss.cloud.dataReceiver.Models,
-                org.zenoss.cloud.dataReceiver.ModelStatusResult>(
-                  this, METHODID_PUT_MODELS)))
-          .build();
     }
   }
 
   /**
+   * Base class for the server implementation of the service DataReceiverService.
    * <pre>
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceStub extends io.grpc.stub.AbstractAsyncStub<DataReceiverServiceStub> {
+  public static abstract class DataReceiverServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return DataReceiverServiceGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service DataReceiverService.
+   * <pre>
+   * Data Receiver API
+   * </pre>
+   */
+  public static final class DataReceiverServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<DataReceiverServiceStub> {
     private DataReceiverServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -389,11 +365,13 @@ public final class DataReceiverServiceGrpc {
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service DataReceiverService.
    * <pre>
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<DataReceiverServiceBlockingStub> {
+  public static final class DataReceiverServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<DataReceiverServiceBlockingStub> {
     private DataReceiverServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -437,11 +415,13 @@ public final class DataReceiverServiceGrpc {
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataReceiverService.
    * <pre>
    * Data Receiver API
    * </pre>
    */
-  public static final class DataReceiverServiceFutureStub extends io.grpc.stub.AbstractFutureStub<DataReceiverServiceFutureStub> {
+  public static final class DataReceiverServiceFutureStub
+      extends io.grpc.stub.AbstractFutureStub<DataReceiverServiceFutureStub> {
     private DataReceiverServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -498,10 +478,10 @@ public final class DataReceiverServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataReceiverServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataReceiverServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -544,6 +524,46 @@ public final class DataReceiverServiceGrpc {
     }
   }
 
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getPutEventsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.zenoss.cloud.dataReceiver.Events,
+              org.zenoss.cloud.dataReceiver.EventStatusResult>(
+                service, METHODID_PUT_EVENTS)))
+        .addMethod(
+          getPutEventMethod(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+            new MethodHandlers<
+              org.zenoss.cloud.dataReceiver.EventWrapper,
+              org.zenoss.cloud.dataReceiver.Void>(
+                service, METHODID_PUT_EVENT)))
+        .addMethod(
+          getPutMetricsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.zenoss.cloud.dataReceiver.Metrics,
+              org.zenoss.cloud.dataReceiver.StatusResult>(
+                service, METHODID_PUT_METRICS)))
+        .addMethod(
+          getPutMetricMethod(),
+          io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+            new MethodHandlers<
+              org.zenoss.cloud.dataReceiver.MetricWrapper,
+              org.zenoss.cloud.dataReceiver.Void>(
+                service, METHODID_PUT_METRIC)))
+        .addMethod(
+          getPutModelsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              org.zenoss.cloud.dataReceiver.Models,
+              org.zenoss.cloud.dataReceiver.ModelStatusResult>(
+                service, METHODID_PUT_MODELS)))
+        .build();
+  }
+
   private static abstract class DataReceiverServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     DataReceiverServiceBaseDescriptorSupplier() {}
@@ -567,9 +587,9 @@ public final class DataReceiverServiceGrpc {
   private static final class DataReceiverServiceMethodDescriptorSupplier
       extends DataReceiverServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataReceiverServiceMethodDescriptorSupplier(String methodName) {
+    DataReceiverServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
