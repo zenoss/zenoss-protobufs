@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.zenoss.zing.proto</groupId>
     <artifactId>zenoss-protobufs</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.1</version>
     <name>zenoss-protobufs</name>
     
      <!--Coordinate any version changes with the services using the generated protobuf classes.-->
     <properties>
-        <google.protobuf.version>3.21.7</google.protobuf.version>
-        <io.grpc.version>1.53.0</io.grpc.version>
+        <google.protobuf.version>4.26.1</google.protobuf.version>
+        <io.grpc.version>1.63.0</io.grpc.version>
     </properties>
     
     <dependencies>

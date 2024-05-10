@@ -9,14 +9,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.50.2)",
+    value = "by gRPC proto compiler (version 1.63.0)",
     comments = "Source: zenoss/cloud/collection_cfg.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CollectionConfigServiceGrpc {
 
   private CollectionConfigServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "zenoss.cloud.collection_cfg.CollectionConfigService";
+  public static final java.lang.String SERVICE_NAME = "zenoss.cloud.collection_cfg.CollectionConfigService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<org.zenoss.cloud.collection.WaitForProbeConfigResponse,
@@ -131,49 +131,47 @@ public final class CollectionConfigServiceGrpc {
    * collection configurations.
    * </pre>
    */
-  public static abstract class CollectionConfigServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigResponse> waitForProbeConfig(
+    default io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigResponse> waitForProbeConfig(
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.WaitForProbeConfigRequest> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getWaitForProbeConfigMethod(), responseObserver);
     }
 
     /**
      */
-    public void getConfigStream(org.zenoss.cloud.collection.GetConfigStreamRequest request,
+    default void getConfigStream(org.zenoss.cloud.collection.GetConfigStreamRequest request,
         io.grpc.stub.StreamObserver<org.zenoss.cloud.collection.GetConfigStreamResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConfigStreamMethod(), responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getWaitForProbeConfigMethod(),
-            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-              new MethodHandlers<
-                org.zenoss.cloud.collection.WaitForProbeConfigResponse,
-                org.zenoss.cloud.collection.WaitForProbeConfigRequest>(
-                  this, METHODID_WAIT_FOR_PROBE_CONFIG)))
-          .addMethod(
-            getGetConfigStreamMethod(),
-            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-              new MethodHandlers<
-                org.zenoss.cloud.collection.GetConfigStreamRequest,
-                org.zenoss.cloud.collection.GetConfigStreamResponse>(
-                  this, METHODID_GET_CONFIG_STREAM)))
-          .build();
     }
   }
 
   /**
+   * Base class for the server implementation of the service CollectionConfigService.
    * <pre>
    * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceStub extends io.grpc.stub.AbstractAsyncStub<CollectionConfigServiceStub> {
+  public static abstract class CollectionConfigServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return CollectionConfigServiceGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service CollectionConfigService.
+   * <pre>
+   * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
+   * collection configurations.
+   * </pre>
+   */
+  public static final class CollectionConfigServiceStub
+      extends io.grpc.stub.AbstractAsyncStub<CollectionConfigServiceStub> {
     private CollectionConfigServiceStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -203,12 +201,14 @@ public final class CollectionConfigServiceGrpc {
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service CollectionConfigService.
    * <pre>
    * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceBlockingStub extends io.grpc.stub.AbstractBlockingStub<CollectionConfigServiceBlockingStub> {
+  public static final class CollectionConfigServiceBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<CollectionConfigServiceBlockingStub> {
     private CollectionConfigServiceBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -230,12 +230,14 @@ public final class CollectionConfigServiceGrpc {
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CollectionConfigService.
    * <pre>
    * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
    * collection configurations.
    * </pre>
    */
-  public static final class CollectionConfigServiceFutureStub extends io.grpc.stub.AbstractFutureStub<CollectionConfigServiceFutureStub> {
+  public static final class CollectionConfigServiceFutureStub
+      extends io.grpc.stub.AbstractFutureStub<CollectionConfigServiceFutureStub> {
     private CollectionConfigServiceFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -256,10 +258,10 @@ public final class CollectionConfigServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CollectionConfigServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CollectionConfigServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -291,6 +293,25 @@ public final class CollectionConfigServiceGrpc {
     }
   }
 
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getWaitForProbeConfigMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              org.zenoss.cloud.collection.WaitForProbeConfigResponse,
+              org.zenoss.cloud.collection.WaitForProbeConfigRequest>(
+                service, METHODID_WAIT_FOR_PROBE_CONFIG)))
+        .addMethod(
+          getGetConfigStreamMethod(),
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+            new MethodHandlers<
+              org.zenoss.cloud.collection.GetConfigStreamRequest,
+              org.zenoss.cloud.collection.GetConfigStreamResponse>(
+                service, METHODID_GET_CONFIG_STREAM)))
+        .build();
+  }
+
   private static abstract class CollectionConfigServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     CollectionConfigServiceBaseDescriptorSupplier() {}
@@ -314,9 +335,9 @@ public final class CollectionConfigServiceGrpc {
   private static final class CollectionConfigServiceMethodDescriptorSupplier
       extends CollectionConfigServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CollectionConfigServiceMethodDescriptorSupplier(String methodName) {
+    CollectionConfigServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
