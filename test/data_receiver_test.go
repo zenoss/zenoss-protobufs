@@ -5,8 +5,8 @@ import (
 	"crypto/tls"
 	"fmt"
 	"log"
-        "os"
-        "testing"
+	"os"
+	"testing"
 	"time"
 
 	"google.golang.org/grpc"
@@ -16,7 +16,6 @@ import (
 	"github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver"
 )
 
-
 func TestDataReceiver(t *testing.T) {
 	dialOption := grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{}))
 
@@ -25,10 +24,10 @@ func TestDataReceiver(t *testing.T) {
 		log.Fatal(err)
 	}
 
-        ZenossAPIKey := os.Getenv("ZENOSS_API_KEY")
-        if ZenossAPIKey == "" {
-            log.Fatal("Missing ZENOSS_API_KEY environment variable: failing")
-        }
+	ZenossAPIKey := os.Getenv("ZENOSS_API_KEY")
+	if ZenossAPIKey == "" {
+		log.Fatal("Missing ZENOSS_API_KEY environment variable: failing")
+	}
 
 	client := data_receiver.NewDataReceiverServiceClient(conn)
 	ctx := metadata.AppendToOutgoingContext(
@@ -52,7 +51,6 @@ func TestDataReceiver(t *testing.T) {
 			},
 		},
 	})
-
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -79,7 +77,6 @@ func TestDataReceiver(t *testing.T) {
 			},
 		},
 	})
-
 	if err != nil {
 		log.Fatal(err)
 	}
