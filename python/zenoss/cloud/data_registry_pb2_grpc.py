@@ -122,6 +122,7 @@ def add_DataRegistryServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'zenoss.cloud.DataRegistryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('zenoss.cloud.DataRegistryService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.

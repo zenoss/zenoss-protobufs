@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.63.0)",
+    value = "by gRPC proto compiler (version 1.70.0)",
     comments = "Source: zenoss/cloud/data_registry.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataRegistryServiceGrpc {
@@ -216,6 +216,21 @@ public final class DataRegistryServiceGrpc {
   }
 
   /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static DataRegistryServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataRegistryServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public DataRegistryServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataRegistryServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return DataRegistryServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
+  /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static DataRegistryServiceBlockingStub newBlockingStub(
@@ -370,6 +385,67 @@ public final class DataRegistryServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataRegistryService.
+   */
+  public static final class DataRegistryServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataRegistryServiceBlockingV2Stub> {
+    private DataRegistryServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataRegistryServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataRegistryServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.dataRegistry.RegisterMetricResponse createOrUpdateMetric(org.zenoss.cloud.dataRegistry.RegisterMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOrUpdateMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<org.zenoss.cloud.dataRegistry.RegisterMetricRequest, org.zenoss.cloud.dataRegistry.RegisterMetricsResponse>
+        createOrUpdateMetrics() {
+      return io.grpc.stub.ClientCalls.blockingClientStreamingCall(
+          getChannel(), getCreateOrUpdateMetricsMethod(), getCallOptions());
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.dataRegistry.RegisterMetricResponse updateMetric(org.zenoss.cloud.dataRegistry.UpdateMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMetricMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.dataRegistry.DefinitionResponse registerDefinition(org.zenoss.cloud.dataRegistry.Definition request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegisterDefinitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.dataRegistry.DefinitionResponse updateDefinition(org.zenoss.cloud.dataRegistry.DefinitionUpdate request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDefinitionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.dataRegistry.GetMetricResponse getMetric(org.zenoss.cloud.dataRegistry.GetMetricRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMetricMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataRegistryService.
    */
   public static final class DataRegistryServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataRegistryServiceBlockingStub> {

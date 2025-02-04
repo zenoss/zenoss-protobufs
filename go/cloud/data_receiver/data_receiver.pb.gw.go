@@ -10,6 +10,7 @@ package data_receiver
 
 import (
 	"context"
+	"errors"
 	"io"
 	"net/http"
 
@@ -24,106 +25,101 @@ import (
 )
 
 // Suppress "imported and not used" errors
-var _ codes.Code
-var _ io.Reader
-var _ status.Status
-var _ = runtime.String
-var _ = utilities.NewDoubleArray
-var _ = metadata.Join
+var (
+	_ codes.Code
+	_ io.Reader
+	_ status.Status
+	_ = errors.New
+	_ = runtime.String
+	_ = utilities.NewDoubleArray
+	_ = metadata.Join
+)
 
 func request_DataReceiverService_PutEvents_0(ctx context.Context, marshaler runtime.Marshaler, client DataReceiverServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Events
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Events
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := client.PutEvents(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_DataReceiverService_PutEvents_0(ctx context.Context, marshaler runtime.Marshaler, server DataReceiverServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Events
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Events
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := server.PutEvents(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_DataReceiverService_PutMetrics_0(ctx context.Context, marshaler runtime.Marshaler, client DataReceiverServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Metrics
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Metrics
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := client.PutMetrics(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_DataReceiverService_PutMetrics_0(ctx context.Context, marshaler runtime.Marshaler, server DataReceiverServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Metrics
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Metrics
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := server.PutMetrics(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 func request_DataReceiverService_PutModels_0(ctx context.Context, marshaler runtime.Marshaler, client DataReceiverServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Models
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Models
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := client.PutModels(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
-
 }
 
 func local_request_DataReceiverService_PutModels_0(ctx context.Context, marshaler runtime.Marshaler, server DataReceiverServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Models
-	var metadata runtime.ServerMetadata
-
-	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && err != io.EOF {
+	var (
+		protoReq Models
+		metadata runtime.ServerMetadata
+	)
+	if err := marshaler.NewDecoder(req.Body).Decode(&protoReq); err != nil && !errors.Is(err, io.EOF) {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
 	msg, err := server.PutModels(ctx, &protoReq)
 	return msg, metadata, err
-
 }
 
 // RegisterDataReceiverServiceHandlerServer registers the http handlers for service DataReceiverService to "mux".
 // UnaryRPC     :call DataReceiverServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDataReceiverServiceHandlerFromEndpoint instead.
+// GRPC interceptors will not work for this type of registration. To use interceptors, you must use the "runtime.WithMiddlewares" option in the "runtime.NewServeMux" call.
 func RegisterDataReceiverServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DataReceiverServiceServer) error {
-
-	mux.Handle("POST", pattern_DataReceiverService_PutEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutEvents", runtime.WithHTTPPathPattern("/v1/data-receiver/events"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutEvents", runtime.WithHTTPPathPattern("/v1/data-receiver/events"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -135,20 +131,15 @@ func RegisterDataReceiverServiceHandlerServer(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutEvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
-
-	mux.Handle("POST", pattern_DataReceiverService_PutMetrics_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutMetrics_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutMetrics", runtime.WithHTTPPathPattern("/v1/data-receiver/metrics"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutMetrics", runtime.WithHTTPPathPattern("/v1/data-receiver/metrics"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -160,20 +151,15 @@ func RegisterDataReceiverServiceHandlerServer(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutMetrics_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
-
-	mux.Handle("POST", pattern_DataReceiverService_PutModels_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutModels_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutModels", runtime.WithHTTPPathPattern("/v1/data-receiver/models"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutModels", runtime.WithHTTPPathPattern("/v1/data-receiver/models"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -185,9 +171,7 @@ func RegisterDataReceiverServiceHandlerServer(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutModels_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
 
 	return nil
@@ -196,25 +180,24 @@ func RegisterDataReceiverServiceHandlerServer(ctx context.Context, mux *runtime.
 // RegisterDataReceiverServiceHandlerFromEndpoint is same as RegisterDataReceiverServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
 func RegisterDataReceiverServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
-	conn, err := grpc.DialContext(ctx, endpoint, opts...)
+	conn, err := grpc.NewClient(endpoint, opts...)
 	if err != nil {
 		return err
 	}
 	defer func() {
 		if err != nil {
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 			return
 		}
 		go func() {
 			<-ctx.Done()
 			if cerr := conn.Close(); cerr != nil {
-				grpclog.Infof("Failed to close conn to %s: %v", endpoint, cerr)
+				grpclog.Errorf("Failed to close conn to %s: %v", endpoint, cerr)
 			}
 		}()
 	}()
-
 	return RegisterDataReceiverServiceHandler(ctx, mux, conn)
 }
 
@@ -228,16 +211,13 @@ func RegisterDataReceiverServiceHandler(ctx context.Context, mux *runtime.ServeM
 // to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DataReceiverServiceClient".
 // Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DataReceiverServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DataReceiverServiceClient" to call the correct interceptors.
+// "DataReceiverServiceClient" to call the correct interceptors. This client ignores the HTTP middlewares.
 func RegisterDataReceiverServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DataReceiverServiceClient) error {
-
-	mux.Handle("POST", pattern_DataReceiverService_PutEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutEvents_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutEvents", runtime.WithHTTPPathPattern("/v1/data-receiver/events"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutEvents", runtime.WithHTTPPathPattern("/v1/data-receiver/events"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -248,18 +228,13 @@ func RegisterDataReceiverServiceHandlerClient(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutEvents_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
-
-	mux.Handle("POST", pattern_DataReceiverService_PutMetrics_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutMetrics_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutMetrics", runtime.WithHTTPPathPattern("/v1/data-receiver/metrics"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutMetrics", runtime.WithHTTPPathPattern("/v1/data-receiver/metrics"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,18 +245,13 @@ func RegisterDataReceiverServiceHandlerClient(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutMetrics_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
-
-	mux.Handle("POST", pattern_DataReceiverService_PutModels_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodPost, pattern_DataReceiverService_PutModels_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		var err error
-		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutModels", runtime.WithHTTPPathPattern("/v1/data-receiver/models"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/zenoss.cloud.DataReceiverService/PutModels", runtime.WithHTTPPathPattern("/v1/data-receiver/models"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -292,26 +262,19 @@ func RegisterDataReceiverServiceHandlerClient(ctx context.Context, mux *runtime.
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-
 		forward_DataReceiverService_PutModels_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
-
 	})
-
 	return nil
 }
 
 var (
-	pattern_DataReceiverService_PutEvents_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "data-receiver", "events"}, ""))
-
+	pattern_DataReceiverService_PutEvents_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "data-receiver", "events"}, ""))
 	pattern_DataReceiverService_PutMetrics_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "data-receiver", "metrics"}, ""))
-
-	pattern_DataReceiverService_PutModels_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "data-receiver", "models"}, ""))
+	pattern_DataReceiverService_PutModels_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "data-receiver", "models"}, ""))
 )
 
 var (
-	forward_DataReceiverService_PutEvents_0 = runtime.ForwardResponseMessage
-
+	forward_DataReceiverService_PutEvents_0  = runtime.ForwardResponseMessage
 	forward_DataReceiverService_PutMetrics_0 = runtime.ForwardResponseMessage
-
-	forward_DataReceiverService_PutModels_0 = runtime.ForwardResponseMessage
+	forward_DataReceiverService_PutModels_0  = runtime.ForwardResponseMessage
 )

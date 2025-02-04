@@ -8,7 +8,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.63.0)",
+    value = "by gRPC proto compiler (version 1.70.0)",
     comments = "Source: zenoss/cloud/data_receiver.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataReceiverServiceGrpc {
@@ -185,6 +185,21 @@ public final class DataReceiverServiceGrpc {
         }
       };
     return DataReceiverServiceStub.newStub(factory, channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static DataReceiverServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<DataReceiverServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public DataReceiverServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new DataReceiverServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return DataReceiverServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -366,6 +381,80 @@ public final class DataReceiverServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataReceiverService.
+   * <pre>
+   * Data Receiver API
+   * </pre>
+   */
+  public static final class DataReceiverServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataReceiverServiceBlockingV2Stub> {
+    private DataReceiverServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataReceiverServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataReceiverServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     * <pre>
+     * Send Events
+     * </pre>
+     */
+    public org.zenoss.cloud.dataReceiver.EventStatusResult putEvents(org.zenoss.cloud.dataReceiver.Events request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPutEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Stream Events of any type.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<org.zenoss.cloud.dataReceiver.EventWrapper, org.zenoss.cloud.dataReceiver.Void>
+        putEvent() {
+      return io.grpc.stub.ClientCalls.blockingClientStreamingCall(
+          getChannel(), getPutEventMethod(), getCallOptions());
+    }
+
+    /**
+     * <pre>
+     * Send Metrics
+     * </pre>
+     */
+    public org.zenoss.cloud.dataReceiver.StatusResult putMetrics(org.zenoss.cloud.dataReceiver.Metrics request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPutMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Stream Metric of any type
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<org.zenoss.cloud.dataReceiver.MetricWrapper, org.zenoss.cloud.dataReceiver.Void>
+        putMetric() {
+      return io.grpc.stub.ClientCalls.blockingClientStreamingCall(
+          getChannel(), getPutMetricMethod(), getCallOptions());
+    }
+
+    /**
+     * <pre>
+     * Send batch of models
+     * </pre>
+     */
+    public org.zenoss.cloud.dataReceiver.ModelStatusResult putModels(org.zenoss.cloud.dataReceiver.Models request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPutModelsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataReceiverService.
    * <pre>
    * Data Receiver API
    * </pre>
