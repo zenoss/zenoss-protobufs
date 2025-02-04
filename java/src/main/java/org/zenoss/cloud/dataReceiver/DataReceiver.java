@@ -26,6 +26,11 @@ public final class DataReceiver {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_zenoss_cloud_CollectionResult_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_zenoss_cloud_CollectionResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_zenoss_cloud_Void_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -162,110 +167,114 @@ public final class DataReceiver {
       "\n zenoss/cloud/data_receiver.proto\022\014zeno" +
       "ss.cloud\032\034google/api/annotations.proto\032\034" +
       "google/protobuf/struct.proto\032\036google/pro" +
-      "tobuf/wrappers.proto\"\006\n\004Void\"\342\003\n\005Event\022\034" +
-      "\n\ttimestamp\030\001 \001(\003R\ttimestamp\022\022\n\004name\030\002 \001" +
-      "(\tR\004name\022C\n\ndimensions\030\003 \003(\0132#.zenoss.cl" +
-      "oud.Event.DimensionsEntryR\ndimensions\022?\n" +
-      "\016metadataFields\030\004 \001(\0132\027.google.protobuf." +
-      "StructR\016metadataFields\022\022\n\004type\030\005 \001(\tR\004ty" +
-      "pe\022\030\n\007summary\030\006 \001(\tR\007summary\022\022\n\004body\030\007 \001" +
-      "(\tR\004body\0222\n\010severity\030\010 \001(\0162\026.zenoss.clou" +
-      "d.SeverityR\010severity\022,\n\006status\030\t \001(\0162\024.z" +
-      "enoss.cloud.StatusR\006status\022>\n\014acknowledg" +
-      "ed\030\n \001(\0132\032.google.protobuf.BoolValueR\014ac" +
-      "knowledged\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001" +
-      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Eve" +
-      "nts\022*\n\020detailedResponse\030\001 \001(\010R\020detailedR" +
-      "esponse\022+\n\006events\030\002 \003(\0132\023.zenoss.cloud.E" +
-      "ventR\006events\"M\n\nEventError\022\024\n\005error\030\001 \001(" +
-      "\tR\005error\022)\n\005event\030\002 \001(\0132\023.zenoss.cloud.E" +
-      "ventR\005event\"\315\001\n\014TaggedMetric\022\026\n\006metric\030\001" +
-      " \001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\ttimesta" +
-      "mp\022\024\n\005value\030\003 \001(\001R\005value\0228\n\004tags\030\004 \003(\0132$" +
-      ".zenoss.cloud.TaggedMetric.TagsEntryR\004ta" +
-      "gs\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val" +
-      "ue\030\002 \001(\tR\005value:\0028\001\"S\n\rCompactMetric\022\016\n\002" +
-      "id\030\001 \001(\tR\002id\022\034\n\ttimestamp\030\002 \001(\003R\ttimesta" +
-      "mp\022\024\n\005value\030\003 \001(\001R\005value\"\232\002\n\006Metric\022\026\n\006m" +
-      "etric\030\001 \001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\t" +
-      "timestamp\022\024\n\005value\030\003 \001(\001R\005value\022D\n\ndimen" +
-      "sions\030\004 \003(\0132$.zenoss.cloud.Metric.Dimens" +
-      "ionsEntryR\ndimensions\022?\n\016metadataFields\030" +
-      "\006 \001(\0132\027.google.protobuf.StructR\016metadata" +
-      "Fields\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003" +
-      "key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\352\001\n\005Model\022" +
-      "\034\n\ttimestamp\030\001 \001(\003R\ttimestamp\022C\n\ndimensi" +
-      "ons\030\002 \003(\0132#.zenoss.cloud.Model.Dimension" +
-      "sEntryR\ndimensions\022?\n\016metadataFields\030\003 \001" +
-      "(\0132\027.google.protobuf.StructR\016metadataFie" +
-      "lds\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003key" +
-      "\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Models\022*\n\020" +
-      "detailedResponse\030\001 \001(\010R\020detailedResponse" +
-      "\022+\n\006models\030\002 \003(\0132\023.zenoss.cloud.ModelR\006m" +
-      "odels\"M\n\nModelError\022\024\n\005error\030\001 \001(\tR\005erro" +
-      "r\022)\n\005model\030\002 \001(\0132\023.zenoss.cloud.ModelR\005m" +
-      "odel\"\241\001\n\021EventStatusResult\022\026\n\006failed\030\001 \001" +
-      "(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucceeded" +
-      "\022\030\n\007message\030\003 \001(\tR\007message\022<\n\014failedEven" +
-      "ts\030\004 \003(\0132\030.zenoss.cloud.EventErrorR\014fail" +
-      "edEvents\"\241\001\n\021ModelStatusResult\022\026\n\006failed" +
-      "\030\001 \001(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucce" +
-      "eded\022\030\n\007message\030\003 \001(\tR\007message\022<\n\014failed" +
-      "Models\030\004 \003(\0132\030.zenoss.cloud.ModelErrorR\014" +
-      "failedModels\"\310\002\n\014StatusResult\022\026\n\006failed\030" +
+      "tobuf/wrappers.proto\"\234\001\n\020CollectionResul" +
+      "t\022+\n\006events\030\001 \003(\0132\023.zenoss.cloud.EventR\006" +
+      "events\022+\n\006models\030\002 \003(\0132\023.zenoss.cloud.Mo" +
+      "delR\006models\022.\n\007metrics\030\003 \003(\0132\024.zenoss.cl" +
+      "oud.MetricR\007metrics\"\006\n\004Void\"\342\003\n\005Event\022\034\n" +
+      "\ttimestamp\030\001 \001(\003R\ttimestamp\022\022\n\004name\030\002 \001(" +
+      "\tR\004name\022C\n\ndimensions\030\003 \003(\0132#.zenoss.clo" +
+      "ud.Event.DimensionsEntryR\ndimensions\022?\n\016" +
+      "metadataFields\030\004 \001(\0132\027.google.protobuf.S" +
+      "tructR\016metadataFields\022\022\n\004type\030\005 \001(\tR\004typ" +
+      "e\022\030\n\007summary\030\006 \001(\tR\007summary\022\022\n\004body\030\007 \001(" +
+      "\tR\004body\0222\n\010severity\030\010 \001(\0162\026.zenoss.cloud" +
+      ".SeverityR\010severity\022,\n\006status\030\t \001(\0162\024.ze" +
+      "noss.cloud.StatusR\006status\022>\n\014acknowledge" +
+      "d\030\n \001(\0132\032.google.protobuf.BoolValueR\014ack" +
+      "nowledged\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(" +
+      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Even" +
+      "ts\022*\n\020detailedResponse\030\001 \001(\010R\020detailedRe" +
+      "sponse\022+\n\006events\030\002 \003(\0132\023.zenoss.cloud.Ev" +
+      "entR\006events\"M\n\nEventError\022\024\n\005error\030\001 \001(\t" +
+      "R\005error\022)\n\005event\030\002 \001(\0132\023.zenoss.cloud.Ev" +
+      "entR\005event\"\315\001\n\014TaggedMetric\022\026\n\006metric\030\001 " +
+      "\001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\ttimestam" +
+      "p\022\024\n\005value\030\003 \001(\001R\005value\0228\n\004tags\030\004 \003(\0132$." +
+      "zenoss.cloud.TaggedMetric.TagsEntryR\004tag" +
+      "s\0327\n\tTagsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005valu" +
+      "e\030\002 \001(\tR\005value:\0028\001\"S\n\rCompactMetric\022\016\n\002i" +
+      "d\030\001 \001(\tR\002id\022\034\n\ttimestamp\030\002 \001(\003R\ttimestam" +
+      "p\022\024\n\005value\030\003 \001(\001R\005value\"\232\002\n\006Metric\022\026\n\006me" +
+      "tric\030\001 \001(\tR\006metric\022\034\n\ttimestamp\030\002 \001(\003R\tt" +
+      "imestamp\022\024\n\005value\030\003 \001(\001R\005value\022D\n\ndimens" +
+      "ions\030\004 \003(\0132$.zenoss.cloud.Metric.Dimensi" +
+      "onsEntryR\ndimensions\022?\n\016metadataFields\030\006" +
+      " \001(\0132\027.google.protobuf.StructR\016metadataF" +
+      "ields\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\352\001\n\005Model\022\034" +
+      "\n\ttimestamp\030\001 \001(\003R\ttimestamp\022C\n\ndimensio" +
+      "ns\030\002 \003(\0132#.zenoss.cloud.Model.Dimensions" +
+      "EntryR\ndimensions\022?\n\016metadataFields\030\003 \001(" +
+      "\0132\027.google.protobuf.StructR\016metadataFiel" +
+      "ds\032=\n\017DimensionsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\tR\005value:\0028\001\"a\n\006Models\022*\n\020d" +
+      "etailedResponse\030\001 \001(\010R\020detailedResponse\022" +
+      "+\n\006models\030\002 \003(\0132\023.zenoss.cloud.ModelR\006mo" +
+      "dels\"M\n\nModelError\022\024\n\005error\030\001 \001(\tR\005error" +
+      "\022)\n\005model\030\002 \001(\0132\023.zenoss.cloud.ModelR\005mo" +
+      "del\"\241\001\n\021EventStatusResult\022\026\n\006failed\030\001 \001(" +
+      "\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucceeded\022" +
+      "\030\n\007message\030\003 \001(\tR\007message\022<\n\014failedEvent" +
+      "s\030\004 \003(\0132\030.zenoss.cloud.EventErrorR\014faile" +
+      "dEvents\"\241\001\n\021ModelStatusResult\022\026\n\006failed\030" +
       "\001 \001(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsuccee" +
-      "ded\022\030\n\007message\030\003 \001(\tR\007message\022T\n\024failedC" +
-      "ompactMetrics\030\004 \003(\0132 .zenoss.cloud.Compa" +
-      "ctMetricErrorR\024failedCompactMetrics\022Q\n\023f" +
-      "ailedTaggedMetrics\030\005 \003(\0132\037.zenoss.cloud." +
-      "TaggedMetricErrorR\023failedTaggedMetrics\022?" +
-      "\n\rfailedMetrics\030\006 \003(\0132\031.zenoss.cloud.Met" +
-      "ricErrorR\rfailedMetrics\"Q\n\014EventWrapper\022" +
-      "3\n\tcanonical\030\001 \001(\0132\023.zenoss.cloud.EventH" +
-      "\000R\tcanonicalB\014\n\nevent_type\"\303\001\n\rMetricWra" +
-      "pper\0224\n\006tagged\030\001 \001(\0132\032.zenoss.cloud.Tagg" +
-      "edMetricH\000R\006tagged\0227\n\007compact\030\002 \001(\0132\033.ze" +
-      "noss.cloud.CompactMetricH\000R\007compact\0224\n\tc" +
-      "anonical\030\003 \001(\0132\024.zenoss.cloud.MetricH\000R\t" +
-      "canonicalB\r\n\013metric_type\"\317\001\n\013MetricBatch" +
-      "\022J\n\013global_tags\030\002 \003(\0132).zenoss.cloud.Met" +
-      "ricBatch.GlobalTagsEntryR\nglobalTags\0225\n\007" +
-      "metrics\030\003 \003(\0132\033.zenoss.cloud.MetricWrapp" +
-      "erR\007metrics\032=\n\017GlobalTagsEntry\022\020\n\003key\030\001 " +
-      "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"_\n\022Co" +
-      "mpactMetricError\022\024\n\005error\030\001 \001(\tR\005error\0223" +
-      "\n\006metric\030\002 \001(\0132\033.zenoss.cloud.CompactMet" +
-      "ricR\006metric\"Q\n\013MetricError\022\024\n\005error\030\001 \001(" +
-      "\tR\005error\022,\n\006metric\030\002 \001(\0132\024.zenoss.cloud." +
-      "MetricR\006metric\"]\n\021TaggedMetricError\022\024\n\005e" +
-      "rror\030\001 \001(\tR\005error\0222\n\006metric\030\002 \001(\0132\032.zeno" +
-      "ss.cloud.TaggedMetricR\006metric\"\354\001\n\007Metric" +
-      "s\022*\n\020detailedResponse\030\001 \001(\010R\020detailedRes" +
-      "ponse\022C\n\016compactMetrics\030\003 \003(\0132\033.zenoss.c" +
-      "loud.CompactMetricR\016compactMetrics\022@\n\rta" +
-      "ggedMetrics\030\004 \003(\0132\032.zenoss.cloud.TaggedM" +
-      "etricR\rtaggedMetrics\022.\n\007metrics\030\005 \003(\0132\024." +
-      "zenoss.cloud.MetricR\007metrics*\210\001\n\010Severit" +
-      "y\022\024\n\020SEVERITY_DEFAULT\020\000\022\022\n\016SEVERITY_DEBU" +
-      "G\020\001\022\021\n\rSEVERITY_INFO\020\002\022\024\n\020SEVERITY_WARNI" +
-      "NG\020\003\022\022\n\016SEVERITY_ERROR\020\004\022\025\n\021SEVERITY_CRI" +
-      "TICAL\020\005*W\n\006Status\022\022\n\016STATUS_DEFAULT\020\000\022\017\n" +
-      "\013STATUS_OPEN\020\001\022\025\n\021STATUS_SUPPRESSED\020\002\022\021\n" +
-      "\rSTATUS_CLOSED\020\0032\320\003\n\023DataReceiverService" +
-      "\022g\n\tPutEvents\022\024.zenoss.cloud.Events\032\037.ze" +
-      "noss.cloud.EventStatusResult\"#\202\323\344\223\002\035\"\030/v" +
-      "1/data-receiver/events:\001*\022>\n\010PutEvent\022\032." +
-      "zenoss.cloud.EventWrapper\032\022.zenoss.cloud" +
-      ".Void\"\000(\001\022e\n\nPutMetrics\022\025.zenoss.cloud.M" +
-      "etrics\032\032.zenoss.cloud.StatusResult\"$\202\323\344\223" +
-      "\002\036\"\031/v1/data-receiver/metrics:\001*\022@\n\tPutM" +
-      "etric\022\033.zenoss.cloud.MetricWrapper\032\022.zen" +
-      "oss.cloud.Void\"\000(\001\022g\n\tPutModels\022\024.zenoss" +
-      ".cloud.Models\032\037.zenoss.cloud.ModelStatus" +
-      "Result\"#\202\323\344\223\002\035\"\030/v1/data-receiver/models" +
-      ":\001*B\\\n\035org.zenoss.cloud.dataReceiverP\001Z9" +
-      "github.com/zenoss/zenoss-protobufs/go/cl" +
-      "oud/data_receiverb\006proto3"
+      "ded\022\030\n\007message\030\003 \001(\tR\007message\022<\n\014failedM" +
+      "odels\030\004 \003(\0132\030.zenoss.cloud.ModelErrorR\014f" +
+      "ailedModels\"\310\002\n\014StatusResult\022\026\n\006failed\030\001" +
+      " \001(\005R\006failed\022\034\n\tsucceeded\030\002 \001(\005R\tsucceed" +
+      "ed\022\030\n\007message\030\003 \001(\tR\007message\022T\n\024failedCo" +
+      "mpactMetrics\030\004 \003(\0132 .zenoss.cloud.Compac" +
+      "tMetricErrorR\024failedCompactMetrics\022Q\n\023fa" +
+      "iledTaggedMetrics\030\005 \003(\0132\037.zenoss.cloud.T" +
+      "aggedMetricErrorR\023failedTaggedMetrics\022?\n" +
+      "\rfailedMetrics\030\006 \003(\0132\031.zenoss.cloud.Metr" +
+      "icErrorR\rfailedMetrics\"Q\n\014EventWrapper\0223" +
+      "\n\tcanonical\030\001 \001(\0132\023.zenoss.cloud.EventH\000" +
+      "R\tcanonicalB\014\n\nevent_type\"\303\001\n\rMetricWrap" +
+      "per\0224\n\006tagged\030\001 \001(\0132\032.zenoss.cloud.Tagge" +
+      "dMetricH\000R\006tagged\0227\n\007compact\030\002 \001(\0132\033.zen" +
+      "oss.cloud.CompactMetricH\000R\007compact\0224\n\tca" +
+      "nonical\030\003 \001(\0132\024.zenoss.cloud.MetricH\000R\tc" +
+      "anonicalB\r\n\013metric_type\"\317\001\n\013MetricBatch\022" +
+      "J\n\013global_tags\030\002 \003(\0132).zenoss.cloud.Metr" +
+      "icBatch.GlobalTagsEntryR\nglobalTags\0225\n\007m" +
+      "etrics\030\003 \003(\0132\033.zenoss.cloud.MetricWrappe" +
+      "rR\007metrics\032=\n\017GlobalTagsEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"_\n\022Com" +
+      "pactMetricError\022\024\n\005error\030\001 \001(\tR\005error\0223\n" +
+      "\006metric\030\002 \001(\0132\033.zenoss.cloud.CompactMetr" +
+      "icR\006metric\"Q\n\013MetricError\022\024\n\005error\030\001 \001(\t" +
+      "R\005error\022,\n\006metric\030\002 \001(\0132\024.zenoss.cloud.M" +
+      "etricR\006metric\"]\n\021TaggedMetricError\022\024\n\005er" +
+      "ror\030\001 \001(\tR\005error\0222\n\006metric\030\002 \001(\0132\032.zenos" +
+      "s.cloud.TaggedMetricR\006metric\"\354\001\n\007Metrics" +
+      "\022*\n\020detailedResponse\030\001 \001(\010R\020detailedResp" +
+      "onse\022C\n\016compactMetrics\030\003 \003(\0132\033.zenoss.cl" +
+      "oud.CompactMetricR\016compactMetrics\022@\n\rtag" +
+      "gedMetrics\030\004 \003(\0132\032.zenoss.cloud.TaggedMe" +
+      "tricR\rtaggedMetrics\022.\n\007metrics\030\005 \003(\0132\024.z" +
+      "enoss.cloud.MetricR\007metrics*\210\001\n\010Severity" +
+      "\022\024\n\020SEVERITY_DEFAULT\020\000\022\022\n\016SEVERITY_DEBUG" +
+      "\020\001\022\021\n\rSEVERITY_INFO\020\002\022\024\n\020SEVERITY_WARNIN" +
+      "G\020\003\022\022\n\016SEVERITY_ERROR\020\004\022\025\n\021SEVERITY_CRIT" +
+      "ICAL\020\005*W\n\006Status\022\022\n\016STATUS_DEFAULT\020\000\022\017\n\013" +
+      "STATUS_OPEN\020\001\022\025\n\021STATUS_SUPPRESSED\020\002\022\021\n\r" +
+      "STATUS_CLOSED\020\0032\320\003\n\023DataReceiverService\022" +
+      "g\n\tPutEvents\022\024.zenoss.cloud.Events\032\037.zen" +
+      "oss.cloud.EventStatusResult\"#\202\323\344\223\002\035\"\030/v1" +
+      "/data-receiver/events:\001*\022>\n\010PutEvent\022\032.z" +
+      "enoss.cloud.EventWrapper\032\022.zenoss.cloud." +
+      "Void\"\000(\001\022e\n\nPutMetrics\022\025.zenoss.cloud.Me" +
+      "trics\032\032.zenoss.cloud.StatusResult\"$\202\323\344\223\002" +
+      "\036\"\031/v1/data-receiver/metrics:\001*\022@\n\tPutMe" +
+      "tric\022\033.zenoss.cloud.MetricWrapper\032\022.zeno" +
+      "ss.cloud.Void\"\000(\001\022g\n\tPutModels\022\024.zenoss." +
+      "cloud.Models\032\037.zenoss.cloud.ModelStatusR" +
+      "esult\"#\202\323\344\223\002\035\"\030/v1/data-receiver/models:" +
+      "\001*B\\\n\035org.zenoss.cloud.dataReceiverP\001Z9g" +
+      "ithub.com/zenoss/zenoss-protobufs/go/clo" +
+      "ud/data_receiverb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -274,14 +283,20 @@ public final class DataReceiver {
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
         });
-    internal_static_zenoss_cloud_Void_descriptor =
+    internal_static_zenoss_cloud_CollectionResult_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_zenoss_cloud_CollectionResult_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_zenoss_cloud_CollectionResult_descriptor,
+        new java.lang.String[] { "Events", "Models", "Metrics", });
+    internal_static_zenoss_cloud_Void_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_zenoss_cloud_Void_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Void_descriptor,
         new java.lang.String[] { });
     internal_static_zenoss_cloud_Event_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_zenoss_cloud_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Event_descriptor,
@@ -293,19 +308,19 @@ public final class DataReceiver {
         internal_static_zenoss_cloud_Event_DimensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_Events_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_zenoss_cloud_Events_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Events_descriptor,
         new java.lang.String[] { "DetailedResponse", "Events", });
     internal_static_zenoss_cloud_EventError_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_zenoss_cloud_EventError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_EventError_descriptor,
         new java.lang.String[] { "Error", "Event", });
     internal_static_zenoss_cloud_TaggedMetric_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_zenoss_cloud_TaggedMetric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_TaggedMetric_descriptor,
@@ -317,13 +332,13 @@ public final class DataReceiver {
         internal_static_zenoss_cloud_TaggedMetric_TagsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_CompactMetric_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_zenoss_cloud_CompactMetric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_CompactMetric_descriptor,
         new java.lang.String[] { "Id", "Timestamp", "Value", });
     internal_static_zenoss_cloud_Metric_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_zenoss_cloud_Metric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Metric_descriptor,
@@ -335,7 +350,7 @@ public final class DataReceiver {
         internal_static_zenoss_cloud_Metric_DimensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_Model_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_zenoss_cloud_Model_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Model_descriptor,
@@ -347,49 +362,49 @@ public final class DataReceiver {
         internal_static_zenoss_cloud_Model_DimensionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_Models_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_zenoss_cloud_Models_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Models_descriptor,
         new java.lang.String[] { "DetailedResponse", "Models", });
     internal_static_zenoss_cloud_ModelError_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_zenoss_cloud_ModelError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_ModelError_descriptor,
         new java.lang.String[] { "Error", "Model", });
     internal_static_zenoss_cloud_EventStatusResult_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_zenoss_cloud_EventStatusResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_EventStatusResult_descriptor,
         new java.lang.String[] { "Failed", "Succeeded", "Message", "FailedEvents", });
     internal_static_zenoss_cloud_ModelStatusResult_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_zenoss_cloud_ModelStatusResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_ModelStatusResult_descriptor,
         new java.lang.String[] { "Failed", "Succeeded", "Message", "FailedModels", });
     internal_static_zenoss_cloud_StatusResult_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_zenoss_cloud_StatusResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_StatusResult_descriptor,
         new java.lang.String[] { "Failed", "Succeeded", "Message", "FailedCompactMetrics", "FailedTaggedMetrics", "FailedMetrics", });
     internal_static_zenoss_cloud_EventWrapper_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_zenoss_cloud_EventWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_EventWrapper_descriptor,
         new java.lang.String[] { "Canonical", "EventType", });
     internal_static_zenoss_cloud_MetricWrapper_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_zenoss_cloud_MetricWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_MetricWrapper_descriptor,
         new java.lang.String[] { "Tagged", "Compact", "Canonical", "MetricType", });
     internal_static_zenoss_cloud_MetricBatch_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_zenoss_cloud_MetricBatch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_MetricBatch_descriptor,
@@ -401,25 +416,25 @@ public final class DataReceiver {
         internal_static_zenoss_cloud_MetricBatch_GlobalTagsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_zenoss_cloud_CompactMetricError_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_zenoss_cloud_CompactMetricError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_CompactMetricError_descriptor,
         new java.lang.String[] { "Error", "Metric", });
     internal_static_zenoss_cloud_MetricError_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_zenoss_cloud_MetricError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_MetricError_descriptor,
         new java.lang.String[] { "Error", "Metric", });
     internal_static_zenoss_cloud_TaggedMetricError_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_zenoss_cloud_TaggedMetricError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_TaggedMetricError_descriptor,
         new java.lang.String[] { "Error", "Metric", });
     internal_static_zenoss_cloud_Metrics_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_zenoss_cloud_Metrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_zenoss_cloud_Metrics_descriptor,
