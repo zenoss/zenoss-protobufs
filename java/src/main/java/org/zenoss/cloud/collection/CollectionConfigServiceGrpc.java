@@ -9,7 +9,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.63.0)",
+    value = "by gRPC proto compiler (version 1.70.0)",
     comments = "Source: zenoss/cloud/collection_cfg.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CollectionConfigServiceGrpc {
@@ -93,6 +93,21 @@ public final class CollectionConfigServiceGrpc {
         }
       };
     return CollectionConfigServiceStub.newStub(factory, channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static CollectionConfigServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CollectionConfigServiceBlockingV2Stub>() {
+        @java.lang.Override
+        public CollectionConfigServiceBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CollectionConfigServiceBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return CollectionConfigServiceBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -202,6 +217,45 @@ public final class CollectionConfigServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CollectionConfigService.
+   * <pre>
+   * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
+   * collection configurations.
+   * </pre>
+   */
+  public static final class CollectionConfigServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CollectionConfigServiceBlockingV2Stub> {
+    private CollectionConfigServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CollectionConfigServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CollectionConfigServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<org.zenoss.cloud.collection.WaitForProbeConfigResponse, org.zenoss.cloud.collection.WaitForProbeConfigRequest>
+        waitForProbeConfig() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getWaitForProbeConfigMethod(), getCallOptions());
+    }
+
+    /**
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, org.zenoss.cloud.collection.GetConfigStreamResponse>
+        getConfigStream(org.zenoss.cloud.collection.GetConfigStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getGetConfigStreamMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CollectionConfigService.
    * <pre>
    * CollectionConfigService is the gRPC &amp; HTTP service responsible for managing
    * collection configurations.

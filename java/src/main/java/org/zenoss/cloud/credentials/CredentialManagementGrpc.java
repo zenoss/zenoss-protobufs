@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.63.0)",
+    value = "by gRPC proto compiler (version 1.70.0)",
     comments = "Source: zenoss/cloud/credentials.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CredentialManagementGrpc {
@@ -58,6 +58,21 @@ public final class CredentialManagementGrpc {
         }
       };
     return CredentialManagementStub.newStub(factory, channel);
+  }
+
+  /**
+   * Creates a new blocking-style stub that supports all types of calls on the service
+   */
+  public static CredentialManagementBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CredentialManagementBlockingV2Stub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<CredentialManagementBlockingV2Stub>() {
+        @java.lang.Override
+        public CredentialManagementBlockingV2Stub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new CredentialManagementBlockingV2Stub(channel, callOptions);
+        }
+      };
+    return CredentialManagementBlockingV2Stub.newStub(factory, channel);
   }
 
   /**
@@ -140,6 +155,30 @@ public final class CredentialManagementGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CredentialManagement.
+   */
+  public static final class CredentialManagementBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CredentialManagementBlockingV2Stub> {
+    private CredentialManagementBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CredentialManagementBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CredentialManagementBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     */
+    public org.zenoss.cloud.credentials.GetCredentialResponse getCredential(org.zenoss.cloud.credentials.GetCredentialRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCredentialMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CredentialManagement.
    */
   public static final class CredentialManagementBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<CredentialManagementBlockingStub> {

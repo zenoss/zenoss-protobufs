@@ -10,6 +10,12 @@ option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/data_receiver";
 option java_multiple_files = true;
 option java_package = "org.zenoss.cloud.dataReceiver";
 
+message CollectionResult {
+  repeated Event events = 1;
+  repeated Model models = 2;
+  repeated Metric metrics = 3;
+}
+
 message Void {}
 
 // Public Event struct.

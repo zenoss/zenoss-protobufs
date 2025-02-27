@@ -1,34 +1,34 @@
 # buf.build/grpc/... plugins generate stubs for gRPC services
 # buf.build/protocolbuffers/... plugins generate protobuf definitions
 
-version: v1
+version: v2
 plugins:
   # Go
-  - plugin: buf.build/grpc/go:v1.3.0
+  - remote: buf.build/grpc/go:v1.5.1
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
 
-  - plugin: buf.build/protocolbuffers/go:v1.34.1
+  - remote: buf.build/protocolbuffers/go:v1.36.4
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
 
-  - plugin: buf.build/grpc-ecosystem/gateway:v2.19.1 # HTTP Gateway generation
+  - remote: buf.build/grpc-ecosystem/gateway:v2.26.0 # HTTP Gateway generation
     out: ./go
     opt:
       - module=github.com/zenoss/zenoss-protobufs/go
 
   # Java
-  - plugin: buf.build/protocolbuffers/java:v26.1
+  - remote: buf.build/protocolbuffers/java:v29.3
     out: ./java/src/main/java
 
-  - plugin: buf.build/grpc/java:v1.63.0
+  - remote: buf.build/grpc/java:v1.70.0
     out: ./java/src/main/java
 
   # Python
-  - plugin: buf.build/grpc/python:v1.63.0
+  - remote: buf.build/grpc/python:v1.70.1
     out: ./python
 
-  - plugin: buf.build/protocolbuffers/python:v26.1
+  - remote: buf.build/protocolbuffers/python:v29.3
     out: ./python
