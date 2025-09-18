@@ -107,7 +107,7 @@ tidy:
 
 .PHONY: mocks
 mocks: $(GODIR)
-	$(GOMOCKERY) --dir $(GODIR) --all --inpackage --with-expecter
+	$(GOMOCKERY)
 
 .PHONY: clean
 clean:
