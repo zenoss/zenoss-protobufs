@@ -1,4 +1,4 @@
-SHELL                := /bin/bash
+SHELL                := $(shell command -v bash 2> /dev/null)
 ROOTDIR              ?= $(CURDIR)
 #
 # When running a deploy build in Jenkin ROOTDIR is set to HOST_WORKSPACE, but
@@ -27,7 +27,6 @@ GOMOCKERY 			 := $(shell which mockery)
 GODIR                := go
 PROTODIR             := protobufs
 DESCRIPTORDIR        := descriptors
-PACKAGE              := github.com/zenoss/zenoss-protobufs
 JAVADIR              := java
 JAVA_SRC_DIR         := $(JAVADIR)/src/main/java
 PYTHONDIR            := python
@@ -35,26 +34,27 @@ PROTOFILES           := $(shell find protobufs -name "*.proto")
 PYTHON_FILES         := $(subst $(PROTODIR), $(PYTHONDIR),$(subst .proto,_pb2.py,$(PROTOFILES)))
 LOCAL_USER_ID        := $(shell id -u)
 CONTAINER_DIR        := /tmp/working
-ZENKIT_BUILD_VERSION := 1.19.2
+ZENKIT_BUILD_VERSION := 1.25.1
 BUILD_IMG            := zenoss/zenkit-build:$(ZENKIT_BUILD_VERSION)
 DOCKER_NETWORK       = host
-DOCKER_PARAMS        := --rm -v $(ROOTDIR):$(CONTAINER_DIR):rw \
-	                    -v $(ROOTDIR):/go/src/$(PACKAGE):rw \
-                        -e LOCAL_USER_ID=$(LOCAL_USER_ID) \
+DOCKER_PARAMS        := --rm \
+                        --volume $(ROOTDIR):$(CONTAINER_DIR):rw \
+	                    --volume $(ROOTDIR):/workspace:rw \
+                        --env LOCAL_USER_ID=$(LOCAL_USER_ID) \
                         --network $(DOCKER_NETWORK) \
                         --security-opt seccomp=unconfined \
-                        -w /go/src/$(PACKAGE)
+                        --workdir /workspace
 
 DOCKER_CMD           := docker run -t $(DOCKER_PARAMS) $(BUILD_IMG)
 
 DEPLOY_BUILD_IMAGE   = zenoss/zing-java-build-glibc:1.0
 MVN                  = docker run --rm \
                             --network $(DOCKER_NETWORK) \
-                            -v $(ROOTDIR)/$(JAVADIR):/usr/src/app:rw \
-                            -v $(LOCAL_MAVEN_REPO):/home/user/.m2:rw \
-                            -v $(ROOTDIR)/$(PROTODIR):/usr/src/protobufs/:ro \
-                            -e LOCAL_USER_ID=$(LOCAL_USER_ID) \
-                            -w /usr/src/app \
+                            --volume $(ROOTDIR)/$(JAVADIR):/usr/src/app:rw \
+                            --volume $(LOCAL_MAVEN_REPO):/home/user/.m2:rw \
+                            --volume $(ROOTDIR)/$(PROTODIR):/usr/src/protobufs/:ro \
+                            --env LOCAL_USER_ID=$(LOCAL_USER_ID) \
+                            --workdir /usr/src/app \
                             $(DEPLOY_BUILD_IMAGE) \
                             mvn
 
@@ -107,7 +107,7 @@ tidy:
 
 .PHONY: mocks
 mocks: $(GODIR)
-	$(GOMOCKERY) --dir $(GODIR) --all --inpackage --with-expecter
+	$(GOMOCKERY)
 
 .PHONY: clean
 clean:

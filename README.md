@@ -1,4 +1,5 @@
 # zenoss-protobufs
+
 Public protobuf messages for data-receiver
 
 # Using Protobufs
@@ -24,14 +25,13 @@ Make that you have new asociated gRPC code for the following languages:
     - Java
     - Python
 
-
 # Functional Testing
 
 After making changes to data_receiver.proto, generate an API key as per:
 
     https://help.zenoss.com/docs/administering-zenoss-cloud/enabling-access-for-zenoss-api-clients/managing-streaming-data-clients-and-zenoss-api-keys/creating-a-zenoss-api-key
 
-Now set your *ZENOSS_API_KEY* environment variable:
+Now set your _ZENOSS_API_KEY_ environment variable:
 
     export ZENOSS_API_KEY="asldkf.alsdjfal.sdkjf209u09cjoj2oi"
 

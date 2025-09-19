@@ -1,0 +1,10 @@
+dir: "{{.InterfaceDir}}"
+filename: "mocks.go"
+template: testify
+template-data:
+  unroll-variadic: true
+packages:
+  github.com/zenoss/zenoss-protobufs:
+    config:
+      recursive: true
+      include-interface-regex: "^[A-Z]"
