@@ -9,6 +9,7 @@ package collection
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	structpb "google.golang.org/protobuf/types/known/structpb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -27,6 +28,7 @@ type Config struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Tenant        string                 `protobuf:"bytes,3,opt,name=tenant,proto3" json:"tenant,omitempty"`
 	Configuration *Configuration         `protobuf:"bytes,5,opt,name=configuration,proto3" json:"configuration,omitempty"`
+	ProbeType     string                 `protobuf:"bytes,10,opt,name=probe_type,json=probeType,proto3" json:"probe_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -89,6 +91,13 @@ func (x *Config) GetConfiguration() *Configuration {
 	return nil
 }
 
+func (x *Config) GetProbeType() string {
+	if x != nil {
+		return x.ProbeType
+	}
+	return ""
+}
+
 type Configuration struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Type          string                 `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
@@ -143,6 +152,7 @@ func (x *Configuration) GetData() string {
 
 type ProbeSuccess struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Data          *structpb.Struct       `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -175,6 +185,13 @@ func (x *ProbeSuccess) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ProbeSuccess.ProtoReflect.Descriptor instead.
 func (*ProbeSuccess) Descriptor() ([]byte, []int) {
 	return file_zenoss_cloud_collection_cfg_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ProbeSuccess) GetData() *structpb.Struct {
+	if x != nil {
+		return x.Data
+	}
+	return nil
 }
 
 type ProbeError struct {
@@ -561,16 +578,21 @@ var File_zenoss_cloud_collection_cfg_proto protoreflect.FileDescriptor
 
 const file_zenoss_cloud_collection_cfg_proto_rawDesc = "" +
 	"\n" +
-	"!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\"\x9c\x01\n" +
+	"!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\x1a\x1cgoogle/protobuf/struct.proto\"\xd3\x01\n" +
 	"\x06Config\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n" +
 	"\x06tenant\x18\x03 \x01(\tR\x06tenant\x12P\n" +
-	"\rconfiguration\x18\x05 \x01(\v2*.zenoss.cloud.collection_cfg.ConfigurationR\rconfigurationJ\x04\b\x04\x10\x05\"7\n" +
+	"\rconfiguration\x18\x05 \x01(\v2*.zenoss.cloud.collection_cfg.ConfigurationR\rconfiguration\x12\x1d\n" +
+	"\n" +
+	"probe_type\x18\n" +
+	" \x01(\tR\tprobeTypeJ\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
+	"\"7\n" +
 	"\rConfiguration\x12\x12\n" +
 	"\x04type\x18\x01 \x01(\tR\x04type\x12\x12\n" +
-	"\x04data\x18\x02 \x01(\tR\x04data\"\x0e\n" +
-	"\fProbeSuccess\"\x94\x01\n" +
+	"\x04data\x18\x02 \x01(\tR\x04data\";\n" +
+	"\fProbeSuccess\x12+\n" +
+	"\x04data\x18\x01 \x01(\v2\x17.google.protobuf.StructR\x04data\"\x94\x01\n" +
 	"\n" +
 	"ProbeError\x12\x18\n" +
 	"\amessage\x18\x03 \x01(\tR\amessage\x12 \n" +
@@ -622,24 +644,26 @@ var file_zenoss_cloud_collection_cfg_proto_goTypes = []any{
 	(*WaitForProbeConfigResponse)(nil), // 7: zenoss.cloud.collection_cfg.WaitForProbeConfigResponse
 	(*GetConfigStreamRequest)(nil),     // 8: zenoss.cloud.collection_cfg.GetConfigStreamRequest
 	(*GetConfigStreamResponse)(nil),    // 9: zenoss.cloud.collection_cfg.GetConfigStreamResponse
+	(*structpb.Struct)(nil),            // 10: google.protobuf.Struct
 }
 var file_zenoss_cloud_collection_cfg_proto_depIdxs = []int32{
-	1, // 0: zenoss.cloud.collection_cfg.Config.configuration:type_name -> zenoss.cloud.collection_cfg.Configuration
-	4, // 1: zenoss.cloud.collection_cfg.ProbeError.field_errors:type_name -> zenoss.cloud.collection_cfg.FieldError
-	2, // 2: zenoss.cloud.collection_cfg.ProbeResult.success:type_name -> zenoss.cloud.collection_cfg.ProbeSuccess
-	3, // 3: zenoss.cloud.collection_cfg.ProbeResult.error:type_name -> zenoss.cloud.collection_cfg.ProbeError
-	0, // 4: zenoss.cloud.collection_cfg.WaitForProbeConfigRequest.configuration:type_name -> zenoss.cloud.collection_cfg.Config
-	5, // 5: zenoss.cloud.collection_cfg.WaitForProbeConfigResponse.result:type_name -> zenoss.cloud.collection_cfg.ProbeResult
-	0, // 6: zenoss.cloud.collection_cfg.GetConfigStreamResponse.configuration:type_name -> zenoss.cloud.collection_cfg.Config
-	7, // 7: zenoss.cloud.collection_cfg.CollectionConfigService.WaitForProbeConfig:input_type -> zenoss.cloud.collection_cfg.WaitForProbeConfigResponse
-	8, // 8: zenoss.cloud.collection_cfg.CollectionConfigService.GetConfigStream:input_type -> zenoss.cloud.collection_cfg.GetConfigStreamRequest
-	6, // 9: zenoss.cloud.collection_cfg.CollectionConfigService.WaitForProbeConfig:output_type -> zenoss.cloud.collection_cfg.WaitForProbeConfigRequest
-	9, // 10: zenoss.cloud.collection_cfg.CollectionConfigService.GetConfigStream:output_type -> zenoss.cloud.collection_cfg.GetConfigStreamResponse
-	9, // [9:11] is the sub-list for method output_type
-	7, // [7:9] is the sub-list for method input_type
-	7, // [7:7] is the sub-list for extension type_name
-	7, // [7:7] is the sub-list for extension extendee
-	0, // [0:7] is the sub-list for field type_name
+	1,  // 0: zenoss.cloud.collection_cfg.Config.configuration:type_name -> zenoss.cloud.collection_cfg.Configuration
+	10, // 1: zenoss.cloud.collection_cfg.ProbeSuccess.data:type_name -> google.protobuf.Struct
+	4,  // 2: zenoss.cloud.collection_cfg.ProbeError.field_errors:type_name -> zenoss.cloud.collection_cfg.FieldError
+	2,  // 3: zenoss.cloud.collection_cfg.ProbeResult.success:type_name -> zenoss.cloud.collection_cfg.ProbeSuccess
+	3,  // 4: zenoss.cloud.collection_cfg.ProbeResult.error:type_name -> zenoss.cloud.collection_cfg.ProbeError
+	0,  // 5: zenoss.cloud.collection_cfg.WaitForProbeConfigRequest.configuration:type_name -> zenoss.cloud.collection_cfg.Config
+	5,  // 6: zenoss.cloud.collection_cfg.WaitForProbeConfigResponse.result:type_name -> zenoss.cloud.collection_cfg.ProbeResult
+	0,  // 7: zenoss.cloud.collection_cfg.GetConfigStreamResponse.configuration:type_name -> zenoss.cloud.collection_cfg.Config
+	7,  // 8: zenoss.cloud.collection_cfg.CollectionConfigService.WaitForProbeConfig:input_type -> zenoss.cloud.collection_cfg.WaitForProbeConfigResponse
+	8,  // 9: zenoss.cloud.collection_cfg.CollectionConfigService.GetConfigStream:input_type -> zenoss.cloud.collection_cfg.GetConfigStreamRequest
+	6,  // 10: zenoss.cloud.collection_cfg.CollectionConfigService.WaitForProbeConfig:output_type -> zenoss.cloud.collection_cfg.WaitForProbeConfigRequest
+	9,  // 11: zenoss.cloud.collection_cfg.CollectionConfigService.GetConfigStream:output_type -> zenoss.cloud.collection_cfg.GetConfigStreamResponse
+	10, // [10:12] is the sub-list for method output_type
+	8,  // [8:10] is the sub-list for method input_type
+	8,  // [8:8] is the sub-list for extension type_name
+	8,  // [8:8] is the sub-list for extension extendee
+	0,  // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_zenoss_cloud_collection_cfg_proto_init() }
