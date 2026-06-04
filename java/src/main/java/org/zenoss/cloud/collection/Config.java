@@ -30,6 +30,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     tenant_ = "";
+    probeType_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -189,6 +190,45 @@ private static final long serialVersionUID = 0L;
     return configuration_ == null ? org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
   }
 
+  public static final int PROBE_TYPE_FIELD_NUMBER = 10;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object probeType_ = "";
+  /**
+   * <code>string probe_type = 10 [json_name = "probeType"];</code>
+   * @return The probeType.
+   */
+  @java.lang.Override
+  public java.lang.String getProbeType() {
+    java.lang.Object ref = probeType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      probeType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string probe_type = 10 [json_name = "probeType"];</code>
+   * @return The bytes for probeType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProbeTypeBytes() {
+    java.lang.Object ref = probeType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      probeType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +255,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getConfiguration());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(probeType_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, probeType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -236,6 +279,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getConfiguration());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(probeType_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, probeType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -263,6 +309,8 @@ private static final long serialVersionUID = 0L;
       if (!getConfiguration()
           .equals(other.getConfiguration())) return false;
     }
+    if (!getProbeType()
+        .equals(other.getProbeType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -284,6 +332,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
       hash = (53 * hash) + getConfiguration().hashCode();
     }
+    hash = (37 * hash) + PROBE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getProbeType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,6 +479,7 @@ private static final long serialVersionUID = 0L;
         configurationBuilder_.dispose();
         configurationBuilder_ = null;
       }
+      probeType_ = "";
       return this;
     }
 
@@ -478,6 +529,9 @@ private static final long serialVersionUID = 0L;
             : configurationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.probeType_ = probeType_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -510,6 +564,11 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasConfiguration()) {
         mergeConfiguration(other.getConfiguration());
+      }
+      if (!other.getProbeType().isEmpty()) {
+        probeType_ = other.probeType_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -559,6 +618,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 42
+            case 82: {
+              probeType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -911,6 +975,78 @@ private static final long serialVersionUID = 0L;
         configuration_ = null;
       }
       return configurationBuilder_;
+    }
+
+    private java.lang.Object probeType_ = "";
+    /**
+     * <code>string probe_type = 10 [json_name = "probeType"];</code>
+     * @return The probeType.
+     */
+    public java.lang.String getProbeType() {
+      java.lang.Object ref = probeType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        probeType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string probe_type = 10 [json_name = "probeType"];</code>
+     * @return The bytes for probeType.
+     */
+    public com.google.protobuf.ByteString
+        getProbeTypeBytes() {
+      java.lang.Object ref = probeType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        probeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string probe_type = 10 [json_name = "probeType"];</code>
+     * @param value The probeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProbeType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      probeType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string probe_type = 10 [json_name = "probeType"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProbeType() {
+      probeType_ = getDefaultInstance().getProbeType();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string probe_type = 10 [json_name = "probeType"];</code>
+     * @param value The bytes for probeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProbeTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      probeType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:zenoss.cloud.collection_cfg.Config)

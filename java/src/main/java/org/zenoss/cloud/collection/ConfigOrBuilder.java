@@ -59,4 +59,16 @@ public interface ConfigOrBuilder extends
    * <code>.zenoss.cloud.collection_cfg.Configuration configuration = 5 [json_name = "configuration"];</code>
    */
   org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder();
+
+  /**
+   * <code>string probe_type = 10 [json_name = "probeType"];</code>
+   * @return The probeType.
+   */
+  java.lang.String getProbeType();
+  /**
+   * <code>string probe_type = 10 [json_name = "probeType"];</code>
+   * @return The bytes for probeType.
+   */
+  com.google.protobuf.ByteString
+      getProbeTypeBytes();
 }

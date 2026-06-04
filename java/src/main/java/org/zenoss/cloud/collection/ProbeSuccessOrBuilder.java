@@ -8,4 +8,19 @@ package org.zenoss.cloud.collection;
 public interface ProbeSuccessOrBuilder extends
     // @@protoc_insertion_point(interface_extends:zenoss.cloud.collection_cfg.ProbeSuccess)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   * @return Whether the data field is set.
+   */
+  boolean hasData();
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   * @return The data.
+   */
+  com.google.protobuf.Struct getData();
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   */
+  com.google.protobuf.StructOrBuilder getDataOrBuilder();
 }

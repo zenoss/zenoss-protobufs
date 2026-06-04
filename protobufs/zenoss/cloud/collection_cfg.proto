@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package zenoss.cloud.collection_cfg;
 
+import "google/protobuf/struct.proto";
+
 option go_package = "github.com/zenoss/zenoss-protobufs/go/cloud/collection";
 option java_multiple_files = true;
 option java_package = "org.zenoss.cloud.collection";
@@ -18,8 +20,9 @@ message Config {
   string name = 2;
   string tenant = 3;
   Configuration configuration = 5;
+  string probe_type = 10;
 
-  reserved 4;
+  reserved 4, 6, 7, 8, 9;
 }
 
 message Configuration {
@@ -27,7 +30,9 @@ message Configuration {
   string data = 2;
 }
 
-message ProbeSuccess {}
+message ProbeSuccess {
+  google.protobuf.Struct data = 1;
+}
 
 message ProbeError {
   // message is a short human-friendly text. Can be empty.

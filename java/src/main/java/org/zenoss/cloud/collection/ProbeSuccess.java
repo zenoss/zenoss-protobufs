@@ -42,6 +42,33 @@ private static final long serialVersionUID = 0L;
             org.zenoss.cloud.collection.ProbeSuccess.class, org.zenoss.cloud.collection.ProbeSuccess.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int DATA_FIELD_NUMBER = 1;
+  private com.google.protobuf.Struct data_;
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   * @return Whether the data field is set.
+   */
+  @java.lang.Override
+  public boolean hasData() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getData() {
+    return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+  }
+  /**
+   * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
+    return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -56,6 +83,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getData());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -65,6 +95,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(1, getData());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -80,6 +114,11 @@ private static final long serialVersionUID = 0L;
     }
     org.zenoss.cloud.collection.ProbeSuccess other = (org.zenoss.cloud.collection.ProbeSuccess) obj;
 
+    if (hasData() != other.hasData()) return false;
+    if (hasData()) {
+      if (!getData()
+          .equals(other.getData())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -91,6 +130,10 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasData()) {
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -210,17 +253,29 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.zenoss.cloud.collection.ProbeSuccess.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getDataFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
       return this;
     }
 
@@ -247,8 +302,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.zenoss.cloud.collection.ProbeSuccess buildPartial() {
       org.zenoss.cloud.collection.ProbeSuccess result = new org.zenoss.cloud.collection.ProbeSuccess(this);
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.zenoss.cloud.collection.ProbeSuccess result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.data_ = dataBuilder_ == null
+            ? data_
+            : dataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -263,6 +331,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.zenoss.cloud.collection.ProbeSuccess other) {
       if (other == org.zenoss.cloud.collection.ProbeSuccess.getDefaultInstance()) return this;
+      if (other.hasData()) {
+        mergeData(other.getData());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -289,6 +360,13 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 10: {
+              input.readMessage(
+                  getDataFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -303,6 +381,128 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } // finally
       return this;
+    }
+    private int bitField0_;
+
+    private com.google.protobuf.Struct data_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> dataBuilder_;
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    public com.google.protobuf.Struct getData() {
+      if (dataBuilder_ == null) {
+        return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+      } else {
+        return dataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public Builder setData(com.google.protobuf.Struct value) {
+      if (dataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+      } else {
+        dataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public Builder setData(
+        com.google.protobuf.Struct.Builder builderForValue) {
+      if (dataBuilder_ == null) {
+        data_ = builderForValue.build();
+      } else {
+        dataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public Builder mergeData(com.google.protobuf.Struct value) {
+      if (dataBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0) &&
+          data_ != null &&
+          data_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getDataBuilder().mergeFrom(value);
+        } else {
+          data_ = value;
+        }
+      } else {
+        dataBuilder_.mergeFrom(value);
+      }
+      if (data_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public Builder clearData() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public com.google.protobuf.Struct.Builder getDataBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
+      if (dataBuilder_ != null) {
+        return dataBuilder_.getMessageOrBuilder();
+      } else {
+        return data_ == null ?
+            com.google.protobuf.Struct.getDefaultInstance() : data_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Struct data = 1 [json_name = "data"];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+        getDataFieldBuilder() {
+      if (dataBuilder_ == null) {
+        dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
+                getData(),
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      return dataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:zenoss.cloud.collection_cfg.ProbeSuccess)
