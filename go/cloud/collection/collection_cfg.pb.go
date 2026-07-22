@@ -28,6 +28,7 @@ type Config struct {
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Tenant        string                 `protobuf:"bytes,3,opt,name=tenant,proto3" json:"tenant,omitempty"`
 	Configuration *Configuration         `protobuf:"bytes,5,opt,name=configuration,proto3" json:"configuration,omitempty"`
+	Tags          []string               `protobuf:"bytes,6,rep,name=tags,proto3" json:"tags,omitempty"`
 	ProbeType     string                 `protobuf:"bytes,10,opt,name=probe_type,json=probeType,proto3" json:"probe_type,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -87,6 +88,13 @@ func (x *Config) GetTenant() string {
 func (x *Config) GetConfiguration() *Configuration {
 	if x != nil {
 		return x.Configuration
+	}
+	return nil
+}
+
+func (x *Config) GetTags() []string {
+	if x != nil {
+		return x.Tags
 	}
 	return nil
 }
@@ -578,15 +586,16 @@ var File_zenoss_cloud_collection_cfg_proto protoreflect.FileDescriptor
 
 const file_zenoss_cloud_collection_cfg_proto_rawDesc = "" +
 	"\n" +
-	"!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\x1a\x1cgoogle/protobuf/struct.proto\"\xd3\x01\n" +
+	"!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\x1a\x1cgoogle/protobuf/struct.proto\"\xe1\x01\n" +
 	"\x06Config\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n" +
 	"\x06tenant\x18\x03 \x01(\tR\x06tenant\x12P\n" +
-	"\rconfiguration\x18\x05 \x01(\v2*.zenoss.cloud.collection_cfg.ConfigurationR\rconfiguration\x12\x1d\n" +
+	"\rconfiguration\x18\x05 \x01(\v2*.zenoss.cloud.collection_cfg.ConfigurationR\rconfiguration\x12\x12\n" +
+	"\x04tags\x18\x06 \x03(\tR\x04tags\x12\x1d\n" +
 	"\n" +
 	"probe_type\x18\n" +
-	" \x01(\tR\tprobeTypeJ\x04\b\x04\x10\x05J\x04\b\x06\x10\aJ\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
+	" \x01(\tR\tprobeTypeJ\x04\b\x04\x10\x05J\x04\b\a\x10\bJ\x04\b\b\x10\tJ\x04\b\t\x10\n" +
 	"\"7\n" +
 	"\rConfiguration\x12\x12\n" +
 	"\x04type\x18\x01 \x01(\tR\x04type\x12\x12\n" +

@@ -61,6 +61,31 @@ public interface ConfigOrBuilder extends
   org.zenoss.cloud.collection.ConfigurationOrBuilder getConfigurationOrBuilder();
 
   /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @return A list containing the tags.
+   */
+  java.util.List<java.lang.String>
+      getTagsList();
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @return The count of tags.
+   */
+  int getTagsCount();
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  java.lang.String getTags(int index);
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTagsBytes(int index);
+
+  /**
    * <code>string probe_type = 10 [json_name = "probeType"];</code>
    * @return The probeType.
    */

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\x1a\x1cgoogle/protobuf/struct.proto\"\xd3\x01\n\x06\x43onfig\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06tenant\x18\x03 \x01(\tR\x06tenant\x12P\n\rconfiguration\x18\x05 \x01(\x0b\x32*.zenoss.cloud.collection_cfg.ConfigurationR\rconfiguration\x12\x1d\n\nprobe_type\x18\n \x01(\tR\tprobeTypeJ\x04\x08\x04\x10\x05J\x04\x08\x06\x10\x07J\x04\x08\x07\x10\x08J\x04\x08\x08\x10\tJ\x04\x08\t\x10\n\"7\n\rConfiguration\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\x12\x12\n\x04\x64\x61ta\x18\x02 \x01(\tR\x04\x64\x61ta\";\n\x0cProbeSuccess\x12+\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x17.google.protobuf.StructR\x04\x64\x61ta\"\x94\x01\n\nProbeError\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\x12 \n\x0b\x64\x65scription\x18\x01 \x01(\tR\x0b\x64\x65scription\x12J\n\x0c\x66ield_errors\x18\x02 \x03(\x0b\x32\'.zenoss.cloud.collection_cfg.FieldErrorR\x0b\x66ieldErrors\"D\n\nFieldError\x12\x14\n\x05\x66ield\x18\x01 \x01(\tR\x05\x66ield\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\"\x9f\x01\n\x0bProbeResult\x12\x45\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00R\x07success\x12?\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00R\x05\x65rrorB\x08\n\x06result\"\x82\x01\n\x19WaitForProbeConfigRequest\x12I\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.ConfigR\rconfiguration\x12\x1a\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03R\x08\x64\x65\x61\x64line\"{\n\x1aWaitForProbeConfigResponse\x12\x1b\n\tconfig_id\x18\x01 \x01(\tR\x08\x63onfigId\x12@\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResultR\x06result\"\x18\n\x16GetConfigStreamRequest\"d\n\x17GetConfigStreamResponse\x12I\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.ConfigR\rconfiguration2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!zenoss/cloud/collection_cfg.proto\x12\x1bzenoss.cloud.collection_cfg\x1a\x1cgoogle/protobuf/struct.proto\"\xe1\x01\n\x06\x43onfig\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06tenant\x18\x03 \x01(\tR\x06tenant\x12P\n\rconfiguration\x18\x05 \x01(\x0b\x32*.zenoss.cloud.collection_cfg.ConfigurationR\rconfiguration\x12\x12\n\x04tags\x18\x06 \x03(\tR\x04tags\x12\x1d\n\nprobe_type\x18\n \x01(\tR\tprobeTypeJ\x04\x08\x04\x10\x05J\x04\x08\x07\x10\x08J\x04\x08\x08\x10\tJ\x04\x08\t\x10\n\"7\n\rConfiguration\x12\x12\n\x04type\x18\x01 \x01(\tR\x04type\x12\x12\n\x04\x64\x61ta\x18\x02 \x01(\tR\x04\x64\x61ta\";\n\x0cProbeSuccess\x12+\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x17.google.protobuf.StructR\x04\x64\x61ta\"\x94\x01\n\nProbeError\x12\x18\n\x07message\x18\x03 \x01(\tR\x07message\x12 \n\x0b\x64\x65scription\x18\x01 \x01(\tR\x0b\x64\x65scription\x12J\n\x0c\x66ield_errors\x18\x02 \x03(\x0b\x32\'.zenoss.cloud.collection_cfg.FieldErrorR\x0b\x66ieldErrors\"D\n\nFieldError\x12\x14\n\x05\x66ield\x18\x01 \x01(\tR\x05\x66ield\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tR\x0b\x64\x65scription\"\x9f\x01\n\x0bProbeResult\x12\x45\n\x07success\x18\x01 \x01(\x0b\x32).zenoss.cloud.collection_cfg.ProbeSuccessH\x00R\x07success\x12?\n\x05\x65rror\x18\x02 \x01(\x0b\x32\'.zenoss.cloud.collection_cfg.ProbeErrorH\x00R\x05\x65rrorB\x08\n\x06result\"\x82\x01\n\x19WaitForProbeConfigRequest\x12I\n\rconfiguration\x18\x01 \x01(\x0b\x32#.zenoss.cloud.collection_cfg.ConfigR\rconfiguration\x12\x1a\n\x08\x64\x65\x61\x64line\x18\x02 \x01(\x03R\x08\x64\x65\x61\x64line\"{\n\x1aWaitForProbeConfigResponse\x12\x1b\n\tconfig_id\x18\x01 \x01(\tR\x08\x63onfigId\x12@\n\x06result\x18\x02 \x01(\x0b\x32(.zenoss.cloud.collection_cfg.ProbeResultR\x06result\"\x18\n\x16GetConfigStreamRequest\"d\n\x17GetConfigStreamResponse\x12I\n\rconfiguration\x18\x01 \x03(\x0b\x32#.zenoss.cloud.collection_cfg.ConfigR\rconfiguration2\xaa\x02\n\x17\x43ollectionConfigService\x12\x8b\x01\n\x12WaitForProbeConfig\x12\x37.zenoss.cloud.collection_cfg.WaitForProbeConfigResponse\x1a\x36.zenoss.cloud.collection_cfg.WaitForProbeConfigRequest\"\x00(\x01\x30\x01\x12\x80\x01\n\x0fGetConfigStream\x12\x33.zenoss.cloud.collection_cfg.GetConfigStreamRequest\x1a\x34.zenoss.cloud.collection_cfg.GetConfigStreamResponse\"\x00\x30\x01\x42W\n\x1borg.zenoss.cloud.collectionP\x01Z6github.com/zenoss/zenoss-protobufs/go/cloud/collectionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,25 +34,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\033org.zenoss.cloud.collectionP\001Z6github.com/zenoss/zenoss-protobufs/go/cloud/collection'
   _globals['_CONFIG']._serialized_start=97
-  _globals['_CONFIG']._serialized_end=308
-  _globals['_CONFIGURATION']._serialized_start=310
-  _globals['_CONFIGURATION']._serialized_end=365
-  _globals['_PROBESUCCESS']._serialized_start=367
-  _globals['_PROBESUCCESS']._serialized_end=426
-  _globals['_PROBEERROR']._serialized_start=429
-  _globals['_PROBEERROR']._serialized_end=577
-  _globals['_FIELDERROR']._serialized_start=579
-  _globals['_FIELDERROR']._serialized_end=647
-  _globals['_PROBERESULT']._serialized_start=650
-  _globals['_PROBERESULT']._serialized_end=809
-  _globals['_WAITFORPROBECONFIGREQUEST']._serialized_start=812
-  _globals['_WAITFORPROBECONFIGREQUEST']._serialized_end=942
-  _globals['_WAITFORPROBECONFIGRESPONSE']._serialized_start=944
-  _globals['_WAITFORPROBECONFIGRESPONSE']._serialized_end=1067
-  _globals['_GETCONFIGSTREAMREQUEST']._serialized_start=1069
-  _globals['_GETCONFIGSTREAMREQUEST']._serialized_end=1093
-  _globals['_GETCONFIGSTREAMRESPONSE']._serialized_start=1095
-  _globals['_GETCONFIGSTREAMRESPONSE']._serialized_end=1195
-  _globals['_COLLECTIONCONFIGSERVICE']._serialized_start=1198
-  _globals['_COLLECTIONCONFIGSERVICE']._serialized_end=1496
+  _globals['_CONFIG']._serialized_end=322
+  _globals['_CONFIGURATION']._serialized_start=324
+  _globals['_CONFIGURATION']._serialized_end=379
+  _globals['_PROBESUCCESS']._serialized_start=381
+  _globals['_PROBESUCCESS']._serialized_end=440
+  _globals['_PROBEERROR']._serialized_start=443
+  _globals['_PROBEERROR']._serialized_end=591
+  _globals['_FIELDERROR']._serialized_start=593
+  _globals['_FIELDERROR']._serialized_end=661
+  _globals['_PROBERESULT']._serialized_start=664
+  _globals['_PROBERESULT']._serialized_end=823
+  _globals['_WAITFORPROBECONFIGREQUEST']._serialized_start=826
+  _globals['_WAITFORPROBECONFIGREQUEST']._serialized_end=956
+  _globals['_WAITFORPROBECONFIGRESPONSE']._serialized_start=958
+  _globals['_WAITFORPROBECONFIGRESPONSE']._serialized_end=1081
+  _globals['_GETCONFIGSTREAMREQUEST']._serialized_start=1083
+  _globals['_GETCONFIGSTREAMREQUEST']._serialized_end=1107
+  _globals['_GETCONFIGSTREAMRESPONSE']._serialized_start=1109
+  _globals['_GETCONFIGSTREAMRESPONSE']._serialized_end=1209
+  _globals['_COLLECTIONCONFIGSERVICE']._serialized_start=1212
+  _globals['_COLLECTIONCONFIGSERVICE']._serialized_end=1510
 # @@protoc_insertion_point(module_scope)
