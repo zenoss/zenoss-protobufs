@@ -30,6 +30,8 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     tenant_ = "";
+    tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     probeType_ = "";
   }
 
@@ -190,6 +192,43 @@ private static final long serialVersionUID = 0L;
     return configuration_ == null ? org.zenoss.cloud.collection.Configuration.getDefaultInstance() : configuration_;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @return A list containing the tags.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getTagsList() {
+    return tags_;
+  }
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @return The count of tags.
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   * <code>repeated string tags = 6 [json_name = "tags"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getTagsBytes(int index) {
+    return tags_.getByteString(index);
+  }
+
   public static final int PROBE_TYPE_FIELD_NUMBER = 10;
   @SuppressWarnings("serial")
   private volatile java.lang.Object probeType_ = "";
@@ -255,6 +294,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getConfiguration());
     }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, tags_.getRaw(i));
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(probeType_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, probeType_);
     }
@@ -279,6 +321,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getConfiguration());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTagsList().size();
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(probeType_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, probeType_);
@@ -309,6 +359,8 @@ private static final long serialVersionUID = 0L;
       if (!getConfiguration()
           .equals(other.getConfiguration())) return false;
     }
+    if (!getTagsList()
+        .equals(other.getTagsList())) return false;
     if (!getProbeType()
         .equals(other.getProbeType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -331,6 +383,10 @@ private static final long serialVersionUID = 0L;
     if (hasConfiguration()) {
       hash = (37 * hash) + CONFIGURATION_FIELD_NUMBER;
       hash = (53 * hash) + getConfiguration().hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
     }
     hash = (37 * hash) + PROBE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getProbeType().hashCode();
@@ -479,6 +535,8 @@ private static final long serialVersionUID = 0L;
         configurationBuilder_.dispose();
         configurationBuilder_ = null;
       }
+      tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       probeType_ = "";
       return this;
     }
@@ -530,6 +588,10 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.probeType_ = probeType_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -565,9 +627,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasConfiguration()) {
         mergeConfiguration(other.getConfiguration());
       }
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
+        onChanged();
+      }
       if (!other.getProbeType().isEmpty()) {
         probeType_ = other.probeType_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -618,9 +690,15 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 42
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureTagsIsMutable();
+              tags_.add(s);
+              break;
+            } // case 50
             case 82: {
               probeType_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             } // case 82
             default: {
@@ -977,6 +1055,117 @@ private static final long serialVersionUID = 0L;
       return configurationBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureTagsIsMutable() {
+      if (!tags_.isModifiable()) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTagsList() {
+      tags_.makeImmutable();
+      return tags_;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTags(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureTagsIsMutable();
+      tags_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param value The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTags(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param values The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTags(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, tags_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTags() {
+      tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 6 [json_name = "tags"];</code>
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTagsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object probeType_ = "";
     /**
      * <code>string probe_type = 10 [json_name = "probeType"];</code>
@@ -1020,7 +1209,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       probeType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1030,7 +1219,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearProbeType() {
       probeType_ = getDefaultInstance().getProbeType();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1044,7 +1233,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       probeType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
