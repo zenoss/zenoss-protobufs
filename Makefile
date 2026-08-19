@@ -48,6 +48,10 @@ DOCKER_PARAMS        := --rm \
 DOCKER_CMD           := docker run -t $(DOCKER_PARAMS) $(BUILD_IMG)
 
 DEPLOY_BUILD_IMAGE   = zenoss/zing-java-build-glibc:1.0
+# DEVOPS-6136: allow CI to point mvn at a settings.xml that mirrors Maven Central through the
+# virtana-zing AR proxy (avoids the shared-IP 429 on Central). Empty by default => bare mvn (local dev).
+MVN_SETTINGS ?=
+
 MVN                  = docker run --rm \
                             --network $(DOCKER_NETWORK) \
                             --volume $(ROOTDIR)/$(JAVADIR):/usr/src/app:rw \
@@ -56,7 +60,7 @@ MVN                  = docker run --rm \
                             --env LOCAL_USER_ID=$(LOCAL_USER_ID) \
                             --workdir /usr/src/app \
                             $(DEPLOY_BUILD_IMAGE) \
-                            mvn
+                            mvn $(if $(MVN_SETTINGS),-s $(MVN_SETTINGS),)
 
 PROJECTS := $(subst .env,,$(notdir $(wildcard $(PROJECTSDIR)/*.env)))
 
