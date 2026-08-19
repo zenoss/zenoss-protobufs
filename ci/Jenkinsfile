@@ -1,0 +1,37 @@
+#! groovy
+// DEVOPS-6136: PR pipeline for zenoss-protobufs (replaces the former FreeStyle "make clean; make"
+// job) so the build can mirror Maven Central through the virtana-zing Artifact Registry proxy and
+// stop 429ing on jenkins-eng's shared egress IP.
+@Library('zing-jenkins') _
+
+def MAKE = 'make'
+
+node('docker') {
+
+    currentBuild.displayName = "PR #${env.ghprbPullId}@${env.NODE_NAME}"
+
+    configFileProvider([
+        configFile(fileId: 'global', variable: 'GLOBAL'),
+    ]) {
+        global = load env.GLOBAL
+    }
+
+    stage('Checkout') {
+        checkout scm
+        // Generate a settings.xml mirroring Central -> virtana-zing (short-lived token) and drop it
+        // into the java module, which the Maven build mounts at its workdir (/usr/src/app ==
+        // $ROOTDIR/java); referenced by MVN_SETTINGS as a relative path.
+        mirrorMavenCentral(credentialsId: 'gcr_push_key', settingsFile: 'java/ci-mvn-mirror-settings.xml')
+    }
+
+    withEnv(["ROOTDIR=${global.HOST_WORKSPACE}"]) {
+        try {
+            stage('Build library') {
+                sh("${MAKE} clean MVN_SETTINGS=ci-mvn-mirror-settings.xml")
+                sh("${MAKE} MVN_SETTINGS=ci-mvn-mirror-settings.xml")
+            }
+        } finally {
+            sh('rm -f java/ci-mvn-mirror-settings.xml')
+        }
+    }
+}
